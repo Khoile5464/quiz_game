@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.1</title>
+<title>MLN111 Quiz Y2K v0.3.2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -501,7 +501,7 @@ footer a{color:inherit}
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.1</small></span>
+  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.2</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -510,7 +510,7 @@ footer a{color:inherit}
 
 <div class="wrap">
   <div class="logo">
-    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.1</small></h1>
+    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.2</small></h1>
     <p><span class="day-only">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -685,7 +685,42 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 
 /* ---------- storage ---------- */
 function fresh(){return {stats:{},xp:0,streak:{count:0,last:""},best:0,sessions:0,answered:0,correct:0,maxCombo:0,perfect:0,badges:[],sound:true}}
-function norm(s){ if (s.coins == null) s.coins = s.xp || 0; if (!s.farm || !Array.isArray(s.farm.animals)) s.farm = {animals: []}; if (!s.farm.dex || typeof s.farm.dex !== "object") s.farm.dex = {}; if (!s.unl || typeof s.unl !== "object") s.unl = {}; if (!s.farm.pity || typeof s.farm.pity !== "object") s.farm.pity = {}; return s; }
+const numOf = (v, d = 0) => ((typeof v === "number" || (typeof v === "string" && v.trim() !== "")) && Number.isFinite(+v)) ? +v : d;
+/* chuẩn hoá mọi dữ liệu lưu cũ/thiếu/hỏng: thêm trường mặc định, bỏ giá trị sai kiểu — KHÔNG đổi KEY để người dùng cũ giữ được tiến trình */
+function norm(s){
+  s = Object.assign(fresh(), s && typeof s === "object" ? s : {});
+  if (!s.stats || typeof s.stats !== "object" || Array.isArray(s.stats)) s.stats = {};
+  for (const k of Object.keys(s.stats)){
+    const v = s.stats[k];
+    if (!v || typeof v !== "object"){ delete s.stats[k]; continue; }
+    v.n = Math.max(0, numOf(v.n)); v.w = Math.max(0, numOf(v.w)); v.box = Math.min(5, Math.max(0, Math.floor(numOf(v.box)))); v.lastWrong = !!v.lastWrong;
+  }
+  for (const k of ["xp", "best", "sessions", "answered", "correct", "maxCombo", "perfect"]) s[k] = Math.max(0, numOf(s[k]));
+  s.coins = Math.max(0, Math.floor(numOf(s.coins, s.xp)));
+  if (!s.streak || typeof s.streak !== "object") s.streak = {count: 0, last: ""};
+  s.streak.count = Math.max(0, numOf(s.streak.count)); if (typeof s.streak.last !== "string") s.streak.last = "";
+  if (!Array.isArray(s.badges)) s.badges = [];
+  if (!s.farm || typeof s.farm !== "object") s.farm = {};
+  if (!Array.isArray(s.farm.animals)) s.farm.animals = [];
+  if (!s.farm.dex || typeof s.farm.dex !== "object" || Array.isArray(s.farm.dex)) s.farm.dex = {};
+  if (!s.farm.pity || typeof s.farm.pity !== "object" || Array.isArray(s.farm.pity)) s.farm.pity = {};
+  if (!s.unl || typeof s.unl !== "object" || Array.isArray(s.unl)) s.unl = {};
+  return s;
+}
+/* dọn danh sách thú (cần SPECIES nên chạy sau khi định nghĩa): bỏ loài không còn, sửa trường thiếu */
+function cleanFarm(s){
+  const seen = new Set();
+  s.farm.animals = s.farm.animals.filter(a => a && typeof a === "object" && typeof a.t === "string" && SPECIES[a.t]);
+  for (const a of s.farm.animals){
+    if (typeof a.id !== "string" || a.id.length < 3 || seen.has(a.id)) a.id = "r" + Math.random().toString(36).slice(2, 8);
+    seen.add(a.id);
+    a.f = Math.min(MAXF, Math.max(0, Math.floor(numOf(a.f))));
+    a.name = typeof a.name === "string" && a.name.trim() ? a.name.slice(0, 16) : NAMES[0];
+    a.named = !!a.named; a.voice = !!a.voice; a.vp = Math.min(1.8, Math.max(.6, numOf(a.vp, 1)));
+  }
+  return s;
+}
+const normFull = s => cleanFarm(norm(s));
 function load(){
   try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.stats)return norm(Object.assign(fresh(),s))}catch(e){}
   return norm(fresh());
@@ -1097,6 +1132,7 @@ GACHA.forEach((m, mi) => m.animals.forEach(an => {
 Object.assign(SPECIES, SPECIES_EXTRA);
 
 const NAMES = ["Zeus","Hera","Athena","Apollo","Artemis","Hermes","Demeter","Dionysus","Poseidon","Hestia","Ares","Eros","Nike","Pan","Orpheus","Icarus","Hector","Achilles","Helen","Odysseus","Socrates","Plato","Aristotle","Homer"];
+cleanFarm(S);
 const PAL = {k:"#2b1b3d",w:"#fffdf5",y:"#ffd84a",o:"#ff9a3c",r:"#e8434f",p:"#ffb3c7",P:"#e0719a",b:"#8a5a35",B:"#5a3820",t:"#e8c49a",g:"#c9c3b5"};
 const SPR = {
   chicken: {
@@ -2678,7 +2714,7 @@ $("quitX").onclick = quit;
 $("resetBtn").onclick = () => {
   if (!confirm("Xoá toàn bộ tiến trình học? Không thể hoàn tác đâu nha 🥺")) return;
   VDB.clear().catch(() => {}); for (const k in vUrl){ URL.revokeObjectURL(vUrl[k]); delete vUrl[k]; }
-  const {theme, yt, ytVol, ytLoop, sfx: sfxCfg} = S; S = norm(Object.assign(fresh(), {theme, yt, ytVol, ytLoop, sfx: sfxCfg})); save(); renderHome(); TV.render(); toast("Đã xoá, bắt đầu lại từ đầu ✦");
+  const {theme, yt, ytVol, ytLoop, sfx: sfxCfg} = S; S = normFull(Object.assign(fresh(), {theme, yt, ytVol, ytLoop, sfx: sfxCfg})); save(); renderHome(); TV.render(); toast("Đã xoá, bắt đầu lại từ đầu ✦");
 };
 const blobToUrl = b => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(b); });
 $("exportBtn").onclick = async () => {
@@ -2695,7 +2731,7 @@ $("importFile").onchange = async e => {
   try {
     const d = JSON.parse(await f.text()); if (!d.stats) throw 0;
     const voices = d.voices || {}; delete d.voices;
-    S = norm(Object.assign(fresh(), d)); save();
+    S = normFull(Object.assign(fresh(), d)); save();
     try{
       await VDB.clear(); for (const k in vUrl){ URL.revokeObjectURL(vUrl[k]); delete vUrl[k]; }
       for (const id in voices) await VDB.put(id, await (await fetch(voices[id])).blob());
