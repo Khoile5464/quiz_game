@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.2</title>
+<title>MLN111 Quiz Y2K v0.3.3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -501,7 +501,7 @@ footer a{color:inherit}
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.2</small></span>
+  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.3</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -510,7 +510,7 @@ footer a{color:inherit}
 
 <div class="wrap">
   <div class="logo">
-    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.2</small></h1>
+    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.3</small></h1>
     <p><span class="day-only">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -1785,12 +1785,24 @@ function playUrl(url, pitch){
 }
 async function animalVoice(a){
   if (!a.voice){ animalSnd(a.t); return; }
-  let url = null; try{ url = await voiceUrl(a.id); }catch(e){}
-  if (!url){ a.voice = false; save(); animalSnd(a.t); return; }
+  let url = null, ok = true; try{ url = await voiceUrl(a.id); }catch(e){ ok = false; }
+  if (!url){
+    if (ok){ a.voice = false; save(); renderSel(); toast(`🎙️ Giọng của ${a.name} không còn trên trình duyệt này, hãy ghi lại nha`); }
+    animalSnd(a.t); return;
+  }
   playUrl(url, a.vp);
 }
+/* phát hiện giọng bị mất (đổi địa chỉ web, xoá dữ liệu trang, khôi phục từ file sao lưu cũ) và báo thay vì im lặng */
+async function checkVoices(){
+  let lost = 0, have = 0;
+  for (const a of S.farm.animals.filter(x => x.voice)){
+    try{ if (await VDB.get(a.id)){ have++; voiceUrl(a.id).catch(() => {}); } else { a.voice = false; lost++; } }catch(e){}
+  }
+  if (lost){ save(); renderSel(); setTimeout(() => toast(`🎙️ ${lost} giọng ghi âm không còn trên trình duyệt này. Ghi lại, hoặc khôi phục từ file sao lưu có kèm giọng`), 1200); }
+  if (have) try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){}
+}
 function voiceDrop(id){ VDB.del(id).catch(() => {}); if (vUrl[id]){ URL.revokeObjectURL(vUrl[id]); delete vUrl[id]; } }
-S.farm.animals.filter(a => a.voice).forEach(a => voiceUrl(a.id).catch(() => {}));
+checkVoices();
 
 function openVoice(a){
   clearTimeout(gT); clearInterval(gAnim); gb.onclick = null; gb.className = "gbox";
@@ -1823,7 +1835,7 @@ function openVoice(a){
   saveBtn.onclick = async () => {
     try{
       if (blob){ await VDB.put(a.id, blob); if (vUrl[a.id]) URL.revokeObjectURL(vUrl[a.id]); vUrl[a.id] = URL.createObjectURL(blob); }
-      a.voice = true; a.vp = pitch; save(); toast(`🎙️ Đã lưu giọng cho ${a.name}`); renderSel(); closeG();
+      a.voice = true; a.vp = pitch; save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} toast(`🎙️ Đã lưu giọng cho ${a.name}`); renderSel(); closeG();
     }catch(e){ toast("Không lưu được giọng (trình duyệt chặn bộ nhớ) 🥲"); }
   };
   delBtn.onclick = () => { voiceDrop(a.id); a.voice = false; a.vp = 1; save(); toast("Đã xoá giọng, quay về tiếng mặc định"); renderSel(); closeG(); };
@@ -2733,10 +2745,9 @@ $("importFile").onchange = async e => {
     const voices = d.voices || {}; delete d.voices;
     S = normFull(Object.assign(fresh(), d)); save();
     try{
-      await VDB.clear(); for (const k in vUrl){ URL.revokeObjectURL(vUrl[k]); delete vUrl[k]; }
-      for (const id in voices) await VDB.put(id, await (await fetch(voices[id])).blob());
+      for (const id in voices){ if (vUrl[id]){ URL.revokeObjectURL(vUrl[id]); delete vUrl[id]; } await VDB.put(id, await (await fetch(voices[id])).blob()); }
     }catch(err){ toast("Khôi phục xong, nhưng không nạp được giọng ghi âm 🥲"); }
-    renderHome(); const nv = Object.keys(voices).length; toast(nv ? `Khôi phục tiến trình và ${nv} giọng ghi âm 💾` : "Khôi phục tiến trình thành công 💾");
+    checkVoices(); renderHome(); const nv = Object.keys(voices).length; toast(nv ? `Khôi phục tiến trình và ${nv} giọng ghi âm 💾` : "Khôi phục tiến trình thành công 💾");
   }
   catch { toast("File không hợp lệ 🥺"); }
   e.target.value = "";
