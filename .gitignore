@@ -1,9 +1,9 @@
 # tiến trình cá nhân / sao lưu
-Save/
-Progress/
+/Save/
+/Progress/
 mln111-progress-*.json
 # phiên bản cũ & file nặng
-Fixed/
+/Fixed/
 *.pdf
 .DS_Store
 Thumbs.db
