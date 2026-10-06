@@ -1,0 +1,182 @@
+[
+{"n": 1,
+ "explain": "Xanh-ximông (Saint-Simon, 1760–1825) là nhà tư tưởng Pháp, cùng với Sáclơ Phuriê là đại biểu nổi tiếng nhất của chủ nghĩa xã hội không tưởng Pháp đầu thế kỷ XIX. Giáo trình xếp trào lưu này là một trong ba nguồn gốc lý luận của chủ nghĩa Mác, và là nguồn gốc trực tiếp của chủ nghĩa xã hội khoa học.",
+ "wrong": {
+  "B": "«Chủ nghĩa xã hội không tưởng Đức» không phải là trào lưu tiêu biểu được kể trong ba nguồn gốc lý luận của chủ nghĩa Mác; hơn nữa Xanh-ximông là người Pháp chứ không phải người Đức.",
+  "C": "«Triết học cổ điển Đức» gắn với Cantơ, Hêghen, Phoiơbắc; Xanh-ximông không thuộc trường phái triết học này.",
+  "D": "«Kinh tế chính trị học Anh» gắn với A. Xmít và Đ. Ricácđô; Xanh-ximông không phải nhà kinh tế chính trị cổ điển Anh."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục II.1 (Tiền đề lý luận ra đời triết học Mác); V.I. Lênin, «Ba nguồn gốc và ba bộ phận cấu thành của chủ nghĩa Mác» (1913).",
+ "keyCheck": "ok"},
+{"n": 2,
+ "explain": "Quan hệ sản xuất là quan hệ giữa người với người trong quá trình sản xuất vật chất, gồm ba mặt: quan hệ sở hữu tư liệu sản xuất, quan hệ tổ chức – quản lý sản xuất và quan hệ phân phối sản phẩm. Đây chính là định nghĩa giáo trình đưa ra khi trình bày phương thức sản xuất.",
+ "wrong": {
+  "A": "«Quan hệ xã hội» quá rộng: nó bao gồm cả quan hệ chính trị, pháp quyền, đạo đức, gia đình…, không chỉ riêng quan hệ trong sản xuất.",
+  "B": "«Quan hệ tổ chức quản lý» chỉ là một mặt (bộ phận) của quan hệ sản xuất, không phải toàn bộ quan hệ giữa người với người trong sản xuất.",
+  "D": "«Quan hệ điều tiết» không phải là một khái niệm của chủ nghĩa duy vật lịch sử để chỉ quan hệ giữa người với người trong sản xuất."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.2 (Biện chứng giữa lực lượng sản xuất và quan hệ sản xuất).",
+ "keyCheck": "ok"},
+{"n": 3,
+ "explain": "Nội dung cốt lõi của quy luật quan hệ sản xuất phù hợp với trình độ phát triển của lực lượng sản xuất là: lực lượng sản xuất quyết định sự hình thành, biến đổi và phát triển của quan hệ sản xuất; quan hệ sản xuất tác động trở lại lực lượng sản xuất. Vì vậy câu tóm tắt «sự hình thành, biến đổi và phát triển của quan hệ sản xuất được quyết định bởi lực lượng sản xuất» là đúng.",
+ "wrong": {
+  "A": "Câu này đảo ngược quan hệ quyết định: chính quan hệ sản xuất phụ thuộc vào lực lượng sản xuất, chứ không phải lực lượng sản xuất phụ thuộc khách quan vào quan hệ sản xuất.",
+  "C": "Câu «hai mặt của phương thức sản xuất, chúng tồn tại…» chỉ mô tả cấu trúc của phương thức sản xuất; nếu hiểu là hai mặt tồn tại tách rời, độc lập thì sai vì chúng thống nhất biện chứng, và dù sao câu này cũng chưa nêu được nội dung cốt lõi của quy luật là vai trò quyết định của lực lượng sản xuất.",
+  "D": "Đây là quy luật phổ biến, tác động trong mọi hình thái kinh tế - xã hội của lịch sử, chứ không chỉ tồn tại trong một vài xã hội."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.2; C. Mác, «Lời tựa Góp phần phê phán khoa kinh tế chính trị» (1859).",
+ "keyCheck": "ok"},
+{"n": 4,
+ "explain": "Tri thức kinh nghiệm là kết quả của nhận thức kinh nghiệm, hình thành từ sự quan sát trực tiếp sự vật, hiện tượng trong đời sống và lao động sản xuất hằng ngày (tri thức kinh nghiệm thông thường). Vì thế đây là loại tri thức nảy sinh trực tiếp từ thực tiễn lao động sản xuất.",
+ "wrong": {
+  "B": "«Tri thức lý luận» là nhận thức gián tiếp, trừu tượng, khái quát về bản chất, quy luật; nó được hình thành trên cơ sở tổng kết kinh nghiệm chứ không nảy sinh trực tiếp từ lao động.",
+  "C": "«Tri thức lý luận khoa học» là trình độ còn cao và gián tiếp hơn nữa, đòi hỏi khái quát, hệ thống hoá; không nảy sinh trực tiếp từ thực tiễn sản xuất.",
+  "D": "«Tri thức lý luận thực tiễn» không phải là một phân loại tri thức trong giáo trình; hơn nữa đã là lý luận thì mang tính gián tiếp."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục III (Lý luận nhận thức – nhận thức kinh nghiệm và nhận thức lý luận).",
+ "keyCheck": "ok"},
+{"n": 5,
+ "explain": "Trong «Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán», Lênin viết: «Quan điểm về đời sống, về thực tiễn, phải là quan điểm thứ nhất và cơ bản của lý luận về nhận thức». Câu này nhấn mạnh thực tiễn là cơ sở, động lực, mục đích của nhận thức và là tiêu chuẩn của chân lý.",
+ "wrong": {
+  "A": "«Điểm thứ nhất» không đúng nguyên văn và thiếu chữ «cơ bản», làm mất ý nhấn mạnh vai trò nền tảng của thực tiễn.",
+  "B": "«Quan điểm đầu tiên» chỉ nói về thứ tự, bỏ mất tính «cơ bản» – ý quan trọng nhất trong câu của Lênin.",
+  "D": "«Điều quan trọng» là cách diễn đạt chung chung, không phải nguyên văn của Lênin."
+ },
+ "source": "V.I. Lênin, «Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán» (1909), Toàn tập, t.18, tr.167; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục III (Vai trò của thực tiễn đối với nhận thức).",
+ "keyCheck": "ok"},
+{"n": 6,
+ "explain": "Công lao lớn của Mác và Ăngghen là đưa phạm trù thực tiễn vào triết học, vào lý luận nhận thức, khắc phục «khuyết điểm chủ yếu» của mọi chủ nghĩa duy vật trước đó (chỉ xem hiện thực dưới hình thức khách thể, trực quan). Tư tưởng này được nêu trong «Luận cương về Phoiơbắc», nơi Mác khẳng định chân lý phải được chứng minh trong thực tiễn.",
+ "wrong": {
+  "A": "Thế giới khách quan đã được các nhà duy vật trước Mác thừa nhận từ thời cổ đại, nên «phát hiện ra thế giới khách quan» không phải công lao riêng của Mác và Ăngghen.",
+  "B": "Phương pháp luận đã có trong triết học từ trước (ví dụ phép biện chứng của Hêghen); đóng góp đặc trưng của Mác và Ăngghen đối với nhận thức là quan điểm thực tiễn.",
+  "D": "Đấu tranh chống giai cấp tư sản là nội dung chính trị – xã hội, không phải công lao trực tiếp đối với lý luận nhận thức."
+ },
+ "source": "C. Mác, «Luận cương về Phoiơbắc» (1845), luận cương 1 và 2; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục III.",
+ "keyCheck": "ok"},
+{"n": 7,
+ "explain": "Nhận thức cảm tính (trực quan sinh động) là giai đoạn đầu của nhận thức, gồm ba hình thức kế tiếp nhau: cảm giác, tri giác và biểu tượng. Ở giai đoạn này con người phản ánh trực tiếp các thuộc tính bề ngoài của sự vật qua giác quan.",
+ "wrong": {
+  "A": "«Phán đoán và suy luận» là hình thức của nhận thức lý tính (tư duy trừu tượng), không thuộc nhận thức cảm tính.",
+  "B": "«Khái niệm» là hình thức của nhận thức lý tính, nên tổ hợp này trộn lẫn hai giai đoạn nhận thức.",
+  "D": "«Khái niệm và phán đoán» đều là hình thức của nhận thức lý tính."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục III (Các giai đoạn cơ bản của quá trình nhận thức).",
+ "keyCheck": "ok"},
+{"n": 8,
+ "explain": "Theo triết học Mác-Lênin, vận động là tuyệt đối còn đứng im là tương đối, tạm thời. Đứng im là tương đối vì nó chỉ xảy ra trong một mối quan hệ nhất định chứ không phải trong mọi quan hệ cùng một lúc, và chỉ với một hình thức vận động nhất định.",
+ "wrong": {
+  "A": "«Thực tế» không phải là phạm trù dùng để chỉ tính chất của đứng im trong triết học Mác-Lênin.",
+  "B": "«Tuyệt đối» là tính chất của vận động; nói đứng im là tuyệt đối sẽ rơi vào quan điểm siêu hình.",
+  "D": "«Thường xuyên» mâu thuẫn với chính nội dung câu hỏi: đứng im chỉ tạm thời, chỉ trong một số quan hệ nhất định."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục I.1 (Vật chất – Phương thức tồn tại của vật chất: vận động và đứng im).",
+ "keyCheck": "ok"},
+{"n": 9,
+ "explain": "Bạn A kiên trì tích lũy kiến thức (thay đổi dần về lượng) đến một giới hạn nhất định thì có bước nhảy, chuyển từ học lực kém thành học sinh giỏi, đạt học bổng (thay đổi về chất). Đây là minh hoạ điển hình cho quy luật chuyển hoá từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại.",
+ "wrong": {
+  "B": "Quy luật thống nhất và đấu tranh của các mặt đối lập vạch ra nguồn gốc, động lực của phát triển (mâu thuẫn); tình huống này nhấn mạnh quá trình tích lũy dẫn đến biến đổi chất.",
+  "C": "Quy luật phủ định của phủ định nói về khuynh hướng phát triển theo đường «xoáy ốc», có kế thừa và lặp lại; tình huống không thể hiện chu kỳ phủ định hai lần.",
+  "D": "«Quy luật phát triển» không phải là tên của một trong ba quy luật cơ bản của phép biện chứng duy vật."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục II.3 (Các quy luật cơ bản của phép biện chứng duy vật – quy luật lượng – chất).",
+ "keyCheck": "ok"},
+{"n": 10,
+ "explain": "Bằng việc vận dụng chủ nghĩa duy vật biện chứng vào xã hội, Mác sáng lập chủ nghĩa duy vật lịch sử, tạo ra cuộc cách mạng thật sự trong học thuyết về xã hội. Lênin đánh giá: «Chủ nghĩa duy vật lịch sử của Mác là thành tựu vĩ đại nhất của tư tưởng khoa học»; Ăngghen cũng coi đây là một trong hai phát kiến vĩ đại của Mác (cùng học thuyết giá trị thặng dư).",
+ "wrong": {
+  "B": "Chủ nghĩa duy tâm khách quan (ví dụ Platôn, Hêghen) có từ trước Mác và đối lập với lập trường duy vật của Mác.",
+  "C": "Chủ nghĩa duy tâm chủ quan (ví dụ Béccơli, Hium) cũng có trước Mác và bị Mác phê phán.",
+  "D": "«Chủ nghĩa duy vật chất phác» là hình thức duy vật thời cổ đại, không phải phát minh của Mác."
+ },
+ "source": "V.I. Lênin, «Ba nguồn gốc và ba bộ phận cấu thành của chủ nghĩa Mác» (1913); Ph. Ăngghen, «Bài phát biểu trước mộ Các Mác» (1883); Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục II.1.",
+ "keyCheck": "ok"},
+{"n": 11,
+ "explain": "Theo định nghĩa của Lênin trong «Sáng kiến vĩ đại», các giai cấp khác nhau về địa vị trong một hệ thống sản xuất xã hội nhất định, trong đó yếu tố quyết định là quan hệ của họ đối với tư liệu sản xuất. Chính quan hệ sở hữu tư liệu sản xuất quyết định vai trò trong tổ chức lao động và cách thức hưởng thụ của cải.",
+ "wrong": {
+  "A": "Quyền lực chính trị là hệ quả của địa vị kinh tế; giai cấp nắm tư liệu sản xuất mới trở thành giai cấp thống trị về chính trị.",
+  "B": "Quyền lực nhà nước cũng là biểu hiện về mặt chính trị, phái sinh từ địa vị kinh tế, không phải tiêu chí cơ bản nhất.",
+  "C": "Vai trò quản lý kinh tế là một dấu hiệu trong định nghĩa của Lênin nhưng nó phụ thuộc vào quan hệ sở hữu tư liệu sản xuất."
+ },
+ "source": "V.I. Lênin, «Sáng kiến vĩ đại» (1919), Toàn tập, t.39, tr.17-18; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục II.1 (Giai cấp).",
+ "keyCheck": "ok"},
+{"n": 12,
+ "explain": "Khi giải quyết mặt thứ hai của vấn đề cơ bản của triết học (con người có nhận thức được thế giới hay không), học thuyết khẳng định khả năng nhận thức của con người được gọi là «thuyết có thể biết», tức thuyết khả tri (khả tri luận); đối lập với nó là thuyết không thể biết (thuyết bất khả tri). Theo đáp án của đề, tên gọi được chọn là «Thuyết khả tri luận».",
+ "wrong": {
+  "A": "«Thuyết nhận biết» không phải là thuật ngữ triết học dùng để gọi thuyết có thể biết.",
+  "B": "«Thuyết khả tri» thực chất cũng là tên gọi giáo trình dùng (khả tri = có thể biết), nhưng đề này chọn cách gọi đầy đủ «khả tri luận»; khi làm bài cần chú ý đáp án mà đề chấp nhận.",
+  "D": "«Thuyết nhận biết luận» là cách ghép từ không có trong thuật ngữ triết học."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.2 (Vấn đề cơ bản của triết học – Thuyết có thể biết và thuyết không thể biết).",
+ "keyCheck": "nghi vấn: Giáo trình 2021 ghi «Thuyết có thể biết (Thuyết Khả tri)», tức trùng khớp nhất với phương án «Thuyết khả tri»; «Thuyết khả tri luận» chỉ là biến thể đồng nghĩa (thừa chữ «thuyết»/«luận»). Hai phương án gần như đồng nghĩa nên đáp án của đề khó bảo vệ."},
+{"n": 13,
+ "explain": "Mác khẳng định sự phát triển của các hình thái kinh tế - xã hội là «một quá trình lịch sử - tự nhiên», tức diễn ra theo các quy luật khách quan (trước hết là quy luật quan hệ sản xuất phù hợp với lực lượng sản xuất và quy luật cơ sở hạ tầng quyết định kiến trúc thượng tầng), chứ không theo ý muốn chủ quan. Do đó quy luật khách quan là nhân tố quyết định xu hướng phát triển chung.",
+ "wrong": {
+  "A": "Ý thức của giai cấp cầm quyền chỉ tác động (thúc đẩy hoặc kìm hãm), không quyết định xu hướng khách quan của lịch sử; khẳng định ngược lại là duy tâm.",
+  "B": "Ý chí của nhân dân là nhân tố chủ quan; nó có vai trò to lớn nhưng phải phù hợp với quy luật khách quan mới phát huy tác dụng.",
+  "D": "Điều kiện khách quan và chủ quan của mỗi xã hội ảnh hưởng đến con đường, hình thức, tốc độ cụ thể, còn xu hướng chung do quy luật khách quan quyết định."
+ },
+ "source": "C. Mác, «Tư bản», tập I, Lời tựa lần xuất bản thứ nhất (1867); Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.4 (Sự phát triển các hình thái kinh tế - xã hội là một quá trình lịch sử - tự nhiên).",
+ "keyCheck": "ok"},
+{"n": 14,
+ "explain": "Quan hệ sản xuất phù hợp với tính chất và trình độ của lực lượng sản xuất khi nó tạo «địa bàn», mở đường cho lực lượng sản xuất phát triển. Tiêu chí khách quan để đánh giá sự phù hợp chính là quan hệ sản xuất đó có thúc đẩy lực lượng sản xuất phát triển hay không.",
+ "wrong": {
+  "B": "Cải thiện đời sống nhân dân là kết quả có thể có của sản xuất phát triển, không phải tiêu chí trực tiếp xác định sự phù hợp giữa quan hệ sản xuất và lực lượng sản xuất.",
+  "C": "Công bằng xã hội là mục tiêu xã hội – chính trị, không phải tiêu chí khách quan để đánh giá sự phù hợp của quan hệ sản xuất.",
+  "D": "Khi quan hệ sản xuất phù hợp thì không đặt ra yêu cầu thay thế; hơn nữa chính quan hệ sản xuất lỗi thời mới là cái bị thay thế, không phải lực lượng sản xuất."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.2 (Quy luật quan hệ sản xuất phù hợp với trình độ phát triển của lực lượng sản xuất).",
+ "keyCheck": "ok"},
+{"n": 15,
+ "explain": "Trong «Biện chứng của tự nhiên», Ăngghen chia vận động thành năm hình thức cơ bản từ thấp đến cao: cơ học, vật lý, hoá học, sinh học và xã hội. Vận động cơ học – sự di chuyển vị trí của vật thể trong không gian – là hình thức thấp nhất, đơn giản nhất.",
+ "wrong": {
+  "B": "Vận động vật lý (vận động của phân tử, hạt cơ bản, nhiệt, điện…) cao hơn vận động cơ học.",
+  "C": "Vận động hoá học (hoá hợp, phân giải các chất) cao hơn cả cơ học và vật lý.",
+  "D": "Vận động xã hội là hình thức cao nhất, phức tạp nhất, bao hàm các hình thức thấp hơn."
+ },
+ "source": "Ph. Ăngghen, «Biện chứng của tự nhiên»; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục I.1 (Các hình thức vận động cơ bản của vật chất).",
+ "keyCheck": "ok"},
+{"n": 16,
+ "explain": "Luận điểm coi quy luật là «sự sáng tạo chủ quan của con người» rồi áp đặt vào tự nhiên và xã hội đã phủ nhận tính khách quan của quy luật, đặt ý thức cá nhân chủ thể làm nguồn gốc. Đó là lập trường của chủ nghĩa duy tâm chủ quan.",
+ "wrong": {
+  "A": "Chủ nghĩa duy vật siêu hình vẫn thừa nhận thế giới và quy luật tồn tại khách quan, dù nhìn nhận một cách máy móc, cô lập.",
+  "B": "Chủ nghĩa duy tâm khách quan coi quy luật là sự thể hiện của một «ý niệm tuyệt đối» hay tinh thần khách quan tồn tại ngoài con người, chứ không phải sáng tạo của chủ thể con người.",
+  "C": "Chủ nghĩa duy vật biện chứng khẳng định quy luật mang tính khách quan, con người chỉ nhận thức và vận dụng chứ không sáng tạo ra quy luật."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.2 (Chủ nghĩa duy vật và chủ nghĩa duy tâm); Chương 2, mục II.2 (tính khách quan của quy luật).",
+ "keyCheck": "ok"},
+{"n": 17,
+ "explain": "Theo chủ nghĩa duy vật lịch sử, nguyên nhân trực tiếp ra đời nhà nước là mâu thuẫn giai cấp không thể điều hoà được. Lênin viết: «Nhà nước là sản phẩm và biểu hiện của những mâu thuẫn giai cấp không thể điều hoà được… sự tồn tại của nhà nước chứng tỏ rằng những mâu thuẫn giai cấp là không thể điều hoà được».",
+ "wrong": {
+  "A": "Quan niệm nhà nước là «lực lượng đại diện cho xã hội» đứng trên để giải quyết mâu thuẫn là quan điểm phi mácxít (thuyết khế ước, thuyết điều hoà giai cấp); thực chất nhà nước là công cụ của giai cấp thống trị.",
+  "B": "«Kinh nghiệm thực tế» chỉ là lập luận cảm tính, không nêu được bản chất và nguyên nhân khách quan ra đời của nhà nước.",
+  "D": "Nói «tất yếu của lịch sử nhân loại» là quá chung chung và không chính xác: nhà nước chỉ ra đời ở một giai đoạn lịch sử nhất định (khi có giai cấp) và sẽ mất đi."
+ },
+ "source": "V.I. Lênin, «Nhà nước và cách mạng» (1917), Toàn tập, t.33, tr.9; Ph. Ăngghen, «Nguồn gốc của gia đình, của chế độ tư hữu và của nhà nước» (1884); Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục III.1 (Nhà nước).",
+ "keyCheck": "ok"},
+{"n": 18,
+ "explain": "Ý thức xã hội có hai trình độ: ý thức thông thường và ý thức lý luận. Ý thức lý luận là những tư tưởng, quan điểm đã được hệ thống hoá, khái quát hoá thành học thuyết; khi đạt trình độ cao và mang tính hệ thống thì tạo thành các hệ tư tưởng.",
+ "wrong": {
+  "B": "«Hệ kiến thức» không phải thuật ngữ của chủ nghĩa duy vật lịch sử để chỉ trình độ cao của ý thức lý luận.",
+  "C": "«Tri thức tổng hợp» là cách gọi chung chung, không phải hình thức trình độ cao của ý thức xã hội.",
+  "D": "«Hệ thống tri thức» quá rộng (khoa học tự nhiên cũng là hệ thống tri thức) và thiếu tính quan điểm, giai cấp vốn có của hệ tư tưởng."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục IV (Ý thức xã hội – các cấp độ của ý thức xã hội: tâm lý xã hội và hệ tư tưởng).",
+ "keyCheck": "ok"},
+{"n": 19,
+ "explain": "Đây là câu chọn nhận định SAI. Thể hiện tính liên tục, tính kế thừa trong sự phát triển của xã hội loài người là vai trò của lực lượng sản xuất (thế hệ sau tiếp nhận lực lượng sản xuất do thế hệ trước để lại), không phải vai trò của quan hệ sản xuất, vì quan hệ sản xuất thay đổi căn bản khi chuyển từ hình thái này sang hình thái khác.",
+ "wrong": {
+  "A": "Nhận định này đúng: giáo trình khẳng định quan hệ sản xuất là quan hệ cơ bản, quyết định các quan hệ xã hội khác, nên không phải câu cần chọn.",
+  "B": "Nhận định này đúng: tổng hợp các quan hệ sản xuất hợp thành cơ sở hạ tầng – cơ sở kinh tế của các hiện tượng xã hội.",
+  "D": "Nhận định này đúng: quan hệ sản xuất là tiêu chuẩn khách quan để phân biệt các chế độ xã hội, tiêu biểu cho bộ mặt của xã hội ở từng giai đoạn lịch sử."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.2 và I.3 (Lực lượng sản xuất – quan hệ sản xuất; Cơ sở hạ tầng và kiến trúc thượng tầng); C. Mác, «Thư gửi P.V. Annenkov» (1846) về tính kế thừa của lực lượng sản xuất.",
+ "keyCheck": "ok"},
+{"n": 20,
+ "explain": "Theo Ăngghen trong «Lútvích Phoiơbắc và sự cáo chung của triết học cổ điển Đức», triết học có một vấn đề cơ bản là quan hệ giữa tư duy và tồn tại (ý thức và vật chất). Vấn đề này có hai mặt: mặt thứ nhất (bản thể luận) – cái nào có trước, cái nào quyết định; mặt thứ hai (nhận thức luận) – con người có khả năng nhận thức thế giới hay không.",
+ "wrong": {
+  "A": "Đảo ngược số lượng: triết học có một vấn đề cơ bản, và vấn đề đó có hai mặt, chứ không phải một mặt hai vấn đề.",
+  "B": "Vấn đề cơ bản có hai mặt chứ không chỉ một mặt; thiếu mặt nhận thức luận.",
+  "D": "Triết học chỉ có một vấn đề cơ bản, không phải hai."
+ },
+ "source": "Ph. Ăngghen, «Lútvích Phoiơbắc và sự cáo chung của triết học cổ điển Đức» (1886), C.Mác và Ph.Ăngghen Toàn tập, t.21, tr.403; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.2.",
+ "keyCheck": "ok"}
+]

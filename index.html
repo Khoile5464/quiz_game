@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.3</title>
+<title>MLN111 Quiz Y2K v0.3.5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -139,7 +139,7 @@ body{
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .startrow{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:stretch}
 .big-start small{display:block;font-family:inherit;font-size:12px;font-weight:700;opacity:.85;margin-top:2px}
-.big-start.review:disabled{opacity:.5;cursor:not-allowed;animation:none;filter:grayscale(.4)}
+.big-start:disabled,.big-start.review:disabled{opacity:.5;cursor:not-allowed;animation:none;filter:grayscale(.4)}
 .big-start{display:block;margin:6px auto 0;font-size:24px;padding:16px 40px;animation:bob 2.2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-5px)}}
 
@@ -436,6 +436,12 @@ footer a{color:inherit}
 .tab:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
 .tabp.hidden{display:none}
 .tabp .hint{font-size:12px}
+.btn.due{outline:3px dashed var(--pink);outline-offset:2px}
+.sbar{height:12px;border:2px solid var(--ink);border-radius:999px;overflow:hidden;margin:4px 0 2px}
+.sbar i{display:block;height:100%;background:var(--pink)}
+.sbar i.warn{background:#ff7a3c}
+.srow{text-align:left;margin:10px 0;font-weight:700;font-size:14px}
+.srow small{display:block;font-weight:600;opacity:.75;font-size:12px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .tb-title{display:none;font-weight:800;font-size:26px;line-height:1;margin-right:auto;white-space:nowrap;
   background:linear-gradient(180deg,#fff 0%,#ffd1f0 30%,#ff7ac8 52%,#b07bff 75%,#fff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1.5px var(--ink);filter:drop-shadow(2px 2px 0 #fff)}
@@ -501,7 +507,7 @@ footer a{color:inherit}
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.3</small></span>
+  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.5</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -510,7 +516,7 @@ footer a{color:inherit}
 
 <div class="wrap">
   <div class="logo">
-    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.3</small></h1>
+    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.5</small></h1>
     <p><span class="day-only">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -545,8 +551,8 @@ footer a{color:inherit}
         <div class="body" style="text-align:center">
           <div class="hint" id="todayMsg"></div>
           <div class="chips" id="scopeChips"></div>
-          <div class="startrow"><button class="btn big-start" id="startBtn"><span id="startMain">Bắt đầu 30 câu ✦</span><small id="startSub">xu thưởng ×2</small></button><button class="btn lav big-start review" id="reviewBtn" title="Ôn lại các câu đã học · xu thưởng cơ bản">🏛 Đền ôn tập<small id="reviewSub">xu ×2</small></button></div>
-          <div class="hint" style="margin-top:8px">Câu hay sai sẽ xuất hiện nhiều hơn, câu đã thuộc ít dần 💫</div>
+          <div class="startrow"><button class="btn big-start" id="startBtn"><span id="startMain">Bắt đầu 30 câu ✦</span><small id="startSub">xu thưởng ×2</small></button><button class="btn lav big-start review" id="reviewBtn" title="Ôn lại các câu đã học · xu thưởng cơ bản">🏛 Đền ôn tập<small id="reviewSub">xu ×2</small></button><button class="btn blue big-start review" id="templeBtn" title="100 câu liên tiếp từ các câu đã học · điểm = số câu đúng"><span>🔱 Ngôi đền huyền thoại</span><small id="templeSub"></small></button></div>
+          <div class="hint" style="margin-top:8px">Học mới: toàn câu chưa làm · Ôn tập: ưu tiên câu vừa sai → master 💫</div>
         </div>
       </div>
 
@@ -579,6 +585,7 @@ footer a{color:inherit}
       <div class="actions">
         <button class="btn small blue" id="exportBtn" title="Tiến trình được lưu tự động trong trình duyệt này. Sao lưu (kèm giọng ghi âm) để chuyển sang máy khác">💾 Sao lưu</button>
         <button class="btn small blue" id="importBtn">📂 Khôi phục</button>
+        <button class="btn small lav" id="storageBtn" title="Xem dung lượng đã dùng" aria-label="Dung lượng lưu trữ">📊</button>
         <button class="btn small" id="resetBtn">🗑 Xoá tiến trình</button>
         <input type="file" id="importFile" accept=".json,application/json" class="hidden">
       </div>
@@ -705,6 +712,9 @@ function norm(s){
   if (!s.farm.dex || typeof s.farm.dex !== "object" || Array.isArray(s.farm.dex)) s.farm.dex = {};
   if (!s.farm.pity || typeof s.farm.pity !== "object" || Array.isArray(s.farm.pity)) s.farm.pity = {};
   if (!s.unl || typeof s.unl !== "object" || Array.isArray(s.unl)) s.unl = {};
+  if (!s.temple || typeof s.temple !== "object" || Array.isArray(s.temple)) s.temple = {};
+  s.temple.best = Math.max(0, Math.floor(numOf(s.temple.best))); s.temple.runs = Math.max(0, Math.floor(numOf(s.temple.runs)));
+  s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }
 /* dọn danh sách thú (cần SPECIES nên chạy sau khi định nghĩa): bỏ loài không còn, sửa trường thiếu */
@@ -726,7 +736,14 @@ function load(){
   return norm(fresh());
 }
 let S = load();
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let saveBad = false, saveFailAt = 0;
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(S)); saveBad = false; }
+  catch(e){
+    saveBad = true; const now = Date.now();
+    if (now - saveFailAt > 30000){ saveFailAt = now; try{ toast("⚠️ Không lưu được tiến trình (bộ nhớ trình duyệt đầy hoặc bị chặn). Bấm Sao lưu ngay để giữ dữ liệu!"); }catch(err){} }
+  }
+}
 const st = id => S.stats[id] || (S.stats[id] = {n:0,w:0,box:0,lastWrong:false});
 
 /* ---------- spaced weighting ---------- */
@@ -745,7 +762,11 @@ let scope = "c12";
 try{const v=localStorage.getItem("mln111_scope");if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
 const inScope = (q, sc = scope) => { const d = SCOPES.find(s => s[0] === sc)[2]; return !d || d.includes(q.c); };
 const pool = () => Q.filter(q => inScope(q));
-const reviewPool = () => Q.filter(q => inScope(q) && (S.stats[q.id]?.n || 0) > 0);
+const learned = q => (S.stats[q.id]?.n || 0) > 0;
+const reviewPool = () => Q.filter(q => inScope(q) && learned(q));
+const newPool = () => Q.filter(q => inScope(q) && !learned(q));
+const templePool = () => Q.filter(learned);
+const TEMPLE_SIZE = 100;
 function renderScope(){
   $("scopeChips").replaceChildren(...SCOPES.map(([k, label]) => {
     const b = el("button", "chip" + (k === scope ? " on" : ""), label);
@@ -754,17 +775,26 @@ function renderScope(){
     return b;
   }));
   const n = pool().length, m = pool().filter(q => (S.stats[q.id]?.box || 0) >= 3).length;
-  $("startMain").textContent = `Bắt đầu ${Math.min(SESSION_SIZE, n)} câu ✦`;
+  const nn = newPool().length;
+  $("startBtn").disabled = !nn;
+  $("startMain").textContent = nn ? `Bắt đầu ${Math.min(SESSION_SIZE, nn)} câu mới ✦` : "Hết câu mới 🎉";
+  $("startSub").textContent = nn ? `còn ${nn} câu chưa học · xu thưởng ×2` : "đã học hết phạm vi này — qua Đền ôn tập nhé";
+  const tn = templePool().length;
+  $("templeBtn").disabled = !tn;
+  $("templeSub").textContent = tn ? `${Math.min(TEMPLE_SIZE, tn)} câu liên tiếp · 🏆 HighScore: ${S.temple.best}` : "học vài câu trước đã";
   $("todayMsg").dataset.scope = `${m}/${n}`;
   const rn = reviewPool().length;
   $("reviewBtn").disabled = !rn;
   $("reviewSub").textContent = rn ? `${Math.min(SESSION_SIZE, rn)} câu đã học · xu cơ bản` : "chưa có câu nào để ôn";
 }
-function pickSession(src = pool()){
-  // Efraimidis–Spirakis: lấy mẫu có trọng số, không lặp
-  return src.map(q => ({q, k: Math.pow(Math.random(), 1 / weight(q))}))
-    .sort((a,b) => b.k - a.k).slice(0, Math.min(SESSION_SIZE, src.length)).map(x => x.q);
-}
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+/* học mới: toàn bộ là câu chưa từng làm, xáo ngẫu nhiên */
+const pickNew = () => shuffle(newPool()).slice(0, SESSION_SIZE);
+/* ôn tập: ưu tiên vừa sai → đang nhớ → khá ổn → đã thuộc → rất chắc → master; cùng mức thì xáo ngẫu nhiên */
+const prio = q => { const b = boxOf(q); return b < 0 ? 0 : b; };
+const pickReview = () => shuffle(reviewPool()).sort((a, b) => prio(a) - prio(b)).slice(0, SESSION_SIZE);
+/* ngôi đền huyền thoại: 100 câu ngẫu nhiên trong các câu đã học (mọi chương) */
+const pickTemple = () => shuffle(templePool()).slice(0, TEMPLE_SIZE);
 function boxOf(q){const s=S.stats[q.id];if(!s||!s.n)return 0;if(s.lastWrong&&s.box===0)return -1;return s.box}
 const mastered = () => Q.filter(q => (S.stats[q.id]?.box || 0) >= 3).length;
 
@@ -1773,7 +1803,7 @@ const VDB = (() => {
   let p;
   const open = () => p || (p = new Promise((res, rej) => { try{ const r = indexedDB.open("mln111_voice", 1); r.onupgradeneeded = () => r.result.createObjectStore("v"); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }catch(e){ rej(e); } }));
   const tx = (mode, fn) => open().then(db => new Promise((res, rej) => { const t = db.transaction("v", mode), q = fn(t.objectStore("v")); t.oncomplete = () => res(q && q.result); t.onerror = () => rej(t.error); }));
-  return {get: id => tx("readonly", s => s.get(id)), put: (id, b) => tx("readwrite", s => s.put(b, id)), del: id => tx("readwrite", s => s.delete(id)), clear: () => tx("readwrite", s => s.clear())};
+  return {get: id => tx("readonly", s => s.get(id)), put: (id, b) => tx("readwrite", s => s.put(b, id)), del: id => tx("readwrite", s => s.delete(id)), all: () => tx("readonly", s => s.getAll()), clear: () => tx("readwrite", s => s.clear())};
 })();
 const vUrl = {};
 async function voiceUrl(id){ if (vUrl[id]) return vUrl[id]; const b = await VDB.get(id); return b ? (vUrl[id] = URL.createObjectURL(b)) : null; }
@@ -2423,9 +2453,47 @@ const TV = (() => {
   return {pause, render};
 })();
 
+/* ---------- nhắc sao lưu + xem dung lượng ---------- */
+const DAY_MS = 864e5;
+let backupNagged = false;
+const backupDue = () => (S.answered > 0 || S.farm.animals.length > 0) && Date.now() - (S.lastBackup || S.firstUse) > 7 * DAY_MS;
+function renderBackupHint(){
+  const due = backupDue() || saveBad, b = $("exportBtn");
+  b.textContent = due ? "💾 Sao lưu ❗" : "💾 Sao lưu"; b.classList.toggle("due", due);
+  if (backupDue() && !backupNagged){
+    backupNagged = true; const ref = S.lastBackup || S.firstUse, d = Math.floor((Date.now() - ref) / DAY_MS);
+    setTimeout(() => toast(S.lastBackup ? `💾 Đã ${d} ngày bạn chưa sao lưu. Bấm "Sao lưu" để giữ dữ liệu an toàn nhé!` : `💾 Bạn chưa sao lưu lần nào (đã ${d} ngày). Bấm "Sao lưu" để giữ dữ liệu an toàn nhé!`), 1500);
+  }
+}
+const fmtB = n => n >= 1048576 ? (n / 1048576).toFixed(1).replace(".", ",") + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+async function openStorage(){
+  clearTimeout(gT); clearInterval(gAnim); gb.onclick = null; gb.className = "gbox";
+  gb.replaceChildren(el("h3", "", "📊 Dung lượng lưu trữ"), el("p", "gnote", "Đang đọc…")); gm.classList.remove("hidden");
+  const LS_MAX = 5e6;
+  const lsChars = (localStorage.getItem(KEY) || "").length;
+  let vBytes = 0, vCount = 0; try{ const all = await VDB.all(); vCount = all.length; vBytes = all.reduce((t, b) => t + (b && b.size || 0), 0); }catch(e){}
+  let usage = 0, quota = 0, persisted = null;
+  try{ if (navigator.storage && navigator.storage.estimate){ const e = await navigator.storage.estimate(); usage = e.usage || 0; quota = e.quota || 0; } }catch(e){}
+  try{ if (navigator.storage && navigator.storage.persisted) persisted = await navigator.storage.persisted(); }catch(e){}
+  const row = (title, sub, pct) => { const r = el("div", "srow"), bar = el("div", "sbar"), i = el("i"); i.style.width = Math.min(100, Math.max(2, pct)) + "%"; if (pct > 80) i.className = "warn"; bar.append(i); r.append(el("div", "", title), bar, el("small", "", sub)); return r; };
+  const rows = [row(`Tiến trình học · ${fmtB(lsChars * 2)}`, `Chiếm khoảng ${Math.round(lsChars / LS_MAX * 100)}% giới hạn ~5 triệu ký tự của trình duyệt. Chỗ này không thể xin thêm.`, lsChars / LS_MAX * 100)];
+  rows.push(row(`Giọng ghi âm · ${vCount} giọng · ${fmtB(vBytes)}`, quota ? `Nằm trong kho lưu lớn của trình duyệt (còn rất nhiều chỗ).` : "Không đọc được hạn mức của trình duyệt.", quota ? vBytes / quota * 100 : 2));
+  if (quota) rows.push(row(`Tổng trang này đã dùng · ${fmtB(usage)} / ${fmtB(quota)}`, "Hạn mức do trình duyệt tự quyết theo dung lượng ổ đĩa còn trống.", usage / quota * 100));
+  const ref = S.lastBackup, d = ref ? Math.floor((Date.now() - ref) / DAY_MS) : null;
+  const info = el("p", "gnote", `${persisted === true ? "🔒 Trình duyệt đã đồng ý giữ dữ liệu ổn định." : persisted === false ? "⚠️ Dữ liệu có thể bị trình duyệt dọn khi máy đầy." : ""} ${ref ? `Sao lưu gần nhất: ${d === 0 ? "hôm nay" : d + " ngày trước"}.` : "Bạn chưa sao lưu lần nào."}`.trim());
+  const act = el("div", "gact");
+  const bk = el("button", "btn", "💾 Sao lưu ngay"); bk.onclick = () => { closeG(); $("exportBtn").onclick(); };
+  act.append(bk);
+  if (persisted === false && navigator.storage && navigator.storage.persist){ const pb = el("button", "btn blue", "🔒 Xin giữ ổn định"); pb.onclick = async () => { try{ await navigator.storage.persist(); }catch(e){} openStorage(); }; act.append(pb); }
+  const cl = el("button", "btn lav", "Đóng"); cl.onclick = closeG; act.append(cl);
+  gb.replaceChildren(el("h3", "", "📊 Dung lượng lưu trữ"), ...rows, info, act);
+  cl.focus({preventScroll: true});
+}
+$("storageBtn").onclick = openStorage;
+
 /* ---------- home ---------- */
 function renderHome(){
-  checkUnlocks(); renderFarmUI(); farmSay(FARM_HINT);
+  checkUnlocks(); renderFarmUI(); farmSay(FARM_HINT); renderBackupHint();
 
   const m = mastered();
   $("sStreak").textContent = liveStreak();
@@ -2467,12 +2535,14 @@ try{ const t = localStorage.getItem("mln111_tab"); if (t && document.getElementB
 let run = null;
 function show(id){ document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
 
-let lastReview = false;
-function startSession(review){
-  review = review === true;
-  if (review && !reviewPool().length){ toast("Chưa có câu nào đã học để ôn — làm vài câu trước nha ✦"); return; }
-  lastReview = review;
-  run = {review, qs: review ? pickSession(reviewPool()) : pickSession(), i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
+let lastMode = "new";
+function startSession(mode){
+  if (mode === "review" && !reviewPool().length){ toast("Chưa có câu nào đã học để ôn — làm vài câu trước nha ✦"); return; }
+  if (mode === "new" && !newPool().length){ toast("Hết câu mới trong phạm vi này rồi — qua Đền ôn tập nhé 🏛"); return; }
+  if (mode === "temple" && !templePool().length){ toast("Chưa có câu nào đã học để vào ngôi đền ✦"); return; }
+  lastMode = mode;
+  const qs = mode === "review" ? pickReview() : mode === "temple" ? pickTemple() : pickNew();
+  run = {mode, review: mode !== "new", qs, i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
   show("quiz"); renderQ();
 }
 
@@ -2482,7 +2552,7 @@ function renderQ(){
   run.order = q.o.map((_, i) => i).sort(() => Math.random() - .5);
   const multi = q.a.length > 1;
 
-  $("qTitle").textContent = `${run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(2,"0")}.exe`;
+  $("qTitle").textContent = `${run.mode === "temple" ? "den_huyen_thoai" : run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(2,"0")}.exe`;
   $("qCount").textContent = `${run.i + 1}/${run.qs.length}`;
   $("qBar").style.width = (run.i / run.qs.length * 100) + "%";
   $("qScore").textContent = `✓ ${run.score}`;
@@ -2490,7 +2560,8 @@ function renderQ(){
   updateCombo();
 
   const tags = $("qTags"); tags.replaceChildren();
-  if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
+  if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
+  else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
   if (!s || !s.n) tags.append(el("span","tag new","✨ câu mới"));
   else if (s.w && s.w / s.n >= .4) tags.append(el("span","tag hard",`🔥 hay sai (${s.w}/${s.n})`));
   else if (s.box >= 3) tags.append(el("span","tag ok","🌸 đã thuộc — ôn lại chút"));
@@ -2674,8 +2745,10 @@ function next(){
 function finish(){
   const n = run.qs.length;
   S.sessions++;
-  S.best = Math.max(S.best, run.score);
-  if (run.score === n && (!run.review || n >= SESSION_SIZE)) S.perfect++;
+  const temple = run.mode === "temple";
+  let newHigh = false;
+  if (temple){ S.temple.runs++; if (run.score > S.temple.best){ S.temple.best = run.score; newHigh = true; } }
+  else { S.best = Math.max(S.best, run.score); if (run.score === n && (!run.review || n >= SESSION_SIZE)) S.perfect++; }
   const t = today();
   if (S.streak.last !== t){ S.streak.count = S.streak.last === yesterday() ? S.streak.count + 1 : 1; S.streak.last = t; }
   const got = checkBadges();
@@ -2690,6 +2763,10 @@ function finish(){
     : pct >= .4 ? ["😮‍💨 Lưng lửng","Nửa đúng nửa sai, học kiểu ăn may à? Câu sai sẽ quay lại hỏi tội đấy."]
     : ["🤦 Thôi xong","Điểm thế này thì về quê nuôi lợn cho lành. Đùa thôi, làm thêm lượt nữa đi!"];
   $("rSticker").textContent = stk; $("rMsg").textContent = msg;
+  if (temple){
+    $("rSticker").textContent = newHigh ? "🔱 KỶ LỤC MỚI!" : stk;
+    $("rMsg").textContent = `Điểm ngôi đền: ${run.score} · 🏆 HighScore: ${S.temple.best}` + (newHigh ? " — bạn vừa phá kỷ lục!" : ` (còn thiếu ${S.temple.best - run.score} để vượt kỷ lục)`);
+  }
   $("rXp").textContent = `+${run.xp} xu`;
   $("rCombo").textContent = `combo max ×${run.maxCombo}`;
   $("rStreak").textContent = `🔥 ${S.streak.count} ngày`;
@@ -2704,7 +2781,8 @@ function finish(){
     d.append(explainEl(q, picked, false));
     return d;
   }));
-  $("againBtn").textContent = run.review ? "Ôn thêm đợt nữa 🏛" : "Thêm 30 câu nữa ✦";
+  $("againBtn").textContent = temple ? "Thử lại ngôi đền 🔱" : run.review ? "Ôn thêm đợt nữa 🏛" : "Thêm 30 câu mới nữa ✦";
+  $("againBtn").disabled = lastMode === "new" && !newPool().length;
   show("result");
   if (pct >= .6){ sfx.win(); setTimeout(() => burst(innerWidth / 2, innerHeight / 3, 40), 200); }
   run = null;
@@ -2716,9 +2794,10 @@ function quit(){
 }
 
 /* ---------- events ---------- */
-$("startBtn").onclick = () => startSession(false);
-$("reviewBtn").onclick = () => startSession(true);
-$("againBtn").onclick = () => startSession(lastReview);
+$("startBtn").onclick = () => startSession("new");
+$("reviewBtn").onclick = () => startSession("review");
+$("templeBtn").onclick = () => startSession("temple");
+$("againBtn").onclick = () => startSession(lastMode);
 $("homeBtn").onclick = () => { renderHome(); show("home"); };
 $("nextBtn").onclick = next;
 $("quitBtn").onclick = quit;
@@ -2730,6 +2809,7 @@ $("resetBtn").onclick = () => {
 };
 const blobToUrl = b => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(b); });
 $("exportBtn").onclick = async () => {
+  S.lastBackup = Date.now(); save(); renderBackupHint();
   const out = Object.assign({}, S), voices = {};
   for (const an of S.farm.animals) if (an.voice){ try{ const b = await VDB.get(an.id); if (b) voices[an.id] = await blobToUrl(b); }catch(e){} }
   const nv = Object.keys(voices).length; if (nv) out.voices = voices;
@@ -2743,7 +2823,7 @@ $("importFile").onchange = async e => {
   try {
     const d = JSON.parse(await f.text()); if (!d.stats) throw 0;
     const voices = d.voices || {}; delete d.voices;
-    S = normFull(Object.assign(fresh(), d)); save();
+    S = normFull(Object.assign(fresh(), d)); S.lastBackup = Date.now(); save();
     try{
       for (const id in voices){ if (vUrl[id]){ URL.revokeObjectURL(vUrl[id]); delete vUrl[id]; } await VDB.put(id, await (await fetch(voices[id])).blob()); }
     }catch(err){ toast("Khôi phục xong, nhưng không nạp được giọng ghi âm 🥲"); }

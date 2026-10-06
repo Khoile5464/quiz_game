@@ -1,0 +1,448 @@
+[
+ {
+  "n": 341,
+  "e": "Giáo trình nêu: cái riêng là cái toàn bộ, phong phú hơn cái chung; cái chung là cái bộ phận nhưng sâu sắc hơn cái riêng. Cái riêng phong phú hơn vì ngoài đặc điểm chung còn có cái đơn nhất. Vậy chỗ trống đầu là «Riêng», chỗ trống sau là «Chung». ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Đảo ngược: cái chung mới là bộ phận, sâu sắc hơn, không phải toàn bộ.",
+   "C": "Cái đơn nhất không phải vế đối sánh trong nhận định này; cái toàn bộ là cái riêng.",
+   "D": "Sai cả hai vế: cái đơn nhất là nét chỉ có ở một sự vật, không phải cái toàn bộ."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VII (cặp phạm trù cái riêng - cái chung)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 342,
+  "e": "Giáo trình khẳng định tất nhiên và ngẫu nhiên đều tồn tại, nhưng không tồn tại biệt lập dưới dạng thuần túy, cũng không có cái ngẫu nhiên thuần túy; chúng thống nhất hữu cơ với nhau. Vì vậy chỉ phương án C đúng. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Phủ định ý giáo trình: không có cái tất nhiên thuần túy tồn tại tách rời.",
+   "B": "Cũng sai tương tự: không có cái ngẫu nhiên thuần túy.",
+   "D": "Tất nhiên và ngẫu nhiên tồn tại khách quan trong thực tế, không chỉ «song song trong tư duy»."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VII, mục IV (Tất nhiên và ngẫu nhiên)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 343,
+  "e": "Giáo trình viết: về bản chất, nhận thức là quá trình phản ánh tích cực, tự giác và sáng tạo thế giới khách quan vào bộ óc người trên cơ sở thực tiễn. Do đó ba từ cần điền là tự giác, tích cực, sáng tạo. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "D": "Phản ánh của nhận thức không phải «chủ quan»; nội dung do thế giới khách quan quyết định, chủ quan chỉ là hình thức phản ánh trong óc người."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương IX (Lý luận nhận thức), mục bản chất của nhận thức",
+  "verdict": "khớp"
+ },
+ {
+  "n": 344,
+  "e": "C. Mác viết: toàn bộ những quan hệ sản xuất ấy hợp thành cơ cấu kinh tế của xã hội; giáo trình định nghĩa cơ sở hạ tầng là toàn bộ những quan hệ sản xuất hợp thành cơ cấu kinh tế của một xã hội nhất định. Câu đề chép hơi cụt («được là gì») nhưng ý rõ. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Kiến trúc thượng tầng (không phải «cơ sở thượng tầng») là quan điểm chính trị, pháp quyền... cùng thiết chế tương ứng.",
+   "C": "Quan hệ sản xuất là các bộ phận hợp thành cơ cấu kinh tế, không phải toàn bộ cơ cấu đó.",
+   "D": "Quan hệ phân phối chỉ là một mặt của quan hệ sản xuất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X (Hình thái kinh tế - xã hội), mục cơ sở hạ tầng và kiến trúc thượng tầng",
+  "verdict": "khớp",
+  "f": "Đề chép cụt: «được là gì»."
+ },
+ {
+  "n": 345,
+  "e": "Giáo trình chỉ ra tư tưởng bảo thủ, trì trệ, «hữu khuynh» thường biểu hiện ở chỗ coi sự phát triển chỉ là thay đổi đơn thuần về lượng, không dám thực hiện bước nhảy. Đó là vi phạm quy luật chuyển hóa từ những thay đổi về lượng thành những thay đổi về chất. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Quy luật mâu thuẫn nói về nguồn gốc, động lực phát triển, không phải căn nguyên sai lầm này.",
+   "C": "«Quy luật tự nhiên» không phải một quy luật cơ bản của phép biện chứng.",
+   "D": "«Quy luật xã hội» là cách gọi chung, không chỉ ra sai lầm cụ thể."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VIII, mục ý nghĩa phương pháp luận của quy luật lượng - chất",
+  "verdict": "khớp"
+ },
+ {
+  "n": 346,
+  "e": "Quang hợp và hô hấp là hai quá trình đối lập (một bên tổng hợp chất hữu cơ, một bên phân giải) nhưng cùng tồn tại, gắn bó trong một cây; đây là ví dụ cho quy luật thống nhất và đấu tranh của các mặt đối lập. Ví dụ này là suy luận từ nội dung quy luật, giáo trình không nêu trực tiếp. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Không nói đến sự tích lũy về lượng dẫn tới đổi chất.",
+   "C": "Không có yếu tố phủ định cái cũ để ra cái mới theo chu kỳ.",
+   "D": "«Quy luật phát triển» không phải tên một quy luật cơ bản trong giáo trình."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VIII (quy luật thống nhất và đấu tranh của các mặt đối lập); ví dụ là suy luận, chưa đối chiếu số mục",
+  "verdict": "khớp"
+ },
+ {
+  "n": 347,
+  "e": "Giáo trình: theo nghĩa rộng, cách mạng xã hội là sự biến đổi có tính bước ngoặt và căn bản về chất trong mọi lĩnh vực đời sống xã hội, là phương thức thay thế hình thái kinh tế - xã hội lỗi thời bằng hình thái cao hơn. Phương án C khái quát đúng nghĩa rộng này. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Đó chỉ là nghĩa hẹp (lật đổ chế độ chính trị lỗi thời).",
+   "B": "Chỉ nói đến thể chế kinh tế, thiếu tính toàn diện của mọi lĩnh vực.",
+   "D": "Hệ tư tưởng chỉ là một yếu tố của kiến trúc thượng tầng."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XII (Nhà nước và cách mạng xã hội), mục bản chất và vai trò của cách mạng xã hội",
+  "verdict": "khớp"
+ },
+ {
+  "n": 348,
+  "e": "Giáo trình định nghĩa: Triết học Mác - Lênin là hệ thống quan điểm duy vật biện chứng về tự nhiên, xã hội và tư duy; là thế giới quan và phương pháp luận khoa học, cách mạng của giai cấp công nhân, nhân dân lao động. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, bản 2021](https://fbs.upt.edu.vn/wp-content/uploads/2021/06/GT-Triet-hoc-Mac-Lenin-Khong-chuyen-7.pdf))",
+  "w": {
+   "B": "Triết học Mác - Lênin không phải «khoa học cầu nối» mà là thế giới quan và phương pháp luận chung.",
+   "C": "Triết học không đồng nhất với chính trị.",
+   "D": "Triết học dựa trên lý luận khoa học, không phải tôn giáo."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, bản 2021), mục Khái niệm triết học Mác - Lênin; chưa đối chiếu số chương",
+  "verdict": "khớp"
+ },
+ {
+  "n": 349,
+  "e": "Giáo trình: thế giới vật chất tồn tại khách quan, có trước và độc lập với ý thức con người. Vì vậy vật chất tồn tại khách quan. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Chủ quan là lập trường duy tâm chủ quan.",
+   "B": "Vật chất không phụ thuộc vào con người.",
+   "D": "Vật chất không tồn tại theo ý muốn của thần linh; đó là quan điểm duy tâm tôn giáo."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V (Vật chất và ý thức), mục tính thống nhất vật chất của thế giới",
+  "verdict": "khớp"
+ },
+ {
+  "n": 350,
+  "e": "Theo giáo trình, mọi bộ phận của thế giới vật chất đều là những dạng cụ thể của vật chất, là kết cấu vật chất. Cái bàn, cái ghế là vật thể thuộc thế giới vật chất nên là dạng cụ thể của vật chất tồn tại trong không gian. Theo đề, chọn A. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Sai: vật thể cụ thể chính là dạng tồn tại của vật chất.",
+   "C": "Kết luận «có» đúng nhưng lập luận «có kích thước và tồn tại cùng thời gian» là chưa chuẩn bằng A.",
+   "D": "Tự mâu thuẫn: dạng cụ thể của vật chất vẫn là vật chất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục tính thống nhất vật chất của thế giới",
+  "verdict": "dễ nhầm",
+  "f": "A và C đều có thể xem là đúng về kết luận; chỉ khác lập luận, nên học theo đáp án của đề."
+ },
+ {
+  "n": 351,
+  "e": "Giáo trình: tính tất yếu của mối liên hệ nhân quả thể hiện ở chỗ cùng một nguyên nhân nhất định, trong những điều kiện giống nhau sẽ gây ra kết quả như nhau. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Tính khách quan là mối liên hệ nhân quả vốn có, không phụ thuộc ý thức.",
+   "B": "Tính phổ biến: mọi sự vật, hiện tượng đều có nguyên nhân.",
+   "D": "«Tính biện chứng» không phải một trong ba tính chất của nhân quả (khách quan, phổ biến, tất yếu)."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VII, mục nhân quả",
+  "verdict": "khớp"
+ },
+ {
+  "n": 352,
+  "e": "Theo giáo trình, năm 1896 Béccơren phát hiện ra hiện tượng phóng xạ (còn Rơnghen phát hiện tia X năm 1895). Đề hỏi «tia phóng xạ» nên đáp án là Béccơren. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Rơnghen phát hiện tia X năm 1895, không phải phóng xạ.",
+   "B": "Nicôlai Côpécních là nhà thiên văn thời Phục hưng.",
+   "D": "Brunô là nhà triết học thời Phục hưng."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục phát triển khoa học tự nhiên cuối thế kỷ XIX - đầu XX",
+  "verdict": "khớp"
+ },
+ {
+  "n": 353,
+  "e": "Giáo trình: cơ sở hạ tầng là toàn bộ những quan hệ sản xuất hợp thành cơ cấu kinh tế của một xã hội nhất định. Chỗ trống là cơ cấu kinh tế. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Cơ sở vật chất - kỹ thuật là khái niệm khác (thuộc lực lượng sản xuất, kinh tế chính trị).",
+   "B": "Đó là nghĩa thông thường của «hạ tầng», không phải thuật ngữ triết học.",
+   "D": "Quá chung, không phải cụm trong định nghĩa."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục cơ sở hạ tầng và kiến trúc thượng tầng",
+  "verdict": "khớp"
+ },
+ {
+  "n": 354,
+  "e": "Giáo trình: vật chất có trước, ý thức có sau, vật chất quyết định ý thức, song ý thức có thể tác động trở lại vật chất thông qua hoạt động thực tiễn của con người. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Đảo ngược quan hệ, là quan điểm duy tâm.",
+   "C": "Phủ nhận vai trò tác động trở lại của ý thức, là duy vật siêu hình.",
+   "D": "Cả hai cùng quyết định là nhị nguyên luận."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục III (ý nghĩa phương pháp luận của mối quan hệ vật chất - ý thức)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 355,
+  "e": "Người có tri thức, năng lực, trình độ, kinh nghiệm và kỹ năng lao động được gọi là lao động trí thức theo cách dùng trong kinh tế tri thức. Cụm này không thấy trong giáo trình triết học đã tra nên chưa kiểm chứng được nguồn.",
+  "w": {
+   "A": "Trí thức chỉ một tầng lớp xã hội.",
+   "B": "Người lao động nói chung, chưa nhấn mạnh yếu tố tri thức.",
+   "D": "Năng lực lao động chỉ là một thuộc tính, không phải chỉ con người."
+  },
+  "s": "chưa đối chiếu được nguồn; câu thuộc nội dung kinh tế tri thức, không có trong giáo trình triết học đã tra",
+  "verdict": "chưa kiểm chứng",
+  "f": "Không tìm thấy định nghĩa tương ứng trong giáo trình Triết học; giữ giải thích bản nháp."
+ },
+ {
+  "n": 356,
+  "e": "Giáo trình: phương thức sản xuất chính là sự thống nhất giữa lực lượng sản xuất ở một trình độ nhất định và quan hệ sản xuất tương ứng. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Hình thái kinh tế - xã hội rộng hơn, gồm cả cơ sở hạ tầng và kiến trúc thượng tầng.",
+   "C": "Cơ sở hạ tầng là toàn bộ quan hệ sản xuất hợp thành cơ cấu kinh tế.",
+   "D": "Kiến trúc thượng tầng là các quan điểm và thiết chế chính trị - pháp lý - tư tưởng."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục phương thức sản xuất",
+  "verdict": "khớp"
+ },
+ {
+  "n": 357,
+  "e": "Giáo trình nêu quần chúng nhân dân trước hết là những người lao động sản xuất ra của cải vật chất và là lực lượng cơ bản của cách mạng, có vai trò quyết định thắng lợi của mọi cuộc cách mạng. Đáp án của đề là người lao động. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Giai cấp thống trị không phải lực lượng cơ bản của quần chúng.",
+   "B": "Tầng lớp trí thức chỉ là bộ phận.",
+   "D": "Công nhân và nông dân là bộ phận của người lao động, hẹp hơn đáp án."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XIV (con người), mục quần chúng nhân dân",
+  "verdict": "khớp"
+ },
+ {
+  "n": 358,
+  "e": "Giáo trình: chỉ có một thế giới duy nhất và thống nhất là thế giới vật chất; tính thống nhất của thế giới ở tính vật chất của nó. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "«Đồng nhất» không phải thuật ngữ trong giáo trình.",
+   "C": "«Thuần nhất» cũng không phải thuật ngữ.",
+   "D": "«Duy nhất» chỉ là một nội dung trong luận điểm, tên tính chất là tính thống nhất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục tính thống nhất vật chất của thế giới",
+  "verdict": "khớp"
+ },
+ {
+  "n": 359,
+  "e": "Theo C. Mác và Ph. Ăngghen, để tồn tại và phát triển con người phải sản xuất ra tư liệu sinh hoạt, tức tiến hành sản xuất vật chất; sản xuất vật chất là cơ sở của sự tồn tại và phát triển xã hội. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Vận động là phương thức tồn tại của vật chất, không phải hoạt động đặc trưng này.",
+   "C": "Làm giàu không phải điều kiện tồn tại của con người.",
+   "D": "Kinh doanh chỉ là một hình thức kinh tế cụ thể."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục sản xuất vật chất - cơ sở của sự tồn tại và phát triển xã hội",
+  "verdict": "khớp"
+ },
+ {
+  "n": 360,
+  "e": "Giáo trình: chủ nghĩa duy tâm chia thành hai phái là chủ nghĩa duy tâm chủ quan và chủ nghĩa duy tâm khách quan. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Giáo trình không chia thành ba.",
+   "C": "Không có cách chia thành bốn.",
+   "D": "Không có cách chia thành năm."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương I, mục vấn đề cơ bản của triết học",
+  "verdict": "khớp"
+ },
+ {
+  "n": 361,
+  "e": "Giáo trình: sản xuất vật chất là cơ sở của sự tồn tại và phát triển của xã hội, quyết định các mặt khác của đời sống xã hội. Đáp án của đề diễn đạt thành «nền tảng vật chất của xã hội»; cụm này không thấy nguyên văn trong giáo trình. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Chưa chỉ rõ tính chất vật chất của nền tảng này.",
+   "C": "Nền tảng tinh thần là sản phẩm phái sinh từ sản xuất vật chất.",
+   "D": "Kỹ thuật, công nghệ chỉ là một yếu tố của lực lượng sản xuất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục sản xuất vật chất",
+  "verdict": "dễ nhầm",
+  "f": "A và B gần nghĩa; nên học theo đáp án B của đề."
+ },
+ {
+  "n": 362,
+  "e": "Giáo trình: trong ba quá trình sản xuất của xã hội (vật chất, tinh thần, sản xuất ra bản thân con người), sản xuất vật chất là cơ sở của sự tồn tại và phát triển của xã hội. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Hàng hóa, dịch vụ chỉ là sản phẩm cụ thể.",
+   "B": "Tư liệu sản xuất chỉ là một bộ phận của sản xuất vật chất.",
+   "C": "Tư liệu tiêu dùng cũng chỉ là một bộ phận."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục sản xuất vật chất - cơ sở của sự tồn tại và phát triển xã hội",
+  "verdict": "khớp"
+ },
+ {
+  "n": 363,
+  "e": "Giáo trình: trong xã hội có giai cấp, các giai cấp có điều kiện sinh hoạt vật chất khác nhau, lợi ích khác nhau do địa vị xã hội của mỗi giai cấp quy định, nên ý thức xã hội của các giai cấp có nội dung và hình thức phát triển khác nhau hoặc đối lập nhau. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Thói quen chỉ là biểu hiện, không phải nguyên nhân gốc.",
+   "C": "Sở thích không phải nguyên nhân gốc.",
+   "D": "Điều kiện sinh hoạt tinh thần không phải cơ sở quyết định, cơ sở là điều kiện vật chất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XIII (Ý thức xã hội), mục tính giai cấp của ý thức xã hội",
+  "verdict": "khớp"
+ },
+ {
+  "n": 364,
+  "e": "Giáo trình: mặt thứ hai của vấn đề cơ bản của triết học (nhận thức luận) trả lời câu hỏi con người có thể nhận thức được thế giới hay không. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Đối tượng nhận thức là thế giới, không phải riêng bản thân.",
+   "B": "Hòa hợp với tự nhiên không phải nội dung của vấn đề cơ bản.",
+   "C": "Chinh phục thế giới là mục tiêu thực tiễn, không phải mặt thứ hai."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương I, mục vấn đề cơ bản của triết học",
+  "verdict": "khớp"
+ },
+ {
+  "n": 365,
+  "e": "Câu nói quen thuộc của C. Mác: các thời đại kinh tế khác nhau không phải ở chỗ chúng sản xuất ra cái gì mà ở chỗ chúng sản xuất bằng cách nào, với những tư liệu lao động nào; nghĩa là phân biệt bằng phương thức sản xuất. Giáo trình cũng nói công cụ lao động là tiêu chuẩn phân biệt các thời đại kinh tế. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Mục đích sản xuất không phải tiêu chí phân biệt theo Mác.",
+   "C": "«Mục đích tự nhiên» không phải tiêu chí.",
+   "D": "Mục đích xã hội cũng không phải tiêu chí."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X (mục lực lượng sản xuất / phương thức sản xuất); trích dẫn Mác trong «Tư bản» chưa đối chiếu trực tiếp với bản gốc",
+  "verdict": "dễ nhầm",
+  "f": "Câu Mác nhấn mạnh «bằng cách nào, với tư liệu lao động nào»; đáp án phương thức sản xuất là cách hiểu rút gọn."
+ },
+ {
+  "n": 366,
+  "e": "Giáo trình nhấn mạnh trong hoạt động con người phải biết kế thừa tinh hoa của cái cũ, tránh thái độ phủ định sạch trơn. Luận điểm «cái mới ra đời trên cơ sở phá hủy hoàn toàn cái cũ» thuộc quan điểm siêu hình (phủ định sạch trơn). ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Không phải đặc trưng của quan điểm duy tâm.",
+   "C": "Quan điểm phát triển biện chứng thừa nhận sự kế thừa.",
+   "D": "Duy vật biện chứng đề cao phủ định biện chứng có kế thừa."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VIII, mục quy luật phủ định của phủ định",
+  "verdict": "khớp"
+ },
+ {
+  "n": 367,
+  "e": "Giáo trình: ý thức xã hội thường lạc hậu so với tồn tại xã hội, biểu hiện rõ trong tâm lý xã hội như truyền thống, tập quán, thói quen; nguyên nhân gồm sự biến đổi nhanh của tồn tại xã hội mà ý thức không phản ánh kịp và sức mạnh của thói quen, tập quán. Đáp án C gộp cả hai. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Chỉ nêu một nguyên nhân.",
+   "B": "Cũng chỉ một nguyên nhân.",
+   "D": "Diễn đạt sai: ý thức xã hội phản ánh tồn tại xã hội nhưng không chỉ rõ nguyên nhân lạc hậu."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XIII, mục tính độc lập tương đối của ý thức xã hội",
+  "verdict": "khớp"
+ },
+ {
+  "n": 368,
+  "e": "Theo giáo trình, năm 1895 Rơnghen phát hiện ra tia X; năm 1896 Béccơren phát hiện hiện tượng phóng xạ; năm 1897 Tômxơn phát hiện ra điện tử. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "1896 là năm Béccơren phát hiện phóng xạ.",
+   "C": "1897 là năm Tômxơn phát hiện điện tử.",
+   "D": "1898 không phải mốc phát hiện tia Rơnghen."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục phát triển khoa học tự nhiên cuối thế kỷ XIX - đầu XX",
+  "verdict": "khớp"
+ },
+ {
+  "n": 369,
+  "e": "Giáo trình: ở Ấn Độ, từ darshana (triết học) có nghĩa là chiêm ngưỡng, nhưng hàm ý là tri thức dựa trên lý trí, là con đường suy ngẫm để dẫn dắt con người đến với lẽ phải. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Tu tập không phải cách giáo trình định nghĩa triết học.",
+   "C": "Giải thoát chỉ là mục đích của một số trường phái.",
+   "D": "Giác ngộ cũng là mục đích của Phật giáo, không phải nghĩa của darshana."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương I, mục Triết học là gì (khái niệm triết học)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 370,
+  "e": "Theo học thuyết Mác, hình thái kinh tế - xã hội cao hơn, kế tiếp tư bản chủ nghĩa là cộng sản chủ nghĩa (giai đoạn đầu là xã hội chủ nghĩa). Đáp án cuối cùng là cộng sản chủ nghĩa. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Phong kiến là hình thái đứng trước tư bản chủ nghĩa.",
+   "B": "Tư bản chủ nghĩa sẽ bị phủ định bởi hình thái cộng sản chủ nghĩa.",
+   "C": "Xã hội chủ nghĩa là giai đoạn đầu của hình thái cộng sản chủ nghĩa."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XII, mục cách mạng xã hội (nhắc hình thái cộng sản chủ nghĩa là hình thái cao hơn tư bản chủ nghĩa); chưa đối chiếu mục lịch sử các hình thái",
+  "verdict": "khớp"
+ },
+ {
+  "n": 371,
+  "e": "Giáo trình nêu trong kiến trúc thượng tầng, chính trị và pháp luật có quan hệ trực tiếp với cơ sở hạ tầng, còn triết học, tôn giáo, nghệ thuật quan hệ gián tiếp; trong xã hội có giai cấp, nhà nước có vai trò đặc biệt quan trọng, nhờ nó giai cấp thống trị thực hiện thống trị trên mọi mặt. Cụm «yếu tố cơ bản nhất, tác động trực tiếp và mạnh nhất» không thấy nguyên văn, nhưng đáp án nhà nước phù hợp. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Đảng chính trị là thiết chế quan trọng nhưng không được giáo trình nêu là yếu tố mạnh nhất.",
+   "C": "Tôn giáo quan hệ gián tiếp với cơ sở hạ tầng.",
+   "D": "Tổ chức văn hóa - xã hội tác động yếu hơn, gián tiếp hơn."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục kiến trúc thượng tầng",
+  "verdict": "dễ nhầm",
+  "f": "Cụm «cơ bản nhất, mạnh mẽ nhất» là cách diễn đạt của đề, giáo trình nói «vai trò đặc biệt quan trọng»."
+ },
+ {
+  "n": 372,
+  "e": "Giáo trình: không phải chỉ cái tất nhiên mới có nguyên nhân mà cả ngẫu nhiên và tất nhiên đều có nguyên nhân; cũng không nên coi hiện tượng con người chưa nhận thức được nguyên nhân là ngẫu nhiên, vì như vậy rơi vào duy tâm chủ quan. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Ngẫu nhiên vẫn có nguyên nhân (do nhân tố bên ngoài).",
+   "B": "Cả tất nhiên lẫn ngẫu nhiên đều có nguyên nhân.",
+   "D": "Ngẫu nhiên không luôn trở thành tất nhiên; hai cái tồn tại thống nhất."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VII, mục IV (Tất nhiên và ngẫu nhiên)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 373,
+  "e": "Giáo trình dẫn các câu tích tiểu thành đại, năng nhặt chặt bị, góp gió thành bão khi nói về quy luật lượng - chất: những việc vĩ đại là tổng hợp việc bình thường, tích lũy dần về lượng tới điểm nút thì chuyển thành chất. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Không nói đến mâu thuẫn giữa các mặt đối lập.",
+   "C": "Không có yếu tố phủ định cái cũ.",
+   "D": "Sai vì A đúng."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương VIII, mục ý nghĩa phương pháp luận của quy luật lượng - chất",
+  "verdict": "khớp"
+ },
+ {
+  "n": 374,
+  "e": "Giáo trình: lực lượng sản xuất quyết định quan hệ sản xuất; khi lực lượng sản xuất phát triển thì quan hệ sản xuất cũ lạc hậu, phải thay đổi bằng quan hệ sản xuất mới phù hợp. Vì vậy sự thay đổi quan hệ sản xuất phụ thuộc trình độ phát triển của lực lượng sản xuất. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Công cụ chỉ là một yếu tố của lực lượng sản xuất.",
+   "B": "Kỹ thuật cũng chỉ là một yếu tố.",
+   "C": "Phân công lao động là một biểu hiện, không phải căn cứ tổng quát."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương X, mục quy luật quan hệ sản xuất phù hợp với trình độ phát triển của lực lượng sản xuất",
+  "verdict": "khớp"
+ },
+ {
+  "n": 375,
+  "e": "Giáo trình: trong xã hội có giai cấp, bản chất của nhà nước là công cụ thống trị giai cấp, bảo vệ lợi ích của giai cấp thống trị. Vì vậy nhà nước mang bản chất của giai cấp thống trị. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Giai cấp bị trị không nắm bộ máy nhà nước.",
+   "C": "Nhà nước không đại diện đồng đều cho mọi giai cấp.",
+   "D": "Nhà nước trong xã hội có giai cấp mang bản chất giai cấp, không phải bản chất «của xã hội» chung chung."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XII, mục nhà nước (bản chất giai cấp)",
+  "verdict": "khớp"
+ },
+ {
+  "n": 376,
+  "e": "Giáo trình: cảm giác phản ánh thuộc tính riêng lẻ khi sự vật đang tác động trực tiếp vào giác quan; tri giác cũng ở giai đoạn trực quan sinh động; còn khái niệm là hình thức cơ bản của tư duy trừu tượng, phản ánh đặc tính bản chất của sự vật. Đề chọn khái niệm, nhưng biểu tượng cũng là hình ảnh còn lưu lại khi sự vật không còn trực tiếp tác động. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Cảm giác chỉ có khi sự vật tác động trực tiếp lên giác quan.",
+   "B": "Tri giác cũng cần sự vật tác động trực tiếp.",
+   "C": "Theo giáo trình, biểu tượng là hình ảnh còn lưu lại khi sự vật không còn trực tiếp tác động, nên có thể bị xem là đúng; đề không chọn."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương IX, mục trực quan sinh động và tư duy trừu tượng",
+  "verdict": "nghi vấn",
+  "f": "Giáo trình định nghĩa biểu tượng đúng là hình ảnh khi sự vật không còn trực tiếp tác động, nên C cũng hợp lý. Đề chọn D; câu có thể thiếu ý (ví dụ thiếu «cảm tính/lý tính»). Nên học theo đáp án của đề."
+ },
+ {
+  "n": 377,
+  "e": "Đề xếp Galilê vào chủ nghĩa duy vật siêu hình. Tuy nhiên giáo trình liệt kê Galilê cùng Côpécních, Brunô, Kuzan, Tômát Morơ trong nhóm nhà khoa học và triết học thời kỳ Phục hưng, không xếp trực tiếp vào duy vật siêu hình; cách xếp của đề là theo cách phân loại thông dụng ở thế kỷ XVI - XVII. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Duy vật biện chứng do Mác - Ăngghen sáng lập sau Galilê.",
+   "C": "Galilê không phải nhà duy tâm.",
+   "D": "Không có trường phái này."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương II, mục triết học Tây Âu thời Phục hưng - cận đại",
+  "verdict": "nghi vấn",
+  "f": "Giáo trình xếp Galilê vào thời Phục hưng, không nêu nhãn «duy vật siêu hình» trực tiếp; đáp án B của đề dựa vào cách phân loại ngoài giáo trình."
+ },
+ {
+  "n": 378,
+  "e": "Giáo trình: mọi bộ phận của thế giới vật chất đều là những dạng cụ thể của vật chất; như vậy vật thể là dạng cụ thể của vật chất chứ vật chất không phải một dạng tồn tại của vật thể. Do đó mệnh đề C sai. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Đúng: vật thể là dạng cụ thể của vật chất.",
+   "B": "Đúng: vật chất tồn tại thông qua các dạng cụ thể.",
+   "D": "Đúng: vật thể không đồng nghĩa với vật chất, vật chất rộng hơn."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương V, mục tính thống nhất vật chất của thế giới",
+  "verdict": "khớp"
+ },
+ {
+  "n": 379,
+  "e": "C. Mác viết: trong tính hiện thực của nó, bản chất con người là tổng hòa những quan hệ xã hội. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "A": "Phẩm chất xã hội chỉ là một mặt.",
+   "B": "Quan hệ lợi ích chỉ là một mặt của quan hệ xã hội.",
+   "D": "«Quan hệ hiện thực» không phải thuật ngữ trong câu của Mác."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XIV (Quan điểm triết học Mác - Lênin về con người), mục bản chất con người",
+  "verdict": "khớp"
+ },
+ {
+  "n": 380,
+  "e": "Giáo trình nêu ý thức xã hội có tính độc lập tương đối, biểu hiện ở chỗ thường lạc hậu so với tồn tại xã hội, có thể vượt trước, có sự kế thừa và tác động qua lại; nhưng suy đến cùng vẫn do tồn tại xã hội quyết định. ([Giáo trình Triết học Mác-Lênin, Bộ GD&ĐT, tái bản lần 3](https://kmacle.duytan.edu.vn/uploads/75770b9b-cdbf-4038-90e2-f25e1f4426fe_triethocmaclenin.pdf))",
+  "w": {
+   "B": "Độc lập tuyệt đối là sai, vì ý thức xã hội phụ thuộc vào tồn tại xã hội.",
+   "C": "Tính sáng tạo không phải tính chất đặc trưng nêu trong mục này.",
+   "D": "Ý thức xã hội thay đổi theo tồn tại xã hội, không bất biến."
+  },
+  "s": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, tái bản lần 3), Chương XIII, mục tính độc lập tương đối của ý thức xã hội",
+  "verdict": "khớp"
+ }
+]

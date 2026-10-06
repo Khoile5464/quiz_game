@@ -1,0 +1,180 @@
+[
+{"n": 41,
+ "explain": "Khác với các khoa học cụ thể chỉ nghiên cứu một lĩnh vực hay một bộ phận của thế giới, triết học nghiên cứu thế giới như một chỉnh thể thống nhất. Triết học tìm ra những quy luật chung nhất, phổ biến nhất chi phối cả tự nhiên, xã hội và tư duy, nhờ đó trở thành hạt nhân lý luận của thế giới quan.",
+ "wrong": {
+  "A": "«Một đối tượng vật chất cụ thể» là cách tiếp cận của các khoa học chuyên ngành (vật lý, sinh học...), không phải của triết học.",
+  "B": "«Một hệ đối tượng vật chất nhất định» vẫn chỉ là một bộ phận, một lĩnh vực của thế giới — đó là đối tượng của khoa học cụ thể, chưa phải cái nhìn bao quát toàn bộ thế giới.",
+  "D": "Câu hỏi có đủ thông tin: giáo trình nêu rõ triết học nghiên cứu thế giới như một chỉnh thể thống nhất."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.1 (Khái niệm và đối tượng của triết học)",
+ "keyCheck": "ok"},
+{"n": 42,
+ "explain": "Quan điểm biện chứng xem xét sự vật, hiện tượng trong mối liên hệ phổ biến và sự vận động, phát triển: chúng vừa tồn tại tương đối độc lập, vừa tác động qua lại, ràng buộc và chuyển hóa lẫn nhau. Đây chính là nội dung của nguyên lý về mối liên hệ phổ biến trong phép biện chứng duy vật.",
+ "wrong": {
+  "A": "Quan điểm siêu hình xem xét sự vật trong trạng thái cô lập, tách rời, tĩnh tại, phủ nhận sự tác động qua lại và chuyển hóa lẫn nhau.",
+  "C": "«Duy tâm» là câu trả lời cho vấn đề thứ nhất của triết học (ý thức có trước vật chất), không phải phương pháp xem xét mối liên hệ, chuyển hóa giữa các sự vật.",
+  "D": "«Duy vật» chỉ khẳng định vật chất có trước, quyết định ý thức; chủ nghĩa duy vật vẫn có thể mang tính siêu hình (như duy vật thế kỷ XVII–XVIII), nên không đồng nhất với quan điểm biện chứng."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.4 (Biện chứng và siêu hình); Chương 2, mục II.2 (Nguyên lý về mối liên hệ phổ biến)",
+ "keyCheck": "ok"},
+{"n": 43,
+ "explain": "Nhà nước xã hội chủ nghĩa thực hiện chức năng quản lý xã hội trên mọi lĩnh vực chủ yếu bằng pháp luật — công cụ mang tính quyền lực nhà nước, bắt buộc chung đối với mọi chủ thể. Vì vậy, xây dựng nhà nước pháp quyền và hoàn thiện hệ thống pháp luật là yêu cầu trọng tâm để nhà nước xã hội chủ nghĩa thực hiện chức năng, nhiệm vụ của mình.",
+ "wrong": {
+  "A": "Khoa học là cơ sở, căn cứ để hoạch định chính sách, nhưng bản thân nó không phải công cụ quản lý mang tính cưỡng chế của nhà nước.",
+  "B": "Tiền tệ chỉ là một công cụ kinh tế trong quản lý vĩ mô, không bao quát được việc quản lý xã hội trên mọi lĩnh vực.",
+  "D": "Kế hoạch là một công cụ quản lý kinh tế, không phải phương thức quản lý xã hội tập trung, bao trùm như pháp luật."
+ },
+ "source": "Giáo trình Chủ nghĩa xã hội khoa học (Bộ GD&ĐT, 2021), Chương 4, mục II (Nhà nước xã hội chủ nghĩa: chức năng và đặc trưng)",
+ "keyCheck": "ok"},
+{"n": 44,
+ "explain": "Thời Trung cổ ở Tây Âu, triết học trở thành «đầy tớ của thần học» và mang hình thức triết học kinh viện (scholasticism, tiêu biểu là Tô-mát Đa-canh). Triết học kinh viện dùng lập luận lôgic hình thức để chứng minh, bảo vệ giáo lý Kitô giáo, xa rời thực tiễn và khoa học thực nghiệm.",
+ "wrong": {
+  "A": "Triết học tự nhiên (nhận thức thế giới như một chỉnh thể thống nhất, mang tính trực quan) là đặc trưng của triết học Hy Lạp cổ đại, không phải thời Trung cổ.",
+  "C": "«Triết học khoa học xã hội» không phải tên một trào lưu lịch sử; thời Trung cổ khoa học bị thần học chi phối nặng nề.",
+  "D": "«Triết học chính trị» là một lĩnh vực nghiên cứu, không phải hình thái triết học thống trị ở Tây Âu thời Trung cổ."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.1 (Sự phát triển của triết học — triết học Tây Âu thời Trung cổ)",
+ "keyCheck": "ok"},
+{"n": 45,
+ "explain": "Ph. Ăngghen trong thư gửi I. Blốc (1890) khẳng định: theo quan niệm duy vật về lịch sử, nhân tố quyết định trong lịch sử, xét đến cùng, là sự sản xuất và tái sản xuất ra đời sống hiện thực. Sự sản xuất này bao gồm sản xuất vật chất, sản xuất tinh thần và sản xuất ra bản thân con người, trong đó sản xuất vật chất giữ vai trò nền tảng.",
+ "wrong": {
+  "A": "«Lao động, tái sản xuất ra con người» chỉ là một mặt của sản xuất xã hội, chưa bao quát toàn bộ quá trình sản xuất ra đời sống hiện thực.",
+  "B": "Sở hữu tư liệu sản xuất và phân phối sản phẩm là các mặt của quan hệ sản xuất — bản thân chúng do trình độ sản xuất quyết định, nên không phải nhân tố quyết định «xét đến cùng».",
+  "C": "Kết cấu xã hội, giai cấp là kết quả phát sinh từ sự phát triển của sản xuất, không phải nguyên nhân quyết định cuối cùng của lịch sử."
+ },
+ "source": "Ph. Ăngghen, Thư gửi I. Blốc (21–22/9/1890), C.Mác và Ph.Ăngghen Toàn tập, t.37; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.1",
+ "keyCheck": "ok"},
+{"n": 46,
+ "explain": "Thuyết bất khả tri (agnosticism) còn gọi là «thuyết không thể biết»: cho rằng con người về nguyên tắc không thể nhận thức được bản chất của thế giới, hoặc chỉ biết được hiện tượng bề ngoài. Đại biểu tiêu biểu là Hium và Cantơ.",
+ "wrong": {
+  "B": "«Thuyết khả tri» là quan điểm đối lập, khẳng định con người có khả năng nhận thức được thế giới.",
+  "C": "«Khả tri luận» cũng là thuyết có thể biết — trái ngược hoàn toàn với bất khả tri.",
+  "D": "«Thuyết nhận biết luận» không phải tên gọi được dùng trong giáo trình cho thuyết bất khả tri, và về nghĩa còn gợi đến khả năng nhận biết."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.3 (Vấn đề cơ bản của triết học — thuyết có thể biết và thuyết không thể biết)",
+ "keyCheck": "ok"},
+{"n": 47,
+ "explain": "Theo phép biện chứng duy vật, nội dung là phạm trù chỉ tổng hợp tất cả những mặt, những yếu tố, những quá trình tạo nên sự vật. Còn hình thức là phương thức tồn tại và phát triển của sự vật, tức hệ thống các mối liên hệ tương đối bền vững giữa các yếu tố ấy.",
+ "wrong": {
+  "A": "«Khả năng» là cái chưa xảy ra nhưng sẽ xảy ra khi có điều kiện thích hợp — không phải tổng hợp các yếu tố tạo nên sự vật.",
+  "B": "«Hiện thực» là cái đang tồn tại thực sự, đối lập với khả năng; không mô tả thành phần cấu tạo của sự vật.",
+  "D": "«Hình thức» là phương thức tồn tại, cách liên kết giữa các yếu tố, chứ không phải bản thân tổng hợp các yếu tố đó."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục II.3 (Các cặp phạm trù cơ bản — Nội dung và hình thức)",
+ "keyCheck": "ok"},
+{"n": 48,
+ "explain": "Lực lượng sản xuất gồm người lao động (yếu tố chủ thể) và tư liệu sản xuất (yếu tố khách thể). Người lao động là con người có tri thức, kinh nghiệm, kỹ năng, kỹ xảo lao động và năng lực sáng tạo — là yếu tố giữ vai trò quyết định trong lực lượng sản xuất.",
+ "wrong": {
+  "B": "Tư liệu sản xuất, dù hiện đại, vẫn là yếu tố khách thể (vật chất) của lực lượng sản xuất, không phải chủ thể.",
+  "C": "Khoa học công nghệ ngày nay trở thành lực lượng sản xuất trực tiếp, nhưng không phải là yếu tố chủ thể — chủ thể vẫn là con người lao động.",
+  "D": "Không thể «đều đúng» vì chỉ người lao động mới là chủ thể; các yếu tố còn lại thuộc mặt khách thể hoặc là nhân tố thâm nhập vào lực lượng sản xuất."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.2 (Biện chứng giữa lực lượng sản xuất và quan hệ sản xuất)",
+ "keyCheck": "ok"},
+{"n": 49,
+ "explain": "Trên lĩnh vực chính trị, nội dung trước tiên của cách mạng xã hội chủ nghĩa là đập tan nhà nước của giai cấp bóc lột, giành chính quyền về tay giai cấp công nhân và nhân dân lao động, đưa những người lao động từ địa vị bị áp bức lên địa vị làm chủ xã hội. Đây là điều kiện tiên quyết để sau đó cải tạo kinh tế, văn hóa, xã hội.",
+ "wrong": {
+  "A": "«Thành người lao động tập thể» gắn với việc cải tạo quan hệ sản xuất trên lĩnh vực kinh tế, là nội dung đến sau, không phải nội dung trước tiên về chính trị.",
+  "B": "«Làm chủ tư liệu sản xuất» là nội dung kinh tế, chỉ một mặt của quyền làm chủ, và chỉ thực hiện được sau khi đã có chính quyền.",
+  "C": "«Thành người quản lý xã hội» chỉ là một biểu hiện cụ thể của quyền làm chủ; cách diễn đạt đầy đủ, chuẩn xác là đưa người lao động lên địa vị làm chủ xã hội."
+ },
+ "source": "Giáo trình Những nguyên lý cơ bản của chủ nghĩa Mác-Lênin (Bộ GD&ĐT, 2009), Chương VII (Cách mạng xã hội chủ nghĩa); Giáo trình Chủ nghĩa xã hội khoa học (Bộ GD&ĐT, 2021), Chương 2, mục nội dung chính trị - xã hội của sứ mệnh lịch sử giai cấp công nhân",
+ "keyCheck": "ok"},
+{"n": 50,
+ "explain": "Theo V.I. Lênin trong «Nhà nước và cách mạng», nhà nước là sản phẩm và biểu hiện của những mâu thuẫn giai cấp không thể điều hòa được. Ở đâu và khi nào mâu thuẫn giai cấp không thể điều hòa được thì nhà nước xuất hiện, để giữ cho xung đột giai cấp nằm trong một «trật tự» có lợi cho giai cấp thống trị.",
+ "wrong": {
+  "A": "«Đi đến giải quyết» sai vì nhà nước không giải quyết mâu thuẫn giai cấp mà chỉ kìm giữ nó trong vòng trật tự của giai cấp thống trị.",
+  "B": "«Phải được giải quyết» không đúng luận điểm của Lênin; nhà nước ra đời chính vì mâu thuẫn đó không thể điều hòa, chứ không phải để giải quyết nó.",
+  "C": "«Có thể giải quyết» trái ngược với luận điểm gốc: nếu mâu thuẫn giai cấp điều hòa được thì nhà nước đã không ra đời."
+ },
+ "source": "V.I. Lênin, «Nhà nước và cách mạng» (1917), Chương I; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục IV.2 (Nhà nước — nguồn gốc)",
+ "keyCheck": "ok"},
+{"n": 51,
+ "explain": "Triết học là hạt nhân lý luận của thế giới quan, và chủ nghĩa duy vật biện chứng — sự thống nhất hữu cơ giữa chủ nghĩa duy vật và phép biện chứng — là hình thức phát triển cao nhất của chủ nghĩa duy vật. Vì thế, chủ nghĩa duy vật biện chứng là hạt nhân lý luận của thế giới quan khoa học.",
+ "wrong": {
+  "A": "«Duy vật» nói chung còn bao gồm duy vật chất phác cổ đại và duy vật siêu hình, có hạn chế nên chưa thể là hạt nhân của thế giới quan khoa học.",
+  "B": "«Chủ nghĩa Mác» là cả một hệ thống gồm triết học, kinh tế chính trị và chủ nghĩa xã hội khoa học — rộng hơn hạt nhân lý luận của thế giới quan.",
+  "D": "«Chủ nghĩa Lênin» là giai đoạn phát triển của chủ nghĩa Mác, không phải tên gọi chỉ hạt nhân lý luận của thế giới quan khoa học."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục I.2 (Triết học — hạt nhân lý luận của thế giới quan) và mục I.4",
+ "keyCheck": "ok"},
+{"n": 52,
+ "explain": "Chủ nghĩa Mác ra đời dựa trên ba điều kiện, tiền đề cơ bản: điều kiện kinh tế - xã hội, tiền đề lý luận và tiền đề khoa học tự nhiên. Riêng tiền đề lý luận cũng gồm ba nguồn gốc (triết học cổ điển Đức, kinh tế chính trị cổ điển Anh, chủ nghĩa xã hội không tưởng Pháp), và tiền đề khoa học tự nhiên gồm ba phát minh lớn — nên con số «ba» là nhất quán.",
+ "wrong": {
+  "B": "«Bốn tiền đề» không khớp với cách phân chia nào trong giáo trình.",
+  "C": "«Năm tiền đề» không đúng; giáo trình chỉ nêu ba nhóm điều kiện, tiền đề.",
+  "D": "«Sáu tiền đề» có thể do cộng nhầm các nguồn gốc lý luận và phát minh khoa học, nhưng không phải cách phân loại của giáo trình."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 1, mục II.1 (Những điều kiện, tiền đề của sự ra đời triết học Mác)",
+ "keyCheck": "ok"},
+{"n": 53,
+ "explain": "Ý thức có nguồn gốc tự nhiên và nguồn gốc xã hội. Nguồn gốc tự nhiên gồm bộ óc người và thế giới khách quan (các sự vật, hiện tượng) tác động lên bộ óc tạo ra sự phản ánh; nguồn gốc xã hội — trực tiếp và quan trọng nhất — là lao động và ngôn ngữ. Ba yếu tố này hợp thành điều kiện cần và đủ cho sự ra đời của ý thức.",
+ "wrong": {
+  "A": "«Nghiên cứu khoa học» là một hình thức hoạt động của ý thức đã phát triển, xuất hiện muộn hơn nhiều, nên không phải điều kiện sinh ra ý thức."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục I.2 (Nguồn gốc của ý thức); Ph. Ăngghen, «Vai trò của lao động trong quá trình chuyển biến từ vượn thành người»",
+ "keyCheck": "ok"},
+{"n": 54,
+ "explain": "Theo Lênin, «khách quan» là cái tồn tại độc lập, không phụ thuộc vào ý thức của con người — đây cũng là thuộc tính cơ bản nhất của vật chất trong định nghĩa vật chất của ông. Vật chất là thực tại khách quan, tồn tại dù con người có nhận thức được nó hay không.",
+ "wrong": {
+  "A": "«Phụ thuộc nhận thức con người» là đặc điểm của cái chủ quan, trái ngược hẳn với khách quan.",
+  "B": "«Trong thế giới con người» chỉ phạm vi, không nói lên tính độc lập với ý thức; nhiều hiện tượng trong xã hội loài người vẫn là chủ quan.",
+  "C": "«Trong thế giới tự nhiên» quá hẹp: các quan hệ xã hội (như quan hệ sản xuất) cũng là khách quan dù không thuộc tự nhiên."
+ },
+ "source": "V.I. Lênin, «Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán» (1909), Chương II; Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục I.1 (Định nghĩa vật chất của Lênin)",
+ "keyCheck": "ok"},
+{"n": 55,
+ "explain": "Khi lực lượng sản xuất phát triển, xuất hiện sản phẩm dư thừa và chế độ tư hữu, xã hội phân chia thành giai cấp. Hình thái kinh tế - xã hội chiếm hữu nô lệ là xã hội có giai cấp đầu tiên trong lịch sử, với hai giai cấp cơ bản là chủ nô và nô lệ.",
+ "wrong": {
+  "A": "Cộng sản nguyên thủy dựa trên chế độ công hữu, chưa có tư hữu và chưa có giai cấp.",
+  "B": "Tư bản chủ nghĩa là xã hội có giai cấp nhưng xuất hiện muộn, không phải nơi bắt đầu sự phân chia giai cấp.",
+  "C": "Phong kiến cũng có giai cấp (địa chủ – nông dân) nhưng ra đời sau chế độ chiếm hữu nô lệ."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục IV.1 (Giai cấp — nguồn gốc); Ph. Ăngghen, «Nguồn gốc của gia đình, của chế độ tư hữu và của nhà nước»",
+ "keyCheck": "ok"},
+{"n": 56,
+ "explain": "Sản xuất là hoạt động sáng tạo ra giá trị vật chất và tinh thần nhằm thỏa mãn nhu cầu tồn tại và phát triển của con người; quá trình đó trong xã hội chính là sản xuất xã hội — sự sản xuất và tái sản xuất ra đời sống hiện thực. Xét đến cùng, mục đích của sản xuất xã hội là duy trì, tái tạo và phát triển toàn bộ đời sống hiện thực của con người và xã hội.",
+ "wrong": {
+  "A": "«Sản xuất ra của cải vật chất» chỉ là một mặt (sản xuất vật chất) — nền tảng nhưng chưa phải toàn bộ mục đích cuối cùng.",
+  "C": "«Sản xuất ra con người, nuôi sống con người» vẫn chỉ là một bộ phận, chưa bao gồm sản xuất tinh thần và các quan hệ xã hội của đời sống hiện thực.",
+  "D": "«Sản xuất ra con người» chỉ là một trong ba mặt của sản xuất xã hội (sản xuất vật chất, tinh thần, con người), nên quá hẹp."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục I.1 (Sản xuất vật chất là cơ sở của sự tồn tại và phát triển xã hội); Ph. Ăngghen, Thư gửi I. Blốc (1890)",
+ "keyCheck": "ok"},
+{"n": 57,
+ "explain": "Nguyên lý về sự phát triển cho thấy phát triển là vận động theo khuynh hướng đi lên, từ thấp đến cao, từ kém hoàn thiện đến hoàn thiện hơn. Do đó quan điểm phát triển đòi hỏi trong nhận thức và thực tiễn phải đặt sự vật, hiện tượng theo khuynh hướng đi lên của nó, đồng thời thấy được tính quanh co, phức tạp của quá trình ấy.",
+ "wrong": {
+  "A": "«Đi thẳng» sai vì phát triển không theo đường thẳng mà theo đường xoáy ốc, quanh co, có cả bước thụt lùi tạm thời.",
+  "C": "«Không tụt lùi» sai vì giáo trình thừa nhận trong quá trình phát triển có thể có những bước thụt lùi tạm thời.",
+  "D": "«Vận động» quá rộng: vận động bao gồm mọi biến đổi, kể cả đi xuống, tuần hoàn; chỉ vận động đi lên mới là phát triển."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục II.2 (Nguyên lý về sự phát triển — ý nghĩa phương pháp luận)",
+ "keyCheck": "ok"},
+{"n": 58,
+ "explain": "Giáo trình nêu nhiều vai trò của lãnh tụ: nắm bắt xu thế của dân tộc, thời đại; tổ chức, lãnh đạo quần chúng; là người sáng lập và là linh hồn của các tổ chức chính trị - xã hội; có thể thúc đẩy hoặc kìm hãm tiến bộ xã hội. Đồng thời lãnh tụ của mỗi thời đại chỉ hoàn thành được nhiệm vụ do thời đại đó đặt ra, nên cả ba nhận định đều đúng.",
+ "wrong": {
+  "A": "Nhận định này đúng nhưng chỉ là một phần; chọn riêng nó sẽ bỏ sót các vai trò khác.",
+  "B": "Nhận định này đúng nhưng chưa đầy đủ, vì lãnh tụ còn tác động thúc đẩy/kìm hãm tiến bộ và bị giới hạn bởi nhiệm vụ thời đại.",
+  "C": "Nhận định này đúng (không có lãnh tụ chung cho mọi thời đại) nhưng chỉ là một khía cạnh, nên không đầy đủ bằng lựa chọn bao gồm tất cả."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 3, mục VI.3 (Vai trò của quần chúng nhân dân và lãnh tụ trong lịch sử)",
+ "keyCheck": "ok"},
+{"n": 59,
+ "explain": "Cái ngẫu nhiên do nguyên nhân bên ngoài, sự kết hợp ngẫu hợp các hoàn cảnh gây ra, nhưng nó không nằm ngoài quy luật: cái tất nhiên «vạch đường đi» cho mình thông qua vô số cái ngẫu nhiên. Vì vậy, ngẫu nhiên là hình thức biểu hiện, là cái bổ sung cho cái tất nhiên — tức là biểu hiện của quy luật.",
+ "wrong": {
+  "A": "Sai vì phủ nhận mối quan hệ giữa ngẫu nhiên và tất nhiên; không có cái ngẫu nhiên thuần túy tách khỏi mọi quy luật.",
+  "B": "«Hoàn toàn diễn ra theo quy luật» là đặc điểm của cái tất nhiên (nhất định phải xảy ra như thế), không phải của cái ngẫu nhiên.",
+  "D": "Sai vì ngẫu nhiên chính là hình thức qua đó tất nhiên, quy luật bộc lộ ra; nói nó không biểu hiện quy luật nào là quan điểm phi biện chứng."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục II.3 (Cặp phạm trù tất nhiên và ngẫu nhiên); Ph. Ăngghen, «Lút-vích Phoi-ơ-bắc và sự cáo chung của triết học cổ điển Đức»",
+ "keyCheck": "ok"},
+{"n": 60,
+ "explain": "Cái riêng là phạm trù triết học dùng để chỉ một sự vật, một hiện tượng, một quá trình riêng lẻ nhất định. Trong cái riêng vừa có cái chung (những thuộc tính lặp lại ở nhiều sự vật) vừa có cái đơn nhất (những nét chỉ có ở sự vật đó).",
+ "wrong": {
+  "A": "«Những mặt, những thuộc tính chung của nhiều sự vật» là định nghĩa của cái chung, không phải cái riêng.",
+  "C": "«Những nét, thuộc tính chỉ có ở một sự vật» là cái đơn nhất — chỉ là một bộ phận bên trong cái riêng.",
+  "D": "«Các yếu tố cấu thành một hệ thống» gần với phạm trù kết cấu/nội dung, không phải định nghĩa cái riêng."
+ },
+ "source": "Giáo trình Triết học Mác-Lênin (Bộ GD&ĐT, 2021), Chương 2, mục II.3 (Cặp phạm trù cái riêng và cái chung)",
+ "keyCheck": "ok"}
+]

@@ -1,0 +1,9 @@
+# tiến trình cá nhân / sao lưu
+Save/
+Progress/
+mln111-progress-*.json
+# phiên bản cũ & file nặng
+Fixed/
+*.pdf
+.DS_Store
+Thumbs.db
