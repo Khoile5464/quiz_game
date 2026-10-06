@@ -1,6 +1,6 @@
 /* ---------- quiz ---------- */
 let run = null;
-function show(id){ document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
+function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
 
 let lastMode = "new";
 function startSession(mode){
@@ -16,6 +16,7 @@ function startSession(mode){
 function renderQ(){
   const q = run.qs[run.i], s = S.stats[q.id];
   run.answered = false; run.picked = new Set();
+  $("nextBtn").blur(); // nút vừa được focus ở câu trước: Space/Enter sẽ bấm nhầm "Bỏ qua" cho câu mới
   const idx = q.o.map((_, i) => i);
   run.order = q.f ? idx : shuffle(idx); // q.f: đáp án tham chiếu chéo ("A và B", "Tất cả đều đúng") → giữ nguyên thứ tự đề cương
   const multi = q.a.length > 1;
@@ -220,7 +221,7 @@ function finish(){
   if (S.streak.last !== t){ S.streak.count = S.streak.last === yesterday() ? S.streak.count + 1 : 1; S.streak.last = t; }
   const got = checkBadges();
   save();
-  if (got.length) setTimeout(() => showBadge(got), 400);
+  if (got.length) setTimeout(() => { if (!$("result").classList.contains("hidden")) showBadge(got); }, 400);
 
   const pct = run.score / n;
   $("rNum").textContent = `${run.score}/${n}`;

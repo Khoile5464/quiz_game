@@ -39,7 +39,14 @@ $("importFile").onchange = async e => {
 };
 addEventListener("keydown", e => {
   if ($("quiz").classList.contains("hidden") || !run || e.target.closest?.("input,textarea,select")) return;
-  if (e.key === "Enter"){ e.preventDefault(); if (!$("nextBtn").disabled) next(); return; }
+  if (e.ctrlKey || e.metaKey || e.altKey || document.querySelector(".brag")) return; // Ctrl+A/D… không phải chọn đáp án; popup danh hiệu đang mở thì không điều khiển quiz phía sau
+  if (e.key === "Enter"){
+    e.preventDefault();
+    // Enter chỉ để chốt câu nhiều đáp án / sang câu tiếp; không bỏ qua câu chưa trả lời (tránh bấm đúp hoặc giữ Enter làm mất câu mới)
+    if (!e.repeat && !$("nextBtn").disabled && (run.answered || run.qs[run.i].a.length > 1)) next();
+    return;
+  }
+  if (e.repeat) return;
   const k = e.key.toUpperCase();
   let pos = "12345".indexOf(k); if (pos < 0) pos = LETTERS.indexOf(k);
   if (pos >= 0 && pos < run.order.length) choose(run.order[pos]);
