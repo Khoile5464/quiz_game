@@ -1,0 +1,17 @@
+/* ---------- sound settings ---------- */
+.sset{position:fixed;top:80px;right:12px;width:310px;max-width:calc(100vw - 24px);z-index:46;margin:0!important}
+.ssbody{padding:12px 14px;display:grid;gap:10px;font-weight:700;font-size:15px}
+.sw{display:flex;align-items:center;gap:10px;cursor:pointer}
+.sw input,.rng input{accent-color:var(--pink)}
+.sw input{width:18px;height:18px;margin:0}
+.ssnote{font-size:12px;color:var(--ink2);margin-top:-4px}
+.swrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.swrow .tbtn{font-size:11px;padding:2px 10px}
+.sschips{display:flex;flex-wrap:wrap;gap:6px}
+.sschips button{font:inherit;font-size:13px;font-weight:700;cursor:pointer;border:2px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);padding:2px 10px}
+.sschips button.on{background:var(--pink2);border-color:var(--pink)}
+.sschips.off{opacity:.4;pointer-events:none}
+.rng{display:grid;gap:2px}
+.rng span{font-size:13px;color:var(--ink2)}
+[data-theme="night"] .sschips button{border-radius:2px;background:#0a0718;border-color:#3d3279}
+[data-theme="night"] .sschips button.on{border-color:var(--pink);background:#2b0f2e;box-shadow:0 0 10px rgba(255,63,164,.5)}

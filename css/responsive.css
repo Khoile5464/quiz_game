@@ -1,0 +1,28 @@
+/* ---------- responsive: nạp sau cùng để ghi đè theo kích thước khung nhìn / mức zoom ---------- */
+
+/* màn rộng nhưng thấp (laptop zoom 125–150%, cửa sổ lùn): trang chủ 2 cột, cuộn dọc bình thường thay vì khóa một màn hình */
+@media (min-width:1000px) and (max-width:1279.98px) and (max-height:839.98px),
+       (min-width:1280px) and (max-height:759.98px){
+  body.on-home .theme-bar,body.on-home .wrap{max-width:1240px}
+  body.on-home #home{display:grid;grid-template-columns:minmax(0,1fr) clamp(380px,38vw,520px);gap:16px;align-items:start}
+  body.on-home .col{display:flex;flex-direction:column;gap:14px;min-width:0}
+  body.on-home .col .win{margin-bottom:0}
+}
+
+/* bảng nổi không bao giờ cao hơn khung nhìn (zoom to / màn thấp) */
+.tv{max-height:calc(100dvh - 24px);overflow:auto}
+.sset{max-height:calc(100dvh - 92px);overflow:auto}
+
+/* zoom to / màn rất hẹp: thu gọn khoảng đệm, nút xuống dòng gọn */
+@media (max-width:420px){
+  .wrap{padding-left:10px;padding-right:10px}
+  .theme-bar{padding-left:10px;padding-right:10px;flex-wrap:wrap}
+  .body{padding:12px}
+  .big-start{font-size:20px;padding:12px 16px}
+}
+
+/* màn ngang thấp (điện thoại xoay ngang, zoom rất to) */
+@media (max-height:480px) and (orientation:landscape){
+  .wrap{padding-top:10px;padding-bottom:30px}
+  .logo{margin-bottom:8px}
+}
