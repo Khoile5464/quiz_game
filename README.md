@@ -4,6 +4,7 @@ Web app ôn trắc nghiệm MLN111 (không cần build, chạy offline).
 
 - Học mới 30 câu chưa làm · Đền ôn tập theo mức ghi nhớ · Ngôi đền huyền thoại (100 câu, HighScore)
 - **Giải đề**: làm lần lượt toàn bộ câu trong phạm vi; tiến độ tự lưu để làm tiếp
+- **📕 Ôn câu sai**: câu sai khi giải đề vào kho ngay; ôn lại theo thứ tự đã sai, đúng thì gỡ khỏi kho, sai thì giữ cho lượt sau
 - **Trích Study Guide** sau mỗi câu, ở mọi chế độ: thẻ kiến thức liên quan, dòng sát ý được tô sáng, bấm để mở đúng thẻ
 - **🧭 Hành trình DVLS**: phần riêng 134 câu Chương 3 (5 phần, nhiều kiểu câu), chọn bằng chip phạm vi
 - Nông trại, gacha, huy hiệu; tiến trình lưu trong trình duyệt (có Sao lưu/Khôi phục `.json`)
@@ -35,4 +36,4 @@ Các file JS là script thường (không dùng ES module) và dùng chung phạ
 ## Chạy / triển khai
 Mở `index.html` bằng trình duyệt. GitHub Pages: Settings → Pages → Deploy from branch → `main` / `(root)`.
 
-Phiên bản hiện tại: v0.3.8
+Phiên bản hiện tại: v0.3.9

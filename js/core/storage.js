@@ -29,6 +29,18 @@ function norm(s){
     for (const k of ["score", "combo", "maxCombo", "xp"]) g[k] = Math.max(0, Math.floor(numOf(g[k])));
     g.wrong = Array.isArray(g.wrong) ? g.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
   } else s.giaide = null;
+  // kho câu sai từ Giải đề: {ids: [id theo thứ tự sai], run: lượt ôn đang làm dở {ids, i, score, combo, maxCombo, xp, wrong}}
+  // dữ liệu cũ chưa có kho: lấy luôn các câu đã sai trong lượt giải đề đang làm dở
+  const o = s.onsai && typeof s.onsai === "object" && !Array.isArray(s.onsai) ? s.onsai : {ids: s.giaide ? s.giaide.wrong.map(w => w[0]) : []};
+  o.ids = [...new Set(Array.isArray(o.ids) ? o.ids.filter(x => typeof x === "string") : [])];
+  const r = o.run;
+  if (r && typeof r === "object" && Array.isArray(r.ids) && r.ids.length){
+    r.ids = r.ids.filter(x => typeof x === "string");
+    r.i = Math.min(r.ids.length, Math.max(0, Math.floor(numOf(r.i))));
+    for (const k of ["score", "combo", "maxCombo", "xp"]) r[k] = Math.max(0, Math.floor(numOf(r[k])));
+    r.wrong = Array.isArray(r.wrong) ? r.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
+  } else o.run = null;
+  s.onsai = o;
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }

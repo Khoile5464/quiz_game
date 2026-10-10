@@ -12,6 +12,8 @@ const TEMPLE_SIZE = 100;
 const scopeLabel = sc => (SCOPES.find(s => s[0] === sc) || SCOPES[SCOPES.length - 1])[1];
 /* giải đề: tiến độ đang lưu (còn câu chưa làm) */
 const giaideLeft = () => S.giaide && S.giaide.i < S.giaide.ids.length ? S.giaide : null;
+/* ôn câu sai: lượt ôn đang làm dở (còn câu chưa làm) */
+const onsaiLeft = () => S.onsai.run && S.onsai.run.i < S.onsai.run.ids.length ? S.onsai.run : null;
 function renderScope(){
   $("scopeChips").replaceChildren(...SCOPES.map(([k, label]) => {
     const b = el("button", "chip" + (k === scope ? " on" : ""), label);
@@ -36,6 +38,11 @@ function renderScope(){
   $("giaideSub").textContent = g ? `câu ${g.i + 1}/${g.ids.length} · ${scopeLabel(g.sc)}` : `${n} câu · kèm trích Study Guide`;
   $("giaideBtn").disabled = !g && !n;
   $("giaideReset").classList.toggle("hidden", !g);
+  const qids = new Set(Q.map(q => q.id)); S.onsai.ids = S.onsai.ids.filter(id => qids.has(id)); // bỏ câu đã bị xoá khỏi ngân hàng đề
+  const o = onsaiLeft(), on = S.onsai.ids.length; // kho câu sai không theo phạm vi: hiện khi có câu sai từ Giải đề
+  $("onsaiBtn").classList.toggle("hidden", !o && !on);
+  $("onsaiMain").textContent = o ? "📕 Ôn câu sai tiếp" : "📕 Ôn câu sai";
+  $("onsaiSub").textContent = o ? `câu ${o.i + 1}/${o.ids.length} · kho còn ${on} câu` : `${on} câu sai từ Giải đề`;
 }
 /* học mới: toàn bộ là câu chưa từng làm, xáo ngẫu nhiên */
 const pickNew = () => shuffle(newPool()).slice(0, SESSION_SIZE);
