@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.6</title>
+<title>MLN111 Quiz Y2K v0.3.8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.6</small></span>
+  <span class="tb-title">MLN111 ♡ Quiz <small>v0.3.8</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -35,7 +35,7 @@
 
 <div class="wrap">
   <div class="logo">
-    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.6</small></h1>
+    <h1>MLN111 ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.8</small></h1>
     <p><span class="day-only">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -72,7 +72,7 @@
           <div class="chips" id="scopeChips"></div>
           <div class="startrow"><button class="btn big-start" id="startBtn"><span id="startMain">Bắt đầu 30 câu ✦</span><small id="startSub">xu thưởng ×2</small></button><button class="btn lav big-start review" id="reviewBtn" title="Ôn lại các câu đã học · xu thưởng cơ bản">🏛 Đền ôn tập<small id="reviewSub">xu ×2</small></button><button class="btn blue big-start review" id="templeBtn" title="100 câu liên tiếp từ các câu đã học · điểm = số câu đúng"><span>🔱 Ngôi đền huyền thoại</span><small id="templeSub"></small></button><button class="btn mint big-start review" id="giaideBtn" title="Làm lần lượt toàn bộ câu trong phạm vi · sau mỗi câu có trích Study Guide · thoát ra vẫn làm tiếp được"><span id="giaideMain">📖 Giải đề</span><small id="giaideSub"></small></button></div>
           <button type="button" class="linkbtn hidden" id="giaideReset">↺ giải đề lại từ đầu (theo phạm vi đang chọn)</button>
-          <div class="hint" style="margin-top:8px">Học mới: toàn câu chưa làm · Ôn tập: ưu tiên câu vừa sai → master 💫 · Giải đề: cả bộ đề + Study Guide</div>
+          <div class="hint" style="margin-top:8px">Học mới: toàn câu chưa làm · Ôn tập: ưu tiên câu vừa sai → master 💫 · Giải đề: cả bộ đề, làm tiếp được · mọi chế độ đều trích Study Guide</div>
         </div>
       </div>
 
@@ -197,6 +197,7 @@
 
 <div id="gModal" class="gmodal hidden" role="dialog" aria-modal="true" aria-label="Máy gacha"><div id="gBox" class="gbox"></div></div>
 <script src="js/data/questions.js"></script>
+<script src="js/data/questions-dvls.js"></script>
 <script src="js/data/sounds.js"></script>
 <script src="js/data/guide.js"></script>
 <script src="js/core/config.js"></script>

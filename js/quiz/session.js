@@ -50,6 +50,7 @@ function renderQ(){
   if (run.mode === "giaide") tags.append(el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"}`), document.createTextNode(" "));
   else if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
   else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
+  if (q.t) tags.append(el("span","tag dvls",`🧭 Phần ${["","I","II","III","IV","V"][q.p]} · ${q.t}`), document.createTextNode(" ")); // phần riêng Hành trình DVLS
   if (!s || !s.n) tags.append(el("span","tag new","✨ câu mới"));
   else if (s.w && s.w / s.n >= .4) tags.append(el("span","tag hard",`🔥 hay sai (${s.w}/${s.n})`));
   else if (s.box >= 3) tags.append(el("span","tag ok","🌸 đã thuộc — ôn lại chút"));
@@ -153,7 +154,7 @@ function explainEl(q, picked, openWrong){
   return box;
 }
 
-/* giải đề: trích thẻ Study Guide liên quan (Guide.match ở js/quiz/guide-match.js) */
+/* trích thẻ Study Guide liên quan sau mỗi câu, ở mọi chế độ (Guide.match ở js/quiz/guide-match.js) */
 function guideText(text){ // **đậm**, *nghiêng* như trong Study Guide
   const frag = document.createDocumentFragment();
   for (const part of String(text).split(/(\*{1,3}[^*]+\*{1,3})/)){
@@ -224,7 +225,7 @@ function submit(){
     comboFx(run.combo);
   }
   $("explain").replaceChildren(explainEl(q, [...run.picked], !right));
-  if (run.mode === "giaide") $("explain").append(guideEl(q));
+  $("explain").append(guideEl(q));
   $("qScore").textContent = `✓ ${run.score}`;
   $("qXp").textContent = `+${run.xp} xu`;
   updateCombo();

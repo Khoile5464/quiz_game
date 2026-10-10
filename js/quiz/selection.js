@@ -1,5 +1,5 @@
 /* ---------- chapter scope ---------- */
-const SCOPES = [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["all","Tất cả",null]];
+const SCOPES = [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["c5","🧭 Hành trình DVLS",[5]],["all","Tất cả",null]];
 let scope = "c12";
 try{const v=localStorage.getItem("mln111_scope");if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
 const inScope = (q, sc = scope) => { const d = SCOPES.find(s => s[0] === sc)[2]; return !d || d.includes(q.c); };
@@ -44,8 +44,8 @@ const prio = q => { const b = boxOf(q); return b < 0 ? 0 : b; };
 const pickReview = () => shuffle(reviewPool()).sort((a, b) => prio(a) - prio(b)).slice(0, SESSION_SIZE);
 /* ngôi đền huyền thoại: 100 câu ngẫu nhiên trong các câu đã học (mọi chương) */
 const pickTemple = () => shuffle(templePool()).slice(0, TEMPLE_SIZE);
-/* giải đề: toàn bộ câu trong phạm vi, đi lần lượt Ch.1 → Ch.2 → Ch.3 → Khác (trong mỗi chương xáo ngẫu nhiên) */
-const pickGiaide = () => shuffle(pool()).sort((a, b) => a.c - b.c);
+/* giải đề: toàn bộ câu trong phạm vi, đi lần lượt Ch.1 → Ch.2 → Ch.3 → Khác → Hành trình DVLS (Phần I → V); trong mỗi chương/phần xáo ngẫu nhiên */
+const pickGiaide = () => shuffle(pool()).sort((a, b) => a.c - b.c || (a.p || 0) - (b.p || 0));
 function boxOf(q){const s=S.stats[q.id];if(!s||!s.n)return 0;if(s.lastWrong&&s.box===0)return -1;return s.box}
 const mastered = () => Q.filter(q => (S.stats[q.id]?.box || 0) >= 3).length;
 

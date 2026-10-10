@@ -17,7 +17,7 @@ function renderHome(){
   $("mapCount").textContent = `${m}/${Q.length} câu đã thuộc. Trong phạm vi đang chọn: ${$("todayMsg").dataset.scope}`;
   $("masterBar").style.width = (m / Q.length * 100) + "%";
   const g = $("grid"); g.replaceChildren();
-  Q.forEach((q, i) => { const c = el("i"); c.dataset.b = boxOf(q); c.title = `Câu ${i + 1}: ${q.q}`; if (!inScope(q)) c.className = "out"; g.append(c); });
+  Q.forEach((q, i) => { const c = el("i"); c.dataset.b = boxOf(q); c.title = `${q.t ? "Hành trình DVLS " + q.id.slice(3) : "Câu " + (i + 1)}: ${q.q}`; if (!inScope(q)) c.className = "out"; g.append(c); });
 
   const weak = Q.filter(q => S.stats[q.id]?.w > 0)
     .map(q => ({q, s: S.stats[q.id]})).sort((x, y) => y.s.w / y.s.n - x.s.w / x.s.n || y.s.w - x.s.w).slice(0, 5);

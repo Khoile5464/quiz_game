@@ -5,8 +5,8 @@
 .chip.combo.hot{background:linear-gradient(90deg,#ffb36b,#ff7ac8);color:#fff;text-shadow:1px 1px 0 var(--ink);animation:wiggle .4s}
 @keyframes wiggle{25%{transform:rotate(-6deg) scale(1.1)}75%{transform:rotate(6deg) scale(1.1)}}
 .tag{display:inline-block;font-size:12px;font-weight:800;border:2px solid var(--ink);border-radius:8px;padding:0 8px;margin-bottom:8px}
-.tag.new{background:var(--sky2)}.tag.hard{background:#ffd0de}.tag.ok{background:#dcfff0}.tag.multi{background:var(--lemon)}
-.qtext{font-size:clamp(18px,3.2vw,22px);font-weight:700;line-height:1.4;margin:0 0 14px}
+.tag.new{background:var(--sky2)}.tag.hard{background:#ffd0de}.tag.ok{background:#dcfff0}.tag.multi{background:var(--lemon)}.tag.dvls{background:#ffe0c2}
+.qtext{font-size:clamp(18px,3.2vw,22px);font-weight:700;line-height:1.4;margin:0 0 14px;white-space:pre-line}
 .opts{display:grid;gap:10px}
 .opt{
   display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;font:inherit;font-size:17px;font-weight:600;color:var(--ink);

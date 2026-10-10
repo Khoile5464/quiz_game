@@ -55,6 +55,7 @@
 [data-theme="night"] .tag.hard{background:#3a0e22;border-color:var(--bad);color:#ffb3c6}
 [data-theme="night"] .tag.ok{background:#0b2b20;border-color:var(--mint);color:var(--mint)}
 [data-theme="night"] .tag.multi{background:#241a05;border-color:var(--lemon);color:var(--lemon)}
+[data-theme="night"] .tag.dvls{background:#2e1a08;border-color:#ff9f6b;color:#ffc59e}
 [data-theme="night"] .opt{border-radius:4px;background:#130d2c;border-color:#3d3279;box-shadow:4px 4px 0 #000}
 [data-theme="night"] .opt:hover:not(:disabled){background:#1b1240;border-color:var(--sky);box-shadow:4px 4px 0 #000,0 0 12px rgba(39,230,255,.45)}
 [data-theme="night"] .opt .k{border-radius:2px;background:#000;color:var(--sky);border-color:var(--sky)}

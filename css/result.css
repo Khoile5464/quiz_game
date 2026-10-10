@@ -4,7 +4,7 @@
 .sticker{display:inline-block;margin:10px 0;padding:6px 18px;border:3px solid var(--ink);border-radius:999px;background:var(--lemon);font-weight:800;font-size:20px;transform:rotate(-3deg)}
 .review{display:grid;gap:10px}
 .review .it{border:2px solid var(--ink);border-radius:12px;padding:10px 12px;background:#fff}
-.review .it .q{font-weight:700}
+.review .it .q{font-weight:700;white-space:pre-line}
 .review .it .a{color:#1f9e66;font-weight:700;margin-top:4px}
 .review .it .y{color:#d63864;font-weight:600;font-size:14px}
 
