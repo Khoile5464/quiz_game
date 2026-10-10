@@ -49,6 +49,21 @@ function startOnsai(){
 }
 /* chế độ lưu tiến độ sau từng câu (thoát ra làm tiếp được) */
 const resumable = m => m === "giaide" || m === "onsai";
+/* số câu trong kho câu sai, hiện trên nhãn câu hỏi ở Giải đề / Ôn câu sai */
+const khoEl = () => el("b","kho",String(S.onsai.ids.length));
+const updKho = () => document.querySelectorAll("#qTags .kho").forEach(b => b.textContent = S.onsai.ids.length);
+/* lượt ôn câu sai đang mở: câu vừa sai ở Giải đề (tab này hoặc tab khác) được thêm vào cuối lượt */
+function syncOnsaiRun(){
+  if (!run || run.mode !== "onsai" || !S.onsai.run) return;
+  const have = new Set(run.qs.map(q => q.id)), byId = new Map(Q.map(q => [q.id, q]));
+  const add = S.onsai.run.ids.filter(id => !have.has(id) && byId.has(id));
+  if (!add.length) return;
+  run.qs.push(...add.map(id => byId.get(id)));
+  $("qCount").textContent = `${run.i + 1}/${run.qs.length}`;
+  $("qBar").style.width = (run.i / run.qs.length * 100) + "%";
+  if (run.answered) $("nextBtn").textContent = "Câu tiếp →";
+  toast(`📕 Thêm ${add.length} câu vừa sai vào lượt ôn`);
+}
 
 function renderQ(){
   const q = run.qs[run.i], s = S.stats[q.id];
@@ -67,8 +82,8 @@ function renderQ(){
   updateCombo();
 
   const tags = $("qTags"); tags.replaceChildren();
-  if (run.mode === "giaide") tags.append(el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"}`), document.createTextNode(" "));
-  else if (run.mode === "onsai") tags.append(el("span","tag onsai",`📕 Ôn câu sai · đúng là gỡ khỏi kho (còn ${S.onsai.ids.length})`), document.createTextNode(" "));
+  if (run.mode === "giaide"){ const t = el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"} · 📕 kho câu sai: `); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
+  else if (run.mode === "onsai"){ const t = el("span","tag onsai","📕 Ôn câu sai · đúng là gỡ khỏi kho · kho còn "); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
   else if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
   else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
   if (q.t) tags.append(el("span","tag dvls",`🧭 Phần ${["","I","II","III","IV","V"][q.p]} · ${q.t}`), document.createTextNode(" ")); // phần riêng Hành trình DVLS
@@ -226,13 +241,19 @@ function submit(){
     run.wrong.push({q, picked: [...run.picked]});
     if (!playMeme()) sfx.bad();
   }
+  // S có thể vừa được nạp lại từ tab khác (app.js, sự kiện storage) nên kiểm tra S.giaide / S.onsai.run trước khi ghi
   if (run.mode === "giaide"){
-    Object.assign(S.giaide, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
-    if (!right){ S.giaide.wrong.push([q.id, [...run.picked]]); if (!S.onsai.ids.includes(q.id)) S.onsai.ids.push(q.id); } // câu sai vào kho ôn ngay
+    if (S.giaide) Object.assign(S.giaide, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
+    if (!right){ // câu sai vào kho ôn ngay, kể cả lượt ôn đang làm dở (thêm vào cuối lượt)
+      S.giaide?.wrong.push([q.id, [...run.picked]]);
+      if (!S.onsai.ids.includes(q.id)) S.onsai.ids.push(q.id);
+      if (S.onsai.run && !S.onsai.run.ids.includes(q.id)) S.onsai.run.ids.push(q.id);
+    }
   } else if (run.mode === "onsai"){
-    Object.assign(S.onsai.run, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
-    if (right) S.onsai.ids = S.onsai.ids.filter(id => id !== q.id); else S.onsai.run.wrong.push([q.id, [...run.picked]]);
+    if (S.onsai.run) Object.assign(S.onsai.run, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
+    if (right) S.onsai.ids = S.onsai.ids.filter(id => id !== q.id); else S.onsai.run?.wrong.push([q.id, [...run.picked]]);
   }
+  updKho();
   if (resumable(run.mode) && ++run.sit === 10) touchStreak(); // buổi giải đề / ôn câu sai rất dài: làm đủ 10 câu là tính đã học hôm nay
   save();
 

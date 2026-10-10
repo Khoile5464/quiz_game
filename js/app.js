@@ -56,6 +56,16 @@ addEventListener("keydown", e => {
   if (pos >= 0 && pos < run.order.length) choose(run.order[pos]);
 });
 
+/* mở app ở nhiều tab: tab khác vừa lưu (vd đang giải đề, vừa sai một câu) thì nạp lại S ngay,
+   để kho câu sai, nút trang chủ và lượt ôn đang mở cập nhật tức thì, và tab này không ghi đè dữ liệu cũ lên */
+let syncT = 0;
+addEventListener("storage", e => {
+  if (e.key !== KEY || e.newValue === null) return;
+  try { S = normFull(JSON.parse(e.newValue)); } catch { return; }
+  syncOnsaiRun(); updKho();
+  clearTimeout(syncT); syncT = setTimeout(() => { if (!$("home").classList.contains("hidden")) renderHome(); }, 150);
+});
+
 $("themeBtn").onclick = () => { S.theme = isNight() ? "day" : "night"; save(); applyTheme(S.theme); };
 $("lofiBtn").onclick = () => Lofi.toggle();
 applyTheme(S.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day"));

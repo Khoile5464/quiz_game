@@ -36,4 +36,4 @@ Các file JS là script thường (không dùng ES module) và dùng chung phạ
 ## Chạy / triển khai
 Mở `index.html` bằng trình duyệt. GitHub Pages: Settings → Pages → Deploy from branch → `main` / `(root)`.
 
-Phiên bản hiện tại: v0.3.9
+Phiên bản hiện tại: v0.3.10
