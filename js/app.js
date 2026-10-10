@@ -2,6 +2,8 @@
 $("startBtn").onclick = () => startSession("new");
 $("reviewBtn").onclick = () => startSession("review");
 $("templeBtn").onclick = () => startSession("temple");
+$("giaideBtn").onclick = () => startSession("giaide");
+$("giaideReset").onclick = () => { const g = giaideLeft(); if (g && !confirm(`Bỏ tiến độ đang làm (câu ${g.i + 1}/${g.ids.length}) và giải đề lại từ đầu theo phạm vi "${scopeLabel(scope)}"?`)) return; startSession("giaide", true); };
 $("againBtn").onclick = () => startSession(lastMode);
 $("homeBtn").onclick = () => { renderHome(); show("home"); };
 $("nextBtn").onclick = next;

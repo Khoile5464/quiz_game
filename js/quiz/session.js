@@ -3,13 +3,30 @@ let run = null;
 function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
 
 let lastMode = "new";
-function startSession(mode){
+function startSession(mode, restart){
+  if (mode === "giaide") return startGiaide(restart);
   if (mode === "review" && !reviewPool().length){ toast("Chưa có câu nào đã học để ôn — làm vài câu trước nha ✦"); return; }
   if (mode === "new" && !newPool().length){ toast("Hết câu mới trong phạm vi này rồi — qua Đền ôn tập nhé 🏛"); return; }
   if (mode === "temple" && !templePool().length){ toast("Chưa có câu nào đã học để vào ngôi đền ✦"); return; }
   lastMode = mode;
   const qs = mode === "review" ? pickReview() : mode === "temple" ? pickTemple() : pickNew();
-  run = {mode, review: mode !== "new", qs, i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
+  run = {mode, review: mode !== "new", x2: mode === "new", qs, i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
+  show("quiz"); renderQ();
+}
+/* giải đề: làm lần lượt toàn bộ câu trong phạm vi, tiến độ lưu sau mỗi câu (S.giaide) nên thoát ra vẫn làm tiếp được */
+function startGiaide(restart){
+  if (restart || !giaideLeft()){
+    if (!pool().length){ toast("Phạm vi này chưa có câu nào ✦"); return; }
+    S.giaide = {sc: scope, ids: pickGiaide().map(q => q.id), i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: []}; save();
+  }
+  const g = S.giaide, byId = new Map(Q.map(q => [q.id, q]));
+  // câu đã bị bỏ khỏi ngân hàng đề (sửa questions.js) thì bỏ qua, giữ đúng vị trí đang làm
+  g.i = g.ids.slice(0, g.i).filter(id => byId.has(id)).length; g.ids = g.ids.filter(id => byId.has(id));
+  lastMode = "giaide";
+  run = {mode: "giaide", review: false, x2: false, qs: g.ids.map(id => byId.get(id)), i: g.i, score: g.score, combo: g.combo, maxCombo: g.maxCombo, xp: g.xp,
+    wrong: g.wrong.filter(([id]) => byId.has(id)).map(([id, picked]) => ({q: byId.get(id), picked})), answered: false, picked: new Set(), sit: 0};
+  if (run.i >= run.qs.length) return finish();
+  if (run.i) toast(`📖 Giải đề tiếp từ câu ${run.i + 1}/${run.qs.length}`);
   show("quiz"); renderQ();
 }
 
@@ -20,8 +37,9 @@ function renderQ(){
   const idx = q.o.map((_, i) => i);
   run.order = q.f ? idx : shuffle(idx); // q.f: đáp án tham chiếu chéo ("A và B", "Tất cả đều đúng") → giữ nguyên thứ tự đề cương
   const multi = q.a.length > 1;
+  if (run.mode === "giaide") run.x2 = !learned(q); // câu chưa học xu ×2 như Học mới, câu đã học xu cơ bản như Đền ôn tập
 
-  $("qTitle").textContent = `${run.mode === "temple" ? "den_huyen_thoai" : run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(2,"0")}.exe`;
+  $("qTitle").textContent = `${run.mode === "giaide" ? "giai_de" : run.mode === "temple" ? "den_huyen_thoai" : run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(run.mode === "giaide" ? 3 : 2,"0")}.exe`;
   $("qCount").textContent = `${run.i + 1}/${run.qs.length}`;
   $("qBar").style.width = (run.i / run.qs.length * 100) + "%";
   $("qScore").textContent = `✓ ${run.score}`;
@@ -29,7 +47,8 @@ function renderQ(){
   updateCombo();
 
   const tags = $("qTags"); tags.replaceChildren();
-  if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
+  if (run.mode === "giaide") tags.append(el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"}`), document.createTextNode(" "));
+  else if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
   else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
   if (!s || !s.n) tags.append(el("span","tag new","✨ câu mới"));
   else if (s.w && s.w / s.n >= .4) tags.append(el("span","tag hard",`🔥 hay sai (${s.w}/${s.n})`));
@@ -134,6 +153,37 @@ function explainEl(q, picked, openWrong){
   return box;
 }
 
+/* giải đề: trích thẻ Study Guide liên quan (Guide.match ở js/quiz/guide-match.js) */
+function guideText(text){ // **đậm**, *nghiêng* như trong Study Guide
+  const frag = document.createDocumentFragment();
+  for (const part of String(text).split(/(\*{1,3}[^*]+\*{1,3})/)){
+    const m = part.match(/^(\*{1,3})([^*]+)\1$/);
+    if (m) frag.append(el(m[1].length === 1 ? "i" : "b", "", m[2])); else if (part) frag.append(part);
+  }
+  return frag;
+}
+function guideEl(q){
+  const box = el("div","sg");
+  const h = el("div","sg-h"); h.append(el("span","","📚"), el("span","","Giải đề · trích Study Guide")); box.append(h);
+  const ms = Guide.match(q).filter((m, k) => !k || m.hits.length); // thẻ phụ chỉ hiện khi có dòng liên quan
+  if (!ms.length){ box.append(el("div","sg-none","Study Guide chưa có thẻ riêng cho câu này — đọc kỹ phần giải thích phía trên nhé.")); return box; }
+  ms.forEach((m, k) => {
+    const card = el("div","sg-card" + (k ? " more" : ""));
+    const t = el("div","sg-t");
+    t.append(el("span","sg-sec",`${m.s.ic} ${m.s.t}`), el("b","",m.c.t));
+    if (m.weak) t.append(el("span","sg-weak","gợi ý gần nhất"));
+    const ul = el("ul");
+    for (const i of k ? m.hits : m.c.b.keys()){ // thẻ chính: cả thẻ, tô sáng dòng liên quan · thẻ phụ: chỉ dòng liên quan
+      let tx = m.c.b[i], cls = m.hits.includes(i) ? "hit" : "";
+      if (tx[0] === "!" || tx[0] === "+"){ cls += tx[0] === "!" ? " trap" : " sure"; tx = tx.slice(1); }
+      const li = el("li", cls.trim()); li.append(guideText(tx)); ul.append(li);
+    }
+    const a = el("a","sg-open","mở trong Study Guide ↗"); a.href = "study-guide.html#" + m.c.k; a.target = "_blank"; a.rel = "noopener";
+    card.append(t, ul, a); box.append(card);
+  });
+  return box;
+}
+
 function submit(){
   const q = run.qs[run.i], s = st(q.id);
   run.answered = true;
@@ -150,9 +200,14 @@ function submit(){
   } else {
     s.w++; s.box = 0; s.lastWrong = true;
     if (run.combo >= 3) toast(`💔 Mất chuỗi combo ×${run.combo}!`);
-    const cons = run.review ? 2 : 4; run.combo = 0; run.xp += cons; S.xp += cons; S.coins += cons;
+    const cons = run.x2 ? 4 : 2; run.combo = 0; run.xp += cons; S.xp += cons; S.coins += cons;
     run.wrong.push({q, picked: [...run.picked]});
     if (!playMeme()) sfx.bad();
+  }
+  if (run.mode === "giaide"){
+    Object.assign(S.giaide, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
+    if (!right) S.giaide.wrong.push([q.id, [...run.picked]]);
+    if (++run.sit === 10) touchStreak(); // buổi giải đề rất dài: làm đủ 10 câu là tính đã học hôm nay
   }
   save();
 
@@ -169,6 +224,7 @@ function submit(){
     comboFx(run.combo);
   }
   $("explain").replaceChildren(explainEl(q, [...run.picked], !right));
+  if (run.mode === "giaide") $("explain").append(guideEl(q));
   $("qScore").textContent = `✓ ${run.score}`;
   $("qXp").textContent = `+${run.xp} xu`;
   updateCombo();
@@ -179,7 +235,7 @@ function submit(){
 
 /* combo >= 3: xu nhân theo combo (tối đa ×10); sai là mất chuỗi */
 const comboMult = c => c >= 3 ? Math.min(c, 10) : 1;
-const xpGain = c => (10 + Math.min(10, c - 1)) * comboMult(c) * (run && run.review ? 1 : 2);
+const xpGain = c => (10 + Math.min(10, c - 1)) * comboMult(c) * (run && run.x2 ? 2 : 1);
 function comboFx(c){
   const tier = c >= 10 ? 3 : c >= 5 ? 2 : 1;
   const pop = el("div","combo-pop t" + tier);
@@ -213,12 +269,12 @@ function next(){
 function finish(){
   const n = run.qs.length;
   S.sessions++;
-  const temple = run.mode === "temple";
+  const temple = run.mode === "temple", giaide = run.mode === "giaide";
   let newHigh = false;
   if (temple){ S.temple.runs++; if (run.score > S.temple.best){ S.temple.best = run.score; newHigh = true; } }
+  else if (giaide) S.giaide = null; // điểm giải đề không tính vào "điểm cao nhất /30"
   else { S.best = Math.max(S.best, run.score); if (run.score === n && (!run.review || n >= SESSION_SIZE)) S.perfect++; }
-  const t = today();
-  if (S.streak.last !== t){ S.streak.count = S.streak.last === yesterday() ? S.streak.count + 1 : 1; S.streak.last = t; }
+  touchStreak();
   const got = checkBadges();
   save();
   if (got.length) setTimeout(() => { if (!$("result").classList.contains("hidden")) showBadge(got); }, 400);
@@ -235,6 +291,7 @@ function finish(){
     $("rSticker").textContent = newHigh ? "🔱 KỶ LỤC MỚI!" : stk;
     $("rMsg").textContent = `Điểm ngôi đền: ${run.score} · 🏆 HighScore: ${S.temple.best}` + (newHigh ? " — bạn vừa phá kỷ lục!" : ` (còn thiếu ${S.temple.best - run.score} để vượt kỷ lục)`);
   }
+  if (giaide) $("rMsg").textContent = `Giải xong ${n} câu · đúng ${run.score} (${Math.round(pct * 100)}%). ` + (run.wrong.length ? `Xem lại ${run.wrong.length} câu sai bên dưới nhé ✦` : "Không sai câu nào, quá đỉnh ✦");
   $("rXp").textContent = `+${run.xp} xu`;
   $("rCombo").textContent = `combo max ×${run.maxCombo}`;
   $("rStreak").textContent = `🔥 ${S.streak.count} ngày`;
@@ -249,14 +306,26 @@ function finish(){
     d.append(explainEl(q, picked, false));
     return d;
   }));
-  $("againBtn").textContent = temple ? "Thử lại ngôi đền 🔱" : run.review ? "Ôn thêm đợt nữa 🏛" : "Thêm 30 câu mới nữa ✦";
+  $("againBtn").textContent = giaide ? "Giải đề lại từ đầu 📖" : temple ? "Thử lại ngôi đền 🔱" : run.review ? "Ôn thêm đợt nữa 🏛" : "Thêm 30 câu mới nữa ✦";
   $("againBtn").disabled = lastMode === "new" && !newPool().length;
   show("result");
   if (pct >= .6){ sfx.win(); setTimeout(() => burst(innerWidth / 2, innerHeight / 3, 40), 200); }
   run = null;
 }
 
+function touchStreak(){
+  const t = today();
+  if (S.streak.last !== t){ S.streak.count = S.streak.last === yesterday() ? S.streak.count + 1 : 1; S.streak.last = t; }
+}
+
 function quit(){
+  if (run && run.mode === "giaide"){ // tiến độ đã lưu sau từng câu: thoát không cần hỏi
+    const sat = run.sit; run = null;
+    const got = checkBadges(); save(); renderHome(); show("home");
+    if (sat) toast("📖 Đã lưu tiến độ giải đề — lúc nào quay lại cũng làm tiếp được");
+    if (got.length) showBadge(got);
+    return;
+  }
   if (run && (run.i > 0 || run.answered) && !confirm("Thoát giữa chừng? Các câu đã làm vẫn được lưu vào thống kê ♡")) return;
   run = null; renderHome(); show("home");
 }

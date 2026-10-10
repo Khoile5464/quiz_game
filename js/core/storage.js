@@ -22,6 +22,13 @@ function norm(s){
   if (!s.unl || typeof s.unl !== "object" || Array.isArray(s.unl)) s.unl = {};
   if (!s.temple || typeof s.temple !== "object" || Array.isArray(s.temple)) s.temple = {};
   s.temple.best = Math.max(0, Math.floor(numOf(s.temple.best))); s.temple.runs = Math.max(0, Math.floor(numOf(s.temple.runs)));
+  const g = s.giaide; // giải đề đang làm dở: {sc, ids, i, score, combo, maxCombo, xp, wrong:[[id, [đáp án đã chọn]]]}
+  if (g && typeof g === "object" && Array.isArray(g.ids) && g.ids.length){
+    g.ids = g.ids.filter(x => typeof x === "string"); g.sc = typeof g.sc === "string" ? g.sc : "all";
+    g.i = Math.min(g.ids.length, Math.max(0, Math.floor(numOf(g.i))));
+    for (const k of ["score", "combo", "maxCombo", "xp"]) g[k] = Math.max(0, Math.floor(numOf(g[k])));
+    g.wrong = Array.isArray(g.wrong) ? g.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
+  } else s.giaide = null;
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }

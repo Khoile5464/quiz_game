@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MLN111 Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6efff;--bg2:#fffafe;--card:#ffffff;--ink:#4b2b73;--ink2:#7a5aa6;--line:#e1d3fa;
+  --pink:#ff8fd0;--lav:#c9a7ff;--sky:#9fe3ff;--mint:#a8f5cf;--lemon:#fff3a3;--peach:#ffc9a8;
+  --ok:#3ddc97;--bad:#ff5c8a;--shadow:0 5px 0 #b48ce8,0 10px 22px rgba(120,60,180,.18);
+  --hl:#fff0a8;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#150f2c;--bg2:#1d1544;--card:#241a52;--ink:#f1e8ff;--ink2:#b9a4e6;--line:#3b2d78;
+    --pink:#ff3fa4;--lav:#8f5cff;--sky:#27e6ff;--mint:#2bff9e;--lemon:#ffcf5c;--peach:#ff9f6b;
+    --shadow:0 5px 0 #5a38b8,0 10px 22px rgba(0,0,0,.4);--hl:#6b4d00;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#150f2c;--bg2:#1d1544;--card:#241a52;--ink:#f1e8ff;--ink2:#b9a4e6;--line:#3b2d78;
+  --pink:#ff3fa4;--lav:#8f5cff;--sky:#27e6ff;--mint:#2bff9e;--lemon:#ffcf5c;--peach:#ff9f6b;
+  --shadow:0 5px 0 #5a38b8,0 10px 22px rgba(0,0,0,.4);--hl:#6b4d00;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Baloo 2",system-ui,sans-serif;font-size:17px;line-height:1.55;
+  background-image:radial-gradient(var(--line) 1.2px,transparent 1.2px);background-size:22px 22px}
+.pix{font-family:"Silkscreen",monospace;letter-spacing:.5px}
+header.hero{padding:34px 16px 26px;text-align:center;background:linear-gradient(135deg,var(--pink),var(--lav) 55%,var(--sky));color:#fff;border-bottom:4px solid var(--ink);position:relative;overflow:hidden}
+header.hero h1{margin:0;font-size:clamp(28px,6vw,52px);text-shadow:3px 3px 0 var(--ink);line-height:1.1}
+header.hero p{margin:8px auto 0;max-width:640px;text-shadow:1px 1px 0 rgba(0,0,0,.35);font-weight:600}
+.stars span{position:absolute;font-size:26px;opacity:.8;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.4) rotate(20deg);opacity:.3}}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.stat{background:var(--bg2);color:var(--ink);border:3px solid var(--ink);border-radius:14px;padding:4px 14px;box-shadow:3px 3px 0 var(--ink);font-weight:800}
+.stat b{font-size:20px}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg2);border-bottom:3px solid var(--ink);padding:8px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.bar input{flex:1;min-width:160px;padding:8px 14px;border-radius:999px;border:3px solid var(--ink);background:var(--card);color:var(--ink);font:inherit;outline:none}
+.bar input:focus{box-shadow:0 0 0 3px var(--pink)}
+.btn{border:3px solid var(--ink);background:var(--lemon);color:#4b2b73;border-radius:999px;padding:6px 14px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 3px 0 var(--ink)}
+.btn:active{transform:translateY(3px);box-shadow:none}
+.prog{height:10px;background:var(--line);border-radius:99px;overflow:hidden;flex-basis:100%}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--sky));transition:width .4s}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;gap:22px;padding:22px 16px 60px}
+nav.toc{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 120px);overflow:auto;display:flex;flex-direction:column;gap:6px}
+nav.toc a{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:3px solid var(--ink);border-radius:14px;padding:5px 10px;font-weight:600;font-size:15px;box-shadow:0 3px 0 var(--ink);transition:.15s}
+nav.toc a:hover,nav.toc a.on{transform:translateX(4px);background:var(--c,var(--pink));color:#4b2b73}
+nav.toc .n{font-family:"Silkscreen",monospace;font-size:11px;opacity:.7}
+.sec{margin-bottom:34px}
+.sec-h{display:flex;align-items:center;gap:12px;padding:10px 16px;border:3px solid var(--ink);border-radius:20px;background:var(--c);color:#4b2b73;box-shadow:var(--shadow);margin-bottom:16px}
+.sec-h .ic{font-size:34px}
+.sec-h h2{margin:0;font-size:clamp(20px,3.4vw,28px);line-height:1.15}
+.sec-h small{display:block;font-weight:600;opacity:.8}
+.sec-h .heat{margin-left:auto;font-family:"Silkscreen",monospace;font-size:11px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:0;box-shadow:0 4px 0 var(--ink);overflow:hidden}
+.card>summary{list-style:none;cursor:pointer;padding:10px 14px;font-weight:800;background:linear-gradient(90deg,var(--c),transparent 130%);color:#4b2b73;display:flex;gap:8px;align-items:center}
+.card>summary::-webkit-details-marker{display:none}
+.card>summary::after{content:"▾";margin-left:auto;transition:.2s}
+.card[open]>summary::after{transform:rotate(180deg)}
+.card .body{padding:8px 14px 14px}
+.card.focus{animation:focus 1.6s ease-out 2}
+@keyframes focus{30%{box-shadow:0 0 0 6px var(--pink),0 4px 0 var(--ink)}}
+.card ul{margin:0;padding-left:0;list-style:none}
+.card li{position:relative;padding:3px 0 3px 22px}
+.card li::before{content:"✦";position:absolute;left:2px;color:var(--c);filter:saturate(1.6) brightness(.85)}
+.card li.warn::before{content:"⚠";color:var(--bad)}
+.card li.ok::before{content:"✔";color:var(--ok)}
+.card li ul{margin-top:2px}
+b{color:var(--bad)}
+:root[data-theme="dark"] b{color:var(--lemon)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) b{color:var(--lemon)}}
+mark{background:var(--hl);color:inherit;border-radius:4px;padding:0 2px}
+.tag{display:inline-block;font-size:12px;font-weight:800;background:var(--c);color:#4b2b73;border:2px solid var(--ink);border-radius:999px;padding:0 8px;margin-right:2px}
+.tbl{overflow:auto;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink);background:var(--card);margin-bottom:14px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th{background:var(--c);color:#4b2b73;text-align:left;padding:8px 12px;font-family:"Silkscreen",monospace;font-size:13px}
+td{padding:8px 12px;border-top:2px dashed var(--line);vertical-align:top}
+tr:nth-child(even) td{background:rgba(180,140,232,.08)}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin:6px 0 16px}
+.node{background:var(--c);color:#4b2b73;border:3px solid var(--ink);border-radius:14px;padding:6px 14px;font-weight:800;box-shadow:0 3px 0 var(--ink);text-align:center}
+.node small{display:block;font-weight:600;font-size:12px}
+.arrow{font-size:22px;color:var(--ink2)}
+.tip{border:3px dashed var(--ink);border-radius:16px;padding:10px 14px;background:var(--bg2);margin:0 0 14px}
+.tip strong{font-family:"Silkscreen",monospace;font-size:13px;color:var(--bad)}
+.eq{font-family:"Silkscreen",monospace;font-size:14px;text-align:center;margin:0 0 14px}
+.eq span{display:inline-block;background:var(--card);border:3px solid var(--ink);border-radius:12px;padding:4px 12px;margin:3px;box-shadow:0 3px 0 var(--ink)}
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.fc{perspective:900px;height:150px;cursor:pointer}
+.fc div{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip div{transform:rotateY(180deg)}
+.fc p{position:absolute;inset:0;margin:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink);font-weight:800}
+.fc .q{background:var(--sky);color:#4b2b73}
+.fc .a{background:var(--mint);color:#4b2b73;transform:rotateY(180deg)}
+.chk{display:flex;gap:8px;align-items:flex-start;margin:10px 0 0;font-size:14px;color:var(--ink2);font-weight:600}
+.chk input{width:18px;height:18px;accent-color:var(--ok);margin-top:3px}
+.done .card{opacity:.75}
+.hide{display:none!important}
+footer{text-align:center;padding:24px;color:var(--ink2);font-weight:600}
+#top{position:fixed;right:16px;bottom:16px;z-index:30}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;flex-direction:row;overflow-x:auto;max-height:none;padding-bottom:6px}
+  nav.toc a{white-space:nowrap}
+}
+@media print{.bar,nav.toc,#top{display:none}.layout{display:block}.card{break-inside:avoid}details>*{display:block}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="stars"><span style="left:6%;top:18%">✦</span><span style="left:90%;top:25%;animation-delay:.6s">✧</span><span style="left:20%;top:78%;animation-delay:1.2s">★</span><span style="left:78%;top:75%;animation-delay:1.8s">✦</span></div>
+  <div class="pix" style="font-size:13px;opacity:.9">★ MLN111 · TRIẾT HỌC MÁC–LÊNIN ★</div>
+  <h1>Study Guide ôn thi</h1>
+  <p>Tổng hợp từ 586 câu trắc nghiệm · chia theo chủ đề · bấm vào thẻ để mở/đóng · tick “Đã thuộc” để theo dõi tiến độ</p>
+  <div class="stats">
+    <div class="stat"><b>586</b> câu nguồn</div>
+    <div class="stat"><b id="nSec">0</b> chương</div>
+    <div class="stat"><b id="nCard">0</b> thẻ kiến thức</div>
+    <div class="stat">Đã thuộc <b id="nDone">0</b></div>
+  </div>
+</header>
+
+<div class="bar">
+  <input id="q" type="search" placeholder="🔍 Tìm nhanh: ví dụ “điểm nút”, “Lênin”, “tha hóa”…" aria-label="Tìm kiếm">
+  <button class="btn" id="openAll">Mở hết</button>
+  <button class="btn" id="closeAll">Đóng hết</button>
+  <button class="btn" id="theme">🌓</button>
+  <div class="prog"><i id="pb"></i></div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc"></nav>
+  <main id="main"></main>
+</div>
+<footer>Làm từ <code>Quiz_MLN111_Cleaned.md</code> · Học vui, thi đỗ ✦</footer>
+<button class="btn" id="top" onclick="scrollTo({top:0})">⬆ Lên đầu</button>
+
+<script>
+/* Markup trong chuỗi: **đậm/nhấn mạnh** ; dòng bắt đầu "!" = cảnh báo/bẫy ; "+" = điểm chắc chắn */
+const COLORS=['var(--pink)','var(--sky)','var(--mint)','var(--lemon)','var(--lav)','var(--peach)'];
+const S=[
+{id:'tc',ic:'🧭',t:'Triết học & vấn đề cơ bản',sub:'Nền móng, hay ra nhất',heat:'🔥🔥🔥',
+ eq:['Vấn đề cơ bản = Tư duy ↔ Tồn tại','Vật chất ↔ Ý thức'],
+ flow:[['Mặt 1','Bản thể luận','Cái nào có trước? → Duy vật / Duy tâm'],['Mặt 2','Nhận thức luận','Biết được thế giới không? → Khả tri / Bất khả tri']],
+ cards:[
+ ['Vấn đề cơ bản của triết học',['**1 vấn đề – 2 mặt**','Mặt 1: giữa vật chất và ý thức, cái nào có trước, cái nào quyết định cái nào','Mặt 2: con người có khả năng **nhận thức được thế giới** không','Là **cơ sở phân chia các trường phái** triết học','Thuyết **khả tri** = có thể biết · **bất khả tri** = không thể biết','+Duy vật biện chứng, duy tâm khách quan, duy vật đều thừa nhận hoặc có thể thừa nhận chân lý; **bất khả tri** và **duy tâm chủ quan** không thừa nhận chân lý khách quan']],
+ ['Chủ nghĩa duy vật – 3 hình thức',['**Chất phác cổ đại**: Thales (nước), Heraclitus (lửa), Anaximenes (khí), Lơxíp & Đêmôcrít (**nguyên tử**)','**Siêu hình** (thế kỷ XVII–XVIII, cận đại): Galilê','**Biện chứng**: Mác – Ăngghen – Lênin','Quan niệm “cái bàn, cái ghế là vật chất” = duy vật chất phác cổ đại','Duy vật trước Mác: vật chất là “một hay một số chất tự có, đầu tiên”']],
+ ['Chủ nghĩa duy tâm – 2 phái',['**Chủ quan**: vật là “phức hợp cảm giác” (Makhơ), mọi thứ do ý thức cá nhân sinh ra','**Khách quan**: có tinh thần/ý niệm tuyệt đối/Thượng đế có trước, tồn tại độc lập (Platon, Hêghen)','Điểm chung: đề cao lĩnh vực **tinh thần**','Nguồn gốc nhận thức: xem xét **phiến diện**, tuyệt đối hóa **một mặt**, một đặc tính','Đề cao duy tâm quá mức → **xa rời thực tế**','!Bản chất duy tâm: **không hoàn toàn phản khoa học**']],
+ ['Nhị nguyên luận',['Vật chất và tinh thần **cùng quyết định** nguồn gốc thế giới','Đại biểu: **Descartes**','“Vật chất là cái phi vật chất đang vận động” = **Henri Berson (Piecson)**']],
+ ['Thế giới quan',['Hệ thống quan điểm **chung nhất** của con người về thế giới và vị trí con người trong đó','Triết học là **hạt nhân lý luận** của thế giới quan (không đồng nhất với nó)','Hình thức có trước triết học: **thế giới quan tôn giáo**','TGQ duy vật biện chứng = tri thức + niềm tin + lý tưởng **khoa học**','Hạt nhân lý luận của TGQ khoa học: **chủ nghĩa duy vật biện chứng**']],
+ ['Nguồn gốc & lịch sử ra đời',['Nguồn gốc **nhận thức** + nguồn gốc **xã hội** (lao động trí óc tách khỏi lao động chân tay)','Ra đời ~ **thế kỷ VIII–VI TCN**','Từ “triết học” dùng lần đầu: **Socrates**','Cổ đại: triết học bao gồm **toàn bộ tri thức** nhân loại','Trung cổ Tây Âu: **triết học kinh viện**, là “**nữ tì của thần học**”','Phục hưng: bắt đầu ở **Ý**, còn pha trộn duy vật – duy tâm; **Copernicus** đặt cơ sở tri thức','Trung Quốc cổ đại có triết học: thuyết **Ngũ hành** (kim, mộc, thủy, hỏa, thổ)','Ấn Độ: Lokayata, Vedanta · Phật giáo: **vô thường, vô ngã**']],
+ ['Triết học & tính giai cấp',['Trong xã hội có giai cấp, triết học **có tính giai cấp**','Triết học **không thay thế** các khoa học cụ thể','Trước Mác, triết học bị “suy tôn” là **khoa học của các khoa học**','!“Triết học là khoa học của mọi khoa học” là nhận định **sai** theo Mác']]
+ ]},
+{id:'mac',ic:'📜',t:'Sự ra đời của triết học Mác–Lênin',sub:'Tiền đề, tác phẩm, nhân vật',heat:'🔥🔥',
+ flow:[['Tiền đề 1','Lý luận','Triết học cổ điển Đức · KTCT Anh · CNXH không tưởng Pháp'],['Tiền đề 2','Khoa học tự nhiên','Bảo toàn năng lượng · Tế bào · Darwin'],['Tiền đề 3','Thực tiễn','Cách mạng của giai cấp vô sản (quan trọng nhất)']],
+ cards:[
+ ['Nguồn gốc & kế thừa',['**3 tiền đề** (nguồn gốc): lý luận – khoa học tự nhiên – thực tiễn','Kế thừa trực tiếp: **duy vật của Phoiơbắc** + **biện chứng của Hêghen** (“hạt nhân hợp lý”)','!Câu “biện chứng Hêghen + **duy tâm** Phoiơbắc” là **SAI**','Mác: phương pháp biện chứng của tôi **đối lập** với Hêghen','Sự ra đời là **tất yếu khách quan**','Chủ nghĩa Mác ra đời **giữa thế kỷ XIX**','Xanh-ximông: CNXH không tưởng **Pháp** · CNXH không tưởng đề cao **tinh thần nhân đạo**']],
+ ['3 bộ phận cấu thành',['**Triết học** (nền tảng) – **Kinh tế chính trị** – **CNXH khoa học**','Triết học làm sáng tỏ bản chất & quy luật chung nhất của thế giới','Triết học Mác = **thế giới quan duy vật + phương pháp luận biện chứng**','Là thế giới quan khoa học của **giai cấp công nhân**','Học thuyết **mở**, không ngừng phát triển; không “thay thế mọi khoa học”']],
+ ['Bước ngoặt cách mạng',['Biểu hiện vĩ đại nhất: sáng tạo **chủ nghĩa duy vật lịch sử**','Đưa **thực tiễn** vào triết học (công lao với nhận thức)','*Tuyên ngôn của Đảng Cộng sản* (1848) = sự chín muồi tư tưởng XHCN','Mác & Ăngghen là người **Đức**']],
+ ['Lênin phát triển',['Cách mạng vô sản có thể thắng ở **một hoặc một số nước**','CNĐQ = giai đoạn **cao nhất & suy tàn** của CNTB','Định nghĩa vật chất trong ***CN duy vật & CN kinh nghiệm phê phán***','!Không phải *Làm gì*, *Bút ký triết học*, hay “kinh viện phê phán”']],
+ ['Tác phẩm / câu trích cần nhớ',['**Ăngghen**: *Biện chứng của tự nhiên*; “con người trước hết cần ăn, uống, ở, mặc…”; “lao động sáng tạo ra bản thân con người”','**Mác**: “Các thời đại kinh tế khác nhau ở chỗ sản xuất **bằng cách nào**, với tư liệu lao động nào”','**Mác**: bản chất con người là **tổng hòa các quan hệ xã hội**','**Lênin**: định nghĩa giai cấp; “thực tiễn là quan điểm thứ nhất và cơ bản”','Phát hiện tia phóng xạ: **Béccơren** · tia X: **Rơnghen (1895)** · tương đối: **Anhxtanh**']],
+ ['Vị trí ở Việt Nam',['Là **nền tảng tư tưởng, kim chỉ nam** cho hành động','Là TGQ khoa học & phương pháp luận biện chứng','!**Không** phải “chìa khóa vạn năng giải quyết mọi vấn đề”']]
+ ]},
+{id:'vc',ic:'⚛️',t:'Vật chất · Vận động · Ý thức',sub:'Định nghĩa Lênin & quan hệ vật chất–ý thức',heat:'🔥🔥🔥',
+ eq:['Vật chất = thực tại khách quan','độc lập với ý thức','được ý thức phản ánh'],
+ cards:[
+ ['Định nghĩa vật chất (Lênin)',['Phạm trù triết học chỉ **thực tại khách quan** được đem lại cho con người trong cảm giác, được cảm giác chép lại, chụp lại, phản ánh, và tồn tại **không lệ thuộc vào cảm giác**','Có **3 nội dung** cơ bản','Thuộc tính cơ bản: **tồn tại khách quan**','Định nghĩa bằng cách **đối lập với ý thức**','Phụ thuộc chủ yếu vào **sự phát triển của khoa học kỹ thuật**','Ý nghĩa: khẳng định **tính thứ nhất** của vật chất, xác định vật chất trong **lĩnh vực xã hội**','Vật chất tồn tại ~ **2500 năm** lịch sử phạm trù; có **2 hình thức tồn tại** (không gian, thời gian)']],
+ ['Vật chất ≠ vật thể',['Vật thể là **dạng cụ thể** của vật chất; vật chất tồn tại thông qua các dạng cụ thể','Sai lầm cổ đại & TK XVII–XVIII: **đồng nhất vật chất với vật thể** / một số thuộc tính của vật thể','!“Vật chất là một dạng tồn tại của vật thể” → **SAI**','Cái bàn, cái ghế là **dạng cụ thể** của vật chất','Makhơ phủ nhận tính hiện thực khách quan của **điện tử**']],
+ ['Thống nhất vật chất của thế giới',['Chỉ có **một thế giới duy nhất**: thế giới vật chất','Mọi bộ phận **liên hệ, chuyển hóa** lẫn nhau','Tồn tại **vĩnh viễn, khách quan, vô hạn**, không do ai sinh ra, không mất đi','Chứng minh bởi sự phát triển lâu dài của **triết học & khoa học tự nhiên** (Ăngghen)','Là **cơ sở của mọi mối liên hệ**','!“Thế giới gồm những bộ phận **riêng biệt**” → SAI']],
+ ['Vận động',['Là **phương thức tồn tại** và thuộc tính **cố hữu** của vật chất; mọi biến đổi nói chung','**5 hình thức** (Ăngghen): Cơ học → Vật lý → Hóa học → Sinh học → Xã hội','Cơ học: thấp nhất · Xã hội: cao nhất','Sinh–lão = **sinh học** · chuyển HTKT–XH = **xã hội**','Hình thức cao **bao hàm** hình thức thấp, nhưng **không quy ngược** được','Vận động **tuyệt đối**; đứng im **tương đối**, tạm thời, trong cân bằng','!Siêu hình: quy mọi vận động về **cơ học**']],
+ ['Nguồn gốc ý thức',['**Tự nhiên**: bộ óc người + thế giới khách quan tác động','**Xã hội**: **lao động + ngôn ngữ**','Điều kiện cần & đủ (3): lao động–ngôn ngữ, bộ óc người, thế giới khách quan','Lao động là điều kiện **tiên quyết** hình thành con người','Lao động & ngôn ngữ giúp chuyển **tâm lý động vật → ý thức người**']],
+ ['Bản chất ý thức',['**Hình ảnh chủ quan** của thế giới **khách quan**','Phản ánh **tự giác, tích cực, sáng tạo** (năng động), có chọn lọc thông tin','Cùng một đám mây, mỗi người thấy hình khác nhau = tính **sáng tạo**','!KHÔNG phải phản ánh nguyên xi/thụ động','Động vật bậc cao: chỉ **phản ánh tâm lý**; chó, mèo không có ý thức (chỉ bản năng)','Kết cấu dọc: **tự ý thức, tiềm thức, vô thức**','Tiềm thức: hoạt động ngoài kiểm soát giúp giảm tải khi lặp lại']],
+ ['Vật chất ↔ Ý thức',['**Vật chất quyết định** ý thức','Ý thức **tác động trở lại** vật chất (thông qua hoạt động thực tiễn)','!Duy vật biện chứng KHÔNG nói “ý thức không tác động”','Chống **bệnh chủ quan duy ý chí** (nóng vội, không tính điều kiện thực tế) – “quyết tâm thực hiện mục tiêu” không phải biểu hiện bệnh này','Duy tâm: ý thức có trước, quyết định vật chất']]
+ ]},
+{id:'bc',ic:'🌀',t:'Phép biện chứng duy vật',sub:'2 nguyên lý · 3 quy luật · 6 cặp phạm trù',heat:'🔥🔥🔥🔥',
+ table:{h:['Quy luật','Vạch ra','Từ khóa'],r:[
+  ['Thống nhất & đấu tranh các mặt đối lập (mâu thuẫn)','**NGUỒN GỐC, động lực** phát triển','Đấu tranh tuyệt đối · thống nhất & đấu tranh không tách rời · QH giữa hai mặt đối lập'],
+  ['Lượng – chất','**CÁCH THỨC** phát triển','Độ → điểm nút → bước nhảy · chống bảo thủ & nôn nóng đốt cháy giai đoạn'],
+  ['Phủ định của phủ định','**KHUYNH HƯỚNG** phát triển','Phủ định biện chứng: khách quan + kế thừa · hình xoáy ốc']]},
+ cards:[
+ ['2 nguyên lý cơ bản',['**Mối liên hệ phổ biến**: tính **khách quan, phổ biến, đa dạng**; thế giới là chỉnh thể vừa tách biệt vừa liên hệ, thâm nhập, chuyển hóa','→ Rút ra **quan điểm toàn diện** (xét mọi mối liên hệ nhưng **phân biệt vị trí, vai trò**) + **quan điểm lịch sử cụ thể**','**Sự phát triển**: quá trình tiến lên **quanh co, phức tạp**, có tính kế thừa','→ **Quan điểm phát triển**: ủng hộ cái mới, **không phủ định sạch trơn** cái cũ','Chống: phiến diện, chiết trung, ngụy biện, cứng nhắc','Mối liên hệ = sự quy định, tác động qua lại, chuyển hóa lẫn nhau']],
+ ['Siêu hình vs Biện chứng',['Hai phương pháp **đối lập** nhau','**Siêu hình**: sự vật **cô lập, tách rời, không vận động, không phát triển**','Phát triển (siêu hình) = tăng/giảm **lượng** đơn thuần hoặc **vòng tròn khép kín**','Cái mới ra đời bằng **phá hủy hoàn toàn** cái cũ = siêu hình','**Biện chứng**: sự vật trong liên hệ, luôn vận động & phát triển','Biện chứng chủ quan = phương pháp tư duy khái quát thành hệ thống nguyên lý, quy luật','Hêghen: biện chứng **duy tâm khách quan** · cổ đại: biện chứng **chất phác**']],
+ ['Lượng – chất chi tiết',['**Chất**: tính quy định khách quan vốn có, sự thống nhất hữu cơ các thuộc tính, “làm nó là nó”','**Lượng**: quy mô, trình độ, nhịp điệu, kết cấu (không phải lúc nào cũng là con số)','**Độ**: khoảng giới hạn lượng đổi mà chất chưa đổi căn bản','**Điểm nút**: giới hạn lượng đổi → chất đổi','**Bước nhảy**: quá trình chuyển hóa chất tại điểm nút','Không phải mọi thay đổi lượng đều **ngay lập tức** đổi chất','Chất mới tác động lại lượng: đổi **kết cấu, quy mô, trình độ, nhịp điệu**','“Góp gió thành bão” → lượng – chất']],
+ ['Mâu thuẫn',['Mâu thuẫn = mối liên hệ **thống nhất, đấu tranh, chuyển hóa** giữa các mặt đối lập','Đấu tranh = tác động theo xu hướng **bài trừ, phủ định** nhau','!Không phải cứ hai mặt đối lập là một mâu thuẫn biện chứng','Mâu thuẫn trong tư duy phản ánh mâu thuẫn hiện thực','Ví dụ: quang hợp ↔ hô hấp của cây']],
+ ['Cái riêng – cái chung – cái đơn nhất',['**Riêng**: một sự vật/quá trình riêng lẻ · **Chung**: thuộc tính chung nhiều sự vật · **Đơn nhất**: chỉ có ở một sự vật','Cái chung tồn tại **TRONG** cái riêng','Cái riêng **phong phú** hơn cái chung','Cái mới sinh ra: xuất hiện đầu tiên là **cái đơn nhất**','Trong điều kiện xác định: **đơn nhất ⇄ chung** chuyển hóa','Ví dụ: Việt Nam = riêng; Hà Nội = đơn nhất','Nhu cầu ăn, mặc, ở = vừa chung vừa tất yếu']],
+ ['Nguyên nhân – kết quả',['Nguyên nhân = tác động tạo ra biến đổi; kết quả = biến đổi đó','**Nguyên nhân có trước**, cần thêm **điều kiện**','Tính chất: **khách quan, phổ biến, tất yếu**','Một kết quả do **nhiều** nguyên nhân; nguyên nhân khác nhau có thể cho kết quả như nhau','!“Một nguyên nhân chỉ đưa đến một kết quả” → SAI','Giống nguyên nhân + giống điều kiện → giống kết quả (tính tất yếu)','Đói nghèo ⇄ dốt nát: **vừa là nguyên nhân vừa là kết quả**','Ăngghen: phủ nhận **tính nhân quả** thì quy luật tự nhiên chỉ là giả thuyết']],
+ ['Tất nhiên – ngẫu nhiên',['**Tất nhiên**: do nguyên nhân **cơ bản bên trong** quyết định, phải xảy ra như thế','**Ngẫu nhiên**: biểu hiện của quy luật, **cũng có nguyên nhân**','Cả hai tồn tại khách quan; **không có cái thuần túy** tồn tại ngoài nhau','Thực tiễn: **căn cứ vào tất nhiên**, đồng thời **tính tới ngẫu nhiên**','Chưa biết nguyên nhân ≠ ngẫu nhiên','Tung đồng xu ngửa mặt đen = vừa tất nhiên vừa ngẫu nhiên','Thơ Hồ Chí Minh “Hết mưa là nắng…” → tất nhiên – ngẫu nhiên']],
+ ['Nội dung – hình thức',['**Nội dung**: tổng hợp các mặt, yếu tố tạo nên sự vật','**Hình thức**: phương thức tồn tại & phát triển, hệ thống liên hệ tương đối bền vững','**Nội dung quyết định hình thức**','Nội dung khách quan, hình thức mang tính chủ quan (trong phạm trù)','LLSX = nội dung; QHSX = hình thức','“Tốt gỗ hơn tốt nước sơn” · “Truyện Kiều là tác phẩm thơ lục bát” (hình thức)']],
+ ['Bản chất – hiện tượng',['**Bản chất**: tổng hợp mặt, mối liên hệ tất nhiên, tương đối ổn định bên trong, quy định vận động phát triển','**Hiện tượng**: biểu hiện bên ngoài của bản chất','Nhận thức đi từ **hiện tượng → bản chất** (Lênin)','Bản chất quan hệ tư sản – công nhân: **bóc lột**','“Mặt người da thú” → bản chất – hiện tượng','Duy tâm chủ quan: bản chất chỉ là tên gọi trống rỗng']],
+ ['Khả năng – hiện thực',['**Khả năng**: cái chưa có, sẽ xuất hiện khi đủ điều kiện (đang ở dạng tiền đề/xu hướng)','**Hiện thực**: cái đang tồn tại thực tế','Thực tế phải **dựa vào hiện thực** và **dự đoán các khả năng**; xét mối quan hệ cả hai','Lênin: chính trị Mác dựa vào **hiện thực**, không dựa vào khả năng']]
+ ]},
+{id:'nt',ic:'🔬',t:'Lý luận nhận thức',sub:'Thực tiễn · cảm tính/lý tính · chân lý',heat:'🔥🔥',
+ flow:[['Thực tiễn','',''],['Nhận thức cảm tính','Cảm giác → Tri giác → Biểu tượng',''],['Nhận thức lý tính','Khái niệm → Phán đoán → Suy luận',''],['Thực tiễn','kiểm nghiệm chân lý','']],
+ cards:[
+ ['Thực tiễn',['Hoạt động **vật chất có mục đích**, mang tính **lịch sử – xã hội**','Là **cơ sở, động lực, mục đích** của nhận thức','Là **tiêu chuẩn của chân lý**','Hình thức cơ bản nhất, quyết định các hình thức khác: **sản xuất vật chất**','Mác: tư duy có đạt chân lý khách quan hay không là vấn đề **thực tiễn**','Lênin: quan điểm thực tiễn là quan điểm **thứ nhất và cơ bản**','Cơ sở trực tiếp hình thành **khái niệm** = thực tiễn']],
+ ['Các giai đoạn nhận thức',['**Cảm tính**: cảm giác (vật tác động **trực tiếp** lên giác quan) · tri giác · biểu tượng','**Lý tính**: khái niệm · phán đoán · suy luận (**gián tiếp**, sự vật không trực tiếp tác động giác quan)','Nhận thức = phản ánh **tự giác, tích cực, sáng tạo**','Lý luận nhận thức ra đời để trả lời: **con người có nhận thức được thế giới không?** (gốc Hy Lạp)','Diễn dịch/kinh viện: rút kết quả riêng từ kết luận chung, không tính thực tế']],
+ ['Kinh nghiệm & lý luận',['**Tri thức kinh nghiệm** nảy sinh **trực tiếp** từ thực tiễn lao động sản xuất, quan sát, thí nghiệm','Gồm kinh nghiệm thông thường & thực nghiệm khoa học','**Lý luận hình thành trên cơ sở kinh nghiệm**','Nguyên tắc **thống nhất lý luận và thực tiễn**']],
+ ['Chân lý',['Sự **phù hợp** giữa tri thức & hiện thực khách quan, được **thực tiễn kiểm nghiệm**','**4 tính chất**: khách quan · tương đối · tuyệt đối · **cụ thể**','!Không phải “ý kiến đa số / lời vĩ nhân / bỏ phiếu / đúng logic”','Duy vật biện chứng thừa nhận chân lý khách quan']]
+ ]},
+{id:'sx',ic:'🏭',t:'Sản xuất · LLSX · QHSX',sub:'Quy luật cơ bản nhất của xã hội',heat:'🔥🔥🔥🔥',
+ eq:['Phương thức sản xuất','= LLSX + QHSX'],
+ flow:[['LLSX','Nội dung · quyết định','Người lao động + Tư liệu sản xuất'],['⇄','',''],['QHSX','Hình thức · tác động lại','Sở hữu · Tổ chức quản lý · Phân phối']],
+ cards:[
+ ['Sản xuất xã hội',['**3 loại**: sản xuất **vật chất**, **tinh thần**, **con người**','Sản xuất vật chất **quyết định** sự tồn tại & phát triển xã hội; là **nền tảng vật chất** của xã hội','Tính chất: khách quan, mục đích, xã hội, lịch sử, sáng tạo','Bản chất: con người **cải biến giới tự nhiên**','Hành vi lịch sử đầu tiên: sản xuất ra **tư liệu sinh hoạt**','Xét đến cùng, nhân tố quyết định: sản xuất & **tái sản xuất ra đời sống hiện thực**','Phương thức sản xuất có **2 mặt**: kỹ thuật & kinh tế']],
+ ['Lực lượng sản xuất (LLSX)',['= **Người lao động** + **Tư liệu sản xuất** (công cụ lao động + đối tượng lao động)','Quan hệ **con người ↔ tự nhiên**','**Người lao động**: nhân tố **quyết định / quan trọng nhất** (yếu tố chủ thể)','**Công cụ lao động**: yếu tố **động nhất, cách mạng nhất**; phản ánh rõ nhất trình độ LLSX; tiêu chí của một thời đại kinh tế','Cối xay tay → lãnh chúa; cối xay hơi nước → nhà tư bản (vai trò công cụ)','**Kết cấu hạ tầng sản xuất** phải đi trước một bước','LLSX **thường xuyên biến đổi**; tỷ trọng **lao động trí tuệ tăng dần**','!“Kinh tế thượng tầng” KHÔNG thuộc LLSX']],
+ ['Quan hệ sản xuất (QHSX)',['Quan hệ **người ↔ người** trong quá trình sản xuất','Gồm 3 mặt: **sở hữu TLSX (quyết định nhất)** · tổ chức–quản lý · phân phối','QHSX **thống trị** đặc trưng cho chế độ kinh tế','Tiêu chí quan trọng nhất phân biệt các HTKT–XH','QHSX thay đổi phụ thuộc vào **trình độ LLSX**']],
+ ['Quy luật QHSX phù hợp trình độ LLSX',['Quy luật **cơ bản nhất, quyết định nhất** của lịch sử xã hội','LLSX **quyết định** QHSX (hình thành, biến đổi, phát triển)','QHSX **tác động trở lại**: thúc đẩy **hoặc** kìm hãm LLSX','Phù hợp → thúc đẩy LLSX phát triển','**Cân bằng động**: sự phù hợp cụ thể luôn bị phá vỡ → thay bằng phù hợp **cao hơn**','Mâu thuẫn gay gắt → giải quyết bằng **cải cách / cách mạng xã hội**','Mối quan hệ là **biện chứng**, không một chiều']],
+ ['Cơ sở hạ tầng – Kiến trúc thượng tầng',['**Hạ tầng** = toàn bộ QHSX hợp thành **cơ cấu kinh tế**','**Thượng tầng** = hệ tư tưởng, hình thái ý thức xã hội + thiết chế chính trị – xã hội tương ứng (chính sách, quan điểm, đường lối nhà nước…)','**Hạ tầng quyết định thượng tầng** · thượng tầng tác động trở lại (tích cực hoặc tiêu cực)','**Nhà nước**: yếu tố quyền lực mạnh nhất, tác động trực tiếp nhất lên hạ tầng','Hạ tầng đổi → thượng tầng sớm muộn đổi','Giai cấp thống trị kinh tế → thống trị chính trị, tư tưởng','Quan hệ hạ tầng–thượng tầng: thống nhất & đấu tranh các mặt đối lập','!“Mâu thuẫn chính trị–tư tưởng quyết định mâu thuẫn kinh tế” → SAI']]
+ ]},
+{id:'ht',ic:'🏛️',t:'Hình thái KT–XH · Tồn tại & Ý thức xã hội',sub:'5 hình thái · lịch sử tự nhiên',heat:'🔥🔥🔥',
+ flow:[['1','Cộng sản nguyên thủy','chưa giai cấp, chưa nhà nước'],['2','Chiếm hữu nô lệ','giai cấp & nhà nước đầu tiên'],['3','Phong kiến',''],['4','Tư bản chủ nghĩa',''],['5','Cộng sản chủ nghĩa','2 giai đoạn']],
+ cards:[
+ ['Hình thái kinh tế – xã hội',['Cấu trúc: **LLSX + QHSX (→ hạ tầng) + kiến trúc thượng tầng**','Xã hội đã/đang trải qua **5 hình thái**; cuối cùng là **cộng sản chủ nghĩa**','Phát triển là quá trình **lịch sử – tự nhiên**: theo quy luật khách quan **nhưng còn chịu tác động của các nhân tố khác**','Nguồn gốc vận động: mâu thuẫn **LLSX–QHSX** & **hạ tầng–thượng tầng**','Là **phương pháp luận khoa học chung nhất** — nhưng không giải thích đầy đủ mọi hiện tượng','Lênin: quy QH xã hội → QHSX, QHSX → **trình độ LLSX**','Đây là nội dung của **chủ nghĩa duy vật lịch sử**']],
+ ['Tồn tại xã hội',['= **sinh hoạt vật chất** và **điều kiện sinh hoạt vật chất** của xã hội','Gồm: **phương thức sản xuất · dân số · điều kiện tự nhiên – địa lý**','Yếu tố cơ bản nhất: **phương thức sản xuất ra của cải vật chất**','Phương thức sản xuất quyết định mọi mặt đời sống xã hội']],
+ ['Ý thức xã hội',['= toàn bộ **đời sống tinh thần** của xã hội','2 trình độ: **tâm lý xã hội** (thấp) và **hệ tư tưởng** (lý luận cao, hệ thống)','Hình thái: chính trị, pháp quyền, đạo đức, **khoa học** (phản ánh bản chất, quy luật), tôn giáo…','Tôn giáo bền vững nhờ yếu tố **tâm lý**; tính quần chúng = hiện tượng xã hội **phổ biến** mọi quốc gia']],
+ ['Quan hệ TTXH ↔ YTXH',['**Tồn tại xã hội quyết định ý thức xã hội**','YTXH có **tính độc lập tương đối**: thường **lạc hậu**, có thể **vượt trước**, có **tính kế thừa**, tác động qua lại giữa các hình thái, **tác động trở lại** TTXH','Tác động trở lại cần **hoạt động thực tiễn của con người**','Mạnh/yếu tùy: điều kiện lịch sử cụ thể · vai trò lịch sử của giai cấp · trình độ phản ánh & sức lan tỏa','Ý thức lạc hậu khó mất: thói quen tập quán + không kịp phản ánh TTXH','Xã hội có giai cấp: nội dung YT khác nhau do **điều kiện vật chất, lợi ích, địa vị** giai cấp','!“TTXH đổi thì YTXH đổi **ngay lập tức**” → SAI','Duy tâm lịch sử: YTXH quyết định TTXH']]
+ ]},
+{id:'gc',ic:'⚔️',t:'Giai cấp · Nhà nước · Cách mạng',sub:'Duy vật lịch sử về chính trị – xã hội',heat:'🔥🔥🔥',
+ cards:[
+ ['Giai cấp',['**Định nghĩa Lênin**: tập đoàn người to lớn, khác nhau về **địa vị trong hệ thống sản xuất xã hội** nhất định','Cơ sở định nghĩa: **kinh tế**','Đặc trưng **chi phối**: quan hệ **sở hữu TLSX**','Khả năng chiếm đoạt lao động của tập đoàn khác do khác nhau về **địa vị**','Nguồn gốc trực tiếp: **chế độ tư hữu** về TLSX · sâu xa: phát triển **LLSX** (có “của dư”)','Phân chia giai cấp bắt đầu từ **chiếm hữu nô lệ**','Nắm TLSX chủ yếu → giai cấp thống trị; hệ tư tưởng thống trị = của giai cấp **thống trị**','Giai cấp công nhân ≡ giai cấp vô sản; hình thành mạnh trong **TBCN**']],
+ ['Đấu tranh giai cấp',['Là **một trong những** động lực phát triển của **xã hội có giai cấp**','Thực chất: cuộc đấu tranh của người bị áp bức, bóc lột chống kẻ áp bức','Đỉnh cao: đấu tranh **chính trị**','Việt Nam hiện nay **vẫn còn** đấu tranh giai cấp (mục tiêu độc lập dân tộc & CNXH, dân giàu nước mạnh…)']],
+ ['Nhà nước',['Ra đời do **mâu thuẫn giai cấp không thể điều hòa**','Bản chất: **công cụ của giai cấp thống trị** (giai cấp sở hữu TLSX chủ yếu)','Hiện tượng khách quan; **không vĩnh viễn**','**5 đặc trưng**, **2 chức năng** cơ bản','Thời cộng sản nguyên thủy: **chưa có** nhà nước (thị tộc, bộ lạc)','Nhà nước XHCN: quản lý bằng **pháp luật**, tôn trọng quyền tự quyết & bình đẳng dân tộc','Nhà nước vô sản “đặc biệt”: của **số đông thống trị số ít**','TB hiện nay: đa đảng nhưng **nhất nguyên chính trị**','Dân chủ: giá trị xã hội phản ánh quyền cơ bản + hình thức tổ chức nhà nước, phát triển cùng lịch sử nhân loại']],
+ ['Cách mạng xã hội',['= thay đổi căn bản, toàn diện **HTKT–XH này bằng HTKT–XH cao hơn**','Đặc trưng: chuyển **chính quyền** sang giai cấp cách mạng','Nguồn gốc sâu xa: mâu thuẫn gay gắt **LLSX–QHSX**','Động lực: **giai cấp tiên tiến**','Là phương thức, động lực **cơ bản nhất** khi xã hội có đối kháng giai cấp','**Mở đường** cho tiến hóa xã hội lên cao hơn','CMXHCN đầu tiên: **Cách mạng tháng Mười Nga**','Nội dung trước tiên của CM XHCN: giành chính quyền, đưa người lao động lên **địa vị làm chủ xã hội**']],
+ ['Cộng đồng người',['**Thị tộc → Bộ lạc → Bộ tộc → Dân tộc**','Thị tộc: cùng huyết thống','Bộ lạc: các thị tộc cùng huyết thống hoặc liên kết hôn nhân','Bộ tộc: hình thành khi **phân chia giai cấp**, nhiều bộ lạc trên một lãnh thổ']],
+ ['Quần chúng – Lãnh tụ',['**Quần chúng nhân dân** = chủ thể sáng tạo chân chính lịch sử; hạt nhân là **người lao động** sản xuất của cải vật chất','**Lãnh tụ**: cá nhân kiệt xuất + gắn bó quần chúng + được tín nhiệm + hy sinh vì lợi ích quần chúng','!Lãnh tụ KHÔNG phải “kiệt xuất trong nhiều lĩnh vực”','Vai trò: thúc đẩy/kìm hãm tiến bộ, linh hồn tổ chức, chỉ giải quyết nhiệm vụ thời đại mình','Duy tâm: **vĩ nhân** sáng tạo lịch sử','Con người sáng tạo lịch sử **trong điều kiện khách quan** do lịch sử trước để lại']]
+ ]},
+{id:'cn',ic:'🧑‍🤝‍🧑',t:'Con người',sub:'Bản chất · tha hóa',heat:'🔥🔥',
+ eq:['Con người = sinh học + xã hội','Bản chất = tổng hòa các quan hệ xã hội'],
+ cards:[
+ ['Quan niệm Mác–Lênin về con người',['Thực thể **sinh học – xã hội** (tự nhiên – xã hội)','**Bản chất** (hiện thực): **tổng hòa các quan hệ xã hội** (Mác)','Khác động vật: biết **chế tạo & sử dụng công cụ lao động** (Ăngghen)','**Lao động** quyết định sự hình thành con người cả sinh học & xã hội','**Tiền đề xuất phát** của duy vật lịch sử: con người **hiện thực**','Quan điểm cách mạng nhất: học thuyết **giải phóng con người**','Đánh giá phẩm chất: qua **hành động thực tiễn**','Nhìn con người trong các quan hệ (gia đình, bạn bè…) = quan điểm **toàn diện**','Nền tảng quan hệ cá nhân–xã hội: **lợi ích**','Hồ Chí Minh: con người XHCN **vừa hồng vừa chuyên**']],
+ ['Tha hóa con người',['Hiện tượng **lịch sử đặc thù**, chỉ trong xã hội **có giai cấp** + chế độ **tư hữu TLSX**','Biểu hiện thứ hai: quan hệ người–người bị thay bằng quan hệ **người–vật**','Ví dụ: người nổi tiếng câu view, lệch chuẩn thuần phong mỹ tục','Tâm lý tiểu nông Việt Nam do: phong kiến–đế quốc áp bức, sản xuất tiểu nông lạc hậu, làng xã khép kín']]
+ ]},
+{id:'kt',ic:'💹',t:'Kinh tế chính trị & CNXH khoa học',sub:'Ít câu · dễ ăn điểm',heat:'🔥',
+ cards:[
+ ['Kinh tế chính trị Mác–Lênin',['Mác nghiên cứu PTSX TBCN bắt đầu từ **hàng hóa / sản xuất hàng hóa giản đơn**','Lượng giá trị 1 đơn vị hàng hóa: **tỷ lệ nghịch** với năng suất lao động, **không phụ thuộc** cường độ lao động','**Giá trị cá biệt** do hao phí lao động **cá biệt** quyết định','Tư bản chia **bất biến / khả biến** (vai trò tạo giá trị thặng dư)','Tư bản **cố định / lưu động** thuộc tư bản **sản xuất**','**Ngày lao động** = thời gian lao động **cần thiết** + **thặng dư**','**Thời gian chu chuyển** = sản xuất + **lưu thông**','Tái sản xuất mở rộng **theo chiều sâu**: tăng NSLĐ & hiệu quả nguồn lực','**Tích lũy tư bản** → CNTB độc quyền','Phân công lao động xã hội lần 3: **thương nghiệp** ra đời','Độc quyền dùng giá cả độc quyền để chiếm đoạt giá trị thặng dư; cơ chế CNTB độc quyền NN = thị trường + độc quyền tư nhân + can thiệp NN','Cạnh tranh: đấu tranh giữa chủ thể kinh tế để giành **lợi ích tối đa**','Nền kinh tế ngày nay: **kinh tế tri thức**']],
+ ['CNXH khoa học & Việt Nam',['Chủ nghĩa cộng sản có **2 giai đoạn**','Đổi mới XHCN diễn ra ở **Việt Nam**','Đặc điểm lớn nhất thời kỳ quá độ ở VN: từ **nền sản xuất nhỏ** lên CNXH **không qua chế độ TBCN**','Cơ sở liên minh công–nông: công nghiệp & nông nghiệp là hai ngành **sản xuất** chính','Nhân tố đảm bảo thắng lợi cuối cùng của một chế độ: **năng suất lao động cao hơn**']]
+ ]}
+];
+
+const TRAPS=[
+ ['Từ tuyệt đối','“luôn luôn”, “ngay lập tức”, “chỉ”, “hoàn toàn”, “không bao giờ” → thường là đáp án SAI (YTXH đổi ngay; chất đổi ngay; nhà nước vĩnh viễn…).'],
+ ['Nguồn gốc / Cách thức / Khuynh hướng','Mâu thuẫn = nguồn gốc · Lượng–chất = cách thức · Phủ định của phủ định = khuynh hướng.'],
+ ['Quyết định hay động nhất?','Người lao động = nhân tố QUYẾT ĐỊNH. Công cụ lao động = yếu tố ĐỘNG NHẤT, CÁCH MẠNG NHẤT.'],
+ ['Duy vật ≠ ý thức vô dụng','Vật chất quyết định ý thức, ý thức VẪN tác động trở lại. Tồn tại XH quyết định YTXH, YTXH có độc lập tương đối.'],
+ ['Chung nằm ở đâu?','Cái chung tồn tại TRONG cái riêng; cái riêng phong phú hơn; cái mới = cái đơn nhất trước.'],
+ ['Tất nhiên vs ngẫu nhiên','Dựa vào TẤT NHIÊN, tính tới ngẫu nhiên. Ngẫu nhiên vẫn có nguyên nhân.'],
+ ['Thực tiễn','Cơ sở – động lực – mục đích – tiêu chuẩn chân lý. Hình thức cơ bản nhất: sản xuất vật chất.'],
+ ['Số lượng hay hỏi','2 mặt VĐCB · 3 tiền đề · 3 bộ phận · 3 hình thức duy vật · 2 phái duy tâm · 5 hình thức vận động · 5 hình thái KT–XH · 4 tính chất chân lý · 3 nội dung định nghĩa vật chất · 2 hình thức tồn tại VC · 5 đặc trưng NN · 2 chức năng NN.'],
+ ['Đáp án đáng nghi','Q426 ghi “quan hệ sản xuất” trong khi Q519 ghi “lực lượng sản xuất” – nên đối chiếu giáo trình. Q101 & Q167 gần như cùng nội dung.']
+];
+const FLASH=[
+ ['Quy luật nào chỉ ra NGUỒN GỐC phát triển?','Thống nhất & đấu tranh các mặt đối lập'],
+ ['Quy luật nào chỉ ra CÁCH THỨC phát triển?','Lượng – chất'],
+ ['Quy luật nào chỉ ra KHUYNH HƯỚNG phát triển?','Phủ định của phủ định'],
+ ['Yếu tố cách mạng nhất của LLSX?','Công cụ lao động'],
+ ['Nhân tố quyết định của LLSX?','Người lao động'],
+ ['Mặt quyết định nhất của QHSX?','Quan hệ sở hữu tư liệu sản xuất'],
+ ['Bản chất con người (Mác)?','Tổng hòa các quan hệ xã hội'],
+ ['Thuộc tính cơ bản trong định nghĩa vật chất?','Thực tại khách quan'],
+ ['5 hình thức vận động (thấp → cao)?','Cơ học, Vật lý, Hóa học, Sinh học, Xã hội'],
+ ['Thứ tự cộng đồng người?','Thị tộc → Bộ lạc → Bộ tộc → Dân tộc'],
+ ['Chân lý có 4 tính chất nào?','Khách quan, tương đối, tuyệt đối, cụ thể'],
+ ['Tiêu chuẩn của chân lý?','Thực tiễn'],
+ ['Nhà nước ra đời vì sao?','Mâu thuẫn giai cấp không thể điều hòa'],
+ ['Phương thức sản xuất = ?','LLSX + QHSX'],
+ ['Hạt nhân lý luận của thế giới quan?','Triết học'],
+ ['Nguồn gốc xã hội của ý thức?','Lao động và ngôn ngữ'],
+ ['Khoảng giới hạn lượng đổi chất chưa đổi?','Độ'],
+ ['Hạ tầng quyết định cái gì?','Kiến trúc thượng tầng']
+];
+
+/* ---------- render ---------- */
+const $=s=>document.querySelector(s);
+const fmt=t=>t.replace(/\*\*\*(.+?)\*\*\*/g,'<i><b>$1</b></i>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>');
+const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let done=store.get('mln111-guide-done')||{};
+const li=t=>{let c='';if(t[0]==='!'){c=' class="warn"';t=t.slice(1)}else if(t[0]==='+'){c=' class="ok"';t=t.slice(1)}return `<li${c}>${fmt(t)}</li>`};
+
+let html='',toc='',total=0;
+S.forEach((s,i)=>{
+  const c=COLORS[i%COLORS.length];
+  toc+=`<a href="#${s.id}" style="--c:${c}" data-id="${s.id}"><span>${s.ic}</span><span>${s.t.split('·')[0].trim()}</span></a>`;
+  let h=`<section class="sec" id="${s.id}" style="--c:${c}"><div class="sec-h"><span class="ic">${s.ic}</span><div><h2><span class="pix" style="font-size:.6em;opacity:.6">0${i+1}</span> ${s.t}</h2><small>${s.sub}</small></div><span class="heat">${s.heat}</span></div>`;
+  if(s.eq) h+=`<div class="eq">${s.eq.map(e=>`<span>${e}</span>`).join('')}</div>`;
+  if(s.flow) h+=`<div class="flow">${s.flow.map((n,k)=>(k?'<span class="arrow">➜</span>':'')+(n[0]==='⇄'?'':`<div class="node">${n[1]?n[0]+' · ':''}${n[1]||n[0]}${n[2]?`<small>${n[2]}</small>`:''}</div>`)).join('')}</div>`;
+  if(s.table) h+=`<div class="tbl"><table><thead><tr>${s.table.h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${s.table.r.map(r=>`<tr>${r.map(x=>`<td>${fmt(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  h+='<div class="grid">';
+  s.cards.forEach((cd,j)=>{
+    total++;const key=s.id+'-'+j;
+    h+=`<details class="card ${done[key]?'done':''}" open id="${key}" data-key="${key}" style="--c:${c}"><summary>${cd[0]}</summary><div class="body"><ul>${cd[1].map(li).join('')}</ul><label class="chk"><input type="checkbox" ${done[key]?'checked':''}> Đã thuộc</label></div></details>`;
+  });
+  h+='</div></section>';
+  html+=h;
+});
+/* traps */
+toc+=`<a href="#traps" style="--c:var(--bad)"><span>🪤</span><span>Bẫy hay gặp</span></a><a href="#flash" style="--c:var(--mint)"><span>🃏</span><span>Flashcard</span></a>`;
+html+=`<section class="sec" id="traps" style="--c:var(--bad)"><div class="sec-h" style="color:#fff"><span class="ic">🪤</span><div><h2>Bẫy hay gặp & mẹo nhớ</h2><small>Đọc kỹ trước khi thi</small></div></div><div class="grid">${TRAPS.map(t=>`<div class="tip"><strong>⚠ ${t[0]}</strong><br>${t[1]}</div>`).join('')}</div></section>`;
+html+=`<section class="sec" id="flash" style="--c:var(--mint)"><div class="sec-h"><span class="ic">🃏</span><div><h2>Flashcard tự kiểm tra</h2><small>Bấm để lật thẻ</small></div></div><div class="flash">${FLASH.map(f=>`<div class="fc"><div><p class="q">${f[0]}</p><p class="a">${f[1]}</p></div></div>`).join('')}</div></section>`;
+$('#main').innerHTML=html;$('#toc').innerHTML=toc;
+$('#nSec').textContent=S.length;$('#nCard').textContent=total;
+
+function upd(){
+  const n=Object.values(done).filter(Boolean).length;
+  $('#nDone').textContent=n+'/'+total;$('#pb').style.width=(n/total*100)+'%';
+}
+upd();
+document.addEventListener('change',e=>{
+  if(!e.target.matches('.chk input'))return;
+  const card=e.target.closest('.card');done[card.dataset.key]=e.target.checked;
+  card.classList.toggle('done',e.target.checked);store.set('mln111-guide-done',done);upd();
+});
+document.addEventListener('click',e=>{const f=e.target.closest('.fc');if(f)f.classList.toggle('flip')});
+$('#openAll').onclick=()=>document.querySelectorAll('details.card').forEach(d=>d.open=true);
+$('#closeAll').onclick=()=>document.querySelectorAll('details.card').forEach(d=>d.open=false);
+$('#theme').onclick=()=>{const r=document.documentElement;const dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#150f2c';r.dataset.theme=dark?'light':'dark'};
+
+/* search */
+const orig=new Map();document.querySelectorAll('.card li').forEach(l=>orig.set(l,l.innerHTML));
+$('#q').addEventListener('input',e=>{
+  const v=e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    const lis=[...c.querySelectorAll('li')];
+    lis.forEach(l=>l.innerHTML=orig.get(l));
+    if(!v){c.classList.remove('hide');return}
+    const hit=(c.querySelector('summary').textContent+' '+lis.map(l=>l.textContent).join(' ')).toLowerCase().includes(v);
+    c.classList.toggle('hide',!hit);
+    if(hit){c.open=true;const re=new RegExp('('+v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')(?![^<]*>)','gi');lis.forEach(l=>l.innerHTML=l.innerHTML.replace(re,'<mark>$1</mark>'))}
+  });
+  document.querySelectorAll('.sec').forEach(s=>{if(s.querySelector('.card'))s.classList.toggle('hide',!!v&&![...s.querySelectorAll('.card')].some(c=>!c.classList.contains('hide')))});
+});
+/* toc highlight */
+const links=[...document.querySelectorAll('nav.toc a')];
+new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-30% 0px -60% 0px'}).observe&&
+document.querySelectorAll('.sec').forEach(s=>{});
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('.sec').forEach(s=>io.observe(s));
+/* mở từ quiz (study-guide.html#tc-0): cuộn tới thẻ và nháy sáng */
+const jump=()=>{const t=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(!t||!t.classList.contains('card'))return;t.open=true;t.classList.remove('focus');void t.offsetWidth;t.classList.add('focus');t.scrollIntoView({block:'center'})};
+addEventListener('hashchange',jump);setTimeout(jump,60);
+</script>
+</body>
+</html>
