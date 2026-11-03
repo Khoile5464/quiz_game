@@ -50,6 +50,7 @@ function norm(s){
     // dữ liệu cũ chưa có kho (chỉ MLN111): lấy luôn các câu đã sai trong lượt giải đề đang làm dở
     s["onsai" + sfx] = normOnsai(s["onsai" + sfx], !sfx && s.giaide ? s.giaide.wrong.map(w => w[0]) : []);
   }
+  if (typeof s.seenNews !== "string") s.seenNews = "";
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }

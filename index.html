@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.12</title>
+<title>MLN111 Quiz Y2K v0.3.13</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title"><span class="subj-code">MLN111</span> ♡ Quiz <small>v0.3.12</small></span>
+  <span class="tb-title"><span class="subj-code">MLN111</span> ♡ Quiz <small>v0.3.13</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -35,7 +35,7 @@
 
 <div class="wrap">
   <div class="logo">
-    <h1><span class="subj-code">MLN111</span> ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.12</small></h1>
+    <h1><span class="subj-code">MLN111</span> ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.13</small></h1>
     <p><span class="day-only" id="subjDay">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only" id="subjNight">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -197,6 +197,17 @@
   </div>
 </div>
 
+<div id="newsModal" class="gmodal hidden" role="dialog" aria-modal="true" aria-label="Thông báo cập nhật"><div class="gbox">
+  <div style="font-size:42px">🎉</div>
+  <h3>Hệ thống đã cập nhật môn MLN122!</h3>
+  <p class="gnote">Kinh tế chính trị Mác–Lênin đã có trong app</p>
+  <ul style="text-align:left;line-height:1.6;margin:10px auto;max-width:460px">
+    <li><b>525 câu</b> chia 6 chương theo Schedule (Progress Test Ch.2–5, Cuối kỳ Ch.1–6)</li>
+    <li>Có <b>giải thích</b> từng câu + <b>Study Guide</b> riêng</li>
+    <li>Bấm chip <b>MLN111 / MLN122</b> ở trang chủ để đổi môn; tiến trình MLN111 của bạn vẫn giữ nguyên</li>
+  </ul>
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px"><button class="btn" id="newsGo">Thử MLN122 ngay ✦</button><button class="btn lav" id="newsOk">Để sau</button></div>
+</div></div>
 <div id="gModal" class="gmodal hidden" role="dialog" aria-modal="true" aria-label="Máy gacha"><div id="gBox" class="gbox"></div></div>
 <script src="js/data/questions.js"></script>
 <script src="js/data/questions-dvls.js"></script>
@@ -230,6 +241,7 @@
 <script src="js/ui/home.js"></script>
 <script src="js/quiz/guide-match.js"></script>
 <script src="js/quiz/session.js"></script>
+<script src="js/ui/news.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

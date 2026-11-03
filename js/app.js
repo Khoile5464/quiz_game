@@ -71,3 +71,4 @@ $("lofiBtn").onclick = () => Lofi.toggle();
 applySubject();
 applyTheme(S.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day"));
 renderHome();
+showNews();

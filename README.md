@@ -26,7 +26,7 @@ js/
   farm/             # nông trại, bản đồ đại dương, gacha, chạm/bế thú (farm-input), giọng ghi âm
   progress/         # huy hiệu
   audio/            # sfx, bảng âm thanh, lofi
-  ui/               # fx, theme, city, tv, home, bảng dung lượng
+  ui/               # news (thông báo cập nhật hiện một lần cho người dùng cũ; đổi NEWS_VER để báo lại), fx, theme, city, tv, home, bảng dung lượng
   app.js            # gắn sự kiện và khởi động
 assets/sounds/      # file âm thanh gốc
 data/               # nguồn câu hỏi đã làm sạch + ghi chú giải thích đáp án
@@ -39,4 +39,4 @@ Các file JS là script thường (không dùng ES module) và dùng chung phạ
 ## Chạy / triển khai
 Mở `index.html` bằng trình duyệt. GitHub Pages: Settings → Pages → Deploy from branch → `main` / `(root)`.
 
-Phiên bản hiện tại: v0.3.12
+Phiên bản hiện tại: v0.3.13
