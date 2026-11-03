@@ -4,7 +4,7 @@
 #renameForm{display:flex;gap:6px;flex:0 0 min(470px,72%)}
 .fc-h{display:flex;align-items:center;gap:6px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab{font-family:"Silkscreen",monospace;font-size:11px;cursor:pointer;border:2px solid transparent;border-radius:999px;padding:3px 10px;background:transparent;color:#fff;text-shadow:1px 1px 0 var(--ink)}
+.tab{font-family:"Baloo 2",system-ui,sans-serif;font-weight:800;font-size:13px;cursor:pointer;border:2px solid transparent;border-radius:999px;padding:3px 10px;background:transparent;color:#fff;text-shadow:1px 1px 0 var(--ink)}
 .tab.on{background:#fff;color:var(--ink);border-color:var(--ink);text-shadow:none}
 .tab:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
 .tabp.hidden{display:none}
@@ -21,7 +21,7 @@
 .tb-title small{font-size:11px;opacity:.7;-webkit-text-stroke:0;color:var(--ink2)}
 [data-theme="night"] .tab{color:var(--ink2);text-shadow:none;border-radius:2px}
 [data-theme="night"] .tab.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink)}
-[data-theme="night"] .tb-title{font-family:"Silkscreen",monospace;font-weight:400;letter-spacing:2px;color:#fff;-webkit-text-stroke:0;background:none;text-shadow:0 0 4px #fff,0 0 12px var(--pink),3px 3px 0 #3a0a2a;filter:none;font-size:20px}
+[data-theme="night"] .tb-title{font-family:"Silkscreen",monospace;font-weight:400;letter-spacing:2px;color:#fff;-webkit-text-stroke:0;background:none;text-shadow:0 0 8px rgba(242,104,159,.45),2px 2px 0 #3a0a2a;filter:none;font-size:20px}
 /* khóa trang chủ vừa một màn hình chỉ khi đủ cao để cột phải không bị cắt (đã đo: cao ≥ 760px khi rộng ≥ 1280px, ≥ 840px khi rộng 1000–1279px) */
 @media (min-width:1280px) and (min-height:760px), (min-width:1000px) and (min-height:840px){
   body.on-home{--wmax:min(1760px,calc((100dvh - 344px) * 1.78 + 640px));height:100dvh;display:flex;flex-direction:column;overflow:hidden}

@@ -22,8 +22,8 @@
 .chip.on{background:linear-gradient(180deg,#fff 0%,var(--pink2) 45%,var(--pink) 55%,#ffb3e2 100%)}
 .chip small{opacity:.7;font-weight:600;margin-left:4px}
 .grid100 i.out{opacity:.18}
-[data-theme="night"] .chip{background:#120d2b;color:#fff;border-color:var(--sky);box-shadow:3px 3px 0 #000}
-[data-theme="night"] .chip.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink);box-shadow:3px 3px 0 #000,0 0 12px var(--pink)}
+[data-theme="night"] .chip{background:var(--surface);color:var(--ink);border-color:var(--line2);box-shadow:3px 3px 0 var(--hard)}
+[data-theme="night"] .chip.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink);box-shadow:3px 3px 0 var(--hard)}
 .grid100{display:grid;grid-template-columns:repeat(auto-fill,minmax(9px,1fr));gap:1px;margin-top:8px}
 .grid100 i{aspect-ratio:1;border-radius:2px;border:1px solid var(--ink)}
 .grid100 i,.legend i{--c0:#fff;--c-1:#ff9cb8;--c1:#ffe9a3;--c2:#c8f0ff;--c3:#b8f5d6;--c4:#7fe6b2;--c5:#d7b5ff;background:var(--c0)}

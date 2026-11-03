@@ -37,7 +37,7 @@
 .brag-it .ic{font-size:52px;line-height:1.2;animation:bragSpin 2.4s ease-in-out infinite alternate}
 @keyframes bragZoom{0%{transform:scale(.1) rotate(-20deg);opacity:0}60%{transform:scale(1.15) rotate(4deg);opacity:1}100%{transform:scale(1)}}
 @keyframes bragSpin{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.15) rotate(6deg)}}
-[data-theme="night"] .brag-card{background:#0f0a24;border-color:var(--sky);border-radius:4px;color:#fff;box-shadow:0 0 30px var(--sky)}
+[data-theme="night"] .brag-card{background:#0f0a24;border-color:var(--sky);border-radius:4px;color:#fff;box-shadow:5px 5px 0 var(--hard)}
 @media (prefers-reduced-motion:reduce){.brag-card,.brag-it,.brag-it .ic{animation:none}}
 /* v0.1.2 combo fx */
 .combo-pop{position:fixed;left:50%;top:38%;z-index:70;pointer-events:none;text-align:center;font-weight:900;transform:translate(-50%,-50%);animation:comboPop 1s cubic-bezier(.2,1.4,.4,1) forwards}
