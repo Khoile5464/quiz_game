@@ -68,5 +68,6 @@ addEventListener("storage", e => {
 
 $("themeBtn").onclick = () => { S.theme = isNight() ? "day" : "night"; save(); applyTheme(S.theme); };
 $("lofiBtn").onclick = () => Lofi.toggle();
+applySubject();
 applyTheme(S.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day"));
 renderHome();

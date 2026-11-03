@@ -14,13 +14,13 @@ function startSession(mode, restart){
   run = {mode, review: mode !== "new", x2: mode === "new", qs, i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
   show("quiz"); renderQ();
 }
-/* giải đề: làm lần lượt toàn bộ câu trong phạm vi, tiến độ lưu sau mỗi câu (S.giaide) nên thoát ra vẫn làm tiếp được */
+/* giải đề: làm lần lượt toàn bộ câu trong phạm vi, tiến độ lưu sau mỗi câu (D.giaide) nên thoát ra vẫn làm tiếp được */
 function startGiaide(restart){
   if (restart || !giaideLeft()){
     if (!pool().length){ toast("Phạm vi này chưa có câu nào ✦"); return; }
-    S.giaide = {sc: scope, ids: pickGiaide().map(q => q.id), i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: []}; save();
+    D.giaide = {sc: scope, ids: pickGiaide().map(q => q.id), i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: []}; save();
   }
-  const g = S.giaide, byId = new Map(Q.map(q => [q.id, q]));
+  const g = D.giaide, byId = new Map(Q.map(q => [q.id, q]));
   // câu đã bị bỏ khỏi ngân hàng đề (sửa questions.js) thì bỏ qua, giữ đúng vị trí đang làm
   g.i = g.ids.slice(0, g.i).filter(id => byId.has(id)).length; g.ids = g.ids.filter(id => byId.has(id));
   lastMode = "giaide";
@@ -33,12 +33,12 @@ function startGiaide(restart){
 /* ôn câu sai: đi hết kho câu sai của Giải đề theo thứ tự đã sai, đúng thì gỡ khỏi kho, sai thì giữ cho lượt sau; tiến độ lưu sau mỗi câu */
 function startOnsai(){
   const byId = new Map(Q.map(q => [q.id, q]));
-  S.onsai.ids = S.onsai.ids.filter(id => byId.has(id)); // câu đã bị bỏ khỏi ngân hàng đề
+  D.onsai.ids = D.onsai.ids.filter(id => byId.has(id)); // câu đã bị bỏ khỏi ngân hàng đề
   if (!onsaiLeft()){
-    if (!S.onsai.ids.length){ S.onsai.run = null; save(); toast("Kho câu sai trống rồi — giải đề tiếp nhé 📖"); return; }
-    S.onsai.run = {ids: [...S.onsai.ids], i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: []}; save();
+    if (!D.onsai.ids.length){ D.onsai.run = null; save(); toast("Kho câu sai trống rồi — giải đề tiếp nhé 📖"); return; }
+    D.onsai.run = {ids: [...D.onsai.ids], i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: []}; save();
   }
-  const o = S.onsai.run;
+  const o = D.onsai.run;
   o.i = o.ids.slice(0, o.i).filter(id => byId.has(id)).length; o.ids = o.ids.filter(id => byId.has(id));
   lastMode = "onsai";
   run = {mode: "onsai", review: true, x2: false, qs: o.ids.map(id => byId.get(id)), i: o.i, score: o.score, combo: o.combo, maxCombo: o.maxCombo, xp: o.xp,
@@ -50,13 +50,13 @@ function startOnsai(){
 /* chế độ lưu tiến độ sau từng câu (thoát ra làm tiếp được) */
 const resumable = m => m === "giaide" || m === "onsai";
 /* số câu trong kho câu sai, hiện trên nhãn câu hỏi ở Giải đề / Ôn câu sai */
-const khoEl = () => el("b","kho",String(S.onsai.ids.length));
-const updKho = () => document.querySelectorAll("#qTags .kho").forEach(b => b.textContent = S.onsai.ids.length);
+const khoEl = () => el("b","kho",String(D.onsai.ids.length));
+const updKho = () => document.querySelectorAll("#qTags .kho").forEach(b => b.textContent = D.onsai.ids.length);
 /* lượt ôn câu sai đang mở: câu vừa sai ở Giải đề (tab này hoặc tab khác) được thêm vào cuối lượt */
 function syncOnsaiRun(){
-  if (!run || run.mode !== "onsai" || !S.onsai.run) return;
+  if (!run || run.mode !== "onsai" || !D.onsai.run) return;
   const have = new Set(run.qs.map(q => q.id)), byId = new Map(Q.map(q => [q.id, q]));
-  const add = S.onsai.run.ids.filter(id => !have.has(id) && byId.has(id));
+  const add = D.onsai.run.ids.filter(id => !have.has(id) && byId.has(id));
   if (!add.length) return;
   run.qs.push(...add.map(id => byId.get(id)));
   $("qCount").textContent = `${run.i + 1}/${run.qs.length}`;
@@ -215,7 +215,7 @@ function guideEl(q){
       if (tx[0] === "!" || tx[0] === "+"){ cls += tx[0] === "!" ? " trap" : " sure"; tx = tx.slice(1); }
       const li = el("li", cls.trim()); li.append(guideText(tx)); ul.append(li);
     }
-    const a = el("a","sg-open","mở trong Study Guide ↗"); a.href = "study-guide.html#" + m.c.k; a.target = "_blank"; a.rel = "noopener";
+    const a = el("a","sg-open","mở trong Study Guide ↗"); a.href = (subjOf(q) === "122" ? "study-guide-mln122.html#" : "study-guide.html#") + m.c.k; a.target = "_blank"; a.rel = "noopener";
     card.append(t, ul, a); box.append(card);
   });
   return box;
@@ -241,17 +241,17 @@ function submit(){
     run.wrong.push({q, picked: [...run.picked]});
     if (!playMeme()) sfx.bad();
   }
-  // S có thể vừa được nạp lại từ tab khác (app.js, sự kiện storage) nên kiểm tra S.giaide / S.onsai.run trước khi ghi
+  // S có thể vừa được nạp lại từ tab khác (app.js, sự kiện storage) nên kiểm tra D.giaide / D.onsai.run trước khi ghi
   if (run.mode === "giaide"){
-    if (S.giaide) Object.assign(S.giaide, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
+    if (D.giaide) Object.assign(D.giaide, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
     if (!right){ // câu sai vào kho ôn ngay, kể cả lượt ôn đang làm dở (thêm vào cuối lượt)
-      S.giaide?.wrong.push([q.id, [...run.picked]]);
-      if (!S.onsai.ids.includes(q.id)) S.onsai.ids.push(q.id);
-      if (S.onsai.run && !S.onsai.run.ids.includes(q.id)) S.onsai.run.ids.push(q.id);
+      D.giaide?.wrong.push([q.id, [...run.picked]]);
+      if (!D.onsai.ids.includes(q.id)) D.onsai.ids.push(q.id);
+      if (D.onsai.run && !D.onsai.run.ids.includes(q.id)) D.onsai.run.ids.push(q.id);
     }
   } else if (run.mode === "onsai"){
-    if (S.onsai.run) Object.assign(S.onsai.run, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
-    if (right) S.onsai.ids = S.onsai.ids.filter(id => id !== q.id); else S.onsai.run?.wrong.push([q.id, [...run.picked]]);
+    if (D.onsai.run) Object.assign(D.onsai.run, {i: run.i + 1, score: run.score, combo: run.combo, maxCombo: run.maxCombo, xp: run.xp});
+    if (right) D.onsai.ids = D.onsai.ids.filter(id => id !== q.id); else D.onsai.run?.wrong.push([q.id, [...run.picked]]);
   }
   updKho();
   if (resumable(run.mode) && ++run.sit === 10) touchStreak(); // buổi giải đề / ôn câu sai rất dài: làm đủ 10 câu là tính đã học hôm nay
@@ -318,8 +318,8 @@ function finish(){
   const temple = run.mode === "temple", giaide = run.mode === "giaide", onsai = run.mode === "onsai";
   let newHigh = false;
   if (temple){ S.temple.runs++; if (run.score > S.temple.best){ S.temple.best = run.score; newHigh = true; } }
-  else if (giaide) S.giaide = null; // điểm giải đề không tính vào "điểm cao nhất /30"
-  else if (onsai) S.onsai.run = null;
+  else if (giaide) D.giaide = null; // điểm giải đề không tính vào "điểm cao nhất /30"
+  else if (onsai) D.onsai.run = null;
   else { S.best = Math.max(S.best, run.score); if (run.score === n && (!run.review || n >= SESSION_SIZE)) S.perfect++; }
   touchStreak();
   const got = checkBadges();
@@ -339,7 +339,7 @@ function finish(){
     $("rMsg").textContent = `Điểm ngôi đền: ${run.score} · 🏆 HighScore: ${S.temple.best}` + (newHigh ? " — bạn vừa phá kỷ lục!" : ` (còn thiếu ${S.temple.best - run.score} để vượt kỷ lục)`);
   }
   if (giaide) $("rMsg").textContent = `Giải xong ${n} câu · đúng ${run.score} (${Math.round(pct * 100)}%). ` + (run.wrong.length ? `Xem lại ${run.wrong.length} câu sai bên dưới nhé ✦` : "Không sai câu nào, quá đỉnh ✦");
-  const left = S.onsai.ids.length;
+  const left = D.onsai.ids.length;
   if (onsai) $("rMsg").textContent = `Ôn xong ${n} câu sai · gỡ được ${run.score} câu khỏi kho. ` + (left ? `Kho còn ${left} câu — sai lần này thì lượt sau gặp lại nhé ✦` : "Kho câu sai trống trơn, quá đỉnh ✦");
   else if (giaide && left) $("rMsg").textContent += ` Kho câu sai đang có ${left} câu — bấm 📕 để ôn lại.`;
   $("onsaiAgain").classList.toggle("hidden", !giaide || !left);

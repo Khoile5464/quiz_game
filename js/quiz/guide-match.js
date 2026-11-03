@@ -1,12 +1,12 @@
 /* ---------- giải đề: tìm thẻ Study Guide liên quan tới câu hỏi ----------
    TF-IDF theo âm tiết + cặp âm tiết (từ ghép tiếng Việt), chấm trên từng gạch đầu dòng và cả thẻ.
    Tính lúc chạy nên sửa câu hỏi hay sửa Study Guide (rồi chạy tools/build-guide.js) đều tự khớp lại. */
-const Guide = (() => {
+function makeGuide(GUIDE, abbrMore){
   const STOP = new Set("là của và các có những được trong cho với không một đó này nào sau đây đúng sai gì theo thì mà để khi cũng như từ về ra vào do bởi đã đang sẽ rất hay hoặc còn chỉ lại nên vì nó họ ta tại trên dưới ấy hãy chọn câu phương án nhận định ý kiến sau".split(" "));
   /* Study Guide viết tắt nhiều, đề thì viết đủ → bung chữ tắt trước khi tách âm tiết */
   const ABBR = {LLSX:"lực lượng sản xuất", QHSX:"quan hệ sản xuất", TLSX:"tư liệu sản xuất", PTSX:"phương thức sản xuất", TTXH:"tồn tại xã hội", YTXH:"ý thức xã hội",
     HTKT:"hình thái kinh tế", "KT–XH":"kinh tế xã hội", CSHT:"cơ sở hạ tầng", KTTT:"kiến trúc thượng tầng", CNXH:"chủ nghĩa xã hội", XHCN:"xã hội chủ nghĩa", CNTB:"chủ nghĩa tư bản",
-    TBCN:"tư bản chủ nghĩa", "CNĐQ":"chủ nghĩa đế quốc", TGQ:"thế giới quan", KTCT:"kinh tế chính trị", "NSLĐ":"năng suất lao động", "VĐCB":"vấn đề cơ bản", NN:"nhà nước", VC:"vật chất"};
+    TBCN:"tư bản chủ nghĩa", "CNĐQ":"chủ nghĩa đế quốc", TGQ:"thế giới quan", KTCT:"kinh tế chính trị", "NSLĐ":"năng suất lao động", "VĐCB":"vấn đề cơ bản", NN:"nhà nước", VC:"vật chất", ...abbrMore};
   const ABBR_RE = new RegExp("(?<!\\p{L})(" + Object.keys(ABBR).sort((a, b) => b.length - a.length).join("|") + ")(?!\\p{L})", "gu");
   const toks = t => String(t).replace(ABBR_RE, m => ABBR[m]).replace(/Hi Lạp/g, "Hy Lạp").toLowerCase().normalize("NFC")
     .replace(/\*+/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim().split(" ").filter(Boolean);
@@ -68,4 +68,11 @@ const Guide = (() => {
     cache.set(q, res); return res;
   }
   return {match};
+}
+/* mỗi môn một Study Guide (MLN122: KTTT là kinh tế thị trường, không phải kiến trúc thượng tầng) */
+const Guide = (() => {
+  const g = {"111": makeGuide(GUIDE), "122": makeGuide(GUIDE122, {KTTT:"kinh tế thị trường", GTTD:"giá trị thặng dư", GTSD:"giá trị sử dụng", SXHH:"sản xuất hàng hóa",
+    XKTB:"xuất khẩu tư bản", "ĐQNN":"độc quyền nhà nước", CNH:"công nghiệp hóa", "HĐH":"hiện đại hóa", CMCN:"cách mạng công nghiệp", TB:"tư bản", DN:"doanh nghiệp",
+    KT:"kinh tế", VN:"Việt Nam", "SLĐ":"sức lao động", "CSVC–KT":"cơ sở vật chất kỹ thuật", "KH-CN":"khoa học công nghệ", KHCN:"khoa học công nghệ", "ĐH":"Đại hội"})};
+  return {match: q => g[subjOf(q)].match(q)};
 })();

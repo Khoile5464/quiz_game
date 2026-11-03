@@ -1,6 +1,28 @@
 /* ---------- storage ---------- */
 function fresh(){return {stats:{},xp:0,streak:{count:0,last:""},best:0,sessions:0,answered:0,correct:0,maxCombo:0,perfect:0,badges:[],sound:true}}
 const numOf = (v, d = 0) => ((typeof v === "number" || (typeof v === "string" && v.trim() !== "")) && Number.isFinite(+v)) ? +v : d;
+/* giải đề đang làm dở: {sc, ids, i, score, combo, maxCombo, xp, wrong:[[id, [đáp án đã chọn]]]} */
+function normGiaide(g){
+  if (!(g && typeof g === "object" && Array.isArray(g.ids) && g.ids.length)) return null;
+  g.ids = g.ids.filter(x => typeof x === "string"); g.sc = typeof g.sc === "string" ? g.sc : "all";
+  g.i = Math.min(g.ids.length, Math.max(0, Math.floor(numOf(g.i))));
+  for (const k of ["score", "combo", "maxCombo", "xp"]) g[k] = Math.max(0, Math.floor(numOf(g[k])));
+  g.wrong = Array.isArray(g.wrong) ? g.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
+  return g;
+}
+/* kho câu sai từ Giải đề: {ids: [id theo thứ tự sai], run: lượt ôn đang làm dở {ids, i, score, combo, maxCombo, xp, wrong}} */
+function normOnsai(o, legacyIds){
+  o = o && typeof o === "object" && !Array.isArray(o) ? o : {ids: legacyIds};
+  o.ids = [...new Set(Array.isArray(o.ids) ? o.ids.filter(x => typeof x === "string") : [])];
+  const r = o.run;
+  if (r && typeof r === "object" && Array.isArray(r.ids) && r.ids.length){
+    r.ids = r.ids.filter(x => typeof x === "string");
+    r.i = Math.min(r.ids.length, Math.max(0, Math.floor(numOf(r.i))));
+    for (const k of ["score", "combo", "maxCombo", "xp"]) r[k] = Math.max(0, Math.floor(numOf(r[k])));
+    r.wrong = Array.isArray(r.wrong) ? r.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
+  } else o.run = null;
+  return o;
+}
 /* chuẩn hoá mọi dữ liệu lưu cũ/thiếu/hỏng: thêm trường mặc định, bỏ giá trị sai kiểu — KHÔNG đổi KEY để người dùng cũ giữ được tiến trình */
 function norm(s){
   s = Object.assign(fresh(), s && typeof s === "object" ? s : {});
@@ -22,25 +44,12 @@ function norm(s){
   if (!s.unl || typeof s.unl !== "object" || Array.isArray(s.unl)) s.unl = {};
   if (!s.temple || typeof s.temple !== "object" || Array.isArray(s.temple)) s.temple = {};
   s.temple.best = Math.max(0, Math.floor(numOf(s.temple.best))); s.temple.runs = Math.max(0, Math.floor(numOf(s.temple.runs)));
-  const g = s.giaide; // giải đề đang làm dở: {sc, ids, i, score, combo, maxCombo, xp, wrong:[[id, [đáp án đã chọn]]]}
-  if (g && typeof g === "object" && Array.isArray(g.ids) && g.ids.length){
-    g.ids = g.ids.filter(x => typeof x === "string"); g.sc = typeof g.sc === "string" ? g.sc : "all";
-    g.i = Math.min(g.ids.length, Math.max(0, Math.floor(numOf(g.i))));
-    for (const k of ["score", "combo", "maxCombo", "xp"]) g[k] = Math.max(0, Math.floor(numOf(g[k])));
-    g.wrong = Array.isArray(g.wrong) ? g.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
-  } else s.giaide = null;
-  // kho câu sai từ Giải đề: {ids: [id theo thứ tự sai], run: lượt ôn đang làm dở {ids, i, score, combo, maxCombo, xp, wrong}}
-  // dữ liệu cũ chưa có kho: lấy luôn các câu đã sai trong lượt giải đề đang làm dở
-  const o = s.onsai && typeof s.onsai === "object" && !Array.isArray(s.onsai) ? s.onsai : {ids: s.giaide ? s.giaide.wrong.map(w => w[0]) : []};
-  o.ids = [...new Set(Array.isArray(o.ids) ? o.ids.filter(x => typeof x === "string") : [])];
-  const r = o.run;
-  if (r && typeof r === "object" && Array.isArray(r.ids) && r.ids.length){
-    r.ids = r.ids.filter(x => typeof x === "string");
-    r.i = Math.min(r.ids.length, Math.max(0, Math.floor(numOf(r.i))));
-    for (const k of ["score", "combo", "maxCombo", "xp"]) r[k] = Math.max(0, Math.floor(numOf(r[k])));
-    r.wrong = Array.isArray(r.wrong) ? r.wrong.filter(w => Array.isArray(w) && typeof w[0] === "string" && Array.isArray(w[1])) : [];
-  } else o.run = null;
-  s.onsai = o;
+  // mỗi môn một giải đề + kho câu sai riêng: MLN111 giữ khoá cũ (giaide, onsai) để không mất tiến trình, môn khác thêm hậu tố (giaide122, onsai122)
+  for (const sfx of ["", "122"]){
+    s["giaide" + sfx] = normGiaide(s["giaide" + sfx]);
+    // dữ liệu cũ chưa có kho (chỉ MLN111): lấy luôn các câu đã sai trong lượt giải đề đang làm dở
+    s["onsai" + sfx] = normOnsai(s["onsai" + sfx], !sfx && s.giaide ? s.giaide.wrong.map(w => w[0]) : []);
+  }
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }
@@ -63,6 +72,9 @@ function load(){
   return norm(fresh());
 }
 let S = load();
+/* giải đề + kho câu sai của môn đang chọn (xem norm): code khác cứ dùng D.giaide / D.onsai như trước */
+const slot = base => subject === "111" ? base : base + subject;
+const D = {get giaide(){return S[slot("giaide")]}, set giaide(v){S[slot("giaide")] = v}, get onsai(){return S[slot("onsai")]}, set onsai(v){S[slot("onsai")] = v}};
 let saveBad = false, saveFailAt = 0;
 function save(){
   try{ localStorage.setItem(KEY, JSON.stringify(S)); saveBad = false; }

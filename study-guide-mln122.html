@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MLN122 Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6efff;--bg2:#fffafe;--card:#ffffff;--ink:#4b2b73;--ink2:#7a5aa6;--line:#e1d3fa;
+  --pink:#ff8fd0;--lav:#c9a7ff;--sky:#9fe3ff;--mint:#a8f5cf;--lemon:#fff3a3;--peach:#ffc9a8;
+  --ok:#3ddc97;--bad:#ff5c8a;--shadow:0 5px 0 #b48ce8,0 10px 22px rgba(120,60,180,.18);
+  --hl:#fff0a8;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#150f2c;--bg2:#1d1544;--card:#241a52;--ink:#f1e8ff;--ink2:#b9a4e6;--line:#3b2d78;
+    --pink:#ff3fa4;--lav:#8f5cff;--sky:#27e6ff;--mint:#2bff9e;--lemon:#ffcf5c;--peach:#ff9f6b;
+    --shadow:0 5px 0 #5a38b8,0 10px 22px rgba(0,0,0,.4);--hl:#6b4d00;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#150f2c;--bg2:#1d1544;--card:#241a52;--ink:#f1e8ff;--ink2:#b9a4e6;--line:#3b2d78;
+  --pink:#ff3fa4;--lav:#8f5cff;--sky:#27e6ff;--mint:#2bff9e;--lemon:#ffcf5c;--peach:#ff9f6b;
+  --shadow:0 5px 0 #5a38b8,0 10px 22px rgba(0,0,0,.4);--hl:#6b4d00;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Baloo 2",system-ui,sans-serif;font-size:17px;line-height:1.55;
+  background-image:radial-gradient(var(--line) 1.2px,transparent 1.2px);background-size:22px 22px}
+.pix{font-family:"Silkscreen",monospace;letter-spacing:.5px}
+header.hero{padding:34px 16px 26px;text-align:center;background:linear-gradient(135deg,var(--pink),var(--lav) 55%,var(--sky));color:#fff;border-bottom:4px solid var(--ink);position:relative;overflow:hidden}
+header.hero h1{margin:0;font-size:clamp(28px,6vw,52px);text-shadow:3px 3px 0 var(--ink);line-height:1.1}
+header.hero p{margin:8px auto 0;max-width:640px;text-shadow:1px 1px 0 rgba(0,0,0,.35);font-weight:600}
+.stars span{position:absolute;font-size:26px;opacity:.8;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.4) rotate(20deg);opacity:.3}}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.stat{background:var(--bg2);color:var(--ink);border:3px solid var(--ink);border-radius:14px;padding:4px 14px;box-shadow:3px 3px 0 var(--ink);font-weight:800}
+.stat b{font-size:20px}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg2);border-bottom:3px solid var(--ink);padding:8px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.bar input{flex:1;min-width:160px;padding:8px 14px;border-radius:999px;border:3px solid var(--ink);background:var(--card);color:var(--ink);font:inherit;outline:none}
+.bar input:focus{box-shadow:0 0 0 3px var(--pink)}
+.btn{border:3px solid var(--ink);background:var(--lemon);color:#4b2b73;border-radius:999px;padding:6px 14px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 3px 0 var(--ink)}
+.btn:active{transform:translateY(3px);box-shadow:none}
+.prog{height:10px;background:var(--line);border-radius:99px;overflow:hidden;flex-basis:100%}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--sky));transition:width .4s}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;gap:22px;padding:22px 16px 60px}
+nav.toc{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 120px);overflow:auto;display:flex;flex-direction:column;gap:6px}
+nav.toc a{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);border:3px solid var(--ink);border-radius:14px;padding:5px 10px;font-weight:600;font-size:15px;box-shadow:0 3px 0 var(--ink);transition:.15s}
+nav.toc a:hover,nav.toc a.on{transform:translateX(4px);background:var(--c,var(--pink));color:#4b2b73}
+nav.toc .n{font-family:"Silkscreen",monospace;font-size:11px;opacity:.7}
+.sec{margin-bottom:34px}
+.sec-h{display:flex;align-items:center;gap:12px;padding:10px 16px;border:3px solid var(--ink);border-radius:20px;background:var(--c);color:#4b2b73;box-shadow:var(--shadow);margin-bottom:16px}
+.sec-h .ic{font-size:34px}
+.sec-h h2{margin:0;font-size:clamp(20px,3.4vw,28px);line-height:1.15}
+.sec-h small{display:block;font-weight:600;opacity:.8}
+.sec-h .heat{margin-left:auto;font-family:"Silkscreen",monospace;font-size:11px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:0;box-shadow:0 4px 0 var(--ink);overflow:hidden}
+.card>summary{list-style:none;cursor:pointer;padding:10px 14px;font-weight:800;background:linear-gradient(90deg,var(--c),transparent 130%);color:#4b2b73;display:flex;gap:8px;align-items:center}
+.card>summary::-webkit-details-marker{display:none}
+.card>summary::after{content:"▾";margin-left:auto;transition:.2s}
+.card[open]>summary::after{transform:rotate(180deg)}
+.card .body{padding:8px 14px 14px}
+.card.focus{animation:focus 1.6s ease-out 2}
+@keyframes focus{30%{box-shadow:0 0 0 6px var(--pink),0 4px 0 var(--ink)}}
+.card ul{margin:0;padding-left:0;list-style:none}
+.card li{position:relative;padding:3px 0 3px 22px}
+.card li::before{content:"✦";position:absolute;left:2px;color:var(--c);filter:saturate(1.6) brightness(.85)}
+.card li.warn::before{content:"⚠";color:var(--bad)}
+.card li.ok::before{content:"✔";color:var(--ok)}
+.card li ul{margin-top:2px}
+b{color:var(--bad)}
+:root[data-theme="dark"] b{color:var(--lemon)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) b{color:var(--lemon)}}
+mark{background:var(--hl);color:inherit;border-radius:4px;padding:0 2px}
+.tag{display:inline-block;font-size:12px;font-weight:800;background:var(--c);color:#4b2b73;border:2px solid var(--ink);border-radius:999px;padding:0 8px;margin-right:2px}
+.tbl{overflow:auto;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink);background:var(--card);margin-bottom:14px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th{background:var(--c);color:#4b2b73;text-align:left;padding:8px 12px;font-family:"Silkscreen",monospace;font-size:13px}
+td{padding:8px 12px;border-top:2px dashed var(--line);vertical-align:top}
+tr:nth-child(even) td{background:rgba(180,140,232,.08)}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin:6px 0 16px}
+.node{background:var(--c);color:#4b2b73;border:3px solid var(--ink);border-radius:14px;padding:6px 14px;font-weight:800;box-shadow:0 3px 0 var(--ink);text-align:center}
+.node small{display:block;font-weight:600;font-size:12px}
+.arrow{font-size:22px;color:var(--ink2)}
+.tip{border:3px dashed var(--ink);border-radius:16px;padding:10px 14px;background:var(--bg2);margin:0 0 14px}
+.tip strong{font-family:"Silkscreen",monospace;font-size:13px;color:var(--bad)}
+.eq{font-family:"Silkscreen",monospace;font-size:14px;text-align:center;margin:0 0 14px}
+.eq span{display:inline-block;background:var(--card);border:3px solid var(--ink);border-radius:12px;padding:4px 12px;margin:3px;box-shadow:0 3px 0 var(--ink)}
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.fc{perspective:900px;height:150px;cursor:pointer}
+.fc div{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip div{transform:rotateY(180deg)}
+.fc p{position:absolute;inset:0;margin:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;border:3px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink);font-weight:800}
+.fc .q{background:var(--sky);color:#4b2b73}
+.fc .a{background:var(--mint);color:#4b2b73;transform:rotateY(180deg)}
+.chk{display:flex;gap:8px;align-items:flex-start;margin:10px 0 0;font-size:14px;color:var(--ink2);font-weight:600}
+.chk input{width:18px;height:18px;accent-color:var(--ok);margin-top:3px}
+.done .card{opacity:.75}
+.hide{display:none!important}
+footer{text-align:center;padding:24px;color:var(--ink2);font-weight:600}
+#top{position:fixed;right:16px;bottom:16px;z-index:30}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;flex-direction:row;overflow-x:auto;max-height:none;padding-bottom:6px}
+  nav.toc a{white-space:nowrap}
+}
+@media print{.bar,nav.toc,#top{display:none}.layout{display:block}.card{break-inside:avoid}details>*{display:block}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="stars"><span style="left:6%;top:18%">✦</span><span style="left:90%;top:25%;animation-delay:.6s">✧</span><span style="left:20%;top:78%;animation-delay:1.2s">★</span><span style="left:78%;top:75%;animation-delay:1.8s">✦</span></div>
+  <div class="pix" style="font-size:13px;opacity:.9">★ MLN122 · KINH TẾ CHÍNH TRỊ MÁC–LÊNIN ★</div>
+  <h1>Study Guide ôn thi</h1>
+  <p>Tổng hợp từ 525 câu trắc nghiệm · chia theo 6 chương của Schedule môn (GT KTCT Mác–Lênin, Bộ GD&ĐT 2021) · bấm vào thẻ để mở/đóng · tick “Đã thuộc” để theo dõi tiến độ</p>
+  <div class="stats">
+    <div class="stat"><b>525</b> câu nguồn</div>
+    <div class="stat"><b id="nSec">0</b> chủ đề</div>
+    <div class="stat"><b id="nCard">0</b> thẻ kiến thức</div>
+    <div class="stat">Đã thuộc <b id="nDone">0</b></div>
+  </div>
+</header>
+
+<div class="bar">
+  <input id="q" type="search" placeholder="🔍 Tìm nhanh: ví dụ “địa tô”, “cartel”, “tích tụ”…" aria-label="Tìm kiếm">
+  <button class="btn" id="openAll">Mở hết</button>
+  <button class="btn" id="closeAll">Đóng hết</button>
+  <button class="btn" id="theme">🌓</button>
+  <div class="prog"><i id="pb"></i></div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc"></nav>
+  <main id="main"></main>
+</div>
+<footer>Làm từ bộ câu hỏi MLN122 + slide bài giảng + giáo trình KTCT Mác–Lênin · Học vui, thi đỗ ✦</footer>
+<button class="btn" id="top" onclick="scrollTo({top:0})">⬆ Lên đầu</button>
+
+<script>
+/* Markup trong chuỗi: **đậm/nhấn mạnh** ; dòng bắt đầu "!" = cảnh báo/bẫy ; "+" = điểm chắc chắn */
+const COLORS=['var(--pink)','var(--sky)','var(--mint)','var(--lemon)','var(--lav)','var(--peach)'];
+const S=[
+{id:'c1',ic:'🧭',t:'Ch.1 Đối tượng, phương pháp, chức năng KTCT',sub:'Slot 1 · lịch sử học thuyết, đối tượng, 4 chức năng',heat:'🔥🔥',
+ flow:[['Cổ – trung đại','','Xenophon, Aristoteles'],['Trọng thương','','TK XV – cuối XVII · lưu thông'],['Trọng nông','','TK XVII – nửa đầu XVIII · sản xuất NN'],['Cổ điển Anh','','W. Petty → A. Smith → D. Ricardo'],['Mác – Lênin','','Những năm 40 TK XIX · bộ Tư bản']],
+ cards:[
+ ['Thuật ngữ “kinh tế chính trị”',['Lần đầu dùng: **A. Montchrétien, năm 1615** (*Chuyên luận về kinh tế chính trị*)','**A. Smith** đưa KTCT thành **môn khoa học có tính hệ thống** với các phạm trù, khái niệm chuyên ngành (TK XVIII, *Của cải của các dân tộc*)','Theo Smith, KTCT gắn với chính khách/nhà lập pháp, hướng tới **2 mục tiêu**: thu nhập dồi dào, sinh kế phong phú cho **người dân** + nguồn ngân sách đầy đủ cho **nhà nước**','“Kinh tế” gốc từ “kinh bang tế thế” – phương pháp trị nước, giúp đời']],
+ ['Các trường phái trước Mác',['**Aristoteles**: 3 loại thương nghiệp (trao đổi tự nhiên, trao đổi tiền tệ, trao đổi để làm giàu) & 2 loại kinh doanh','**Trọng thương** (TK XV – cuối XVII): trọng tâm **lưu thông**, của cải = tiền (vàng bạc); là **tư tưởng kinh tế đầu tiên của giai cấp tư sản**, hệ thống lý luận **bước đầu nghiên cứu nền SX TBCN** (Thomas Mun, Montchrétien, Stafford)','**Trọng nông** (TK XVII – nửa đầu XVIII, Pháp): trọng tâm **sản xuất (nông nghiệp)** – Quesnay, Turgot, Boisguillebert','**Cổ điển Anh**: Mác coi **W. Petty** là người sáng lập, kết thúc ở **D. Ricardo**; đại biểu: Petty, Smith, Ricardo','+Đóng góp lớn nhất của cổ điển Anh: **giá trị do hao phí lao động tạo ra** (lý luận giá trị – lao động)','Cổ điển Anh coi đời sống kinh tế vận động theo **quy luật tự nhiên** (“trật tự tự nhiên”, “bàn tay vô hình”)']],
+ ['KTCT Mác – Lênin ra đời',['C. Mác & Ph. Ăngghen, **những năm 40 TK XIX**','Kế thừa **trực tiếp** thành tựu của **KTCT cổ điển Anh**','Tập trung, cô đọng nhất trong bộ ***Tư bản***','Học thuyết **giá trị thặng dư** = “hòn đá tảng”; **tính hai mặt của lao động SXHH** = phát hiện riêng của Mác','**Lênin** bổ sung lý luận về **CNTB độc quyền** (cuối XIX – đầu XX)','Trình tự PTSX: cộng sản nguyên thủy → chiếm hữu nô lệ → phong kiến → TBCN → cộng sản chủ nghĩa']],
+ ['Đối tượng nghiên cứu',['**Các quan hệ xã hội của sản xuất và trao đổi** (quan hệ giữa **người với người**) trong PTSX mà các quan hệ đó hình thành, phát triển','Đặt trong liên hệ biện chứng với trình độ **LLSX** và **KTTT** tương ứng','Nghiên cứu QHSX trong **4 khâu** tái SX xã hội: **sản xuất – phân phối – trao đổi – tiêu dùng**','Gồm: thể thống nhất các quan hệ · quan hệ trong mỗi khâu · quan hệ giữa các khâu','Lênin: KTCT “tuyệt nhiên không nghiên cứu sự sản xuất, mà nghiên cứu những quan hệ xã hội giữa **người với người** trong sản xuất”','!Không phải LLSX, không phải quan hệ CSHT–KTTT, không phải quan hệ người – hàng hóa']],
+ ['Mục đích & quy luật kinh tế',['Mục đích **cao nhất**: phát hiện **quy luật kinh tế** chi phối quan hệ giữa **người và người** trong **sản xuất và trao đổi**','Quy luật kinh tế mang tính **khách quan**, có **tính lịch sử**, phát huy tác dụng **thông qua hoạt động kinh tế của con người**','Quy luật tác động vào động cơ lợi ích → điều chỉnh **hành vi con người**','Chính sách kinh tế là sản phẩm **chủ quan** → quy luật và chính sách **khác nhau nhưng có quan hệ** với nhau']],
+ ['Phương pháp nghiên cứu',['Nền tảng: **phép biện chứng duy vật**','Quan trọng, phù hợp nhất: **trừu tượng hóa khoa học** (gạt bỏ cái ngẫu nhiên, giữ cái bản chất)','Kết hợp **logic với lịch sử**, phân tích – tổng hợp, thống kê, mô hình hóa…']],
+ ['4 chức năng',['**Nhận thức** · **Thực tiễn** · **Tư tưởng** · **Phương pháp luận**','**Thực tiễn**: vận dụng đúng quy luật qua điều chỉnh hành vi/chính sách → thúc đẩy KT–XH tiến bộ','**Tư tưởng**: xây dựng thế giới quan, niềm tin vào CNXH','**Phương pháp luận**: nền tảng lý luận cho các khoa học kinh tế ngành','!“Chức năng giáo dục”, “dự báo”, “khoa học” **không** nằm trong 4 chức năng']],
+ ['Sản xuất vật chất',['Quá trình SX = **sức lao động** + **tư liệu sản xuất** (đối tượng lao động + tư liệu lao động)','Lao động sản xuất: hoạt động có mục đích, có ý thức; là sự tiêu dùng sức lao động trong hiện thực; tạo của cải, hoàn thiện thể lực – trí lực con người','**Đối tượng lao động**: những vật mà lao động tác động vào để biến đổi cho phù hợp mục đích','**Tư liệu lao động**: công cụ lao động + vật chứa đựng, bảo quản + kết cấu hạ tầng','+**Công cụ lao động** quyết định năng suất lao động','LLSX ngày nay: người lao động + TLSX + **khoa học công nghệ**']]
+ ]},
+{id:'c2a',ic:'📦',t:'Ch.2 Hàng hóa & sản xuất hàng hóa',sub:'Slot 2 · 2.1.1–2.1.2 · điều kiện, 2 thuộc tính, lượng giá trị',heat:'🔥🔥🔥🔥',
+ eq:['Giá trị hàng hóa G = c + v + m','c: giá trị cũ · v + m: giá trị mới'],
+ table:{h:['','Tăng năng suất lao động','Tăng cường độ lao động'],r:[['Số sản phẩm / đơn vị thời gian','**Tăng**','**Tăng**'],['Giá trị 1 đơn vị hàng hóa','**Giảm**','Không đổi'],['Tổng giá trị trong cùng thời gian','Không đổi','**Tăng** (như kéo dài thời gian)'],['Dựa vào','Cải tiến kỹ thuật, tay nghề, tổ chức','Tăng hao phí sức lực trong 1 đơn vị thời gian']]},
+ cards:[
+ ['Sản xuất hàng hóa – 2 điều kiện',['SX hàng hóa: sản xuất ra sản phẩm để **trao đổi, mua bán** (khác SX tự cung, tự cấp)','Điều kiện 1: **phân công lao động xã hội** (chuyên môn hóa thành ngành nghề khác nhau)','Điều kiện 2: **sự tách biệt về mặt kinh tế** giữa các chủ thể sản xuất (dựa trên các hình thức sở hữu khác nhau về TLSX)','Kinh tế hàng hóa là sự **tiếp nối của kinh tế tự nhiên** (tự cung tự cấp); SXHH ra đời từ **chế độ chiếm hữu nô lệ**','!SXHH **không** chỉ có trong CNTB, vẫn tồn tại trong CNXH','Mâu thuẫn cơ bản của SXHH: **lao động tư nhân ↔ lao động xã hội**']],
+ ['3 lần phân công lao động xã hội lớn',['Lần 1: **chăn nuôi tách khỏi trồng trọt**','Lần 2: **thủ công nghiệp tách khỏi nông nghiệp**','Lần 3: **thương nghiệp** xuất hiện (tầng lớp thương nhân)','Phân công lao động xã hội: sự chuyên môn hóa sản xuất, phân chia lao động xã hội vào các ngành, lĩnh vực khác nhau']],
+ ['Hàng hóa – 2 thuộc tính',['Hàng hóa: **sản phẩm của lao động**, thỏa mãn nhu cầu con người **thông qua trao đổi, mua bán**','**Giá trị sử dụng**: công dụng của vật phẩm; đáp ứng nhu cầu **của người mua**; KH-KT càng phát triển GTSD càng **phong phú, đa dạng**','**Giá trị**: **lao động xã hội** của người SX kết tinh trong hàng hóa (thực thể giá trị = lao động)','Giá trị trao đổi là **hình thức biểu hiện** của giá trị; cơ sở chung của trao đổi = lượng lao động bằng nhau','Hàng hóa có 2 thuộc tính vì lao động SXHH có **tính hai mặt**','Hàng hóa hữu hình & vô hình (dịch vụ); hàng hóa cá nhân & hàng hóa công cộng']],
+ ['Tính hai mặt của lao động SXHH',['**Lao động cụ thể** → tạo **giá trị sử dụng**; mỗi lao động cụ thể có mục đích, đối tượng, công cụ, phương pháp, kết quả riêng','**Lao động trừu tượng** → tạo **giá trị**; là sự hao phí sức lao động nói chung (cơ bắp, thần kinh) không kể hình thức cụ thể','+Phát hiện riêng của **C. Mác** – chìa khóa hiểu giá trị']],
+ ['Lượng giá trị & nhân tố ảnh hưởng',['Đo bằng **thời gian lao động xã hội cần thiết** (thời gian cần để SX trong điều kiện bình thường của xã hội, trình độ thành thạo, cường độ trung bình)','Giá trị cá biệt do hao phí lao động cá biệt quyết định; quy luật giá trị đòi hỏi hao phí cá biệt **≤** hao phí xã hội cần thiết','**Năng suất lao động**: tỷ lệ **nghịch** với lượng giá trị 1 đơn vị','**Tính chất phức tạp** của lao động: lao động phức tạp = bội số của lao động giản đơn → tạo nhiều giá trị hơn','!**Cường độ lao động** không làm thay đổi giá trị 1 đơn vị hàng hóa','Nhân tố tăng NSLĐ: trình độ người lao động, KH-CN, tổ chức quản lý, quy mô & hiệu suất TLSX, điều kiện tự nhiên']]
+ ]},
+{id:'c2b',ic:'💰',t:'Ch.2 Tiền tệ & dịch vụ',sub:'Slot 2 · 2.1.3–2.1.4 · hình thái giá trị, 5 chức năng',heat:'🔥🔥🔥',
+ flow:[['1','','Giản đơn, ngẫu nhiên'],['2','','Mở rộng, đầy đủ'],['3','','Chung'],['4','','Tiền (vàng)']],
+ cards:[
+ ['Nguồn gốc & bản chất tiền',['Tiền ra đời từ quá trình phát triển lâu dài của **sản xuất và trao đổi**; khi SX & trao đổi phát triển đòi hỏi vật ngang giá chung thống nhất','Khi **vàng** cố định làm vật ngang giá chung → **hình thái tiền**','Bản chất: **hàng hóa đặc biệt** làm vật ngang giá chung, biểu hiện lao động xã hội và quan hệ giữa những người SXHH']],
+ ['5 chức năng của tiền',['**Thước đo giá trị** · **Phương tiện lưu thông** · **Phương tiện cất trữ** · **Phương tiện thanh toán** · **Tiền tệ thế giới**','Thước đo giá trị: chỉ cần tiền **tưởng tượng** nhưng phải là tiền có đủ giá trị (vàng)','Cất trữ & tiền tệ thế giới: đòi hỏi tiền **vàng / đủ giá trị**','Lưu thông, thanh toán: có thể dùng tiền giấy, tiền tín dụng (tiền ký hiệu)']],
+ ['Quy luật lưu thông tiền tệ & lạm phát',['Lượng tiền cần thiết **M = P·Q / V** (tỷ lệ thuận với tổng giá cả hàng hóa, nghịch với tốc độ lưu thông tiền)','Lưu thông tiền phải căn cứ vào yêu cầu của lưu thông hàng hóa, dịch vụ','**Lạm phát**: mức giá chung tăng, sức mua đồng tiền giảm; tác động trực tiếp đến **sức mua của tiền / giá cả**','Lạm phát phi mã: có lợi nhất là **mua hàng hóa hoặc vàng cất giữ**']],
+ ['Dịch vụ & hàng hóa đặc biệt',['**Dịch vụ** = hàng hóa **vô hình**; sản xuất và tiêu dùng **đồng thời**, không cất trữ được','Một số quan hệ trao đổi đặc biệt: quyền sử dụng đất, thương hiệu, chứng khoán…']]
+ ]},
+{id:'c2c',ic:'🛒',t:'Ch.2 Thị trường & kinh tế thị trường',sub:'Slot 2–3 · 2.2 · quy luật, chủ thể',heat:'🔥🔥🔥',
+ cards:[
+ ['Thị trường',['Nghĩa hẹp: **nơi diễn ra** trao đổi, mua bán','Nghĩa rộng (trừu tượng): **tổng hòa các quan hệ kinh tế** trong đó nhu cầu được đáp ứng qua trao đổi, mua bán, xác định giá cả và số lượng','Phân loại theo **đối tượng trao đổi**: thị trường hàng hóa – dịch vụ; theo **phạm vi**: trong nước – thế giới; theo **vai trò yếu tố**: tư liệu tiêu dùng – TLSX; theo **cơ chế**: tự do, có điều tiết, cạnh tranh hoàn hảo – không hoàn hảo','Vai trò: **thực hiện giá trị** hàng hóa; kích thích sáng tạo, phân bổ nguồn lực; **gắn kết** nền kinh tế thành chỉnh thể, gắn với kinh tế thế giới','Thị trường giải quyết 3 vấn đề: **SX cái gì – SX như thế nào – SX cho ai**']],
+ ['Kinh tế thị trường',['Nền kinh tế vận hành theo **cơ chế thị trường**; là **kinh tế hàng hóa phát triển cao**','Mầm mống từ xã hội nô lệ, hình thành trong phong kiến, phát triển cao trong **CNTB**','Đặc trưng: đa dạng chủ thể, nhiều hình thức sở hữu; thị trường **quyết định phân bổ nguồn lực**; giá cả theo nguyên tắc thị trường, cạnh tranh vừa là môi trường vừa là động lực; **lợi ích** là động lực trực tiếp; nhà nước quản lý, khắc phục khuyết tật; nền kinh tế **mở**','Ưu thế: tạo động lực sáng tạo; phát huy tiềm năng; thỏa mãn tối đa nhu cầu','Khuyết tật: tiềm ẩn **rủi ro khủng hoảng**; không tự khắc phục **cạn kiệt tài nguyên, suy thoái môi trường**; không tự khắc phục **phân hóa sâu sắc**','Adam Smith: cơ chế thị trường như **“bàn tay vô hình”**']],
+ ['Quy luật giá trị',['Nội dung: SX & trao đổi phải dựa trên **hao phí lao động xã hội cần thiết**; trao đổi theo nguyên tắc **ngang giá**','Là quy luật **căn bản** của SX và lưu thông hàng hóa','3 tác động: **điều tiết** SX & lưu thông; **kích thích cải tiến kỹ thuật**, tăng NSLĐ; **phân hóa** người SX giàu – nghèo','Giá cả = biểu hiện bằng tiền của giá trị; **giá trị là cơ sở của giá cả**; giá cả xoay quanh giá trị do cung – cầu, cạnh tranh, sức mua đồng tiền']],
+ ['Cung – cầu, cạnh tranh',['**Cầu**: nhu cầu **có khả năng thanh toán**; **cung**: hàng hóa có trên thị trường hoặc chuẩn bị đưa ra thị trường','Cung < cầu → **giá cả > giá trị**; cung > cầu → giá cả < giá trị','Cung gắn với khâu **sản xuất**, cầu gắn với khâu **tiêu dùng** → quan hệ cung – cầu phản ánh quan hệ sản xuất – tiêu dùng','Quy luật cạnh tranh: **nội bộ ngành** → hình thành **giá trị thị trường**; **giữa các ngành** → **lợi nhuận bình quân**','Cạnh tranh trong KTHH: thúc đẩy LLSX, cải tiến kỹ thuật, phân bổ nguồn lực']],
+ ['Chủ thể tham gia thị trường',['**Người sản xuất**: tạo ra hàng hóa, dịch vụ; phải có trách nhiệm với xã hội','**Người tiêu dùng**: sức mua **quyết định** sự phát triển bền vững của người SX','**Chủ thể trung gian**: cầu nối người SX – người tiêu dùng','**Nhà nước**: quản lý nhà nước về kinh tế + **khắc phục khuyết tật** thị trường']]
+ ]},
+{id:'c3a',ic:'⚙️',t:'Ch.3 Nguồn gốc & bản chất giá trị thặng dư',sub:'Slot 3–4 · 3.1 · hòn đá tảng của học thuyết Mác',heat:'🔥🔥🔥🔥',
+ eq:['T – H – T′ (T′ = T + m)','m′ = m/v · 100% = t′/t · 100%','M = m′ · V'],
+ cards:[
+ ['Công thức chung của tư bản',['Lưu thông hàng hóa giản đơn **H – T – H**: mục đích là **giá trị sử dụng**; tiền là phương tiện','Lưu thông tư bản **T – H – T′**: mục đích là **giá trị lớn hơn**; mở đầu bằng mua, kết thúc bằng bán','Hai công thức giống nhau: đều có 2 yếu tố tiền – hàng, 2 hành vi đối lập mua – bán','Mâu thuẫn: GTTD **không** sinh ra trong lưu thông nhưng cũng **không** ngoài lưu thông','Tiền chỉ thành tư bản khi được dùng để **mua sức lao động**, mang lại GTTD','Dạng: TB thương nghiệp T–H–T′ · TB công nghiệp T–H…SX…H′–T′ · TB cho vay T–T′']],
+ ['Hàng hóa sức lao động',['Sức lao động: **toàn bộ thể lực và trí lực** trong con người đang sống, được vận dụng khi lao động','2 điều kiện: người lao động **tự do về thân thể** + **không có đủ TLSX** để tự kết hợp với sức lao động','Giá trị: giá trị TL sinh hoạt cho bản thân + **nuôi con** + **phí tổn đào tạo**; bao hàm yếu tố **tinh thần & lịch sử**','**GTSD đặc biệt**: khi sử dụng tạo ra **giá trị mới lớn hơn giá trị bản thân nó** → chìa khóa giải mâu thuẫn công thức chung','Phổ biến từ khi **CNTB ra đời**; công nhân bán **sức lao động**, không bán “lao động”']],
+ ['Sự sản xuất GTTD',['Quá trình SX TBCN = thống nhất của **quá trình tạo ra giá trị** và **quá trình làm tăng giá trị**','**GTTD (m)**: bộ phận giá trị mới **dôi ra ngoài giá trị sức lao động** do công nhân tạo ra, bị nhà TB chiếm không','Nhà TB trả **đúng giá trị** sức lao động vẫn thu được GTTD','Nguồn gốc GTTD: **lao động không công** của công nhân làm thuê','Quy luật kinh tế cơ bản của CNTB = **quy luật GTTD**']],
+ ['Tư bản bất biến (c) & khả biến (v)',['Căn cứ phân chia: **vai trò** của từng bộ phận trong **việc tạo ra GTTD**','**c**: tồn tại dưới dạng **TLSX** (máy móc, nguyên liệu); giá trị **chuyển nguyên vẹn** vào sản phẩm, không tăng lượng','**v**: tồn tại dưới dạng **sức lao động** (tiền công); **tăng lượng** trong SX → nguồn gốc m','Máy móc là **điều kiện**, không phải nguồn gốc GTTD','!c, v thuộc phạm trù **tư bản sản xuất**']],
+ ['Tiền công',['Tiền công = **giá cả của hàng hóa sức lao động** (bản chất), bề ngoài như giá cả của lao động','2 hình thức cơ bản: **tính theo thời gian** & **tính theo sản phẩm**','Tiền công **danh nghĩa** (số tiền nhận) vs **thực tế** (lượng hàng hóa, dịch vụ mua được)','Tiền công theo sản phẩm: căn cứ **số lượng & chất lượng** sản phẩm','Xu hướng chung trong CNTB: **hạ thấp** tiền công (thực tế)']],
+ ['Tuần hoàn tư bản',['T – H (SLĐ + TLSX) … SX … H′ – T′','3 giai đoạn: **mua** (lưu thông) → **sản xuất** → **bán** (lưu thông)','3 hình thái lần lượt: **TB tiền tệ** → **TB sản xuất** → **TB hàng hóa**','Tuần hoàn TB công nghiệp = thống nhất 3 hình thái tuần hoàn: TB tiền tệ, TB sản xuất, TB hàng hóa']],
+ ['Chu chuyển tư bản',['Chu chuyển = tuần hoàn xét như quá trình **định kỳ, lặp lại, đổi mới** theo thời gian','Thời gian chu chuyển = thời gian **sản xuất + lưu thông**','Tốc độ: **n = CH / ch** (CH: thời gian 1 năm, ch: thời gian 1 vòng)','**TB cố định**: máy móc, nhà xưởng – chuyển giá trị **dần dần**; hao mòn **hữu hình** (vật chất) & **vô hình** (mất giá do máy mới rẻ hơn)','**TB lưu động**: nguyên, nhiên liệu, sức lao động – chuyển giá trị **một lần**','Căn cứ chia cố định/lưu động: **phương thức chuyển giá trị** vào sản phẩm','!Đừng nhầm căn cứ c/v (vai trò tạo GTTD) với căn cứ cố định/lưu động']],
+ ['Tỷ suất & khối lượng GTTD',['**m′ = m/v × 100%** = t′/t × 100% → **trình độ bóc lột**','**M = m′ × V** → **quy mô bóc lột**']],
+ ['3 phương pháp sản xuất GTTD',['**Tuyệt đối**: **kéo dài ngày lao động** (hoặc **tăng cường độ lao động**), thời gian tất yếu không đổi – là cơ sở chung','**Tương đối**: **rút ngắn thời gian lao động tất yếu** nhờ tăng NSLĐ **xã hội** (ngành SX tư liệu sinh hoạt), ngày lao động không đổi','**Siêu ngạch**: tăng NSLĐ **cá biệt**, giá trị cá biệt < giá trị xã hội → **hình thức biến tướng** của GTTD tương đối','!Bóc lột sản phẩm thặng dư **không** chỉ có trong CNTB (các PTSX trước bóc lột trực tiếp)']]
+ ]},
+{id:'c3b',ic:'🏗️',t:'Ch.3 Tích lũy tư bản & tái sản xuất',sub:'Slot 4 · 3.2',heat:'🔥🔥🔥',
+ cards:[
+ ['Tái sản xuất',['Tái SX: SX lặp lại, tiếp diễn liên tục','Căn cứ **quy mô**: **giản đơn** (quy mô cũ) / **mở rộng** (quy mô lớn hơn) – mở rộng là điển hình của CNTB','Căn cứ **phạm vi**: **cá biệt** / **xã hội**','Mở rộng **theo chiều sâu**: tăng sản phẩm chủ yếu nhờ **tăng NSLĐ, hiệu quả** sử dụng nguồn lực','Nội dung TSX xã hội: tái SX **của cải vật chất, sức lao động, QHSX, môi trường**','Mác chia nền SX xã hội: **KV I – SX tư liệu sản xuất**, **KV II – SX tư liệu tiêu dùng**']],
+ ['Bản chất tích lũy',['Tích lũy = **biến một phần GTTD thành tư bản phụ thêm** (tư bản hóa GTTD)','Nguồn gốc duy nhất của tích lũy: **giá trị thặng dư**','Nhân tố quy mô tích lũy: **trình độ bóc lột (m′)**, **NSLĐ xã hội**, **chênh lệch TB sử dụng – TB tiêu dùng** (hiệu quả máy móc), **quy mô TB ứng trước**','Phụ thuộc trước hết vào tỷ lệ chia m thành quỹ tích lũy – quỹ tiêu dùng']],
+ ['Hệ quả của tích lũy',['Tăng **cấu tạo hữu cơ c/v** (cấu tạo giá trị do cấu tạo kỹ thuật quyết định, phản ánh sự biến đổi của nó)','**Cấu tạo kỹ thuật**: tỷ lệ số lượng TLSX / số lượng sức lao động sử dụng','Tăng **tích tụ** và **tập trung** tư bản','Tăng chênh lệch thu nhập nhà TB – người lao động; **nhân khẩu thừa tương đối (thất nghiệp)** do c/v tăng','Quy luật chung: một cực **giàu có** – một cực **bần cùng**']],
+ ['Tích tụ vs Tập trung',['**Tích tụ**: tăng quy mô TB cá biệt bằng **tư bản hóa GTTD** → làm tăng TB xã hội','**Tập trung**: **hợp nhất** nhiều TB cá biệt (sáp nhập, thôn tính) → **không** làm tăng TB xã hội','+Giống nhau: đều làm **tăng quy mô tư bản cá biệt**','Tập trung gắn với cạnh tranh và tín dụng']]
+ ]},
+{id:'c3c',ic:'🧾',t:'Ch.3 Các hình thức biểu hiện của GTTD',sub:'Slot 4 · 3.3 · lợi nhuận, lợi tức, địa tô',heat:'🔥🔥🔥🔥',
+ eq:['k = c + v','W = k + m = k + p','p′ = m/(c+v) · 100%'],
+ cards:[
+ ['Chi phí sản xuất & lợi nhuận',['**Chi phí SX TBCN k = c + v**: phần giá trị bù lại TLSX đã tiêu dùng và sức lao động; luôn **nhỏ hơn** giá trị hàng hóa','Chi phí thực tế của xã hội = **c + v + m** (giá trị hàng hóa)','**Lợi nhuận p**: GTTD được quan niệm là **con đẻ của toàn bộ tư bản ứng trước**; bản chất **p và m đều là lao động không công**','Lợi nhuận **che giấu** bóc lột vì chi phí k **xóa nhòa sự khác nhau giữa c và v**','Về lượng: p có thể = m, >m, <m (do giá cả lệch giá trị); xét toàn xã hội **tổng p = tổng m**']],
+ ['Tỷ suất lợi nhuận p′',['**p′ = m/(c+v) × 100%** – phản ánh mức doanh lợi đầu tư','Luôn **nhỏ hơn m′**','Nhân tố: **m′** (thuận), **cấu tạo hữu cơ c/v** (nghịch), **tốc độ chu chuyển** (thuận), **tiết kiệm c** (thuận)','Xu hướng p′ **giảm dần**']],
+ ['Lợi nhuận bình quân & giá cả sản xuất',['**Cạnh tranh giữa các ngành** → tỷ suất lợi nhuận bình quân','Giá cả sản xuất = **k + p̄**','Giai đoạn tự do cạnh tranh: quy luật giá trị → **quy luật giá cả sản xuất**; quy luật GTTD → **quy luật lợi nhuận bình quân**','Giai đoạn độc quyền: quy luật GTTD → **quy luật lợi nhuận độc quyền cao**']],
+ ['Tư bản thương nghiệp',['Là **bộ phận TB công nghiệp tách ra** (khâu H′ – T′) chuyên đảm nhận lưu thông','Lợi nhuận thương nghiệp = phần GTTD **TB công nghiệp nhường** cho TB thương nghiệp','Công thức T – H – T′']],
+ ['Tư bản cho vay & lợi tức',['TB cho vay: TB tiền tệ **tạm thời nhàn rỗi** cho vay để thu lợi tức; **quyền sở hữu tách khỏi quyền sử dụng**; T – T′','**Lợi tức z**: một phần **lợi nhuận bình quân** người đi vay trả người cho vay','Tỷ suất lợi tức z′ = z / TB cho vay; **0 < z′ < p̄**','**Cổ phiếu**: thường & ưu đãi; **trái phiếu**; mua cổ phiếu, trái phiếu ở nước ngoài = **đầu tư gián tiếp**']],
+ ['Địa tô TBCN',['= phần **lợi nhuận siêu ngạch ngoài lợi nhuận bình quân** nhà TB kinh doanh nông nghiệp trả cho **địa chủ**','**Chênh lệch I**: ruộng **màu mỡ** (tốt, trung bình) và **vị trí thuận lợi**','**Chênh lệch II**: ruộng đã **thâm canh**','**Tuyệt đối**: thu trên **mọi loại ruộng**, kể cả ruộng xấu nhất (do cấu tạo hữu cơ NN thấp hơn CN)','Giá cả ruộng đất = **địa tô / tỷ suất lợi tức ngân hàng**','+Giống nhau: đều là **lợi nhuận siêu ngạch**, nguồn gốc là GTTD']]
+ ]},
+{id:'c4a',ic:'🏰',t:'Ch.4 Cạnh tranh & độc quyền',sub:'Slot 5 · 4.1',heat:'🔥🔥🔥',
+ cards:[
+ ['Độc quyền là gì?',['Liên minh giữa các **doanh nghiệp lớn**, nắm phần lớn SX & tiêu thụ, định ra **giá cả độc quyền**, thu **lợi nhuận độc quyền cao**','Lênin: “**tự do cạnh tranh đẻ ra tập trung sản xuất** và sự tập trung SX này, khi phát triển tới một mức độ nhất định, lại dẫn tới độc quyền”','3 nguyên nhân: **phát triển LLSX** (cần quy mô lớn) · **cạnh tranh** (hợp lại hoặc bị loại bỏ) · **khủng hoảng & phát triển hệ thống tín dụng**','Xuất hiện cuối TK XIX – đầu XX']],
+ ['Tác động của độc quyền',['+Tích cực: khả năng **nghiên cứu, ứng dụng KHKT**; tăng NSLĐ, năng lực cạnh tranh; tạo sức mạnh kinh tế','!Tiêu cực: **thiệt hại người tiêu dùng** & xã hội; **kìm hãm tiến bộ kỹ thuật**; **phân hóa giàu nghèo**; chi phối chính trị bởi nhóm lợi ích']],
+ ['Giá cả & lợi nhuận độc quyền',['Giá cả độc quyền = chi phí SX + **lợi nhuận độc quyền cao**; **bán đắt, mua rẻ**','Nguồn gốc lợi nhuận độc quyền cao: lao động không công của công nhân trong và **ngoài** DN độc quyền, người SX nhỏ, nhân dân lao động ở các nước thuộc địa…','Giá cả độc quyền **không xóa bỏ** quy luật giá trị (chỉ phân phối lại)']],
+ ['Cạnh tranh trong trạng thái độc quyền',['Độc quyền **không thủ tiêu** cạnh tranh mà làm nó **gay gắt** hơn','Thêm 3 loại: **độc quyền ↔ DN ngoài độc quyền** · **giữa các tổ chức độc quyền** · **trong nội bộ tổ chức độc quyền**','Cạnh tranh nội bộ độc quyền: giành **tỷ lệ cổ phần khống chế**, vị trí trong hệ thống, phân chia lợi ích có lợi']],
+ ['Độc quyền nhà nước',['= kết hợp **sức mạnh độc quyền tư nhân + nhà nước tư sản** thành cơ chế thống nhất; nhà nước **phụ thuộc** độc quyền','Nguyên nhân: tích tụ, tập trung cần quy mô lớn; phân công lao động → ngành **ít lợi nhuận** (kết cấu hạ tầng) nhà nước đầu tư; mâu thuẫn giai cấp; quốc tế hóa, mở rộng quan hệ đối ngoại','Bản chất: **nấc thang phát triển mới** của CNTB độc quyền; quan hệ kinh tế – chính trị – xã hội, **không chỉ là một chính sách**','Hình thành rõ nét, phổ biến từ **giữa thế kỷ XX**','Mục đích: phục vụ lợi ích **tổ chức độc quyền tư nhân**, duy trì sự phát triển của CNTB']]
+ ]},
+{id:'c4b',ic:'🎩',t:'Ch.4 Lênin: 5 đặc điểm của CNTB độc quyền',sub:'Slot 5 · 4.2',heat:'🔥🔥🔥🔥',
+ table:{h:['#','Đặc điểm kinh tế','Từ khóa'],r:[['1','**Tập trung SX** & các tổ chức độc quyền','Cartel → Syndicate → Trust → Consortium'],['2','**Tư bản tài chính** & hệ thống tài phiệt','Ngân hàng + công nghiệp · chế độ tham dự'],['3','**Xuất khẩu tư bản** phổ biến','XKHH = tự do cạnh tranh · XKTB = độc quyền'],['4','**Phân chia thế giới về kinh tế**','Liên minh độc quyền quốc tế'],['5','**Phân chia lãnh thổ** giữa các cường quốc','Chủ nghĩa thực dân']]},
+ cards:[
+ ['Hình thức tổ chức độc quyền',['**Cartel**: độc lập cả **SX & lưu thông**, chỉ thỏa thuận giá, thị trường, sản lượng – **thấp nhất, lỏng lẻo** (phổ biến châu Âu cuối TK XIX)','**Syndicate**: độc lập SX, **mất độc lập lưu thông** (ban quản trị chung mua – bán) – phổ biến ở **Pháp**','**Trust**: thống nhất **cả SX và lưu thông**, nhà TB thành **cổ đông** – quê hương **Mỹ**','**Consortium**: **đa ngành, liên kết dọc**, ngân hàng lớn đứng đầu – **cao nhất**','Liên kết **ngang** (cùng ngành): Cartel, Syndicate, Trust · liên kết **dọc** (nhiều ngành): Consortium','Mới: **Concern** (đa ngành, hàng trăm xí nghiệp) & **Conglomerate** (đa ngành không liên quan, lợi nhuận chủ yếu từ **mua bán chứng khoán**)']],
+ ['Tư bản tài chính',['Lênin: **hợp nhất TB ngân hàng** của một số ít ngân hàng độc quyền lớn với **TB của liên minh độc quyền các nhà công nghiệp**','Nguồn gốc: tích tụ, tập trung trong **ngân hàng** → ngân hàng từ **trung gian thanh toán** thành người **khống chế**','Thống trị qua **chế độ tham dự** (công ty mẹ – con – cháu) + **kết hợp nhân sự**; nay bổ sung **chế độ ủy nhiệm**','Dẫn tới hình thành **đầu sỏ tài chính (tài phiệt)**']],
+ ['Xuất khẩu tư bản',['**Xuất khẩu giá trị** ra nước ngoài nhằm chiếm đoạt **GTTD** và các nguồn lợi khác ở nước nhập khẩu','Xuất khẩu **hàng hóa** = đặc điểm CNTB **tự do cạnh tranh**; xuất khẩu **tư bản** = đặc điểm CNTB **độc quyền**','Hình thức: **trực tiếp** (xây xí nghiệp) / **gián tiếp** (cho vay, mua cổ phiếu, trái phiếu); **nhà nước** / **tư nhân**','XKTB nhà nước về kinh tế: đầu tư hạ tầng, **mở đường cho XKTB tư nhân**','Biểu hiện mới: dòng vốn chủ yếu giữa **các nước phát triển**; chủ thể là **công ty xuyên quốc gia**; hình thức đa dạng; nguyên tắc **cùng có lợi**']],
+ ['Phân chia thế giới',['Về **kinh tế**: liên minh độc quyền quốc tế chia thị trường tiêu thụ, nguyên liệu, đầu tư','Về **lãnh thổ**: chủ nghĩa thực dân; sau thập niên 50 TK XX chuyển sang **thực dân mới** (viện trợ **kinh tế, quân sự**…)','Biểu hiện mới: chủ thể có cả nhà nước; hình thành **khu vực hóa** và **toàn cầu hóa** kinh tế','Thực dân tạo ra mâu thuẫn: các nước đế quốc ↔ thuộc địa, giữa các nước đế quốc…']],
+ ['Đặc điểm độc quyền nhà nước (3)',['**Kết hợp nhân sự** giữa tổ chức độc quyền và nhà nước (hội chủ xí nghiệp, đảng phái)','Hình thành, phát triển **sở hữu nhà nước** = sở hữu tập thể của giai cấp tư sản độc quyền; kết hợp sở hữu NN + sở hữu độc quyền tư nhân','Chức năng sở hữu NN: **mở rộng SX TBCN**; **giải phóng TB độc quyền** khỏi ngành ít lãi; **chỗ dựa** cho điều tiết kinh tế','ĐQNN trở thành **công cụ điều tiết kinh tế**; cơ chế: **thị trường + độc quyền tư nhân + can thiệp nhà nước**','Nhà nước đầu tư thay tư nhân vào ngành **vốn lớn, lãi thấp** (kết cấu hạ tầng)']]
+ ]},
+{id:'c4c',ic:'🌐',t:'Ch.4 Biểu hiện mới & vai trò lịch sử của CNTB',sub:'Slot 6 · 4.3',heat:'🔥🔥🔥',
+ cards:[
+ ['Biểu hiện mới của độc quyền',['Tích tụ & tập trung: xuất hiện **công ty độc quyền xuyên quốc gia** bên cạnh sự phát triển của **DN vừa và nhỏ**','Thế mạnh DN vừa và nhỏ: **linh hoạt, nhạy bén**, dễ đổi mới, ứng dụng KHCN','Tư bản tài chính: **chế độ tham dự** được bổ sung **chế độ ủy nhiệm**; đa dạng hóa hoạt động','**TNCs** đẩy mạnh **quốc tế hóa, toàn cầu hóa**','Phân chia thị trường: **khu vực hóa**, liên kết khu vực, toàn cầu hóa']],
+ ['Vai trò tích cực của CNTB',['**Thúc đẩy LLSX** phát triển nhanh','**Chuyển nền SX nhỏ** thành **SX lớn hiện đại**','Thực hiện **xã hội hóa sản xuất**','Phương thức SX TBCN qua 3 giai đoạn (C. Mác): **hiệp tác giản đơn → công trường thủ công → đại công nghiệp cơ khí**']],
+ ['Giới hạn của CNTB',['Mục đích SX vẫn vì **lợi ích thiểu số giai cấp tư sản**','Gây ra **chiến tranh, xung đột**','**Phân hóa giàu nghèo** ngày càng sâu','Bắt nguồn từ **mâu thuẫn cơ bản**: tính **xã hội hóa** ngày càng cao của LLSX ↔ chế độ **chiếm hữu tư nhân TBCN** về TLSX','Quy luật QHSX phù hợp LLSX → **CNTB không tồn tại vĩnh viễn**']],
+ ['Khủng hoảng kinh tế',['Bản chất: khủng hoảng **sản xuất “thừa”** so với **sức mua có hạn** của xã hội','Mang tính **khách quan, chu kỳ**','Nguyên nhân sâu xa: mâu thuẫn cơ bản của CNTB']]
+ ]},
+{id:'c5a',ic:'🇻🇳',t:'Ch.5 KTTT định hướng XHCN ở Việt Nam',sub:'Slot 7 · 5.1 · khái niệm, tất yếu, 5 đặc trưng',heat:'🔥🔥🔥',
+ flow:[['ĐH VI (1986)','','Đổi mới cơ chế quản lý kinh tế'],['ĐH IX (2001)','','Mô hình KTTT định hướng XHCN'],['ĐH XII–XIII','','Định nghĩa đầy đủ']],
+ cards:[
+ ['Khái niệm',['Nền KT vận hành theo **các quy luật của thị trường**, đồng thời góp phần hướng tới xác lập XHCN, có sự điều tiết của **Nhà nước pháp quyền XHCN** do **ĐCS Việt Nam lãnh đạo**','Đảng: “một kiểu tổ chức kinh tế vừa tuân theo quy luật của KTTT vừa dựa trên cơ sở và chịu sự **dẫn dắt, chi phối bởi các nguyên tắc và bản chất của CNXH**”','Là **mô hình kinh tế tổng quát** của thời kỳ quá độ lên CNXH ở VN (**ĐH IX**)','Hoạt động kinh tế biểu hiện **vô cùng phong phú**; nhà nước điều tiết, phục vụ lợi ích nhân dân']],
+ ['Tính tất yếu khách quan',['Phù hợp **xu hướng phát triển khách quan** của VN trong bối cảnh thế giới','Do **tính ưu việt** của KTTT trong thúc đẩy phát triển','Phù hợp **nguyện vọng** dân giàu, nước mạnh, dân chủ, công bằng, văn minh','!KTTT là **thành tựu chung của nhân loại**, không phải sản phẩm riêng của CNTB']],
+ ['5 đặc trưng',['**Mục tiêu**: phát triển LLSX, xây dựng CSVC–KT của CNXH, nâng cao đời sống; **dân giàu, nước mạnh, dân chủ, công bằng, văn minh**','**Sở hữu & thành phần**: nhiều hình thức sở hữu, nhiều thành phần; **KT nhà nước giữ vai trò chủ đạo**; **KT tư nhân là động lực quan trọng**','**Quản lý**: Nhà nước pháp quyền XHCN, Đảng lãnh đạo, nhân dân làm chủ; công cụ: **pháp luật, chiến lược, kế hoạch, chính sách**','**Phân phối**: **theo lao động & hiệu quả kinh tế** (chủ yếu), theo mức đóng góp vốn, qua **phúc lợi xã hội**','**Tăng trưởng gắn với tiến bộ & công bằng xã hội** ngay trong từng bước, từng chính sách']],
+ ['Tăng trưởng & phát triển',['Tăng trưởng kinh tế: **tăng GDP, GNP** trong một thời kỳ nhất định','Nhân tố tăng trưởng: **con người, vốn, KH–CN, cơ cấu kinh tế, thể chế chính trị**','Công bằng trong phân phối: công bằng ngang & công bằng dọc']]
+ ]},
+{id:'c5b',ic:'📐',t:'Ch.5 Hoàn thiện thể chế KTTT định hướng XHCN',sub:'Slot 7 · 5.2',heat:'🔥🔥',
+ cards:[
+ ['Thể chế',['Thể chế: những **quy tắc, luật pháp, bộ máy quản lý và cơ chế vận hành** điều chỉnh hoạt động của con người','Phân loại theo **lĩnh vực cốt lõi**: thể chế **chính trị**, **kinh tế**, **xã hội** · theo **cấu trúc tổ chức tham gia xã hội**: thể chế **công** – thể chế **tư**','Thể chế kinh tế: hệ thống quy tắc, luật pháp, bộ máy & cơ chế điều chỉnh hành vi các chủ thể kinh tế','Thể chế KTTT định hướng XHCN gồm: **luật pháp, quy tắc** · **chủ thể tham gia** · **cơ chế vận hành** · các yếu tố thị trường…']],
+ ['Vì sao phải hoàn thiện',['Thể chế **chưa đồng bộ**','Hệ thống thể chế **chưa đầy đủ**','Thể chế **kém hiệu lực, hiệu quả**; thiếu các yếu tố thị trường và các loại thị trường','!Không phải vì “làm theo nước ngoài” hay “để xóa bỏ vai trò nhà nước”']],
+ ['Nội dung hoàn thiện',['Thể chế về **sở hữu** và phát triển các **thành phần kinh tế** (thể chế hóa đầy đủ quyền tài sản; hoàn thiện pháp luật về đất đai, tài nguyên…)','Phát triển **đồng bộ các yếu tố thị trường** và các loại thị trường','Gắn **tăng trưởng** với **tiến bộ, công bằng** xã hội','Thúc đẩy **hội nhập** kinh tế quốc tế','Nâng cao năng lực lãnh đạo của Đảng, vai trò quản lý của Nhà nước, phát huy quyền làm chủ của nhân dân']]
+ ]},
+{id:'c5c',ic:'⚖️',t:'Ch.5 Các quan hệ lợi ích kinh tế',sub:'Slot 8 · 5.3',heat:'🔥🔥🔥',
+ cards:[
+ ['Lợi ích kinh tế',['Là **lợi ích vật chất** thu được khi thực hiện các hoạt động kinh tế','Bản chất: phản ánh **mục đích và động cơ** của quan hệ giữa các chủ thể trong SX xã hội','Biểu hiện: chủ DN – **lợi nhuận**; người lao động – **tiền công**…','Vai trò: **động lực trực tiếp** của các chủ thể; **cơ sở** thúc đẩy các lợi ích khác','Giải quyết **quan hệ lợi ích** → tạo động lực sáng tạo, vận dụng quy luật']],
+ ['Quan hệ lợi ích kinh tế',['Vừa **thống nhất** vừa **mâu thuẫn**','Nhân tố ảnh hưởng: **trình độ LLSX**; **địa vị trong QHSX**; **chính sách phân phối** của nhà nước; **hội nhập** quốc tế','Quan hệ chủ yếu: người lao động – người sử dụng LĐ; giữa những người sử dụng LĐ; giữa những người LĐ; **cá nhân – nhóm – xã hội**','Phương thức thực hiện: theo **nguyên tắc thị trường** + theo **chính sách nhà nước** & tổ chức xã hội']],
+ ['Vai trò Nhà nước (4)',['**Bảo vệ lợi ích hợp pháp**, tạo môi trường thuận lợi (ổn định chính trị, pháp luật, kết cấu hạ tầng)','**Điều hòa** lợi ích cá nhân – DN – xã hội (chính sách **phân phối thu nhập**)','**Kiểm soát, ngăn ngừa** quan hệ lợi ích tiêu cực (tham nhũng, lợi ích nhóm)','**Giải quyết mâu thuẫn** trong quan hệ lợi ích']],
+ ['Sở hữu',['Sở hữu: quan hệ giữa người với người đối với TLSX & của cải; chịu quy định trực tiếp của **trình độ LLSX**','Cơ sở sâu xa hình thành sở hữu hiện thực: **quá trình sản xuất và tái sản xuất xã hội**']]
+ ]},
+{id:'c6a',ic:'🏭',t:'Ch.6 Cách mạng công nghiệp & CNH, HĐH',sub:'Slot 9 · 6.1',heat:'🔥🔥🔥',
+ table:{h:['CMCN','Thời gian · nơi','Nội dung'],r:[['Lần 1','Giữa TK XVIII – giữa XIX · **Anh**, từ ngành **dệt**','**Cơ giới hóa**, máy hơi nước; thoi bay (John Kay)'],['Lần 2','Nửa cuối XIX – đầu XX','**Điện – cơ khí**, dây chuyền SX hàng loạt; giao thông, thông tin liên lạc'],['Lần 3','Đầu thập niên 60 – cuối TK XX','**CNTT, tự động hóa** (cách mạng số)'],['Lần 4','Đề cập lần đầu: hội chợ **Hannover (Đức) 2011**','**AI, IoT, Big data**, in 3D, công nghệ sinh học…']]},
+ cards:[
+ ['Cách mạng công nghiệp',['Bước phát triển **nhảy vọt về chất** trình độ **tư liệu lao động**, kéo theo thay đổi phân công lao động, NSLĐ','Đến nay thế giới trải qua **4** cuộc CMCN','Mác khái quát CMCN lần 1 qua **3 giai đoạn**: hiệp tác giản đơn → công trường thủ công → đại công nghiệp','Vai trò: thúc đẩy **LLSX**; thúc đẩy **hoàn thiện QHSX**; thúc đẩy **đổi mới phương thức quản trị phát triển**','CMCN 4 làm mất lợi thế **lao động giá rẻ, tài nguyên** của nước đang phát triển; cốt lõi kỹ thuật số: **IoT, AI, Big data**']],
+ ['3 mô hình CNH tiêu biểu',['**Cổ điển** (Anh…): bắt đầu từ **công nghiệp nhẹ** (dệt), kéo dài **60–80 năm**; vốn từ **bóc lột lao động, cướp bóc thuộc địa, phá sản người SX nhỏ**','**Kiểu Liên Xô** (từ những năm **1930**): ưu tiên **công nghiệp nặng**; kế hoạch hóa tập trung (về sau trì trệ – nguyên nhân sụp đổ: **cơ chế kế hoạch hóa tập trung mệnh lệnh**)','**Nhật Bản & NICs** (Hàn Quốc, Singapore, Đài Loan, Hồng Kông): **rút ngắn 20–30 năm**, nhập khẩu & chuyển giao công nghệ']],
+ ['CNH, HĐH ở Việt Nam',['Chuyển đổi căn bản, toàn diện SX, kinh doanh, quản lý từ lao động thủ công sang sử dụng phổ biến sức lao động + công nghệ, phương tiện hiện đại','Tất yếu: quy luật phổ biến; xây dựng **CSVC–KT của CNXH**; rút ngắn khoảng cách tụt hậu; tạo **NSLĐ cao**','4 đặc trưng: theo **định hướng XHCN**; gắn **kinh tế tri thức**; trong điều kiện **KTTT định hướng XHCN**; trong bối cảnh **toàn cầu hóa, hội nhập**','Nội dung: tạo lập điều kiện; ứng dụng KH-CN; **chuyển dịch cơ cấu kinh tế**; hoàn thiện QHSX phù hợp LLSX; thích ứng CMCN 4.0','Kiểu **rút ngắn**: phát triển kinh tế tri thức, coi trọng công nghệ hiện đại, ứng dụng KH-CN gắn với **phát triển nguồn nhân lực**','**ĐH IX**: KH-CN có bước tiến nhảy vọt, **kinh tế tri thức** ngày càng nổi bật']]
+ ]},
+{id:'c6b',ic:'🤝',t:'Ch.6 Hội nhập kinh tế quốc tế',sub:'Slot 10 · 6.2',heat:'🔥🔥',
+ flow:[['ASEAN','','1995'],['ASEM','','1996 (sáng lập)'],['APEC','','1998'],['WTO','','2007']],
+ cards:[
+ ['Khái niệm & tất yếu',['Hội nhập: quá trình **gắn kết** nền kinh tế quốc gia với kinh tế thế giới dựa trên **chia sẻ lợi ích**, tuân thủ chuẩn mực chung','Tất yếu: **xu thế khách quan** trong toàn cầu hóa; **phương thức phát triển phổ biến** của các nước','Mục đích: thu hút vốn, công nghệ, kinh nghiệm quản lý, mở rộng thị trường…']],
+ ['Tác động',['+Tích cực: mở rộng thị trường, thu hút **vốn, công nghệ**; chuyển dịch cơ cấu; nâng cao nguồn nhân lực; nâng vị thế quốc tế','!Tiêu cực: cạnh tranh gay gắt; **phụ thuộc** bên ngoài; phân phối lợi ích không công bằng; nguy cơ thành **bãi thải công nghiệp**, đe dọa bản sắc văn hóa']],
+ ['Mốc & tổ chức',['Gia nhập **ASEAN**: 1995 · sáng lập **ASEM**: 1996 · **APEC**: 1998 · **WTO**: 11/01/**2007**','**OECD** = Tổ chức Hợp tác và Phát triển Kinh tế','FTA thế hệ mới: CPTPP, EVFTA, RCEP…','Quan điểm “xây dựng nền kinh tế **tự chủ** dựa trên làm chủ công nghệ, chủ động tích cực hội nhập…”: **Chiến lược phát triển KT–XH 2021–2030**']]
+ ]}
+];
+const TRAPS=[
+ ['m′ hay p′?','m′ = m/v (trình độ bóc lột) · p′ = m/(c+v) (mức doanh lợi) → p′ luôn < m′.'],
+ ['M hay m′?','M = m′·V phản ánh QUY MÔ bóc lột; m′ phản ánh TRÌNH ĐỘ bóc lột.'],
+ ['NSLĐ hay cường độ?','Cả hai đều tăng số sản phẩm. Chỉ NSLĐ làm GIẢM giá trị 1 đơn vị; cường độ thì không.'],
+ ['c/v hay cố định/lưu động?','c/v: căn cứ VAI TRÒ tạo GTTD. Cố định/lưu động: căn cứ PHƯƠNG THỨC CHUYỂN GIÁ TRỊ.'],
+ ['Tích tụ hay tập trung?','Tích tụ = tư bản hóa m (tăng TB xã hội). Tập trung = hợp nhất TB cá biệt (không tăng TB xã hội).'],
+ ['3 phương pháp GTTD','Kéo dài ngày lao động/tăng cường độ = tuyệt đối · tăng NSLĐ xã hội = tương đối · tăng NSLĐ cá biệt = siêu ngạch.'],
+ ['XK hàng hóa hay XK tư bản?','Hàng hóa = tự do cạnh tranh. Tư bản = độc quyền (đặc điểm thứ 3 của Lênin).'],
+ ['Thang độc quyền','Cartel (lỏng nhất) → Syndicate (mất lưu thông) → Trust (mất cả SX lẫn lưu thông) → Consortium (đa ngành, cao nhất).'],
+ ['Địa tô chênh lệch I hay II?','I: đất màu mỡ, vị trí thuận lợi. II: đất đã THÂM CANH. Tuyệt đối: MỌI loại đất.'],
+ ['KV I hay KV II?','KV I sản xuất TƯ LIỆU SẢN XUẤT · KV II sản xuất TƯ LIỆU TIÊU DÙNG.'],
+ ['Trọng thương hay trọng nông?','Trọng thương: LƯU THÔNG, tư tưởng đầu tiên của tư sản. Trọng nông: SẢN XUẤT (nông nghiệp).'],
+ ['Petty hay Smith?','Petty = sáng lập cổ điển Anh (theo Mác). Smith = đưa KTCT thành khoa học hệ thống. Ricardo = kết thúc.'],
+ ['Đáp án “Tất cả / Các phương án đều đúng”','Bộ đề này rất hay để đáp án gộp ở cuối — đọc kỹ từng ý trước khi chọn.']
+];
+const FLASH=[
+ ['Thuật ngữ “kinh tế chính trị” xuất hiện năm nào, do ai?','1615 · A. Montchrétien'],
+ ['Người sáng lập KTCT tư sản cổ điển (theo Mác)?','William Petty'],
+ ['Đối tượng nghiên cứu của KTCT Mác–Lênin?','Quan hệ xã hội của sản xuất và trao đổi'],
+ ['4 chức năng của KTCT Mác–Lênin?','Nhận thức · Thực tiễn · Tư tưởng · Phương pháp luận'],
+ ['2 điều kiện ra đời SX hàng hóa?','Phân công lao động xã hội + tách biệt về kinh tế'],
+ ['Lao động cụ thể tạo ra gì?','Giá trị sử dụng'],
+ ['Lao động trừu tượng tạo ra gì?','Giá trị'],
+ ['Lượng giá trị đo bằng gì?','Thời gian lao động xã hội cần thiết'],
+ ['5 chức năng của tiền?','Thước đo GT · lưu thông · cất trữ · thanh toán · tiền tệ thế giới'],
+ ['2 điều kiện sức lao động thành hàng hóa?','Tự do thân thể + không có TLSX'],
+ ['Công thức tỷ suất GTTD?','m′ = m/v × 100%'],
+ ['Công thức tốc độ chu chuyển?','n = CH / ch'],
+ ['Chi phí sản xuất TBCN?','k = c + v'],
+ ['Nguồn gốc duy nhất của tích lũy tư bản?','Giá trị thặng dư'],
+ ['Hình thức độc quyền thấp nhất / cao nhất?','Cartel / Consortium'],
+ ['Tư bản tài chính = ?','TB ngân hàng độc quyền + TB công nghiệp độc quyền'],
+ ['Đại hội xác định mô hình KTTT định hướng XHCN?','Đại hội IX (2001)'],
+ ['Thành phần giữ vai trò chủ đạo?','Kinh tế nhà nước'],
+ ['CMCN 4.0 lần đầu được nhắc ở đâu?','Hội chợ Hannover (Đức) 2011'],
+ ['VN vào WTO khi nào?','11/01/2007']
+];
+
+/* ---------- render ---------- */
+const $=s=>document.querySelector(s);
+const fmt=t=>t.replace(/\*\*\*(.+?)\*\*\*/g,'<i><b>$1</b></i>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>');
+const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let done=store.get('mln122-guide-done')||{};
+const li=t=>{let c='';if(t[0]==='!'){c=' class="warn"';t=t.slice(1)}else if(t[0]==='+'){c=' class="ok"';t=t.slice(1)}return `<li${c}>${fmt(t)}</li>`};
+
+let html='',toc='',total=0;
+S.forEach((s,i)=>{
+  const c=COLORS[i%COLORS.length];
+  toc+=`<a href="#${s.id}" style="--c:${c}" data-id="${s.id}"><span>${s.ic}</span><span>${s.t.split('·')[0].trim()}</span></a>`;
+  let h=`<section class="sec" id="${s.id}" style="--c:${c}"><div class="sec-h"><span class="ic">${s.ic}</span><div><h2><span class="pix" style="font-size:.6em;opacity:.6">0${i+1}</span> ${s.t}</h2><small>${s.sub}</small></div><span class="heat">${s.heat}</span></div>`;
+  if(s.eq) h+=`<div class="eq">${s.eq.map(e=>`<span>${e}</span>`).join('')}</div>`;
+  if(s.flow) h+=`<div class="flow">${s.flow.map((n,k)=>(k?'<span class="arrow">➜</span>':'')+(n[0]==='⇄'?'':`<div class="node">${n[1]?n[0]+' · ':''}${n[1]||n[0]}${n[2]?`<small>${n[2]}</small>`:''}</div>`)).join('')}</div>`;
+  if(s.table) h+=`<div class="tbl"><table><thead><tr>${s.table.h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${s.table.r.map(r=>`<tr>${r.map(x=>`<td>${fmt(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  h+='<div class="grid">';
+  s.cards.forEach((cd,j)=>{
+    total++;const key=s.id+'-'+j;
+    h+=`<details class="card ${done[key]?'done':''}" open id="${key}" data-key="${key}" style="--c:${c}"><summary>${cd[0]}</summary><div class="body"><ul>${cd[1].map(li).join('')}</ul><label class="chk"><input type="checkbox" ${done[key]?'checked':''}> Đã thuộc</label></div></details>`;
+  });
+  h+='</div></section>';
+  html+=h;
+});
+/* traps */
+toc+=`<a href="#traps" style="--c:var(--bad)"><span>🪤</span><span>Bẫy hay gặp</span></a><a href="#flash" style="--c:var(--mint)"><span>🃏</span><span>Flashcard</span></a>`;
+html+=`<section class="sec" id="traps" style="--c:var(--bad)"><div class="sec-h" style="color:#fff"><span class="ic">🪤</span><div><h2>Bẫy hay gặp & mẹo nhớ</h2><small>Đọc kỹ trước khi thi</small></div></div><div class="grid">${TRAPS.map(t=>`<div class="tip"><strong>⚠ ${t[0]}</strong><br>${t[1]}</div>`).join('')}</div></section>`;
+html+=`<section class="sec" id="flash" style="--c:var(--mint)"><div class="sec-h"><span class="ic">🃏</span><div><h2>Flashcard tự kiểm tra</h2><small>Bấm để lật thẻ</small></div></div><div class="flash">${FLASH.map(f=>`<div class="fc"><div><p class="q">${f[0]}</p><p class="a">${f[1]}</p></div></div>`).join('')}</div></section>`;
+$('#main').innerHTML=html;$('#toc').innerHTML=toc;
+$('#nSec').textContent=S.length;$('#nCard').textContent=total;
+
+function upd(){
+  const n=Object.values(done).filter(Boolean).length;
+  $('#nDone').textContent=n+'/'+total;$('#pb').style.width=(n/total*100)+'%';
+}
+upd();
+document.addEventListener('change',e=>{
+  if(!e.target.matches('.chk input'))return;
+  const card=e.target.closest('.card');done[card.dataset.key]=e.target.checked;
+  card.classList.toggle('done',e.target.checked);store.set('mln122-guide-done',done);upd();
+});
+document.addEventListener('click',e=>{const f=e.target.closest('.fc');if(f)f.classList.toggle('flip')});
+$('#openAll').onclick=()=>document.querySelectorAll('details.card').forEach(d=>d.open=true);
+$('#closeAll').onclick=()=>document.querySelectorAll('details.card').forEach(d=>d.open=false);
+$('#theme').onclick=()=>{const r=document.documentElement;const dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#150f2c';r.dataset.theme=dark?'light':'dark'};
+
+/* search */
+const orig=new Map();document.querySelectorAll('.card li').forEach(l=>orig.set(l,l.innerHTML));
+$('#q').addEventListener('input',e=>{
+  const v=e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    const lis=[...c.querySelectorAll('li')];
+    lis.forEach(l=>l.innerHTML=orig.get(l));
+    if(!v){c.classList.remove('hide');return}
+    const hit=(c.querySelector('summary').textContent+' '+lis.map(l=>l.textContent).join(' ')).toLowerCase().includes(v);
+    c.classList.toggle('hide',!hit);
+    if(hit){c.open=true;const re=new RegExp('('+v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')(?![^<]*>)','gi');lis.forEach(l=>l.innerHTML=l.innerHTML.replace(re,'<mark>$1</mark>'))}
+  });
+  document.querySelectorAll('.sec').forEach(s=>{if(s.querySelector('.card'))s.classList.toggle('hide',!!v&&![...s.querySelectorAll('.card')].some(c=>!c.classList.contains('hide')))});
+});
+/* toc highlight */
+const links=[...document.querySelectorAll('nav.toc a')];
+new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-30% 0px -60% 0px'}).observe&&
+document.querySelectorAll('.sec').forEach(s=>{});
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('.sec').forEach(s=>io.observe(s));
+/* mở từ quiz (study-guide.html#tc-0): cuộn tới thẻ và nháy sáng */
+const jump=()=>{const t=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(!t||!t.classList.contains('card'))return;t.open=true;t.classList.remove('focus');void t.offsetWidth;t.classList.add('focus');t.scrollIntoView({block:'center'})};
+addEventListener('hashchange',jump);setTimeout(jump,60);
+</script>
+</body>
+</html>

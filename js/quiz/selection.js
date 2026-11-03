@@ -1,7 +1,27 @@
 /* ---------- chapter scope ---------- */
-const SCOPES = [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["c5","🧭 Hành trình DVLS",[5]],["all","Tất cả",null]];
-let scope = "c12";
-try{const v=localStorage.getItem("mln111_scope");if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
+/* mỗi môn một bộ phạm vi: [khoá, nhãn, danh sách q.c hoặc null = tất cả]. MLN122 chia chương theo Schedule môn (Progress Test: Ch.2–5, cuối kỳ: Ch.1–6) */
+const SCOPES_BY = {
+  "111": [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["c5","🧭 Hành trình DVLS",[5]],["all","Tất cả",null]],
+  "122": [["p25","Progress Test · Ch.2–5",[2,3,4,5]],["c1","Ch.1 · Đối tượng & phương pháp",[1]],["c2","Ch.2 · Hàng hóa, thị trường",[2]],["c3","Ch.3 · Giá trị thặng dư",[3]],["c4","Ch.4 · Cạnh tranh & độc quyền",[4]],["c5","Ch.5 · KTTT định hướng XHCN",[5]],["c6","Ch.6 · CNH, HĐH & hội nhập",[6]],["all","Cuối kỳ · Ch.1–6",null]],
+};
+const SCOPE_KEY = () => subject === "111" ? "mln111_scope" : "mln111_scope_" + subject;
+let SCOPES = SCOPES_BY[subject], scope = SCOPES[0][0];
+try{const v=localStorage.getItem(SCOPE_KEY());if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
+/* đổi môn: lọc lại ngân hàng câu hỏi, phạm vi, tiêu đề; giải đề + kho câu sai của môn được giữ riêng (D trong storage.js) */
+function applySubject(){
+  document.querySelectorAll(".subj-code").forEach(e => e.textContent = "MLN" + subject);
+  document.title = document.title.replace(/MLN\d+/, "MLN" + subject);
+  $("subjDay").textContent = `✦ ôn ${SUBJ_TXT[subject][0]} kiểu siêu cute ✦`;
+  $("subjNight").textContent = `// lofi beats to study ${SUBJ_TXT[subject][1]} to · 2:00 AM ☂`;
+}
+function setSubject(k){
+  if (k === subject || !SUBJECTS.some(s => s[0] === k)) return;
+  if (run) return toast("Thoát bài đang làm rồi hãy đổi môn nha ✦");
+  subject = k; try{localStorage.setItem("mln111_subject", k)}catch(e){}
+  Q = ALLQ.filter(q => subjOf(q) === subject); SCOPES = SCOPES_BY[subject]; scope = SCOPES[0][0];
+  try{const v=localStorage.getItem(SCOPE_KEY());if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
+  applySubject(); renderHome();
+}
 const inScope = (q, sc = scope) => { const d = SCOPES.find(s => s[0] === sc)[2]; return !d || d.includes(q.c); };
 const pool = () => Q.filter(q => inScope(q));
 const learned = q => (S.stats[q.id]?.n || 0) > 0;
@@ -11,10 +31,16 @@ const templePool = () => Q.filter(learned);
 const TEMPLE_SIZE = 100;
 const scopeLabel = sc => (SCOPES.find(s => s[0] === sc) || SCOPES[SCOPES.length - 1])[1];
 /* giải đề: tiến độ đang lưu (còn câu chưa làm) */
-const giaideLeft = () => S.giaide && S.giaide.i < S.giaide.ids.length ? S.giaide : null;
+const giaideLeft = () => D.giaide && D.giaide.i < D.giaide.ids.length ? D.giaide : null;
 /* ôn câu sai: lượt ôn đang làm dở (còn câu chưa làm) */
-const onsaiLeft = () => S.onsai.run && S.onsai.run.i < S.onsai.run.ids.length ? S.onsai.run : null;
+const onsaiLeft = () => D.onsai.run && D.onsai.run.i < D.onsai.run.ids.length ? D.onsai.run : null;
 function renderScope(){
+  $("subjectChips").replaceChildren(...SUBJECTS.map(([k, label]) => {
+    const b = el("button", "chip" + (k === subject ? " on" : ""), label);
+    b.append(el("small", "", String(ALLQ.filter(q => subjOf(q) === k).length)));
+    b.onclick = () => setSubject(k);
+    return b;
+  }));
   $("scopeChips").replaceChildren(...SCOPES.map(([k, label]) => {
     const b = el("button", "chip" + (k === scope ? " on" : ""), label);
     b.append(el("small", "", String(Q.filter(q => inScope(q, k)).length)));
@@ -38,8 +64,8 @@ function renderScope(){
   $("giaideSub").textContent = g ? `câu ${g.i + 1}/${g.ids.length} · ${scopeLabel(g.sc)}` : `${n} câu · kèm trích Study Guide`;
   $("giaideBtn").disabled = !g && !n;
   $("giaideReset").classList.toggle("hidden", !g);
-  const qids = new Set(Q.map(q => q.id)); S.onsai.ids = S.onsai.ids.filter(id => qids.has(id)); // bỏ câu đã bị xoá khỏi ngân hàng đề
-  const o = onsaiLeft(), on = S.onsai.ids.length; // kho câu sai không theo phạm vi: hiện khi có câu sai từ Giải đề
+  const qids = new Set(Q.map(q => q.id)); D.onsai.ids = D.onsai.ids.filter(id => qids.has(id)); // bỏ câu đã bị xoá khỏi ngân hàng đề
+  const o = onsaiLeft(), on = D.onsai.ids.length; // kho câu sai không theo phạm vi: hiện khi có câu sai từ Giải đề
   $("onsaiBtn").classList.toggle("hidden", !o && !on);
   $("onsaiMain").textContent = o ? "📕 Ôn câu sai tiếp" : "📕 Ôn câu sai";
   $("onsaiSub").textContent = o ? `câu ${o.i + 1}/${o.ids.length} · kho còn ${on} câu` : `${on} câu sai từ Giải đề`;
