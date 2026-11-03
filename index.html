@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MLN111 Quiz Y2K v0.3.14</title>
+<title>MLN111 Quiz Y2K v0.3.20</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/quiz.css">
 <link rel="stylesheet" href="css/result.css">
 <link rel="stylesheet" href="css/guide.css">
+<link rel="stylesheet" href="css/story.css">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/sound-panel.css">
 <link rel="stylesheet" href="css/tv.css">
@@ -26,7 +27,7 @@
 <div class="floaty" id="floaty"></div>
 <div class="marquee"><div id="mq"></div></div>
 <div class="theme-bar">
-  <span class="tb-title"><span class="subj-code">MLN111</span> ♡ Quiz <small>v0.3.14</small></span>
+  <span class="tb-title"><span class="subj-code">MLN111</span> ♡ Quiz <small>v0.3.20</small></span>
   <button class="tbtn" id="lofiBtn" title="Nhạc lofi tự tạo, không cần mạng">📻 lofi: off</button>
   <button class="tbtn" id="tvBtn" title="Phát nhạc từ link YouTube">📺 youtube</button>
   <button class="tbtn" id="sndBtn" title="Cài đặt âm thanh">⚙ âm thanh</button>
@@ -35,7 +36,7 @@
 
 <div class="wrap">
   <div class="logo">
-    <h1><span class="subj-code">MLN111</span> ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.14</small></h1>
+    <h1><span class="subj-code">MLN111</span> ♡ Quiz <small style="font-size:12px;opacity:.6;font-weight:700">v0.3.20</small></h1>
     <p><span class="day-only" id="subjDay">✦ ôn Triết học Mác–Lênin kiểu siêu cute ✦</span><span class="night-only" id="subjNight">// lofi beats to study triết học to · 2:00 AM ☂</span></p>
   </div>
 
@@ -72,6 +73,7 @@
           <div class="chips" id="subjectChips"></div>
           <div class="chips" id="scopeChips"></div>
           <div class="startrow"><button class="btn big-start" id="startBtn"><span id="startMain">Bắt đầu 30 câu ✦</span><small id="startSub">xu thưởng ×2</small></button><button class="btn lav big-start review" id="reviewBtn" title="Ôn lại các câu đã học · xu thưởng cơ bản">🏛 Đền ôn tập<small id="reviewSub">xu ×2</small></button><button class="btn blue big-start review" id="templeBtn" title="100 câu liên tiếp từ các câu đã học · điểm = số câu đúng"><span>🔱 Ngôi đền huyền thoại</span><small id="templeSub"></small></button><button class="btn mint big-start review" id="giaideBtn" title="Làm lần lượt toàn bộ câu trong phạm vi · sau mỗi câu có trích Study Guide · thoát ra vẫn làm tiếp được"><span id="giaideMain">📖 Giải đề</span><small id="giaideSub"></small></button><button class="btn peach big-start review hidden" id="onsaiBtn" title="Làm lại các câu đã sai trong Giải đề · đúng thì gỡ khỏi kho, sai thì giữ lại cho lượt sau"><span id="onsaiMain">📕 Ôn câu sai</span><small id="onsaiSub"></small></button></div>
+          <button class="btn lav story-entry hidden" id="storyBtn" title="Học cả môn qua một câu chuyện có tương tác"><span>📜 Câu chuyện KTCT</span><small>học qua truyện · mô phỏng · quiz chốt</small></button>
           <button type="button" class="linkbtn hidden" id="giaideReset">↺ giải đề lại từ đầu (theo phạm vi đang chọn)</button>
           <div class="hint" style="margin-top:8px">Học mới: toàn câu chưa làm · Ôn tập: ưu tiên câu vừa sai → master 💫 · Giải đề: cả bộ đề, làm tiếp được · Ôn câu sai: làm lại câu sai khi giải đề, đúng là gỡ khỏi kho · mọi chế độ đều trích Study Guide</div>
         </div>
@@ -111,6 +113,14 @@
         <input type="file" id="importFile" accept=".json,application/json" class="hidden">
       </div>
       <footer>Tiến trình được lưu tự động trong trình duyệt này ♡</footer>
+    </div>
+  </section>
+
+  <!-- CÂU CHUYỆN KTCT (MLN122) -->
+  <section id="story" class="hidden">
+    <div class="win storywin">
+      <div class="bar"><span class="t pixel">ktct_story.exe</span><span class="dots"><i>_</i><i>□</i><i>×</i></span></div>
+      <div class="body" id="storyBody"></div>
     </div>
   </section>
 
@@ -241,6 +251,9 @@
 <script src="js/ui/home.js"></script>
 <script src="js/quiz/guide-match.js"></script>
 <script src="js/quiz/session.js"></script>
+<script src="js/story/formulas.js"></script>
+<script src="js/data/story-mln122.js"></script>
+<script src="js/story/story.js"></script>
 <script src="js/ui/news.js"></script>
 <script src="js/app.js"></script>
 </body>

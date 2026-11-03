@@ -35,7 +35,7 @@ const rows = src.map((r, i) => {
   if (!(r.c >= 1 && r.c <= 6)) errs.push(tag + ": chương không hợp lệ");
   const k = r.q + "|" + r.o.join("|");
   if (seen.has(k)) errs.push(tag + ": trùng câu"); seen.add(k);
-  const out = {q: r.q, o: r.o, a: r.a, m: "122", c: r.c, ...(r.f ? {f: 1} : {})};
+  const out = {q: r.q, o: r.o, a: r.a, m: "122", c: r.c, n, ...(r.f ? {f: 1} : {})}; // n: số thứ tự trong questions.json (câu chốt của Câu chuyện KTCT dùng n)
   const x = notes.get(n);
   if (!x){ errs.push(tag + ": thiếu ghi chú giải thích"); return out; }
   if (!x.e) errs.push(tag + ": thiếu e");

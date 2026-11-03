@@ -63,6 +63,7 @@ function renderScope(){
   $("giaideMain").textContent = g ? "📖 Giải đề tiếp" : "📖 Giải đề";
   $("giaideSub").textContent = g ? `câu ${g.i + 1}/${g.ids.length} · ${scopeLabel(g.sc)}` : `${n} câu · kèm trích Study Guide`;
   $("giaideBtn").disabled = !g && !n;
+  $("storyBtn").classList.toggle("hidden", subject !== "122");
   $("giaideReset").classList.toggle("hidden", !g);
   const qids = new Set(Q.map(q => q.id)); D.onsai.ids = D.onsai.ids.filter(id => qids.has(id)); // bỏ câu đã bị xoá khỏi ngân hàng đề
   const o = onsaiLeft(), on = D.onsai.ids.length; // kho câu sai không theo phạm vi: hiện khi có câu sai từ Giải đề

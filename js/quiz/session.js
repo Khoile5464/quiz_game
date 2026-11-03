@@ -1,6 +1,6 @@
 /* ---------- quiz ---------- */
 let run = null;
-function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
+function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result","story"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
 
 let lastMode = "new";
 function startSession(mode, restart){
@@ -85,6 +85,7 @@ function renderQ(){
   if (run.mode === "giaide"){ const t = el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"} · 📕 kho câu sai: `); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
   else if (run.mode === "onsai"){ const t = el("span","tag onsai","📕 Ôn câu sai · đúng là gỡ khỏi kho · kho còn "); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
   else if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
+  else if (run.mode === "story") tags.append(el("span","tag giaide","📜 Quiz chốt · Câu chuyện KTCT"), document.createTextNode(" "));
   else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
   if (q.t) tags.append(el("span","tag dvls",`🧭 Phần ${["","I","II","III","IV","V"][q.p]} · ${q.t}`), document.createTextNode(" ")); // phần riêng Hành trình DVLS
   if (!s || !s.n) tags.append(el("span","tag new","✨ câu mới"));
@@ -313,6 +314,7 @@ function next(){
 }
 
 function finish(){
+  if (run.mode === "story"){ const r = run; run = null; touchStreak(); checkBadges(); save(); return Story.afterGate(r); } // quiz chốt của Câu chuyện KTCT
   const n = run.qs.length;
   S.sessions++;
   const temple = run.mode === "temple", giaide = run.mode === "giaide", onsai = run.mode === "onsai";
@@ -379,6 +381,7 @@ function quit(){
     return;
   }
   if (run && (run.i > 0 || run.answered) && !confirm("Thoát giữa chừng? Các câu đã làm vẫn được lưu vào thống kê ♡")) return;
+  if (run && run.mode === "story"){ const r = run; run = null; save(); return Story.afterGate(r, true); }
   run = null; renderHome(); show("home");
 }
 

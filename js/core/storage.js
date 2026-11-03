@@ -51,6 +51,10 @@ function norm(s){
     s["onsai" + sfx] = normOnsai(s["onsai" + sfx], !sfx && s.giaide ? s.giaide.wrong.map(w => w[0]) : []);
   }
   if (typeof s.seenNews !== "string") s.seenNews = "";
+  // Câu chuyện KTCT (MLN122): {done: {"a3.s1": điểm quiz chốt}, cards: {thẻ Study Guide đã mở: true}, acts: {hồi đã xong: true}}
+  const sto = s.story && typeof s.story === "object" && !Array.isArray(s.story) ? s.story : {};
+  for (const k of ["done", "cards", "acts"]) if (!sto[k] || typeof sto[k] !== "object" || Array.isArray(sto[k])) sto[k] = {};
+  s.story = sto;
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }
