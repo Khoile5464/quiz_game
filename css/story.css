@@ -93,3 +93,8 @@
 [data-theme="night"] .st-term-h{background:var(--lav2)}
 [data-theme="night"] .st-gt{background:#10221f}
 [data-theme="night"] .st-no{background:var(--sky2);border-radius:4px}
+
+/* thông báo cập nhật */
+.news-body{text-align:left;max-width:500px;margin:6px auto 0;display:flex;flex-direction:column;gap:10px}
+.news-item h4{margin:0 0 2px;font-size:16px}
+.news-item ul{margin:0;padding-left:20px;line-height:1.6;font-size:14px}
