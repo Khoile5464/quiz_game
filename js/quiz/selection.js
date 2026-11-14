@@ -4,6 +4,15 @@ const SCOPES_BY = {
   "111": [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["c5","🧭 Hành trình DVLS",[5]],["all","Tất cả",null]],
   "122": [["p25","Progress Test · Ch.2–5",[2,3,4,5]],["c1","Ch.1 · Đối tượng & phương pháp",[1]],["c2","Ch.2 · Hàng hóa, thị trường",[2]],["c3","Ch.3 · Giá trị thặng dư",[3]],["c4","Ch.4 · Cạnh tranh & độc quyền",[4]],["c5","Ch.5 · KTTT định hướng XHCN",[5]],["c6","Ch.6 · CNH, HĐH & hội nhập",[6]],["all","Cuối kỳ · Ch.1–6",null]],
 };
+/* «✚ Tự chọn»: người học tick nhiều chương một lúc; danh sách lưu theo môn, chèn trước mục «Tất cả» */
+const MULTI_KEY = k => "mln111_multi_" + k, MULTI_LABEL = "✚ Tự chọn nhiều chương";
+for (const k in SCOPES_BY){ SCOPES_BY[k].splice(SCOPES_BY[k].length - 1, 0, ["multi", MULTI_LABEL, []]);
+  try{ const v = JSON.parse(localStorage.getItem(MULTI_KEY(k))); const chs = SCOPES_BY[k].filter(x => x[2]?.length === 1).map(x => x[2][0]);
+    const ok = Array.isArray(v) ? v.filter(c => chs.includes(c)) : []; SCOPES_BY[k].find(x => x[0] === "multi")[2].push(...(ok.length ? ok : chs.slice(0, 2)));
+  }catch(e){ SCOPES_BY[k].find(x => x[0] === "multi")[2].push(...SCOPES_BY[k].filter(x => x[2]?.length === 1).map(x => x[2][0]).slice(0, 2)); } }
+const multiEntry = () => SCOPES.find(x => x[0] === "multi");
+function syncMulti(){ const m = multiEntry(); m[2].sort((a, b) => a - b); m[1] = m[2].length ? "✚ Ch." + m[2].join("+") : MULTI_LABEL;
+  try{ localStorage.setItem(MULTI_KEY(subject), JSON.stringify(m[2])); }catch(e){} }
 const SCOPE_KEY = () => subject === "111" ? "mln111_scope" : "mln111_scope_" + subject;
 let SCOPES = SCOPES_BY[subject], scope = SCOPES[0][0];
 try{const v=localStorage.getItem(SCOPE_KEY());if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
@@ -41,10 +50,18 @@ function renderScope(){
     b.onclick = () => setSubject(k);
     return b;
   }));
+  $("scopeChips").classList.toggle("multi", scope === "multi");
   $("scopeChips").replaceChildren(...SCOPES.map(([k, label]) => {
-    const b = el("button", "chip" + (k === scope ? " on" : ""), label);
+    const list = SCOPES.find(x => x[0] === k)[2], single = list?.length === 1 && k !== "multi", inMulti = scope === "multi" && single && multiEntry()[2].includes(list[0]);
+    const b = el("button", "chip" + (k === scope || inMulti ? " on" : ""), (inMulti ? "☑ " : "") + label);
     b.append(el("small", "", String(Q.filter(q => inScope(q, k)).length)));
-    b.onclick = () => { scope = k; try{localStorage.setItem("mln111_scope", k)}catch(e){} renderHome(); };
+    b.title = single && scope === "multi" ? "Bấm để thêm/bỏ chương này" : k === "multi" ? "Tick nhiều chương một lúc để học, ôn" : "";
+    b.onclick = () => {
+      const m = multiEntry();
+      if (k === "multi" && scope !== "multi"){ const cur = SCOPES.find(x => x[0] === scope)[2]; m[2].splice(0, m[2].length, ...(cur?.length ? cur : SCOPES.filter(x => x[2]?.length === 1).map(x => x[2][0]))); syncMulti(); scope = "multi"; }
+      else if (single && scope === "multi"){ const i = m[2].indexOf(list[0]); if (i >= 0){ if (m[2].length < 2) return toast("Giữ ít nhất 1 chương nha ✦"); m[2].splice(i, 1); } else m[2].push(list[0]); syncMulti(); }
+      else scope = k;
+      try{localStorage.setItem(SCOPE_KEY(), scope)}catch(e){} renderHome(); };
     return b;
   }));
   const n = pool().length, m = pool().filter(q => (S.stats[q.id]?.box || 0) >= 3).length;
