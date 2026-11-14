@@ -14,6 +14,9 @@ const NEWS = [
     "Có khung «Theo giáo trình» và cảnh báo chỗ ẩn dụ không còn đúng",
     "Cuối mỗi cảnh có quiz chốt: đi vào ôn tập, nhận xu, mở thẻ thuật ngữ",
     "Chọn môn <b>MLN122</b> rồi bấm nút <b>📜 Câu chuyện KTCT</b> ở trang chủ"]},
+  {id: "story-viz", ic: "🎨", t: "Câu chuyện KTCT có hình minh họa", go: "122", li: [
+    "Sơ đồ, thanh chồng c + v + m và mốc thời gian ngay trong các cảnh chính",
+    "Thứ tự các lựa chọn được xáo ngẫu nhiên mỗi lần, không còn đoán theo vị trí"]},
 ];
 const newsUnseen = () => { const i = NEWS.findIndex(n => n.id === S.seenNews); return NEWS.slice(i + 1); }; // seenNews lạ hoặc rỗng → i = -1 → tất cả
 function closeNews(){ $("newsModal").classList.add("hidden"); S.seenNews = NEWS[NEWS.length - 1].id; save(); }

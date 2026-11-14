@@ -76,14 +76,14 @@ const Story = (() => {
       d.append(el("span", "st-ic", who.ic)); const b = el("div", "st-bub"); b.append(el("b", "", who.name), el("p", "", s.text)); d.append(b); return d; },
     choice(s){ const d = el("div", "st-box"); d.append(el("p", "st-q", s.prompt));
       const fb = el("p", "st-fb hidden");
-      s.options.forEach(o => { const b = el("button", "st-opt", o.t);
+      shuffle(s.options).forEach(o => { const b = el("button", "st-opt", o.t);
         b.onclick = () => { fb.textContent = o.fb; fb.className = "st-fb " + (o.ok ? "good" : "bad"); b.classList.add(o.ok ? "right" : "wrong");
           if (o.ok){ d.querySelectorAll(".st-opt").forEach(x => x.disabled = true); sfx.ok(); unlock(); } else sfx.bad(); };
         d.append(b); });
       d.append(fb); return d; },
     sort(s){ const d = el("div", "st-box"); d.append(el("p", "st-q", s.prompt));
       let left = s.items.length;
-      for (const [t, bin] of s.items){ const row = el("div", "st-sort"); row.append(el("span", "st-item", t));
+      for (const [t, bin] of shuffle(s.items)){ const row = el("div", "st-sort"); row.append(el("span", "st-item", t));
         const btns = el("span", "st-bins");
         s.bins.forEach((name, j) => { const b = el("button", "st-bin", name);
           b.onclick = () => { if (j === bin){ btns.querySelectorAll("button").forEach(x => x.disabled = true); b.classList.add("right"); row.classList.add("ok"); sfx.ok(); if (!--left) unlock(); }
@@ -98,6 +98,30 @@ const Story = (() => {
           else { b.classList.add("wrong"); sfx.bad(); setTimeout(() => b.classList.remove("wrong"), 600); } };
         pool.append(b); }
       d.append(done, pool); return d; },
+    /* picture step: flow (boxes + arrows), stack (proportional bars), timeline. Pure data, no interaction. */
+    viz(s){ const d = el("div", "st-box st-viz"); d.append(el("p", "st-q", "🎨 " + s.title)); let n = 0;
+      const delay = x => { x.style.setProperty("--i", n++); return x; };
+      if (s.kind === "flow"){
+        for (const row of s.rows || [s.nodes]){ const r = el("div", "st-flow");
+          row.forEach((nd, i) => { if (i) r.append(delay(el("span", "st-arrow", "➜")));
+            const b = delay(el("div", "st-node")); b.append(el("b", "", nd[0])); if (nd[1]) b.append(el("small", "", nd[1])); r.append(b); });
+          d.append(r); }
+      } else if (s.kind === "stack"){
+        const seen = new Map();
+        for (const [name, segs] of s.rows){ const r = el("div", "st-stack"), bar = el("div", "st-stackbar");
+          r.append(el("span", "st-stack-n", name));
+          for (const [l, v, c] of segs){ const g = delay(el("i", "seg " + c, `${vnd(v)}`)); g.style.flexGrow = v; g.title = `${l}: ${vnd(v)}${s.unit || ""}`; bar.append(g); if (!seen.has(c)) seen.set(c, [c, l]); }
+          r.append(bar); d.append(r); }
+        const lg = el("div", "st-keys");
+        for (const [c, l] of seen.values()){ const k = el("span", "st-key"); k.append(el("i", "seg " + c), l); lg.append(k); }
+        d.append(lg);
+      } else if (s.kind === "timeline"){
+        const ol = el("ol", "st-timeline");
+        for (const [t, txt] of s.items){ const li = delay(el("li")); li.append(el("b", "", t), el("span", "", txt)); ol.append(li); }
+        d.append(ol);
+      }
+      if (s.note) d.append(el("p", "st-legend", s.note));
+      return d; },
     term(s){ const d = el("div", "st-term");
       d.append(el("div", "st-term-h", "🦉 Athena gọi tên"));
       const tb = el("table", "st-trans"); tb.append(rowOf(["Trong truyện", "Thuật ngữ giáo trình"], "th"));
@@ -122,7 +146,7 @@ const Story = (() => {
         b.style.width = Math.max(0, Math.min(100, v[i])) + "%"; bar.append(b); r.append(el("span", "", g), bar, el("b", "", String(Math.round(v[i])))); return r; }));
       const round = () => { if (k === s.rounds.length){ stage.replaceChildren(el("p", "st-fb good", s.done)); unlock(); return; }
         const R = s.rounds[k], fb = el("p", "st-fb hidden");
-        stage.replaceChildren(el("p", "st-q", `Tình huống ${k + 1}/${s.rounds.length}: ${R.sit}`), ...R.options.map(o => { const b = el("button", "st-opt", o.t);
+        stage.replaceChildren(el("p", "st-q", `Tình huống ${k + 1}/${s.rounds.length}: ${R.sit}`), ...shuffle(R.options).map(o => { const b = el("button", "st-opt", o.t);
           b.onclick = () => { const tried = val.map((x, i) => x + o.eff[i]); drawBars(tried); fb.textContent = o.fb; fb.className = "st-fb " + (o.ok ? "good" : "bad");
             if (o.ok){ tried.forEach((x, i) => val[i] = x); stage.querySelectorAll(".st-opt").forEach(x => x.disabled = true); sfx.ok();
               log.append(el("li", "ok", `✅ ${R.role}`)); k++; setTimeout(round, 1400); }

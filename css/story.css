@@ -94,6 +94,34 @@
 [data-theme="night"] .st-gt{background:#10221f}
 [data-theme="night"] .st-no{background:var(--sky2);border-radius:4px}
 
+/* minh họa: sơ đồ, thanh chồng, mốc thời gian */
+.st-viz{border-style:solid;border-color:var(--sky)}
+.st-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px}
+.st-node{flex:1 1 140px;display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-radius:12px;background:var(--sky2);border:2px solid var(--line,#d9c8f5)}
+.st-node small{font-size:12px;font-weight:700;color:var(--ink2);line-height:1.4}
+.st-arrow{align-self:center;font-weight:800;color:var(--pink)}
+.st-node,.st-arrow,.st-timeline li,.st-stackbar .seg{animation:stPop .5s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i,0) * 130ms)}
+@keyframes stPop{from{opacity:0;transform:translateY(6px) scale(.96)}}
+.st-stack{display:grid;grid-template-columns:minmax(120px,200px) 1fr;align-items:center;gap:4px 10px}
+.st-stack-n{font-size:14px;font-weight:700}
+.st-stackbar{display:flex;gap:2px;height:30px}
+.seg{display:inline-flex;align-items:center;justify-content:center;min-width:0;border-radius:6px;font-style:normal;font-weight:800;font-size:13px;color:var(--ink)}
+.seg.a{background:var(--sky)}
+.seg.b{background:var(--pink)}
+.seg.c{background:var(--lav)}
+.st-keys{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;font-weight:700;color:var(--ink2)}
+.st-key{display:inline-flex;align-items:center;gap:6px}
+.st-key .seg{width:14px;height:14px;border-radius:4px}
+.st-timeline{list-style:none;margin:0;padding:0 0 0 14px;border-left:3px solid var(--sky);display:flex;flex-direction:column;gap:10px}
+.st-timeline li{position:relative;display:flex;flex-direction:column;gap:1px;line-height:1.45}
+.st-timeline li::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--pink)}
+.st-timeline b{font-size:15px}
+.st-timeline span{font-size:14px;font-weight:700;color:var(--ink2)}
+@media (prefers-reduced-motion:reduce){.st-node,.st-arrow,.st-timeline li,.st-stackbar .seg{animation:none}}
+@media (max-width:560px){.st-stack{grid-template-columns:1fr}.st-arrow{flex-basis:100%;text-align:center;transform:rotate(90deg);height:18px}}
+[data-theme="night"] .st-node{background:var(--surface);border-radius:6px}
+[data-theme="night"] .seg{color:#10151c}
+
 /* thông báo cập nhật */
 .news-body{text-align:left;max-width:500px;margin:6px auto 0;display:flex;flex-direction:column;gap:10px}
 .news-item h4{margin:0 0 2px;font-size:16px}
