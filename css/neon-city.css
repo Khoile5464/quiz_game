@@ -17,7 +17,6 @@
 [data-theme="night"] .day-only{display:none}
 [data-theme="night"] .night-only{display:inline}
 [data-theme="night"] :focus-visible{outline:2px solid var(--sky);outline-offset:2px}
-[data-theme="night"] .marquee{background:#0b0820;color:var(--ink2);font-family:"Baloo 2",system-ui,sans-serif;font-size:14px;padding:3px 0;border-bottom:1px solid var(--line)}
 [data-theme="night"] .logo h1{
   font-family:"Silkscreen",monospace;font-weight:400;letter-spacing:2px;color:#fff3fa;-webkit-text-stroke:0;background:none;
   text-shadow:0 0 10px rgba(242,104,159,.55),3px 3px 0 #3a0a2a;filter:none
