@@ -14,6 +14,14 @@ function startSession(mode, restart){
   run = {mode, review: mode !== "new", x2: mode === "new", qs, i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], answered: false, picked: new Set()};
   show("quiz"); renderQ();
 }
+/* làm lại câu sai: sau lượt Học mới / Ôn tập / Đền, đi lại đúng những câu vừa sai; câu sai lần nữa quay lại cuối hàng, xong khi đúng hết.
+   Chỉ luyện thêm: không đổi thống kê, xu hay điểm (lượt gốc đã tính rồi). lastMode giữ nguyên nên «làm thêm đợt nữa» vẫn quay về chế độ gốc */
+let fixPool = [];
+function startFix(){
+  if (!fixPool.length) return;
+  run = {mode: "fix", review: true, x2: false, qs: [...fixPool], i: 0, score: 0, combo: 0, maxCombo: 0, xp: 0, wrong: [], total: fixPool.length, tries: 0, answered: false, picked: new Set()};
+  show("quiz"); renderQ();
+}
 /* giải đề: làm lần lượt toàn bộ câu trong phạm vi, tiến độ lưu sau mỗi câu (D.giaide) nên thoát ra vẫn làm tiếp được */
 function startGiaide(restart){
   if (restart || !giaideLeft()){
@@ -74,9 +82,9 @@ function renderQ(){
   const multi = q.a.length > 1;
   if (run.mode === "giaide") run.x2 = !learned(q); // câu chưa học xu ×2 như Học mới, câu đã học xu cơ bản như Đền ôn tập
 
-  $("qTitle").textContent = `${run.mode === "giaide" ? "giai_de" : run.mode === "onsai" ? "on_cau_sai" : run.mode === "temple" ? "den_huyen_thoai" : run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(resumable(run.mode) ? 3 : 2,"0")}.exe`;
-  $("qCount").textContent = `${run.i + 1}/${run.qs.length}`;
-  $("qBar").style.width = (run.i / run.qs.length * 100) + "%";
+  $("qTitle").textContent = `${run.mode === "giaide" ? "giai_de" : run.mode === "onsai" ? "on_cau_sai" : run.mode === "fix" ? "lam_lai_cau_sai" : run.mode === "temple" ? "den_huyen_thoai" : run.review ? "den_on_tap" : "question"}_${String(run.i + 1).padStart(resumable(run.mode) ? 3 : 2,"0")}.exe`;
+  $("qCount").textContent = run.mode === "fix" ? `đã sửa ${run.score}/${run.total}` : `${run.i + 1}/${run.qs.length}`;
+  $("qBar").style.width = ((run.mode === "fix" ? run.score / run.total : run.i / run.qs.length) * 100) + "%";
   $("qScore").textContent = `✓ ${run.score}`;
   $("qXp").textContent = `+${run.xp} xu`;
   updateCombo();
@@ -85,6 +93,7 @@ function renderQ(){
   if (run.mode === "giaide"){ const t = el("span","tag giaide",`📖 Giải đề · ${run.x2 ? "xu ×2" : "xu cơ bản"} · 📕 kho câu sai: `); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
   else if (run.mode === "onsai"){ const t = el("span","tag onsai","📕 Ôn câu sai · đúng là gỡ khỏi kho · kho còn "); t.append(khoEl()); tags.append(t, document.createTextNode(" ")); }
   else if (run.mode === "temple") tags.append(el("span","tag hard",`🔱 Ngôi đền huyền thoại · HighScore ${S.temple.best}`), document.createTextNode(" "));
+  else if (run.mode === "fix") tags.append(el("span","tag onsai",`🔁 Làm lại câu sai · còn ${run.total - run.score} câu chưa đúng · không tính xu`), document.createTextNode(" "));
   else if (run.mode === "story") tags.append(el("span","tag giaide","📜 Quiz chốt · Câu chuyện KTCT"), document.createTextNode(" "));
   else if (run.review) tags.append(el("span","tag ok","🏛 Đền ôn tập · xu cơ bản"), document.createTextNode(" "));
   if (q.t) tags.append(el("span","tag dvls",`🧭 Phần ${["","I","II","III","IV","V"][q.p]} · ${q.t}`), document.createTextNode(" ")); // phần riêng Hành trình DVLS
@@ -223,11 +232,14 @@ function guideEl(q){
 }
 
 function submit(){
-  const q = run.qs[run.i], s = st(q.id);
+  const q = run.qs[run.i], fix = run.mode === "fix", s = fix ? {} : st(q.id);
   run.answered = true;
   const right = run.picked.size === q.a.length && q.a.every(a => run.picked.has(a));
-  s.n++; S.answered++;
-  if (right){
+  if (fix){
+    if (right){ run.score++; sfx.ok(); } else { run.tries++; run.qs.push(q); if (!playMeme()) sfx.bad(); } // sai: xếp lại cuối hàng
+  } else s.n++, S.answered++;
+  if (fix){}
+  else if (right){
     s.box = Math.min(5, s.box + 1); s.lastWrong = false;
     run.score++; run.combo++; S.correct++;
     const gain = xpGain(run.combo);
@@ -266,14 +278,15 @@ function submit(){
   const fb = $("fb");
   fb.className = "feedback show " + (right ? "good" : "bad");
   $("fbE").textContent = right ? pick(["🎉","🌟","💖","🦄","✨"]) : pick(["🙄","😮‍💨","🤦","😏","🫠"]);
-  $("fbT").textContent = right ? `${pick(GOOD)}  +${xpGain(run.combo)} xu` + (comboMult(run.combo) > 1 ? ` (×${comboMult(run.combo)})` : "") : badFor(q);
-  if (right && run.combo >= 3){
+  $("fbT").textContent = fix ? (right ? pick(GOOD) + " Câu này xong rồi ✓" : badFor(q) + " Câu này sẽ quay lại cuối hàng.") : right ? `${pick(GOOD)}  +${xpGain(run.combo)} xu` + (comboMult(run.combo) > 1 ? ` (×${comboMult(run.combo)})` : "") : badFor(q);
+  if (right && run.combo >= 3 && !fix){
     comboFx(run.combo);
   }
   $("explain").replaceChildren(explainEl(q, [...run.picked], !right));
   $("explain").append(guideEl(q));
   $("qScore").textContent = `✓ ${run.score}`;
   $("qXp").textContent = `+${run.xp} xu`;
+  if (fix){ $("qCount").textContent = `đã sửa ${run.score}/${run.total}`; $("qBar").style.width = (run.score / run.total * 100) + "%"; }
   updateCombo();
   $("nextBtn").disabled = false;
   $("nextBtn").textContent = run.i + 1 < run.qs.length ? "Câu tiếp →" : "Xem kết quả ✦";
@@ -315,6 +328,16 @@ function next(){
 
 function finish(){
   if (run.mode === "story"){ const r = run; run = null; touchStreak(); checkBadges(); save(); return Story.afterGate(r); } // quiz chốt của Câu chuyện KTCT
+  if (run.mode === "fix"){ // xong khi đúng hết: không đổi thống kê
+    const r = run; run = null; fixPool = [];
+    $("rNum").textContent = `${r.total}/${r.total}`; $("rSticker").textContent = "✅ Sửa xong hết!";
+    $("rMsg").textContent = `Đã làm đúng cả ${r.total} câu từng sai` + (r.tries ? `, sau ${r.tries} lần phải làm lại.` : ", không lần nào phải làm lại.") + " Chúng vẫn ghi là sai ở lượt gốc để thuật toán ôn tập nhắc lại sau ✦";
+    $("rXp").textContent = "không tính xu"; $("rCombo").textContent = `${r.total + r.tries} lượt trả lời`; $("rStreak").textContent = `🔥 ${S.streak.count} ngày`;
+    $("rBadges").replaceChildren(); $("reviewWin").classList.add("hidden"); $("onsaiAgain").classList.add("hidden"); $("fixAgain").classList.add("hidden");
+    $("againBtn").textContent = lastMode === "temple" ? "Thử lại ngôi đền 🔱" : lastMode === "review" ? "Ôn thêm đợt nữa 🏛" : "Thêm 30 câu mới nữa ✦";
+    $("againBtn").disabled = lastMode === "new" && !newPool().length;
+    show("result"); sfx.win(); setTimeout(() => burst(innerWidth / 2, innerHeight / 3, 40), 200); return;
+  }
   const n = run.qs.length;
   S.sessions++;
   const temple = run.mode === "temple", giaide = run.mode === "giaide", onsai = run.mode === "onsai";
@@ -344,6 +367,9 @@ function finish(){
   const left = D.onsai.ids.length;
   if (onsai) $("rMsg").textContent = `Ôn xong ${n} câu sai · gỡ được ${run.score} câu khỏi kho. ` + (left ? `Kho còn ${left} câu — sai lần này thì lượt sau gặp lại nhé ✦` : "Kho câu sai trống trơn, quá đỉnh ✦");
   else if (giaide && left) $("rMsg").textContent += ` Kho câu sai đang có ${left} câu — bấm 📕 để ôn lại.`;
+  fixPool = giaide || onsai ? [] : [...new Map(run.wrong.map(w => [w.q.id, w.q])).values()]; // câu sai của lượt này (mỗi câu một lần)
+  $("fixAgain").classList.toggle("hidden", !fixPool.length);
+  $("fixAgain").textContent = `🔁 Làm lại ${fixPool.length} câu sai đến khi đúng`;
   $("onsaiAgain").classList.toggle("hidden", !giaide || !left);
   $("onsaiAgain").textContent = `📕 Ôn ${left} câu sai`;
   $("rXp").textContent = `+${run.xp} xu`;

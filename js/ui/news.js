@@ -20,6 +20,9 @@ const NEWS = [
   {id: "multi-scope", ic: "☑", t: "Chọn nhiều chương một lúc", li: [
     "Bấm <b>✚ Tự chọn nhiều chương</b>, rồi tick bất kỳ chương nào muốn gộp lại",
     "Dùng được cho Học mới, Ôn tập, Giải đề, ở cả MLN111 lẫn MLN122"]},
+  {id: "fix-wrong", ic: "🔁", t: "Làm lại câu sai đến khi đúng hết", li: [
+    "Sau mỗi lượt Học mới, Ôn tập hoặc Ngôi đền, bấm <b>🔁 Làm lại câu sai</b>",
+    "Câu sai lần nữa quay lại cuối hàng, xong khi đúng hết. Chỉ luyện thêm, không đổi thống kê hay xu"]},
 ];
 const newsUnseen = () => { const i = NEWS.findIndex(n => n.id === S.seenNews); return NEWS.slice(i + 1); }; // seenNews lạ hoặc rỗng → i = -1 → tất cả
 function closeNews(){ $("newsModal").classList.add("hidden"); S.seenNews = NEWS[NEWS.length - 1].id; save(); }
