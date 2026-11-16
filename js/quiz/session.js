@@ -100,6 +100,7 @@ function renderQ(){
   if (!s || !s.n) tags.append(el("span","tag new","✨ câu mới"));
   else if (s.w && s.w / s.n >= .4) tags.append(el("span","tag hard",`🔥 hay sai (${s.w}/${s.n})`));
   else if (s.box >= 3) tags.append(el("span","tag ok","🌸 đã thuộc — ôn lại chút"));
+  if (multi) tags.append(document.createTextNode(" "), el("span","tag multi","☑ câu nhiều đáp án")); // chỉ báo loại câu, không nói có bao nhiêu đáp án đúng
 
   $("qText").textContent = q.q;
   const box = $("opts"); box.replaceChildren();
