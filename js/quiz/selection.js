@@ -2,6 +2,8 @@
 /* mỗi môn một bộ phạm vi: [khoá, nhãn, danh sách q.c hoặc null = tất cả]. MLN122 chia chương theo Schedule môn (Progress Test: Ch.2–5, cuối kỳ: Ch.1–6) */
 const SCOPES_BY = {
   "111": [["c12","Giữa kỳ · Ch.1+2",[1,2]],["c1","Chương 1",[1]],["c2","Chương 2",[2]],["c3","Chương 3",[3]],["c4","Khác (KTCT, CNXH…)",[4]],["c5","🧭 Hành trình DVLS",[5]],["all","Tất cả",null]],
+  /* IPR102: 6 chương theo chủ đề, học theo lộ trình Ch.1 → Bản quyền (Ch.2–3) → Nhãn hiệu (Ch.4–5) → Kiểu dáng & sáng chế (Ch.6); không có Schedule riêng nên cuối kỳ = cả 6 chương */
+  "ipr": [["c1","Ch.1 · Tổng quan, điều ước & chuyển giao",[1]],["c2","Ch.2 · Bản quyền: đối tượng & thời hạn",[2]],["c3","Ch.3 · Bản quyền: vi phạm & ngoại lệ",[3]],["c4","Ch.4 · Nhãn hiệu: đăng ký & phân loại",[4]],["c5","Ch.5 · Passing off, tên miền & xâm phạm NH",[5]],["c6","Ch.6 · Kiểu dáng & sáng chế",[6]],["cr","📘 Cả phần Bản quyền · Ch.2–3",[2,3]],["tm","🏷 Cả phần Nhãn hiệu · Ch.4–5",[4,5]],["all","Cuối kỳ · Ch.1–6",null]],
   "122": [["p25","Progress Test · Ch.2–5",[2,3,4,5]],["c1","Ch.1 · Đối tượng & phương pháp",[1]],["c2","Ch.2 · Hàng hóa, thị trường",[2]],["c3","Ch.3 · Giá trị thặng dư",[3]],["c4","Ch.4 · Cạnh tranh & độc quyền",[4]],["c5","Ch.5 · KTTT định hướng XHCN",[5]],["c6","Ch.6 · CNH, HĐH & hội nhập",[6]],["all","Cuối kỳ · Ch.1–6",null]],
 };
 /* «✚ Tự chọn»: người học tick nhiều chương một lúc; danh sách lưu theo môn, chèn trước mục «Tất cả» */
@@ -18,8 +20,8 @@ let SCOPES = SCOPES_BY[subject], scope = SCOPES[0][0];
 try{const v=localStorage.getItem(SCOPE_KEY());if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}
 /* đổi môn: lọc lại ngân hàng câu hỏi, phạm vi, tiêu đề; giải đề + kho câu sai của môn được giữ riêng (D trong storage.js) */
 function applySubject(){
-  document.querySelectorAll(".subj-code").forEach(e => e.textContent = "MLN" + subject);
-  document.title = document.title.replace(/MLN\d+/, "MLN" + subject);
+  document.querySelectorAll(".subj-code").forEach(e => e.textContent = SUBJ_CODE[subject]);
+  document.title = document.title.replace(/(MLN|IPR)\d+/, SUBJ_CODE[subject]);
   $("subjDay").textContent = `✦ ôn ${SUBJ_TXT[subject][0]} kiểu siêu cute ✦`;
   $("subjNight").textContent = `// lofi beats to study ${SUBJ_TXT[subject][1]} to · 2:00 AM ☂`;
 }
@@ -45,8 +47,10 @@ const giaideLeft = () => D.giaide && D.giaide.i < D.giaide.ids.length ? D.giaide
 const onsaiLeft = () => D.onsai.run && D.onsai.run.i < D.onsai.run.ids.length ? D.onsai.run : null;
 function renderScope(){
   $("subjectChips").replaceChildren(...SUBJECTS.map(([k, label]) => {
-    const b = el("button", "chip" + (k === subject ? " on" : ""), label);
-    b.append(el("small", "", String(ALLQ.filter(q => subjOf(q) === k).length)));
+    const [code, name] = label.split(" · ");
+    const b = el("button", "subj-tab" + (k === subject ? " on" : ""));
+    b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", k === subject);
+    b.append(el("b", "st-code", code), el("span", "st-name", name), el("small", "st-n", ALLQ.filter(q => subjOf(q) === k).length + " câu"));
     b.onclick = () => setSubject(k);
     return b;
   }));
@@ -78,7 +82,7 @@ function renderScope(){
   $("reviewSub").textContent = rn ? `${Math.min(SESSION_SIZE, rn)} câu đã học · xu cơ bản` : "chưa có câu nào để ôn";
   const g = giaideLeft();
   $("giaideMain").textContent = g ? "📖 Giải đề tiếp" : "📖 Giải đề";
-  $("giaideSub").textContent = g ? `câu ${g.i + 1}/${g.ids.length} · ${scopeLabel(g.sc)}` : `${n} câu · kèm trích Study Guide`;
+  $("giaideSub").textContent = g ? `câu ${g.i + 1}/${g.ids.length} · ${scopeLabel(g.sc)}` : `${n} câu · ${subject === "ipr" ? "kèm bản dịch tiếng Việt" : "kèm trích Study Guide"}`;
   $("giaideBtn").disabled = !g && !n;
   $("storyBtn").classList.toggle("hidden", subject !== "122");
   $("giaideReset").classList.toggle("hidden", !g);

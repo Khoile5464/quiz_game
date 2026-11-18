@@ -103,10 +103,13 @@ function renderQ(){
   if (multi) tags.append(document.createTextNode(" "), el("span","tag multi","☑ câu nhiều đáp án")); // chỉ báo loại câu, không nói có bao nhiêu đáp án đúng
 
   $("qText").textContent = q.q;
+  $("qVi").textContent = q.vi ? q.vi.q : ""; applyVi(q);
   const box = $("opts"); box.replaceChildren();
   run.order.forEach((oi, pos) => {
     const b = el("button","opt"); b.dataset.oi = oi;
-    b.append(el("span","k",LETTERS[pos]), el("span","",q.o[oi]));
+    const ot = el("span","ot"); ot.append(el("span","",q.o[oi]));
+    if (q.vi) ot.append(el("small","vi",q.vi.o[oi]));
+    b.append(el("span","k",LETTERS[pos]), ot);
     b.onclick = () => choose(oi);
     box.append(b);
   });
@@ -177,7 +180,31 @@ function rich(text){
   }
   frag.append(document.createTextNode(text.slice(last))); return frag;
 }
-function explainEl(q, picked, openWrong){
+/* bản dịch tiếng Việt (q.vi) của môn IPR102: bật/tắt hiện ngay dưới đề và từng phương án khi đang làm; sau khi chọn luôn có khung dịch đầy đủ */
+let viOn = false; try{ viOn = localStorage.getItem("mln111_vi") === "1"; }catch(e){}
+function applyVi(q){
+  document.body.classList.toggle("vi-on", viOn);
+  const b = $("viBtn"); b.classList.toggle("hidden", !(q && q.vi));
+  b.classList.toggle("on", viOn); b.textContent = viOn ? "🇻🇳 Dịch: bật" : "🇻🇳 Dịch: tắt";
+}
+$("viBtn").onclick = () => { viOn = !viOn; try{ localStorage.setItem("mln111_vi", viOn ? "1" : "0"); }catch(e){} applyVi(run && run.qs[run.i]); };
+function viExplainEl(q, picked, order){
+  const box = el("div","exp vi-exp");
+  const h = el("div","eh"); h.append(el("span","","🇻🇳"), el("span","","Bản dịch tiếng Việt")); box.append(h);
+  const eb = el("div","eb"); eb.append(el("b","",q.vi.q)); box.append(eb);
+  const ul = el("ul");
+  (order || q.o.map((_, i) => i)).forEach((oi, pos) => {
+    const ok = q.a.includes(oi), me = picked.includes(oi);
+    const li = el("li", ok ? "ok" : me ? "mine" : "", `${ok ? "✓" : "✗"} ${LETTERS[pos]}. ${q.vi.o[oi]}`);
+    if (me) li.append(el("span", "you", "bạn chọn"));
+    ul.append(li);
+  });
+  box.append(ul);
+  if (q.k) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + q.k.replace(/^nghi vấn:\s*/i, "") + " — Khi thi vẫn nên chọn theo đáp án của đề."));
+  return box;
+}
+function explainEl(q, picked, openWrong, order){
+  if (!q.e && q.vi) return viExplainEl(q, picked, order);
   const box = el("div","exp");
   const h = el("div","eh"); h.append(el("span","","💡"), el("span","","Vì sao đúng?")); box.append(h);
   { const eb = el("div","eb"); eb.append(rich(q.e || "Chưa có giải thích cho câu này.")); box.append(eb); }
@@ -282,8 +309,8 @@ function submit(){
   if (right && run.combo >= 3 && !fix){
     comboFx(run.combo);
   }
-  $("explain").replaceChildren(explainEl(q, [...run.picked], !right));
-  $("explain").append(guideEl(q));
+  $("explain").replaceChildren(explainEl(q, [...run.picked], !right, run.order));
+  if (Guide.has(q)) $("explain").append(guideEl(q));
   $("qScore").textContent = `✓ ${run.score}`;
   $("qXp").textContent = `+${run.xp} xu`;
   if (fix){ $("qCount").textContent = `đã sửa ${run.score}/${run.total}`; $("qBar").style.width = (run.score / run.total * 100) + "%"; }

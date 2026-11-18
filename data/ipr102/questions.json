@@ -1,0 +1,5263 @@
+[
+{
+"n": 1,
+"q": "Which of the followings is an infringement of copyright?",
+"o": [
+"Reading a book without consent of the author",
+"Listening to a song without consent of the author",
+"Translating an article without consent of the author",
+"Researching a paper without consent of the author"
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 2,
+"q": "One of the requirements for a mark to be registered as trademark is......",
+"o": [
+"not an infringement of other's right",
+"to be new",
+"to be creative",
+"to be original"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 3,
+"q": "How long is the duration of database right according to the UK law?",
+"o": [
+"Lasts for the life of its creator plus a further 70 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more.....jointly involved in the work",
+"For the works generated before 1 January 1996 the duration of database right is life plus....50 years.",
+"Lasts for 15 years from the end of the year the database was created or made accessible"
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 4,
+"q": "A mechanical device is NOT protected by which IPR?",
+"o": [
+"Copyright",
+"Design right",
+"Patent",
+"Registered design"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 5,
+"q": "The paternity right is NOT applied to:",
+"o": [
+"The creator of a literary, artistic, dramatic or musical copyright work and the director of a film (unless he or she is an employee)",
+"The designer of a building or other structure",
+"Computer programs or to any work created by a computer without human intervention",
+"An individual person and only when there is also a copyright"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 6,
+"q": "Which is the principle of \"independence of protection\" stipulated in Bern Convention?",
+"o": [
+"Works originating in one of the Contracting States must be given the same protection in each of the other Contracting States as the latter grants to the works of its own nationals",
+"Protection must not be conditional upon compliance with any formality",
+"Protection is independent of the existence of protection in the country of origin of the work",
+"As to works, protection must include \"every production in the literary, scientific and artistic domain, whatever the mode or form of its expression\""
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 7,
+"q": "The remedies available for the trademark infringement are..... to those applicable for copyright",
+"o": [
+"the same",
+"more favorable",
+"less favorable",
+"completely different"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 8,
+"q": "What is not relevant purpose for applying fair dealing",
+"o": [
+"Commercial purpose",
+"Educational purpose",
+"News reporting",
+"Reviewing purpose"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 9,
+"q": "Which is/are exceptions to copyright infringement?",
+"o": [
+"Public events",
+"Time shifting",
+"Education",
+"All of others are correct"
+],
+"a": [
+3
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 10,
+"q": "Which one of the followings is NOT correct according to UK law?",
+"o": [
+"Injunction and delivery-up can be applied even in case the plaintiff suffers no damage.",
+"Courts may apply provisional measures where any delay is likely to cause irreparable harm to the right holder.",
+"Provisional measurers are applicable if there is a demonstrable risk of evidence being destroyed.",
+"The combination of injunction and delivery-up is not available if there is no damage incurred to the plaintiff."
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 11,
+"q": "What is the best definition about \"passing-off\"?",
+"o": [
+"The use of identical or similar marks or get-ups to cause confusion in the public by relying on the reputation of a mark or get-up, which has already been used long enough.",
+"The use of different mark by relying on the reputation of a mark or get-up, which has been used long enough. However, this use is not caused any confusion.",
+"The use of distinctive marks or get-ups to cause confusion in the public",
+"A trade mark infringement"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 12,
+"q": "Philips has taken a photograph of a particular scenic view. John knew about that photograp.... still independently took a photograph with the same view, same perspectives. John's photograph... similar to the Philips'one. The two photographs are virtually indistinguishable.",
+"o": [
+"John had to ask Philips for consent before taking his photograph.",
+"Philips can request John for a copyright compensation.",
+"John made a copy of Philips' photograph and it is a copyright infringement.",
+"It is not copying and not copyright infringement for John"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 13,
+"q": "Which is an exception to copyright infringement?",
+"o": [
+"Research or private study",
+"If a technical paper is published in a periodical with an abstract, then copying the abstract is permitted, unless there is a licensing scheme in force",
+"Education",
+"All of others are correct"
+],
+"a": [
+3
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 14,
+"q": "In Vietnam law, how long the trade mark protection is?",
+"o": [
+"5 years",
+"10 years",
+"15 years",
+"it depends but can last forever provided that the owner renews its application for protection"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 15,
+"q": "Since the aim of a trade mark is to encourage purchasers to buy your company's product or your company's service by using the mark when they place an order, what is deemed essential for a sign to be called \"trade mark\" from business perspective?",
+"o": [
+"Trade marks should be slightly different from marks used by competitors to avoid confusion.",
+"Trade marks should be easy to remember and sufficiently different from marks used by competitors to avoid confusion.",
+"That trade marks should be easy to remember and similar to marks used by competitors to avoid confusion.",
+"That trade marks should be similar to marks used by competitors to create more confusions to enjoy benefits from dilution."
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 16,
+"q": "A Uniform Dispute Resolution Procedure (UDRP) is agreed by participants, which provide some mechanism to resolve dispute in terms of domain names and intellectual property.",
+"o": [
+"True.",
+"False. UDRP provide mechanism to resolve dispute in terms of domain names only",
+"False. UDRP provide mechanism to resolve dispute in terms of trade mark only",
+"False. UDRP provide mechanism to resolve dispute in terms of the ownership of trade mark only."
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 17,
+"q": "Are domain names intellectual property?",
+"o": [
+"Not really.",
+"Yes, they are.",
+"Yes, provided that domain names are registered with the Internet service providers",
+"Yes, since domain names provides the exact information of the owner of goods or services on the Internet"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 18,
+"q": "What are Civil remedies?",
+"o": [
+"Provisional measures, Injunction, imprisonment",
+"Delivery-up, Compensatory damages, Punitive damages; and Account of profits",
+"Imprisonment, Punitive damages; and Account of profits",
+"Delivery-up, Imprisonment, Compensatory damages"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 19,
+"q": "Cellupro, a company that designed and manufactured cell phones, had a unique design to their products and a particular color for their phones and packaging. This design and color is known as",
+"o": [
+"trade dress.",
+"a service mark.",
+"a fanciful mark.",
+"trade style."
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 20,
+"q": "What does a trademark protect?",
+"o": [
+"A work of art",
+"A secret formula",
+"Logos, names and brands",
+"General information"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 21,
+"q": "The protection of copyright excludes",
+"o": [
+"A single word",
+"Songs",
+"A list of names and addresses in a telephone directory",
+"Computer programs"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 22,
+"q": "Which is NOT right about \"Copying in a different medium\"?",
+"o": [
+"a photocopy of a book.",
+"a scanned-in digital copy of a photograph",
+"a reproduction and the copy have a material form",
+"a transiation a copyright work"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 23,
+"q": "Acme Corporation attempted to register a trade mark that was generic and not fanciful, arbitrary, suggestive or descriptive with a secondary meaning. Under these circumstances, Acme has",
+"o": [
+"an excellent case for the registration of a trade mark because generic trade marks, as opposed to fanciful, arbitrary or suggestive trade marks, are capable of being copyrighted.",
+"an excellent case for the registration of a trade mark because all trade marks are capable of being copyrighted.",
+"no case for registration of the trade mark because a trade mark must be fanciful, arbitrary or suggestive to be capable of being copyrighted.",
+"no case for registration of the trade mark because a trade mark must be independent, rather than fanciful, arbitrary or suggestive, to be capable of being copyrighted."
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 24,
+"q": "The \"Commonplace\", which is the requirement for protection of design right, means:",
+"o": [
+"The similarities of the design in question when compared objectively to other designs",
+"\"Not original\" in the design field in question.",
+"None of A&B",
+"Both of A&B"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 25,
+"q": "What protects the intellectual property created by designers?",
+"o": [
+"Copyright",
+"Registered designs",
+"Both copyright and registered designs",
+"Neither copyright nor registered designs"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 26,
+"q": "What are criteria for winning a transfer of a domain name?",
+"o": [
+"A domain name must be identical or confusingly similar to a registered or unregistered trade mark, the use complained of must be by someone having no legitimate interest in the name, and bad faith",
+"When there is innocently confusing use, an offer to sell the mark or a history of registering names based on third party trade marks.",
+"All are correct",
+"None of the answers are correct"
+],
+"a": [
+0
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 27,
+"q": "A Uniform Dispute Resolution Procedure (UDRP) is run by",
+"o": [
+"WIPO",
+"WTO",
+"UN",
+"UNCITRAL"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 28,
+"q": "What does indirect compensation include?",
+"o": [
+"post-calculated, recurring payments, the amount of which is determined under economic (sales, profits).",
+"a pre-calculated amount paid once or in installments",
+"compensation for services and assistance rendered by technical or professional experts.",
+"dividend or income from related operations: commission paid to licensor for his assistance"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 29,
+"q": "Knowing Kevin is a self-employed designerCharlotte has introduced Kevin to Company XThe Company X then commissioned Kevin for 1500 Euro to design a machine. Who owns the right to the register design of the machine?",
+"o": [
+"Kevin himself",
+"Company X",
+"Charlotte",
+"Company X and Kevin"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 30,
+"q": "Pictorial design or logo is protected by which IPRs?",
+"o": [
+"Copyright, registered design, trademark",
+"Topography right, trademark, design right",
+"Registered design, confidential information, copyright",
+"Topography right, confidential information, copyright"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 31,
+"q": "How long is the duration of computer-generated right according to the UK law?",
+"o": [
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more.... jointly involved in the work",
+"The copyright lasts for 50 years from the end of the year in which the copyright material....",
+"Lasts for 15 years from the end of the year the database was created or made accessible"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 32,
+"q": "In the 1990s, there was an explosion of names registered by US Network Solutions, the administrator of the top level domain (TLD) with the suffix.com. What sorts of problems quickly arose then:",
+"o": [
+"owners of trade marks identical to the domain name objected to use of the domain name, and unscrupulous persons registered variations of famous company names and offered to sell them for large sums of money - this is called cyber-squatting.",
+"Company can easily get their domain name as they wish on the Internet, and this is more easier to company with famous brand.",
+"People can register for domain names easier and provide such names to anyone in need for free",
+"Nothing happened."
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 33,
+"q": "If a company develops a new technology for producing a special range of clothes, what type of intellectual property right can it use to prevent other from using such technology",
+"o": [
+"Copyright",
+"Trademarks",
+"Registered designs",
+"Patents"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 34,
+"q": "Cindy has very detailed and interesting ideas on writing a book. Based on these ideas, David writes a book without attribution of Cindy. David........",
+"o": [
+"infringes paternity right",
+"infringes adaptation right",
+"Infringes reproduction right",
+"not infringes intellectual property right"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 35,
+"q": "To be protected by registered design, an article must...",
+"o": [
+"Have an individual character",
+"Be original",
+"Be non- commonplace",
+"Be new"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 36,
+"q": "Which of these statements is true about the general nature of passing off?",
+"o": [
+"The defendant must intend to cause loss",
+"The misrepresentation must be intentional",
+"There must be a false representation",
+"There must be actual damages"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 37,
+"q": "Design right applies to:",
+"o": [
+"Drawings produced in an industrial context",
+"Tangible three-dimensional Articles",
+"Artistic drawings",
+"Textbook on Design rights"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 38,
+"q": "Which of followings is correct?",
+"o": [
+"Passing off is an infringement of only unregistered trademark",
+"Passing off is an infringement of only registered trademark",
+"Passing off is an infringement of both unregistered and registered trademark",
+"Passing off is an infringement of neither unregistered nor registered trademark"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 39,
+"q": "Which is the principle of \"national treatment\" stipulated in Bern Convention?",
+"o": [
+"Works originating in one of the Contracting States must be given the same protection in each of the other Contracting States as the latter grants to the works of its own nationals",
+"Protection must not be conditional upon compliance with any formality",
+"Protection is independent of the existence of protection in the country of origin of the work",
+"As to works, protection must include \"every production in the literary, scientific and artistic domain, whatever the mode or form of its expression\""
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 40,
+"q": "Company M subcontracts Company H to copy and make a product which owned by Company N with a clear instruction to manufacture the copy. Company H knows the product is owned by Company N. Which of the following is RIGHT?",
+"o": [
+"M has transferred the legal burden to H on the infringement of Design right.",
+"His not responsible for the infringement",
+"M is not responsible for the infringement as it is not the one drectily coppied and made the product.",
+"Both H & M infringed N's Design right."
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 41,
+"q": "What can be defined as \"fees\"?",
+"o": [
+"Post-calculated, recurring payments, the amount of which is determined under economic use or result (sales, profits).",
+"A pre-calculated amount paid once or in installments",
+"Compensation for services and assistance rendered by technical or professional experts.",
+"Dividend or income from related operations: commission paid to licensor for his assistance in selling."
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 42,
+"q": "A salesman of a bags shop exhibited and sold a fake Chanel clutch for 1.000.000vnd (provided that the real Chanel clutch costs 20.000.000vnd). But he told clients that this clutch is fake. This is......",
+"o": [
+"A passing off",
+"Not a passing off but an infringement of trademark",
+"A passing off and an infringement of trademark",
+"Neither a passing off nor infringement of trademark"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 43,
+"q": "Which is considered as copying by adaption?",
+"o": [
+"Adapting a copyright work, which includes translating it.",
+"Copying one line of a well-known song in a nontechnical context",
+"The extraction or reutilization of a computer-stored database, whether the whole or a substantial part",
+"A photocopy of a book, or a scanned-in digital copy of a photograph"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 44,
+"q": "Collective trade mark means....",
+"o": [
+"There are many users of this trade mark",
+"There are many owners of this trade mark",
+"There is a collection of trademarks used by one company",
+"There is a collection of products sharing this trademark"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 45,
+"q": "Which of the following form of a spoken word is NOT protected by copyright?",
+"o": [
+"A fully prepared text",
+"A note",
+"In shorthand, or on tape or disk",
+"None of the answer is correct"
+],
+"a": [
+1
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 46,
+"q": "A trade mark being an invented word must......",
+"o": [
+"Be new",
+"Be distinctive",
+"Indicate the nature of the goods",
+"Be meaningful"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 47,
+"q": "Which of the followings is not secondary infringement of copyrights?",
+"o": [
+"A copy is distributed either internally within a business or outside the company",
+"A single copy of a computer program bought abroad, and brought it home for using in connection with professional engineering work.",
+"Photocopying of a book",
+"Showing a TV broadcast, cable programme, film or playing music to the public"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 48,
+"q": "To protect Registered Design, an owner of Registered design needs to do:",
+"o": [
+"Show that there has been copying",
+"Show that the same or a substantially similar design is being applied to a product.",
+"Prove that the design was not created independently by the infringer",
+"All of the above"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 49,
+"q": "Dennis has successfully registered his design (after 9 December 2001). After that, Mike, who with a similar design, applies to have the Dennis's registration invalidated on the grounds that the design was not new. Which of the following is RIGHT?",
+"o": [
+"Mike can do that only when Dennis design has not been registered",
+"Mike can do that even after Dennis design has been successful registered",
+"Mike cannot do that after Dennis design has been successful registered",
+"Mike can do that after Dennis' design has been successful registered if Dennis design did not have individual character and was not new."
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 50,
+"q": "Anders has created a triangle classes box. The box could have been protected by a registered design but no application was filed. What is the requirement if the box is protected by Design right?",
+"o": [
+"Novelty",
+"Not commonplace",
+"Individual character",
+"All of the above"
+],
+"a": [
+1
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 51,
+"q": "Secondary copyright infringement is:",
+"o": [
+"Copying the material without permission.",
+"Trading of those illegal copies",
+"Rewriting the material without permission.",
+"Scanning the material without permission."
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 52,
+"q": "Primary copyright infringement is:",
+"o": [
+"Trading of those illegal copies",
+"Copying the material without permission.",
+"Rewriting the material with permission.",
+"Both of A&C"
+],
+"a": [
+1
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 53,
+"q": "A technical drawing is prepared for use in manufacturing a television set, the drawing is protected by:",
+"o": [
+"Design right",
+"Copyright",
+"Registered design",
+"Both of B&C"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 54,
+"q": "Regarding to Registration period for a registered design. Which of the following is WRONG?",
+"o": [
+"The initial registration period for a design last for 5 years from the application date.",
+"The registration can be kept in force for four subsequent periods of 5 years (after the initial registration period), automatically, without fees.",
+"The registration can be kept in force for four subsequent periods of 5 years, (after the initial registration period), if renewal fees are paid.",
+"The registration period for a design last for 5 years only from the application date. After that period, the registration will not be extended if the owner does not pay the renewal fees"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 55,
+"q": "Which of the followings is protected by copyright",
+"o": [
+"A word",
+"An idea",
+"A legal document",
+"An express of an idea"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 56,
+"q": "Referring to a trade mark in news is.......",
+"o": [
+"A primary infringement of trade mark",
+"A secondary infringement of trade mark",
+"Not an infringement of trade mark",
+"An infringement of copyright"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 57,
+"q": "For the purpose of showing damage in a passing-off action, the owner must........",
+"o": [
+"Show actual loss",
+"Demonstrate high risk of loss of business arising from the confusion",
+"Calculate the number of clients before and after passing off occurs",
+"Proving the activity of imitation"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 58,
+"q": "Which of the following statements is true?",
+"o": [
+"Fair dealing means that only insubstantial part of a work may be used",
+"Fair dealing with a work is permitted",
+"Quoting from a work in criticism or review is permitted provided that the critic or review is fair",
+"Developing a single part of a work is fair"
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 59,
+"q": "In case of copyright infringement, the copyright holder can use",
+"o": [
+"Only injunction",
+"Only delivery-up",
+"Only compensatory damages",
+"Each of (a), (b), (c) or combination"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 60,
+"q": "What is sole license?",
+"o": [
+"the licensee will have no competition",
+"the licensor will afford no licenses to other persons within the contractual territory",
+"A and B are correct",
+"A and B are incorrect"
+],
+"a": [
+1
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 61,
+"q": "Which of the following is NOT a copyright infringement?",
+"o": [
+"Someone copies without the copyright owner's permission",
+"A photographer takes a photograph of a particular scenic view, even though the photograph is virtually indistinguishable to another person's photograph.",
+"Someone creates a scene in a studio to reproduce a scene in someone else's photograph",
+"One similarity drawing has had access to the material which has supposedly been copied"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 62,
+"q": "In the EU, marks registered by the Office for Harmonisation of the Internal Market (Trade Marks and Designs) and are called.....",
+"o": [
+"Community Trade Marks",
+"Global Trade Marks",
+"European Trade Marks",
+"All are correct"
+],
+"a": [
+0
+],
+"c": 4,
+"f": 1
+},
+{
+"n": 63,
+"q": "Adding some words in a song without consent of author is an infringement of......",
+"o": [
+"Reproduction right",
+"Public performance right",
+"Integrity right (quyền bảo toàn toàn ven sản phẩm)",
+"False attribution"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 64,
+"q": "If the technical drawings of motorbike are copied, there is infringement of:",
+"o": [
+"Registered design",
+"Design right",
+"Copyright.",
+"Both of A&B"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 65,
+"q": "Which of these rights is not generally regarded as part of design law?",
+"o": [
+"Registered designs",
+"Design right",
+"Trade mark right",
+"Both registered designs and design right"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 66,
+"q": "Which of the following actions may constitute an infringement?",
+"o": [
+"Using the descriptive sign of the goods in accordance with honest practice",
+"Using a well-known trade mark in the course of a business",
+"Using the geographical indications of the goods in accordance with honest practice",
+"Using his own registered trademark"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 67,
+"q": "In a dispute on design right, .........",
+"o": [
+"Alleged copyist must prove not copying.",
+"The owner must prove copying",
+"The Government must prove copying",
+"Nobody is in charged of proving copying"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 68,
+"q": "A false attribution as an author.....",
+"o": [
+"Is made if a reasonable reader of the work would think that claimant was the author",
+"Is made where particular words are attributed to the claimant without consent",
+"Is made if the name of author is not mentioned",
+"Is made if the work is re-written"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 69,
+"q": "The article made by Company X does not exactly the same with the article owned by Company Y but this article is only slightly different from Y's article. Which of the following is RIGHT?",
+"o": [
+"The article made by X is already different slightly from Y's article. It is not an infringement of design right.",
+"It is an infringement of design right. Y, as the owner, will prevent X from copying the design.",
+"X does not have to obtain Y's permission before making the article",
+"X does not have to compensate for Y's design right."
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 70,
+"q": "A writer has written a detective novel based on using a murder case's transcripts from court proceedings without the Court's consent. The Court is the publisher of the transcripts. Which of the following is RIGHT?",
+"o": [
+"The transcripts from court proceedings are protected by Copyright.",
+"The writer has to compensate for the Court's copyright",
+"Transcripts from court proceedings are in the public domain",
+"The writer has infringed the Court's Copyright"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 71,
+"q": "To be protected, unregistered trade mark must........",
+"o": [
+"Have reputation",
+"Be distinctive for the goods or services for which it has been used",
+"Both be distinctive and have reputation",
+"Be distinctive but do not have reputation"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 72,
+"q": "A wooden chair is protected by registered design. After seeing this chair, a chocolate shop makes a chocolate bar with the design of this chair. Such act is.....",
+"o": [
+"A secondary infringement of registered design",
+"A primary infringement of registered design",
+"Not an infringement of registered design",
+"An infringement of patent"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 73,
+"q": "Anders is the copyright owner of Computer programs. Without Anders' permission, Tine has authorised Charlotte, the one working under contract with Tine, to make an copy of Anders' Computer programs with something added. The act of Tine is:",
+"o": [
+"A secondary infringement of Anders' Copyrights",
+"A primary infringement of Anders' Copyrights",
+"Not a copyright infringement",
+"Both A&B"
+],
+"a": [
+0
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 74,
+"q": "Fair dealing means........",
+"o": [
+"Exception to IP rights infringement",
+"Exception to copyright infringement",
+"Exception to trademark infringement",
+"Exception to patent infringement"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 75,
+"q": "Which of following is NOT passing-off?",
+"o": [
+"Selling used item as a new one",
+"Copying an existing business names",
+"Persuading clients of a well-known shop to try other goods or services",
+"Using similar decoration of an existing business names"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 76,
+"q": "The Fair use of copyrighted work is:",
+"o": [
+"The permission of copyright owner to others to use freely copyrighted material for certain uses.",
+"The statutory permission granted expressly by the Copyright Act to the public to use copyrighted material for certain uses.",
+"Both A&B",
+"Not A&B"
+],
+"a": [
+1
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 77,
+"q": "Liability for infringement of copyright can be avoided if...",
+"o": [
+"It is taken negligently",
+"It is taken intentionally",
+"It is used for commercial purpose",
+"It is used for educational purpose"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 78,
+"q": "If a famous signer sets up her own company to sell her own range of clothes, what type of intellectual property right can she use to show that the clothes are made by her company?",
+"o": [
+"Copyright",
+"Trademarks",
+"Registered designs",
+"Patents"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 79,
+"q": "When: The mark could have been registered but the owner decided not to register it, and The mark is unregistrable because it does not meet the requirements of the law i.e Trade Marks Act 1994). In both cases, use of the mark generates what is known as",
+"o": [
+"Good hope",
+"Goodwill",
+"Good faith",
+"Good use"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 80,
+"q": "What can be deemed as an infringement of registered trade mark?",
+"o": [
+"Use the registered trade mark in relation to the goods/services specified in the registration;",
+"Use the registered trade mark on the similar goods/services;",
+"Use the similar mark on the registered or similar goods/services, so that the public is likely to be confused;",
+"All are correct;"
+],
+"a": [
+3
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 81,
+"q": "How do you think about this statement: In the UK, a mark can be used in business course without registration?",
+"o": [
+"This is correct. In the UK, a mark can be used without registering although it is recommended that registration is always needed for enjoying protection.",
+"This is not correct. Once being used, a trade mark has already been registered.",
+"This is not correct. Trade mark must be registered before using in the course of trade",
+"None of the statements are correct."
+],
+"a": [
+0
+],
+"c": 4,
+"f": 1
+},
+{
+"n": 82,
+"q": "When is the best time to minimize the risk of being sued for infringement of a registered trade mark, for passing-off or even misuse of someone else's company name?",
+"o": [
+"a trade mark is selected in the last place.",
+"a trade mark is selected in the first place.",
+"a trade mark is newly created",
+"a trade mark is communicated to the public"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 83,
+"q": "Which of the followings is secondary infringement of copyright?",
+"o": [
+"Possession of or dealings with infringing copies",
+"Performing the work in public",
+"Duplicating the work",
+"Selling a work"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 84,
+"q": "According to Madrid Agreement, the single application of trade mark must be made within how many months from the initial trade mark application?",
+"o": [
+"6",
+"12",
+"18",
+"3"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 85,
+"q": "Computer programs can be protected by.........",
+"o": [
+"Design rights",
+"Copyright",
+"Trademark",
+"Patent"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 86,
+"q": "Which of the following is not a law governing intellectual property perspective?",
+"o": [
+"Copyright Act, 1957",
+"Trademark Act, 1999",
+"Patent Act, 1970",
+"Design Act, 2000",
+"Customs Act, 1962"
+],
+"a": [
+4
+],
+"c": 1
+},
+{
+"n": 87,
+"q": "Which of the followings can NOT be a registrable trademark?",
+"o": [
+"A symbol",
+"A smell",
+"A single colour",
+"A generic name of the goods"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 88,
+"q": "Who is not an author of the artistic work?",
+"o": [
+"A person who solely creates the artistic work",
+"A person who fixes the picture on whatever medium.",
+"A person who jointly provide significant contribution to create a copyrightable artistic work.",
+"A person who merely provides ideas."
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 89,
+"q": "Regarding applying for registration of a design in the UK, which of the following is RIGHT?",
+"o": [
+"Applying for registration of a design in the UK is free of charge",
+"The application can be dealt with by a patent attorney who will be familiar with the formalities required",
+"An examiner (at the UK Designs Registry) will check whether the design is new.",
+"All of the above"
+],
+"a": [
+1
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 90,
+"q": "The concept of design right was introduced into the UK in:",
+"o": [
+"The UK Trade Marks Act 1994",
+"The UK Patents Act 1977",
+"The UK Copyright, Designs and Patents Act 1988",
+"None of the above"
+],
+"a": [
+2
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 91,
+"q": "Registered design does not protect:",
+"o": [
+"A design on parts which are assembled into a complex product",
+"A design on the whole or a part of a product",
+"A design on handicraft item",
+"A design on products such as vehicle spare parts which are not seen in normal use"
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 92,
+"q": "A is a movie-star. B takes a photograph of A and sells it to a magazine. C",
+"o": [
+"B infringes on A's copyright",
+"B infringes A's privacy right",
+"B does not infringe any IP right",
+"B infringes A's trademark"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 93,
+"q": "Which of followings can NOT be patented?",
+"o": [
+"Discovery of scientific theory",
+"New methodology of running a technique system",
+"New way of operating an equipment",
+"New application of scientific theory"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 94,
+"q": "In the UK law, what the owner of a trade mark must show while proving the damage?",
+"o": [
+"actual loss of business",
+"loss of orders to the competitor",
+"a high risk of loss of business arising from the confusion",
+"the market loss"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 95,
+"q": "To be protected by registered design, the owner must.....",
+"o": [
+"Prove copying",
+"Show the designs are the same or very similar",
+"Publish the design one year earlier",
+"Show an application of the design"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 96,
+"q": "In a case on Registered design dispute, if the defendant (the suspected infringer) can prove that the design was created independently by himself/herself, then:",
+"o": [
+"There is not infringement",
+"There is an infringement",
+"There is an infringement only when the owner shows that there has been copying.",
+"All of others are correct"
+],
+"a": [
+2
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 97,
+"q": "An author of a song wants that people will refer to his name whenever they sing that song. What type of intellectual property right can he claim?",
+"o": [
+"Copyright",
+"Trademarks",
+"Registered designs",
+"Patent"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 98,
+"q": "Duration of false attribution right according to UK law",
+"o": [
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"Lasts for the life of its creator plus a further 20 years)",
+"None of others is correct"
+],
+"a": [
+2
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 99,
+"q": "A company wishes to ensure that no one else can use their logo. Which IPR protects that right?",
+"o": [
+"Copyright",
+"Trademark",
+"Patent",
+"Industrial design"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 100,
+"q": "While proving for the reputation of an unregistered mark, the owner need to:",
+"o": [
+"Prove that the unregistered mark or the get-up is distinctive",
+"Prove that the unregistered mark is taken to show a trade connection with a particular bus",
+"A and B are correct",
+"A and B are incorrect"
+],
+"a": [
+2
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 101,
+"q": "The public domain is referred to:",
+"o": [
+"Addresses in Web",
+"Any works not protected by copyright",
+"Public land",
+"The works protected by copyright"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 102,
+"q": "What protects the intellectual property created by artist?",
+"o": [
+"Trademarks",
+"Copyright",
+"Patents",
+"Confidential information"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 103,
+"q": "What is the intention of the UK government in recognising design right?",
+"o": [
+"To take technical drawings out of copyright protection",
+"To take functional articles out of copyright protection",
+"None of A&B",
+"Both A&B"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 104,
+"q": "In the case that the registered design of goods has been copied. Which of the following is RIGHT?",
+"o": [
+"The person accused of infringement can prove his/her innocence",
+"The person accused of infringement cannot prove his/her innocence",
+"In protecting by registered design, the owner needs to prove copying",
+"Both A&C"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 105,
+"q": "Which of the following is NOT an example of literary work?",
+"o": [
+"A book",
+"An engineer report or specification",
+"A bus timetable",
+"A legal document"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 106,
+"q": "Case: Kastenholz, vs Office for Harmonisation in the Internal Market (OHIM), Qwatchme A/S [2013] T-68/11 (06 June 2013) What are the findings that the OHIM's third Board of Appeal dismissed the Kastenholz's application for a declaration of invalidity appeal?",
+"o": [
+"The contested design was different from the earlier designs",
+"The contested design possessed individual character",
+"The contested design could not be regarded as being a reproduction or an adaptation of the earlier works of art.",
+"All of the above"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 107,
+"q": "The word \"Steel\" can be add in trademark of.......",
+"o": [
+"Only company producing steel",
+"Only company not producing steel",
+"Any company",
+"All company"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 108,
+"q": "A coffee mug having a textured surface created by Kevin, the surface decoration can be protected by:",
+"o": [
+"Registered designs",
+"Design right.",
+"Copyright",
+"None of the above"
+],
+"a": [
+0
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 109,
+"q": "Computer icon is protected by",
+"o": [
+"Copyright",
+"Design right",
+"Trademark",
+"Registered design"
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 110,
+"q": "A technical drawing is protected by..........",
+"o": [
+"Copyright",
+"Registered designs",
+"Both copyright and registered designs",
+"Patent"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 111,
+"q": "Is it necessary to prove that those knowing the mark or get-up can identif he owner?",
+"o": [
+"No",
+"Yes. It is necessary",
+"Yes. This is a must to protect the original owner of the trade mark",
+"Yes. It is important to know who is the first one registering for the trade mark"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 112,
+"q": "The owner of copyright of a book written on author's own is",
+"o": [
+"Its author",
+"The publisher of the book",
+"The person who prints it with consent of the author",
+"The person who provide the ideas for this book"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 113,
+"q": "What can be used to make a copy of a design?",
+"o": [
+"Only the article itself",
+"Only the design document of the article",
+"Either the article itself or its design document",
+"None of the article and its design document"
+],
+"a": [
+2
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 114,
+"q": "An article with its exterior identical to a previous design but its internal feature which cannot be seen is different. This article is protected by:",
+"o": [
+"Design right.",
+"Copyright",
+"Confidential information",
+"Trade secret"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 115,
+"q": "According to Vietnam law, duration of a broadcast program related right",
+"o": [
+"Lasts for 50 years from the year it is released to the public",
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"Lasts forever"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 116,
+"q": "An article is referred to without naming the author. This is an infringement of......",
+"o": [
+"Reproduction right",
+"Paternity right",
+"Integrity right",
+"False attribution"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 117,
+"q": "According to UK law, to be granted suspension of release by custom authorities, the applicant must",
+"o": [
+"Provide adequate evidence to prove that under the laws of the country of importation, there is prima facie an infringement of the right holder's intellectual property right",
+"Supply a sufficiently detailed description of the goods to make them readily recognizable by the customs authorities",
+"Provide a security or equivalent assurance sufficient to protect the defendant and the competent authorities and to prevent abuse",
+"All of others are correct"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 118,
+"q": "The civil remedies against copyright infringement include",
+"o": [
+"Final remedies, compensatory damages, criminal sanctions",
+"Provisional measure, injunction, delivery-up, compensatory damages, punitive damages, account of profits",
+"Injunction, compensatory damages, border measures",
+"Account of profits, border measures, final remedies"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 119,
+"q": "You can infringe a patent by............",
+"o": [
+"Making a product for your own personal use",
+"Publishing drawings of the product on your website",
+"Selling main components of the product, together with instruction how to assemble it using commonly available fastening components.",
+"Talking about it"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 120,
+"q": "According to TRIPS, after registration a mark must be used; if not, it can be cancelled after how many years?",
+"o": [
+"3",
+"4",
+"5",
+"6"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 121,
+"q": "According to TRIPS, if registration of sounds or smells is allowed by countries?",
+"o": [
+"Yes. Provided that these are distinctive",
+"No. Only invented words permitted",
+"No. Only signs are permitted",
+"No. Since sounds or smells are not distinctive."
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 122,
+"q": "Duration of economics right in films according to Vietnam law",
+"o": [
+"Lasts for 50 years from the year the film or record was made or, if it is released to the public, 50 years from its release",
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"Lasts for 75 years from the end of the year in which the film was created"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 123,
+"q": "When does the owner of a registered design have the right to start proceedings for infringement of her/his rights?",
+"o": [
+"When the registration is applied",
+"When a certificate is issued and the registration is published",
+"When the representation of the design is completed",
+"When the owner of the registered design found out an infringement of her/his rights"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 124,
+"q": "Suspecting an infringement of his rights, Peter, the owner of a registered design has written to sue a suspected infringer. When can the threatened person sue Peter for making an unjustified threat?",
+"o": [
+"When there was no infringement",
+"When there is an infringement",
+"The person threatened cannot sue Peter in any cases",
+"Both B&C"
+],
+"a": [
+0
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 125,
+"q": "ATM machine is protected...",
+"o": [
+"Only by design right",
+"Only by patents",
+"By both design right and patents",
+"By trademark"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 126,
+"q": "If a mark or get-up has been used long enough to have generated a reputation, the owner can stop a competitor from 'passing-off' goods or services as if they originated with the owner by use of identical or similar marks or get-ups. To do this the owner must show:",
+"o": [
+"there is a reputation in the mark or get-up",
+"there has been confusion in the market place",
+"the owner has suffered damage",
+"All A+B+C must be proved together"
+],
+"a": [
+3
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 127,
+"q": "Which of the following is NOT protected by an artistic copyright accordinato UK law?",
+"o": [
+"A fully prepared text, a note or in shorthand, on tape or disk",
+"A recording of light or other radiation on any medium on which an image is produced or from which an image may by any means be produced",
+"Technical drawings, photographs and to designs of buildings and other structures",
+"Any drawing, diagram, map, chart or plan"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 128,
+"q": "Singing a song in a party with friends is.",
+"o": [
+"Infringement of reproduction right",
+"Infringement of public performance right",
+"Infringement of false attribution right",
+"Not an infringement of copyright"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 129,
+"q": "What is licensing?",
+"o": [
+"The permission to perform one or more acts covered by exclusive rights of the owner of patented invention/IPRs within a specific area and for particular time.",
+"The ownership of IPRs is transferred.",
+"The supplier promises to deliver the know-how to another party (recipient) for the use by that party.",
+"Owner gives up the ownership of his/her intellectual property"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 130,
+"q": "Which value of ideas and information that Intellectual Property Rights (IPR) protect?",
+"o": [
+"Ethical value",
+"Moral value",
+"Social value",
+"Commercial value"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 131,
+"q": "The term \"WIPO\" stands for:",
+"o": [
+"World Investment policy organization",
+"World intellectual property organization",
+"Wildlife Investigation and Policing organization",
+"World institute for Prevention of organized crime"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 132,
+"q": "Which IPR DOES NOT protect a technical report or specification?",
+"o": [
+"Copyright",
+"Patent",
+"Confidential information",
+"Design right"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 133,
+"q": "An engineering drawing on paper is NOT protected by",
+"o": [
+"Copyright",
+"Patent",
+"Trademark",
+"Design right"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 134,
+"q": "Electrical device (thiết bi điện) is protected by",
+"o": [
+"Copyright",
+"Confidential information",
+"Trademark",
+"Design right"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 135,
+"q": "Computer program can be protected by",
+"o": [
+"Copyright, topography right, trademark",
+"Confidential information, topography right, patent",
+"Trademark, confidential information, copyright",
+"Topography right, patent, confidential information, copyright"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 136,
+"q": "Name of a product is protected by",
+"o": [
+"Copyright",
+"Confidential information",
+"Trademark",
+"Topography right"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 137,
+"q": "This IP right is associated with every literary, dramatic, musical or artistic work, to sound recordings, films, broadcasts and cable programmes. This right is:",
+"o": [
+"Copyright",
+"Design right",
+"Registered design",
+"Confidential information"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 138,
+"q": "Which of the following is protected by copyright?",
+"o": [
+"Idea",
+"Concept",
+"Expression (Biểu thức)",
+"None of others is correct"
+],
+"a": [
+2
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 139,
+"q": "Which of the following is NOT an infringment in coyright according to UK law?",
+"o": [
+"Copying in a different medium to the original work, such as a photocopy of a book, or a scanned-in digital copy of a photograph",
+"Making a short-term or transient copy",
+"Speaking words aloud without making a copy whether by shorthand or on tape",
+"Making an object in three dimensions from a drawing of that object"
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 140,
+"q": "Which of the following is NOT an infringment in coyright?",
+"o": [
+"Someone copies without the copyright owner's permission",
+"A photographer takes a photograph of a particular scenic view, even though the photograph is virtually indistinguishable to another person's photograph.",
+"Someone creates a scene in a studio to reproduce a scene in someone else's photograph",
+"One similarity drawing has had access to the material which has supposedly been copied"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 141,
+"q": "The main law applicable in the UK for copyright is",
+"o": [
+"The Copyright, Designs and Patents Act 1988 and its revision",
+"A WIPO Treaty on Copyright",
+"EU directives on e-commerce and digital copyright",
+"The Patents Act 1977"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 142,
+"q": "Which is NOT right about \"literary copyright\" according to Act 88?",
+"o": [
+"A literary work is 'any work... which is written, spoken or sung'",
+"Copyright applies from the instant the work is recorded and the law refers to this being 'in writing or otherwise'",
+"The 88 Act is silent on quality or literary merit",
+"The author's intention is relevant. An internal memo is legally protected to the same degree and the same value as a fully revised paper written for publication."
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 143,
+"q": "Which is NOT right about \"literary copyright\" according to Act 88?",
+"o": [
+"One word is sufficient to be a copyright work, such as a company name",
+"Titles of books and magazines, particularly when they consist of conventional words, are not copyright",
+"A list of code words or shorthand symbols will also be protected by copyright",
+"The only hint of a criterion is on length"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 144,
+"q": "Which of the following is NOT right about Copyright in computer programs according to UK law?",
+"o": [
+"are classified as literary works",
+"as 'any form of notation or code, whether by hand or otherwise and regardless of the method by which, or medium in or on which, it is recorded'",
+"enough for electronic copyright",
+"The 88 Act does not define 'computer program' or even 'computer' to ensure that the law will still apply even when technology moves on and new types of machine are developed which are not recognisable as computers, or new methods of instructing hardware are devised."
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 145,
+"q": "Part of an Internet address, such as cengage.com → Domain name",
+"o": [
+"True",
+"False"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 146,
+"q": "The exclusive right of an offer or originator of a literary or artistic production to publish, print, sell, or otherwise use that production for a statutory period of time → Patent",
+"o": [
+"True",
+"False"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 147,
+"q": "The Mark used by one or more persons, other than the owner, to certify the region, materials, mode of manufacture, quality, or other characteristic of specific goods or services → Certification Mark",
+"o": [
+"True",
+"False"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 148,
+"q": "A patent application has been updated after it has been filed to incorporate new features.",
+"o": [
+"True",
+"False"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 149,
+"q": "Before disclosing your graphic work which you have just created to any person, you",
+"o": [
+"(i) make an agreement with him/her thereby he/she promises not to disclose or misuse the graphic work without your permission",
+"(ii) make sure you are not in infringement of any third person's IPRs if disclosing the graphic work",
+"Neither (i) nor (ii)",
+"Both (i) and (ii)"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 150,
+"q": "Which of the following is not true",
+"o": [
+"Your friend gives you a copy of a drawing and you have reason to know that that copy has been taken without the copyright owner's consent. You bring this copy to UK. In this case, you commit secondary infringement of copyright",
+"You import copies of cartoons into UK for your professional purpose and you have reason to know that those copies have been taken without copyright owner's permission. In this case, you commit secondary infringement of copyright",
+"You import copies of cartoons into UK for your private collection and have reason to know that those copies have been taken without copyright owner's permission. In this case, you do not commit secondary infringement of copyright",
+"You import copies of cartoons into UK for your private collection but you have no reason to believe that those copies have been taken without copyright owner's permission. In this case, you do not"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 151,
+"q": "Under Berne Convention, in most cases, the copyright shall last for",
+"o": [
+"The author's life plus 70 years",
+"The author's life",
+"The author's life plus 50 years",
+"70 years"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 152,
+"q": "Which one of the followings is incorrect",
+"o": [
+"Injunction and delivery-up can be applied even in case the plaintiff suffers no damage.",
+"Courts may apply provisional measures where any delay is likely to cause irreparable harm to the right holder.",
+"Provisional measurers are applicable if there is a demonstrable risk of evidence being destroyed.",
+"The combination of injunction and delivery-up is not available if there is no damage incurred to the plaintiff. -- applicable"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 153,
+"q": "Regarding the novelty, relevant date may be (i) Filing date; (ii) Priority date",
+"o": [
+"(i) or (ii)",
+"(i) and (ii)",
+"Only (i)",
+"Only (ii)"
+],
+"a": [
+0
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 154,
+"q": "Which one of the followings is not correct",
+"o": [
+"A part or parts of an article which connect it to another article shall not be protected by design right",
+"Anyone can make exhaust system for a car",
+"The fuse holder can be copied without permission",
+"A method of construction is not protected by design right"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 155,
+"q": "Which of the followings is not correct?",
+"o": [
+"The applicant must list goods/services for which the trademarks to be used",
+"The trademark which is registered in UK is automatically protected in Vietnam",
+"Under Nice Agreement, goods are divided into 34 classes",
+"The registration must be renewed by paying fee"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 156,
+"q": "In which case the designer owns rights in a registered design",
+"o": [
+"The designer created the design in the course of employment",
+"The designer created the design under commission",
+"The designer created the design at his own expenses for his own purpose",
+"The designer assigns his registered design to another person"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 157,
+"q": "Which of the followings is not true",
+"o": [
+"\"Flowers\" are not accepted to be registered for flowers",
+"Distinctiveness must be evaluated in connection with the goods to which the trademark is applied",
+"Common words cannot be used as distinctive signs",
+"If a sign is not distinguishable, it cannot be treated as a trademark"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 158,
+"q": "Article 50 of TRIPs requires courts or equivalent judicial authority to grant a provisional measure order accordingly the applicant's request (with out any request)",
+"o": [
+"True",
+"False"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 159,
+"q": "The author reserves the right to object any changes to his original work which would be prejudice to his honor or reputation.",
+"o": [
+"True",
+"False"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 160,
+"q": "Which of the followings may be distinctive",
+"o": [
+"A natural shape of a good",
+"A single color",
+"A new cartoon & a non-descriptive invented word",
+"A functional shape"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 161,
+"q": "If the design is put to practical use that means that the articles are made and sold, hired or advertised",
+"o": [
+"Its legal protection shall last for 10 years from the end of the year in which the articles are sold, hired or advertised",
+"Its legal protection shall last for 05 years from the end of the year in which the articles are sold, hired or advertised",
+"Its legal protection shall last for 15 years from the end of the year in which the articles are sold, hired or advertised",
+"Its legal protection shall last for 20 years from the end of the year in which the articles are sold, hired or advertised"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 162,
+"q": "Surface decoration shall not be protected by any type of IPR.",
+"o": [
+"True",
+"False"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 163,
+"q": "A registered design can not be protected by.........",
+"o": [
+"Copyright",
+"Design right",
+"Patent",
+"Registered design"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 164,
+"q": "Copyright is protected............",
+"o": [
+"Everywhere in the world",
+"By being registered",
+"When the works in question is created",
+"Only in the country where it is registered"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 165,
+"q": "Simplifying a written story without consent of author is..........",
+"o": [
+"Infringement of copyright",
+"Plagiarism",
+"Passing off",
+"False attribution"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 166,
+"q": "The owner of copyright of a music sound recording is the...........",
+"o": [
+"Author",
+"Singer",
+"Producer",
+"Recorder"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 167,
+"q": "The author of copyright of a writing is.......",
+"o": [
+"The person who provides ideas for this writing",
+"The person who expresses this writing",
+"Both the person who provide ideas for and express this writing",
+"The person who copying this writing"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 168,
+"q": "To apply for a patent, an inventor must......",
+"o": [
+"File an application at a patent office which must comply with formal and technical requirements",
+"Demonstrate that their invention works",
+"State the date on which the invention was first \"reduced to practice\"",
+"Apply it"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 169,
+"q": "A design has individual character if",
+"o": [
+"It appeals to the eye of the ordinary consumer",
+"It gives a different overall impression, when compared with prior designs, to someone who is an interested consumer for the products in question",
+"The difference over previous designs are not trivial",
+"Every one can find the difference between this design and others"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 170,
+"q": "Design right.......",
+"o": [
+"Can arise however the design is created and regardless of whether or not any copyright arises",
+"Apply to the individual elements of a design",
+"Only protects the visible parts of designs",
+"Is only applied upon registration"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 171,
+"q": "Which of these events potentially triggers the right of attribution",
+"o": [
+"Broadcasting a recording of a song on the radio",
+"Uploading a song to a file-sharing website",
+"Broadcasting a recitation of a poem on the radio",
+"Using a song in a film"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 172,
+"q": "Which of the followings is not a category of copyright?",
+"o": [
+"Literary works",
+"Sculpture",
+"Furniture",
+"Computer progammes"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 173,
+"q": "Which of the following is not \"use in the course of trade\"?",
+"o": [
+"Fixing the sign to goods",
+"Fixing the sign to the business paper",
+"Presenting the sign for teaching purpose",
+"Selling the goods under the sign"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 174,
+"q": "What is the correct statement about 'originality'?",
+"o": [
+"Originality means 'not copied' and nothing more",
+"Originality requires creative effort",
+"Originality means that the creator does not copy others' work and has contributed skill or labour.",
+"Originality means being totally new"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 175,
+"q": "Which of the followings is NOT a requirement for passing off?",
+"o": [
+"Confusion",
+"Within geographical area",
+"Damages",
+"Providing similar product"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 176,
+"q": "The requirement of proof of reputation is applied for the protection of......",
+"o": [
+"Registered trade mark",
+"Unregistered trade mark",
+"Both registered and unregistered trade mark",
+"Any trademark"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 177,
+"q": "Unregistered trade mark..........",
+"o": [
+"Can not be protected by IP law",
+"Can be protected by IP law upon the satisfaction of requirements",
+"Can be protected by IP law in all cases",
+"Can be protected by IP law in limited area"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 178,
+"q": "Passing off refers to infringement of......",
+"o": [
+"Registered trade mark",
+"Unregistered trade mark",
+"Both registered and unregistered trademark",
+"Neither registered nor unregistered trademark"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 179,
+"q": "What is NOT \"get-up\" of a well-known bakery shop?",
+"o": [
+"Client",
+"Packaging",
+"Decoration style",
+"Name"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 180,
+"q": "Protected trade marks include....",
+"o": [
+"Registered trade marks",
+"Unregistered trademarks",
+"Both registered and unregistered trademark",
+"All marks in the market of one specific country"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 181,
+"q": "Trade mark includes......",
+"o": [
+"Only registered trade mark",
+"Only unregistered trade mark",
+"Both registered and unregistered trademark",
+"Neither registered nor unregistered trademark"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 182,
+"q": "Using a trade mark in a different writing style is...........",
+"o": [
+"An infringement of trade mark",
+"Not a primary infringement of trade mark",
+"Not a secondary infringement of trade mark",
+"An infringement of copyright"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 183,
+"q": "A tool kit can not be protected by.........",
+"o": [
+"Copyright",
+"Patent",
+"Design right",
+"Registered design"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 184,
+"q": "In case \"Apple\" is registered as trade mark of Apple Inc., the trade mark \"Apple\".......",
+"o": [
+"Can not be used by a company producing computer and phone",
+"Can not be printed in a T-shirt",
+"Can not be used by a company selling apple",
+"Can not be used by any company"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 185,
+"q": "A registered trade mark of one goods.........",
+"o": [
+"Can not be registered as trade mark of other goods in different classes",
+"Can not be registered as trade mark of services",
+"Can not be registered as trademark of other goods in the same class",
+"Can not be registered as trade mark of any service and goods"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 186,
+"q": "To be registered as a trade mark, a term must......",
+"o": [
+"Be distinctive",
+"Not indicate the type, quality, purpose or geographical origin of the goods",
+"Both distinctive and indicate the type, quality, purpose or geographical origin of the goods",
+"Be meaningful"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 187,
+"q": "A trade mark can be........",
+"o": [
+"A word",
+"A symbol",
+"A smell",
+"An invented word, a symbol and a smell"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 188,
+"q": "The term \"Gala Apple\" could be refused to be a trade mark because.....",
+"o": [
+"It is not pronounceable",
+"It indicates the nature of one type of apple",
+"It is an invented word",
+"It is not clear"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 189,
+"q": "Which of the followings is correct?",
+"o": [
+"Trade mark must be a word in English",
+"Trade mark must be an invented word",
+"Trade mark could be a symbol",
+"Trade mark must be pronounceable"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 190,
+"q": "As the term \"BM Apple\" as registered as a trade mark of a company selling apples, the term \"BN Apple\".........",
+"o": [
+"Can not be registered as a trade mark of a company selling apples",
+"Still can be registered as a trade mark of a company selling apples",
+"Can be registered as a trademark of all company",
+"Can not be registered as a trademark of any company"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 191,
+"q": "The term \"Apple\" can NOT be a trade mark of........",
+"o": [
+"Any business",
+"Any business selling apples",
+"Any business selling smartphones",
+"Any business selling computers"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 192,
+"q": "An unregistered trade mark shall be.....",
+"o": [
+"Fully protected",
+"Partly protected",
+"Not protected",
+"Full protected within limited period"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 193,
+"q": "Business methods are.......",
+"o": [
+"patentable in the US but not patentable in the UK",
+"not patentable in both UK and US",
+"patentable in both UK and US",
+"Not patentable anywhere"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 194,
+"q": "An exception to patent infringement is......",
+"o": [
+"Using the patented invention on behalf of the government",
+"Selling a patented product for non-commercial use",
+"Copying that patent for personal use",
+"Using that patent for public use"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 195,
+"q": "A patent is infringed..........",
+"o": [
+"Only when every feature within at least one claim is used in the allegedly infringing article or process",
+"When some features are used in the allegedly infringing article or process",
+"The allegedly infringing article or process looks like the patented one",
+"The allegedly infringing article or process is developed from the patented one with consent of"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 196,
+"q": "Manufacturing an article protected only by a UK granted patent in China is.......",
+"o": [
+"A secondary infringement",
+"A primary infringement",
+"Not an infringement of patent",
+"An infringement of IP rights"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 197,
+"q": "A patent granted in the one country has legal effect.......",
+"o": [
+"Worldwide",
+"only in the country of registration",
+"in the European Union",
+"in country of nationality of the owner"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 198,
+"q": "One of the requirements for an invention to be patented is.......",
+"o": [
+"Having individual character",
+"Not being obvious",
+"Being artistic",
+"Being original"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 199,
+"q": "Which of the followings can be patented?",
+"o": [
+"Mathematical method",
+"Presentation of information",
+"New materials",
+"Scientific theory"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 200,
+"q": "When a machine is protected by registered design, the drawing of this machine is.....",
+"o": [
+"Also protected by registered design",
+"Not protected by IP rights",
+"protected by copyright",
+"Protected by patent"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 201,
+"q": "Once a design is registered in the UK, it will be protected.....",
+"o": [
+"worldwide",
+"Only in the UK",
+"In any country where such registration is applied",
+"Outside of the UK"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 202,
+"q": "To be protected by design right, an article must NOT.....",
+"o": [
+"Be original",
+"Be non-commonplace",
+"Have an individual character",
+"be original and non-commonplace"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 203,
+"q": "The protection of design right is applied..........",
+"o": [
+"To all original and non-commonplace articles",
+"To only registered articles",
+"To only some technical objects",
+"To only some artistic works"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 204,
+"q": "An article of company X was designed by its employee.- Mr. Y. Two years later, X transfers design right of this article to other company without consent of Y. Such transfer is.....",
+"o": [
+"A secondary infringement of design right",
+"A primary infringement of design right",
+"Not an infringement of design right",
+"An infringement of copyright"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 205,
+"q": "Buying a toy car being protected by registered design is.......",
+"o": [
+"A secondary infringement of design right",
+"A primary infringement of design right",
+"Not an infringement of design right",
+"An infringement of copyright"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 206,
+"q": "Infringement of design right occurs when.......",
+"o": [
+"It exists two similar designs",
+"It is shown that the alleged copyist had access to the design in question",
+"The activity of copying is proven",
+"The design in concerned is registered"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 207,
+"q": "A machine with artificial intelligence created a 3D sculpture. The owner of design right of this sculpture is......",
+"o": [
+"This machine",
+"The person by whom the arrangements necessary for the creation of the design are undertaken",
+"Nobody",
+"Public"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 208,
+"q": "Design right applies when......",
+"o": [
+"The design is recorded",
+"The design is registered",
+"The design is published",
+"The design is showed"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 209,
+"q": "The design of contact lenses can..........",
+"o": [
+"Be protected by design rights",
+"Not be protected by design rights",
+"Be protected by patent",
+"Not be protected by patent"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 210,
+"q": "A triangle eyeglasses box can be protected by............",
+"o": [
+"Design rights",
+"Copyright",
+"Patent",
+"Trademark"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 211,
+"q": "Computer programmes can be protected by.........",
+"o": [
+"Design rights",
+"Copyright",
+"Trademark",
+"Patent"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 212,
+"q": "To be protected by copyright, a creative work must be......",
+"o": [
+"Fixed in a tangible medium",
+"original",
+"both original and fixed in a tangible medium",
+"Spoken"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 213,
+"q": "Which of the followings is NOT primary infringement of copyright?",
+"o": [
+"Copying part of a work without consent of author",
+"Importing infringing copies",
+"Translating a work without consent of author",
+"Adapting a work without consent of author"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 214,
+"q": "Duration of database right according to UK law",
+"o": [
+"Lasts for the life of its creator plus a further 70 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"For the works generated before 1 January 1996 the duration of database right is life plus 50 years.",
+"Lasts for 15 years from the end of the year the database was created or made accessible to the public"
+],
+"a": [
+3
+],
+"c": 6
+},
+{
+"n": 215,
+"q": "Copyright can be applied to",
+"o": [
+"Music, plays and conventional artistic works including paintings and sculptures.",
+"Works of artistic craftsmanship such as individually designed items of furniture.",
+"Typefaces and to typographical editions, that is, the way a literary work is laid out on a page.",
+"All of others are correct"
+],
+"a": [
+3
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 216,
+"q": "Duration of copyright in sound recordings or films according to UK law",
+"o": [
+"Lasts for 50 years from the year the film or record was made or, if it is released to the public, 50 years from its release",
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"The copyright lasts for 70 years from the end of the year in which the copyright material was created"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 217,
+"q": "Integrity right applied to",
+"o": [
+"Computer programs, works created for newspapers or magazines or multi-authored works, such as encyclopaedias",
+"Copyright material created before the 88 Act came into force on 1 August 1989, provided the creator was alive on that day and had not assigned or licensed the copyright.",
+"Films created before 1 August 1989",
+"None of others is correct"
+],
+"a": [
+1
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 218,
+"q": "What is privacy right?",
+"o": [
+"The right not to be wrongly named, that is, not to have a work falsely attributed to a creator",
+"Relates to photographs taken under a commission (i.e. for payment) for private purposes",
+"The author's right to object to a distortion or mutilation of a work when it is published, or to changes made which are considered to be prejudicial to the honour or reputation of the creator",
+"The right for the creator of a literary, artistic, dramatic or musical copyright work and the director of a film (unless he or she is an employee) to be named as author or director in certain circumstances"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 219,
+"q": "Which of the following is NOT a source of international copyright law?",
+"o": [
+"Bern convention",
+"Paris convention",
+"TRIPS - Trade-Related aspects of Intellectual Property Rights",
+"WIPO Copyright Treaty"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 220,
+"q": "Which country is NOT a member of Bern convention before 2022?",
+"o": [
+"Vietnam",
+"Singapore",
+"Laos",
+"Indonesia"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 221,
+"q": "Until 2022, Vietnam has not been a contracting party of:",
+"o": [
+"WIPO Copyright Treaty",
+"Bern Convention",
+"Paris Convention",
+"Hague Agreement"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 222,
+"q": "You and your co-worker are employees of a design company. Both of you are assigned to create a company logo for a client. In this case",
+"o": [
+"Only you reserve the right of paternity",
+"Both you and your friend reserve the right of paternity",
+"Only your company reserves the right of paternity",
+"Your company, you and your friend all reserve the right of paternity"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 223,
+"q": "Moral rights include:",
+"o": [
+"Integrity right, reproduction right and false attribution right",
+"Economic right, public performance right",
+"Paternity right, integrity right, alse attribution right and privacy right",
+"Paternity right, distribution right and privacy right"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 224,
+"q": "Which one of the followings is correct?",
+"o": [
+"Under Berne Convention, authors shall not reserve moral rights upon they transfer their works to other persons.",
+"Under Berne Convention, authors shall reserve the right to claim authorship of their work but not the right to object any changes to their work upon they transfer their work.",
+"Under Berne Convention, authors are not allowed to accept any changes to his original works upon they transfer such works to other persons.",
+"Under Berne Convention, authors shall reserve moral rights upon they transfer their work to other persons."
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 225,
+"q": "To be granted a provisional measure order, the applicant must",
+"o": [
+"Provide any reasonable evidence to prove that he/she is the right holder of copyright",
+"Provide any reasonable evidence to prove that his/her rights are being infringed or that such infringement is imminent.",
+"Provide security",
+"All of others are correct"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 226,
+"q": "Which is NOT considered as copying part of a work?",
+"o": [
+"Uses a 'substantial part' of a work.",
+"Copying one line of a well-known song in a nontechnical context,",
+"Copying one frame from a film",
+"A photocopy of a book, or a scanned-in digital copy of a photograph"
+],
+"a": [
+3
+],
+"c": 3
+},
+{
+"n": 227,
+"q": "Which is considered as copying part of a work according to UK law?",
+"o": [
+"Adapting a copyright work, which includes translating it.",
+"Copying one line of a well-known song in a nontechnical context",
+"The extraction or reutilisation of a computer-stored database, whether the whole or a substantial part",
+"A photocopy of a book, or a scanned-in digital copy of a photograph"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 228,
+"q": "Which is considered as infringing a broadcast program copyright?",
+"o": [
+"Adapting a copyright work, which includes translating it.",
+"Copying one line of a well-known song in a nontechnical context",
+"Re-broadcast it or include it in another cable programme",
+"The extraction or reutilisation of a computer-stored database, whether the whole or a substantial part"
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 229,
+"q": "Which is NOT right about copying computer programs?",
+"o": [
+"Conventional translation of a program from English into a foreign language",
+"When an applications program on a disk is loaded onto a personal computer (PC), a copy is made in a different medium",
+"When hardware is running software, parts of the software code are copied internally, for example, from a read-only memory into an instruction register",
+"Computer programs cannot be used without an act of copying, it is legally essential for the copyright owner to give permission for the copying."
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 230,
+"q": "' Apple' for computers is an example of",
+"o": [
+"Invented words used as a trade mark",
+"Words used out of context as a trade mark",
+"Symbols used as a trade mark",
+"Shapes used as a trade mark"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 231,
+"q": "Registration of a trade mark is",
+"o": [
+"automatic",
+"subject to an approval process through the designated authoritative body",
+"dependent upon a corporation using a priori means to establish an original mark.",
+"dependent upon whether the mark has been established as being diluted."
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 232,
+"q": "A trade mark can be any of the following except a",
+"o": [
+"Word",
+"Symbol",
+"Formula",
+"Phrase"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 233,
+"q": "Which of the following is not eligible for immediate trade mark protection?",
+"o": [
+"fanciful trade marks",
+"descriptive trade marks",
+"arbitrary trade marks",
+"suggestive trade marks"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 234,
+"q": "Which of the following is an example of a suggestive trade mark?",
+"o": [
+"Fruit of the Loom",
+"Victoria's Secret",
+"eBay",
+"Netflix"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 235,
+"q": "In the UK, a trade mark is used without registering is permitted.",
+"o": [
+"This is correct. A marked can be used without registering although it is recommended that registration is always needed for enjoying protection.",
+"This is not correct. Once being used, a trade mark has already been registered.",
+"This is not correct. Trade mark must be registered before using in the course of trade",
+"None of the statements are correct."
+],
+"a": [
+0
+],
+"c": 4,
+"f": 1
+},
+{
+"n": 236,
+"q": "In the UK trade mark law, when is \"goodwill\" generated by the use of the mark?",
+"o": [
+"When the mark could have been registered but the owner decided not to register it",
+"When the mark is unregistrable because it does not meet the requirements of the Trade Marks Act 1994",
+"A and B are correct",
+"A and B are incorrect"
+],
+"a": [
+2
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 237,
+"q": "After a sufficient use, a mark which is unregistrable may become registrable because",
+"o": [
+"Its reputation can be used as proof that the mark has become distinctive for the goods or service for which it has been used.",
+"This can not be happened. The mark should be registered through an official process as stated by the laws.",
+"The mark is automatically registered",
+"None of the answer is correct"
+],
+"a": [
+0
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 238,
+"q": "Get-up includes",
+"o": [
+"the colour of packaging and the type of lettering used on a label",
+"a slogan used for broadcast or printed advertising",
+"visual impression of business premises, such as the style of fascia board and the colour of shop fittings",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 239,
+"q": "Confusion can be caused by a competitor using the most memorable part of the trade mark.",
+"o": [
+"Yes. The use of the most memorable part will be sufficient to generate the confusion.",
+"No. The confusion happens when the competitor uses an identical or very similar trade mark or get-up.",
+"No. The confusion happens only in the case of using identical marks for identical goods or services",
+"None of the abovementioned statement is correct"
+],
+"a": [
+0
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 240,
+"q": "What is the definition of a domain name?",
+"o": [
+"A domain name is an anonymous string that defines a realm of administrative autonomy, authority or control within the Internet.",
+"A domain name is an identification string that defines a realm of administrative autonomy, authority or control within a geographic area.",
+"A domain name is an identification string that defines a realm of administrative autonomy, authority or control within the Internet.",
+"A domain name is an identification string that defines a person, authority or control within the Internet."
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 241,
+"q": "Domain names are registered by the principle of",
+"o": [
+"Peer-reviewed",
+"censorship",
+"Resources restriction",
+"first-come first-served"
+],
+"a": [
+3
+],
+"c": 5
+},
+{
+"n": 242,
+"q": "A registration of domain names usually lasts for.... year(s), and if not renewed, can be allocated to another owner.",
+"o": [
+"1",
+"2",
+"3",
+"4"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 243,
+"q": "Comparative advertising does not infringe trade mark use unless",
+"o": [
+"it is for the company's advantages",
+"it is not in accordance with honest business practices.",
+"it serves customers with information",
+"All trade mark uses in comparative advertising contribute the infringement to trade mark protection"
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 244,
+"q": "When you use the similar mark on the registered or similar goods/services is an infringement",
+"o": [
+"Yes. This is enough to conclude that there is an infringement",
+"No. This will be an infringement when the use likely causes public to be confused.",
+"Yes. This is an infringement since it can devalue goods or services.",
+"Yes. This is an infringement because it offers more choices for customers."
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 245,
+"q": "When you use the registered trade mark in relation to the goods/services specified in the registration, there is an infringement.",
+"o": [
+"True.",
+"It depends.",
+"False. Besides what mentioned, the infringement must be caused with confusion.",
+"False. Because the use of registered trade mark in relation to the goods/services specified in the registrati"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 246,
+"q": "What does Trade libel means?",
+"o": [
+"Misleading advertisements and false indications of the origin of goods and services",
+"The original information about the quality of products or services",
+"An injunction against counterfeit",
+"A piece of information identified the products or services on mass communication"
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 247,
+"q": "Dealing with trading counterfeit goods is an international problem due to major differences in national laws, particularly in the Far East. In these countries, what measure prevails as a viable way for this problem?",
+"o": [
+"Enacting a new international mechanism",
+"International lobbying on a long-term basis.",
+"Enhancing more international observations",
+"Do nothing, since this is a domestic problem of a country"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 248,
+"q": "In the UK, it is a _____ offence to apply a mark identical to (or likely to be mistaken for) a registered trade mark to goods, labels, packaging or advertising materials intended for use in relation to goods without the proprietor's permission.",
+"o": [
+"Civil",
+"Moral",
+"Criminal",
+"Ethical"
+],
+"a": [
+2
+],
+"c": 5
+},
+{
+"n": 249,
+"q": "In the UK, if you want to search for registering of trade marks, who have all information to help you?",
+"o": [
+"a trade mark agent",
+"patent attorney",
+"a commercial searching organization",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 4,
+"f": 1
+},
+{
+"n": 250,
+"q": "In the UK, there are criminal provisions relating to misuse of trade marks and relate only to",
+"o": [
+"Registered trade marks",
+"Unregistered trade marks",
+"Get-up",
+"All are correct"
+],
+"a": [
+0
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 251,
+"q": "A Community Trade Marks (CTM) is valid in ___",
+"o": [
+"All member countries of the WTO",
+"All member countries of the EU",
+"All member countries of the WIPO",
+"All member countries of the UN"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 252,
+"q": "The registration of a Community Trade Mark can be renewed every....... years.",
+"o": [
+"CTM cannot be renewed",
+"5 years, for 4 consecutive times after the first registration",
+"5 years",
+"10 years"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 253,
+"q": "What trade marks international system allows anyone with a trade mark registration in one member country to make a single application covering all, or a selected number, of other member countries?",
+"o": [
+"Hauge Agreement",
+"Madrid Agreement",
+"Paris Convention",
+"Berne Convention"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 254,
+"q": "According to TRIPS, what a registered mark must give the owner?",
+"o": [
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar goods",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar services",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar goods and services",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for different goods"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 255,
+"q": "Why do owners need to commercialize IPRs?",
+"o": [
+"IPRs owner should translate IPRs into money for reinvestment and profit",
+"IPRs owner may not have enough resources to exploit IPRs.",
+"IPRs owner should commercialize IPRs by means of assignment or license.",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 256,
+"q": "What intellectual property right can be licensed?",
+"o": [
+"Any IPR",
+"Copyright only",
+"Registered design only",
+"Trade mark only"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 257,
+"q": "How to acquire IPRs?",
+"o": [
+"Assignment",
+"Licensing",
+"Know-how contract",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 258,
+"q": "What is an assignment?",
+"o": [
+"The ownership of IPRs is transferred from the assignor to the assignee. Upon assignment, the assignee becomes the owner of the rights.",
+"The ownership of IPRs is transferred from the assignee to the assignor. Upon assignment, the assignor becomes the owner of the rights.",
+"The ownership of IPRs is transferred from the assignor to the other assignee. Upon assignment, the assignor remains the owner of the rights.",
+"None of the above definitions is correct"
+],
+"a": [
+0
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 259,
+"q": "The assignment and licensing agreement shall be registered by the competent authority as required by law.",
+"o": [
+"No. Only the licensing is needed",
+"Yes. They can be registered upon the requirement of the law",
+"No. Only the assignment agreement is needed",
+"No. They can never be registered"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 260,
+"q": "The know-how may be delivered in the forms of",
+"o": [
+"documents only",
+"None is correct",
+"technical service and other intangible forms only",
+"the tangible forms or intangible forms"
+],
+"a": [
+3
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 261,
+"q": "Know-how contract can be existed under a form of relevant transaction such as joint-venture.",
+"o": [
+"True. Know-how contract can be existed under a form of relevant transaction such as joint-venture besides other forms.",
+"False. Know-how contract can be existed only under a form of apprenticeship.",
+"False. Know-how contract can be existed only under a form of franchising.",
+"False. Know-how contract can be existed only under a form of supporting agreement."
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 262,
+"q": "What does royalty mean?",
+"o": [
+"post-calculated, recurring payments, the amount of which is determined under economic use or result (sales, profits).",
+"a pre-calculated amount paid once or in installments",
+"compensation for services and assistance rendered by technical or professional experts.",
+"dividend or income from related operations: commission paid to licensor for his assistance in selling."
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 263,
+"q": "Lump-sum payment is",
+"o": [
+"post-calculated, recurring payments, the amount of which is determined under economic use or result (sales, profits).",
+"a pre-calculated amount paid once or in installments",
+"compensation for services and assistance rendered by technical or professional experts.",
+"dividend or income from related operations: commission paid to licensor for his assistance in selling."
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 264,
+"q": "Indirect compensation includes",
+"o": [
+"post-calculated, recurring payments, the amount of which is determined under economic use or result (sales, profits).",
+"a pre-calculated amount paid once or in installments",
+"compensation for services and assistance rendered by technical or professional experts.",
+"dividend or income from related operations: commission paid to licensor for his assistance in selling."
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 265,
+"q": "Exclusive license is",
+"o": [
+"the licensee will have no competition",
+"the licensor will afford no licenses to other persons within the contractual territory",
+"A and B are correct",
+"A and B are incorrect"
+],
+"a": [
+0
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 266,
+"q": "Sole license is",
+"o": [
+"the licensee will have no competition",
+"the licensor will afford no licenses to other persons within the contractual territory",
+"A and B are correct",
+"A and B are incorrect"
+],
+"a": [
+1
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 267,
+"q": "Copyright license can only be made in writing",
+"o": [
+"True. Since the IP license can be granted only in written forms.",
+"False. An IP license can be also granted orally but it is highly preferable if the agreement is in written form.",
+"False. An IP license can only be made orally",
+"None of the given statements are correct"
+],
+"a": [
+1
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 268,
+"q": "The color or shape of an item, if distinctive, is",
+"o": [
+"a trade mark.",
+"trade dress.",
+"a copyright.",
+"a patent."
+],
+"a": [
+1
+],
+"c": 5
+},
+{
+"n": 269,
+"q": "Each of the following is considered trade dress except",
+"o": [
+"The white linen tablecloths at the Four Seasons Restaurant in New York City.",
+"The font and size of print used in a national store's print advertising.",
+"The brown uniforms and trucks at UPS.",
+"The costume worn by your school's mascot at sporting and other events."
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 270,
+"q": "When a trade mark has become representative of a broad type of products as opposed to being descriptive of a particular brand, the trade mark has become........ and the holder has lost the right to enforce the mark against competitors.",
+"o": [
+"limited",
+"authentic",
+"original",
+"generic"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 271,
+"q": "Trade marks indicate a specific producer.",
+"o": [
+"True",
+"False"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 272,
+"q": "A trade mark is always protected, even if it loses its distinctiveness.",
+"o": [
+"True",
+"False"
+],
+"a": [
+1
+],
+"c": 4
+},
+{
+"n": 273,
+"q": "What does NOT protects the intellectual property created by designers?",
+"o": [
+"Copyright",
+"Patents",
+"Registered designs",
+"Design rights"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 274,
+"q": "You write an original story, what type of intellectual property right that you can claim?",
+"o": [
+"Copyright",
+"Trademarks",
+"Registered designs",
+"Patent"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 275,
+"q": "Andy translates a book into Vietnamese with consent of the author. However, in this translated version, Andy re-arranges different parts of the book. Andy might commit infringement of....",
+"o": [
+"Translation right",
+"Reproduction right",
+"Integrity right",
+"False attribution"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 276,
+"q": "Ben covers a song with consent of the author. In addition to the name of the author, Ben adds his name to that song. Ben might.......",
+"o": [
+"commit infringement of reproduction right",
+"commit infringement of paternity right",
+"not commit infringement of intellectual property right",
+"commit infringement of translation right"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 277,
+"q": "A literary work must be......... for being protected by copyright",
+"o": [
+"long",
+"complex",
+"Neither long nor complex",
+"Long and complex"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 278,
+"q": "A photograph is protected by..........",
+"o": [
+"copyright",
+"patent",
+"registered design",
+"Trademark"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 279,
+"q": "Copyright is NOT applied to..........",
+"o": [
+"Songs",
+"Video tapes",
+"Broadcasts",
+"None of them"
+],
+"a": [
+3
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 280,
+"q": "If a book cover is designed under the order of a publisher, the ownership of this page is..........",
+"o": [
+"The author of the book",
+"The designer of this book cover",
+"The publisher",
+"Public"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 281,
+"q": "A designer is an employee of a publisher. Then, copyright of all his artistic works under employment contract is owned by.......",
+"o": [
+"This publisher",
+"This designer",
+"Both publisher and designer",
+"Neither publisher nor designer"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 282,
+"q": "If copyright material is created by a computer, the owner of this copyright is..........",
+"o": [
+"The computer",
+"The company producing this computer",
+"The person making the arrangement necessary for that creation.",
+"Nobody"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 283,
+"q": "Paternity right.......",
+"o": [
+"Is similar to copyright",
+"Lasts forever",
+"can be transferred",
+"Is given only to the author of an artistic works"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 284,
+"q": "Paternity right does NOT apply to:",
+"o": [
+"A book",
+"Computer programmes",
+"An article",
+"A photograph"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 285,
+"q": "A hybrid car is intended for manufacture and the design is new and not commonplace, has an individual character. Which of the followings is WRONG?",
+"o": [
+"The car can be protected by a registered design.",
+"The car can be protected by a design right.",
+"The car cannot be protected by a registered right.",
+"Both A&B"
+],
+"a": [
+2
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 286,
+"q": "Which of the followings is not a public domain material?",
+"o": [
+"Works expired copyrights",
+"Works published by the United States government",
+"A novel protected by Copyright",
+"News and history"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 287,
+"q": "In most types of work, how long does copyright last for according to Bern Convention?",
+"o": [
+"10 years after the creation of the work",
+"50 years after the creation of the work",
+"10 years after the death of the person who created that work",
+"50 years after the death of the person who created that work"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 288,
+"q": "Which of the following is RIGHT?",
+"o": [
+"As a copyright holder, you are compensated for fair use of your copyrighted work by others.",
+"A teacher has copied a book for purpose of teaching. The teacher has to compensate for the book's copyright holder for the use.",
+"A university professor has copied a book for purpose of his research. This is not an infringement of copynight.",
+"If material is protected by copyright, in any cases, no anyone can use the material without copyright holder's permission."
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 289,
+"q": "According to Vietnam law, duration of economics right in literature work:",
+"o": [
+"Lasts for 50 years from the year the film or record was made or, if it is released to the public, 50 years from its release",
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"Lasts for 75 years from the end of the year in which the film was created"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 290,
+"q": "A design of a television set being intended for manufacture is new and has an individual character. The design is also not commonplace. What IPRs can simultaneously protect the design?",
+"o": [
+"Trademarks; and Copyright.",
+"Registered Design; and Design Right.",
+"Copyright, and Registered Design.",
+"Copyright; Trademarks; and Registered Design."
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 291,
+"q": "Which of the following is a generic term?",
+"o": [
+"\"car\" for cars",
+"\"Apple' for computers",
+"\"Camel\" for cigarettes",
+"\"Kodak\" for cameras"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 292,
+"q": "What does three stripes on Adidas clothing represent?",
+"o": [
+"A trade mark.",
+"Trade dress.",
+"A trade secret.",
+"A patent."
+],
+"a": [
+0
+],
+"c": 5
+},
+{
+"n": 293,
+"q": "Company H designs a new type of fuse holder. Company M has copied freely the parts of the holder that actually contact the fuse. Which of the following is RIGHT?",
+"o": [
+"Company M infringed Company H's Design right.",
+"Company M have to obtain Company H's permission before coping the parts",
+"Company M can copy and produced the parts without Company H's permission",
+"Company H can request Company M for a Design right compensation."
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 294,
+"q": "In a case on Design rights dispute, if the design right owner succeeds in proving the infringement, what cannot the Court award?",
+"o": [
+"An injunction to stop further manufacture or import",
+"An arrest warrant for the infringer",
+"Order payment of damages (e.g. for loss of sales by the design right owner)",
+"The destruction of the offending articles produced during the previous 6 years or handing them over to the design right owner"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 295,
+"q": "In which case you are the creator of an Intellectual Property?",
+"o": [
+"You employed someone creating the intellectual property.",
+"You created the intellectual property by yourself.",
+"You bought the intellectual property rights from the previous owner of the property.",
+"You are donated the intellectual property rights from the previous owner of the property."
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 296,
+"q": "According to current Vietnam Intellectual Property Law, Intellectual Property Rights includes:",
+"o": [
+"Literatural works; Designs; Trademark.",
+"Copyright and rights related to copyright; Industrial property rights; Rights to plant varieties.",
+"Rights to tangible property",
+"Both of a&b"
+],
+"a": [
+1
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 297,
+"q": "Which of the IP Laws below currently having legal validity in Viet Nam?",
+"o": [
+"The Intellectual Property Law No. 50/2005/QH11",
+"The Intellectual Property Law No. 50/2005/QH11 having been amended and supplemented in accordance with the Law No. 36/2009/QH12; the Law No. 42/2019/QH14; and the Law No. 07/2022/QH15",
+"The Intellectual Property Law No. 50/2005/QH11 having been amended and supplemented in accordance with the Law No. 36/2009/QH12 and the Law No. 42/2019/QH14.",
+"All of the above"
+],
+"a": [
+1
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 298,
+"q": "What is the \"public interest\" principle with regard to IP protection?",
+"o": [
+"It means that the protection and exercise of IP rights must be for the interests of the general public.",
+"It means that the protection and exercise of IP rights must be for the profits of public corporations having important role for national economic development.",
+"It means that the protection and exercise of IP rights must be balanced with the public interest, and that a balance must be maintained between the interests of right holders and the general public.",
+"It means that the protection and exercise of IP rights must be for the interests of IP right holders."
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 299,
+"q": "A design for a car body is registered. Can the same design be used for:",
+"o": [
+"A toy car",
+"A chocolate bar",
+"A print on a tea towel",
+"Not any of A,B&C"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 300,
+"q": "According to TRIPS, a registered mark can give the owner....",
+"o": [
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar goods",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar services",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for identical or similar goods and services",
+"Exclusive right to prevent use by a third party in the course of trade of an identical or similar sign for different goods"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 301,
+"q": "Which of the following is NOT a type of Intellectual Property Right (IPR)?",
+"o": [
+"Patent",
+"Copyright",
+"Trademark",
+"Real Estate Ownership"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 302,
+"q": "Which of the following cannot be registered as a design under the Registered Designs Act?",
+"o": [
+"A sculpture",
+"A computer program",
+"A vehicle's external shape",
+"A typeface"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 303,
+"q": "What is the main domestic law applicable in the UK for copyright?",
+"o": [
+"The Copyright, Designs and Patents Act 1988 and its revision",
+"A WIPO Treaty on Copyright",
+"EU directives on e-commerce and digital copyright",
+"The Patents Act 1977"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 304,
+"q": "What is the requirement for an invented word to be a trade mark?",
+"o": [
+"It must be distinctive",
+"It must be meaningful",
+"It must indicate the nature of the products",
+"It must be new"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 305,
+"q": "What are the basic requirements that trade mark should be?",
+"o": [
+"Easy to remember and sufficiently different from marks used by competitors",
+"Easy to remember and creating confusion",
+"Distinctive and confusion",
+"All are correct"
+],
+"a": [
+0
+],
+"c": 4,
+"f": 1
+},
+{
+"n": 306,
+"q": "Which is not the way of recovering the cost of developing an engineering technology (an IP)?",
+"o": [
+"Both of b&d",
+"Granting a license to a company, who all paid a royalty for the right to use the IP.",
+"Applying for the IP registration at an authorized State agency.",
+"Making a product and selling it, with the IPR keeping competitors out of the market."
+],
+"a": [
+2
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 307,
+"q": "Assuming that an article is not common place, if this article could have been protected by a registered design but no application was filed, what is the potential result?",
+"o": [
+"It will be protected by design right.",
+"It will be protected by trademark",
+"It will be protected by copyright",
+"All are not correct"
+],
+"a": [
+0
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 308,
+"q": "Which of the following is not a moral right in Vietnamese IP law?",
+"o": [
+"Right to make copies",
+"Right to attribution",
+"None of the options",
+"Right to publish the work"
+],
+"a": [
+0
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 309,
+"q": "The standard that must be met for a plaintiff to win a trade mark dilution claim is the likelihood of confusion.",
+"o": [
+"Yes. Likelihood of confusion is the key indicator to identify a trade mark infringement.",
+"No. Since dilution is a form of damage in passing off, the plaintiff must show there is a reputation in the mark or get-up; there has been confusion in the marketplace, and the owner has suffered damage to win the claim.",
+"No. The damage is the fundamental indicator in a dilution claim, that the plaintiff must prove to win the ca",
+"There are no correct answers"
+],
+"a": [
+3
+],
+"c": 5
+},
+{
+"n": 310,
+"q": "If the design is NOT put to practical use,.....",
+"o": [
+"Its legal protection shall last for 10 years from the time it is created",
+"Its legal protection shall last for 15 years from the time it is created",
+"Its legal protection shall last for 05 years from the time it is created",
+"Its legal protection shall last for 20 years from the time it is created"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 311,
+"q": "Which is litigation model applied in the countries used the civil law system?",
+"o": [
+"Adversarial litigation",
+"Inquisitorial litigation",
+"Civil procedure",
+"Court procedure"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 312,
+"q": "Who traditionally owns the copyright in a sound recording?",
+"o": [
+"The composer of the music",
+"The person who performs the music",
+"The person making the arrangements necessary for the recording to be made, typically the producer",
+"The recording studio"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 313,
+"q": "Company X pays Company Y for one copy of a program such as a word processing or accountancy packag for a PC (Company Y is the owner of the program). Company X then makes copies for every PC in the company without the permission of the Company Y. Which of the following option is wrong?",
+"o": [
+"Company Y can sue Company X for the Copyright Infringement.",
+"Company X can make copies of the program for every PC in the company for internal use only within the company as it has paid for the program already.",
+"Company X does not have the right to make copies for every PC in the company, unless the accompanying license gives this permission.",
+"Both of a&c"
+],
+"a": [
+1
+],
+"c": 3,
+"f": 1
+},
+{
+"n": 314,
+"q": "According to Vietnam law, duration of moral right in literature work:",
+"o": [
+"Lasts for 50 years from the year the film or record was made or, if it is released to the public, 50 years fro its release",
+"Lasts for the life of its creator plus a further 50 years.",
+"Lasts for 70 years begins to run on the death of the last surviving creator if two or more authors were jointly involved in the work",
+"Lasts forever"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 315,
+"q": "In the context of the 'must fit' exception, which of the following scenarios is true?",
+"o": [
+"The entire car exhaust system can be copied without permission",
+"The design of a contact lens front surface can be copied",
+"Only the parts of an exhaust system that connect to the car can be copied",
+"The overall shape of a car cannot be copied"
+],
+"a": [
+2
+],
+"c": 6
+},
+{
+"n": 316,
+"q": "Distinguishing those products from the products of competitors and being capable of indicating goods or services originating from a particular source are.... element of trade mark",
+"o": [
+"Comparative",
+"Original",
+"Distinctive",
+"Memorable"
+],
+"a": [
+2
+],
+"c": 4
+},
+{
+"n": 317,
+"q": "Which of the following is NOT a copyright infringement according to the UK law?",
+"o": [
+"Copying in a different medium to the original work, such as a photocopy of a book, or a scanned-in digital copy of a photograph",
+"Making a short-term or transient copy",
+"Speaking words aloud without making a copy whether by shorthand or on tape",
+"Making an object in three dimensions from a drawing of that object"
+],
+"a": [
+2
+],
+"c": 3
+},
+{
+"n": 318,
+"q": "If an owner of copyright believes the material it protects is being copied without permission, which are the courts the owner will take a legal action for the infringement?",
+"o": [
+"Courts having the jurisdiction on labor cases.",
+"Civil courts.",
+"Courts having the jurisdiction on marriage issues",
+"Courts having the jurisdiction on administrative cases."
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 319,
+"q": "Why is protection of Intellectual Property Rights (IPRs) significant? (check all that apply)",
+"o": [
+"Encouraging creations and innovations",
+"Protecting innovations and investments required for the development of advanced technologies.",
+"Not sustaining long-term social growth.",
+"Promoting a comprehensive cooperation among countries worldwide."
+],
+"a": [
+0,
+1,
+3
+],
+"c": 1
+},
+{
+"n": 320,
+"q": "Computer program can be simultaneously protected by:",
+"o": [
+"Trade Mark and Registered Design",
+"Copyright, Patent and Confidential Information",
+"Design Right, Trade Mark and Copyright",
+"Trade secret and Trade Mark"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 321,
+"q": "What happens to copyright protection when minor bug-fixing changes are made to a computer program?",
+"o": [
+"The program loses its copyright protection",
+"The former copyright still applies",
+"A new copyright must be filed",
+"The changes are not protected by copyright"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 322,
+"q": "What entity typically owns the copyright in a broadcast?",
+"o": [
+"The director of the broadcast",
+"The actors in the broadcast",
+"The broadcasting company that makes the broadcast",
+"The viewers of the broadcast"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 323,
+"q": "What does copyright in software include?",
+"o": [
+"Protection of the code and related documentation",
+"Only the visual design",
+"Only the underlying ideas",
+"Only the user interface"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 324,
+"q": "What must an idea have to be protected by copyright?",
+"o": [
+"Be original and registered",
+"Be expressed in a tangible form",
+"Be reviewed by an authority",
+"Be published"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 325,
+"q": "Which of the following is incorrect?",
+"o": [
+"Nonfiction information is copyrightable.",
+"The author's intention when making a literary work is irrelevant to its copyrightability.",
+"Short phrases are generally not protected by copyright.",
+"None of the options"
+],
+"a": [
+0
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 326,
+"q": "Who is the designer?",
+"o": [
+"The draughts person who made the drawing",
+"Anyone who contributes the ideas of the drawing",
+"Person who provides the concept for designing",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 327,
+"q": "According to the UK's law, copyright for a novel, which is written by a novelist, in 2011, lasts for _",
+"o": [
+"The novelist's life plus 70 years",
+"The novelist's life plus 50 years",
+"20 years",
+"The novelist's life"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 328,
+"q": "What does this mean for Ander if he is an author of a novel based on the \"National treatment principle in the Berne Convention on Literary and Artistic Works 1886",
+"o": [
+"He is required to register his works with the Berne Convention office.",
+"He is exempt from any copyright regulations in the Berne Convention's country members",
+"His novel will be in the public domain.",
+"Ander is given the same rights and privileges (copyright) to his novel as domestic authors in any country that ratified Berne Convention."
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 329,
+"q": "What is a \"public performance\" in terms of copyright?",
+"o": [
+"Any performance of a work in a public space",
+"A private showing of a work",
+"A limited distribution of a work",
+"A performance by a professional artist only"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 330,
+"q": "What must a work be to qualify for artistic copyright?",
+"o": [
+"Original, not copied from elsewhere",
+"Registered with an official body",
+"Of high artistic merit",
+"Published in an art magazine"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 331,
+"q": "If a work was created by multiple authors, when does the 70-year copyright duration begin?",
+"o": [
+"From the date the work is completed",
+"From the death of the last surviving author",
+"From the date of the first publication",
+"From the date the work is registered"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 332,
+"q": "How would you copyright a poem that you have created and sent to a poem contest?",
+"o": [
+"It is protected by copyright once you have written it on paper or any other medium.",
+"You need to receive a Copyright certificate from the Copyright Office in your country.",
+"It is never protected by copyright, because you have let people at the contest read it.",
+"You need to register it with the Copyright Office in your country and in foreign countries."
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 333,
+"q": "Which of the following is considered a \"literary work\" under copyright law, relevant to engineering?",
+"o": [
+"Sound recordings",
+"Engineering reports",
+"Films",
+"Broadcasts"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 334,
+"q": "How does copyright apply to computer programs?",
+"o": [
+"Only applies to commercial software",
+"They are protected as literary works under copyright law",
+"They are not covered by copyright",
+"Only the source code is protected"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 335,
+"q": "Which of the following is NOT an example of literary work?",
+"o": [
+"A character in a novel",
+"A novel written by Smith",
+"A technical report or specification",
+"None of the options"
+],
+"a": [
+0
+],
+"c": 2,
+"f": 1
+},
+{
+"n": 336,
+"q": "What does copyright protection in sound recordings cover?",
+"o": [
+"Only recordings of music",
+"Any type of sound recording, including spoken words and noises",
+"Only digital recordings",
+"Only films and broadcasts"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 337,
+"q": "Which of the following is a moral right in Vietnamese IP law?",
+"o": [
+"Public communication right",
+"Right to attribution",
+"Right to lease",
+"Right to make copies"
+],
+"a": [
+1
+],
+"c": 2
+},
+{
+"n": 338,
+"q": "What does the legal term \"overlap in Intellectual Property Right (IPR) protection\" mean?",
+"o": [
+"It indicates the simultaneous use of multiple IPR protection mechanisms to protect a single IP.",
+"It refers to the legal conflicts arising when one type of IPR protection are applied to more than one IP",
+"It implies the expiration of IPR protection, allowing others to use the protected IP freely.",
+"It is about the collaboration among creators/owners to collectively protect their IPRs."
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 339,
+"q": "Get-up includes:",
+"o": [
+"The color of packaging and the type of lettering used on a label",
+"A slogan used for broadcast or printed advertising",
+"Visual impression of business premises, such as the style of fascia board and the color of shop fittings",
+"All are correct"
+],
+"a": [
+3
+],
+"c": 5,
+"f": 1
+},
+{
+"n": 340,
+"q": "Who can handle the trade mark registration?",
+"o": [
+"A professional trade mark agent",
+"Anyone",
+"The judge in the court",
+"The All"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 341,
+"q": "What is an invented word that used as a trade mark?",
+"o": [
+"A word which has been made up specially for use as a trade and has no meaning in the English language",
+"A word which is commonly used in specific context",
+"Any word with meaning is invented word",
+"A word which is used out of it context"
+],
+"a": [
+0
+],
+"c": 4
+},
+{
+"n": 342,
+"q": "How did the House of Lords rule in the case of British Leyland vs. Armstrong Patents Company Limited regarding car exhaust systems?",
+"o": [
+"They ruled that copyright could not be used to prevent car repairs at a reasonable price",
+"They upheld British Leyland's copyright claim",
+"They ruled in favor of Armstrong's copyright",
+"They decided that the exhaust system design was public domain"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 343,
+"q": "Can a method of construction be protected by design right?",
+"o": [
+"Yes, always",
+"No, methods of construction are excluded from design right protection",
+"Only if it is innovative",
+"Only if it is registered"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 344,
+"q": "The assignment and licensing agreement shall be registered by the competent authority as required by law. Is this statement correct?",
+"o": [
+"No. Only the licensing is needed",
+"Yes. They can be registered upon the requirement of the law",
+"No. Only the assignment agreement is needed",
+"No. They can never be registered"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 345,
+"q": "What is an IPRs (Intellectual Property Rights) Know-how Contract?",
+"o": [
+"A legal agreement in which the owner of an intellectual property (IP) share specific knowledge, techniques, processes, or expertise to another party (other parties) for a particular purpose, typically in business, manufacturing, or technology.",
+"A legal contract in which the owner of an intellectual property (IP) grants permission to another party (other parties) to use that IP under defined conditions.",
+"A legal contract on transferring of ownership of IP from the assignor to the assignee.",
+"Both of b&c"
+],
+"a": [
+0
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 346,
+"q": "According to UK laws, which is not the types of IP case that the Patent Court (belonging to the Chancery Division of the High Court) hears?",
+"o": [
+"Cases relating to Registered designs and Design rights.",
+"Cases relating to the theft of artworks.",
+"Cases relating to Patent.",
+"Cases relating to Trade marks, Passing-off and Copyright."
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 347,
+"q": "Who must prove primary infringement?",
+"o": [
+"The right owner",
+"The licensee",
+"The infringer",
+"Police"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 348,
+"q": "Agreement on Trade-Related Aspects of Intellectual Property Rights (TRIPS) is an international agreement that... for all World Trade Organization members.",
+"o": [
+"Sets maximum standards for protection of intellectual property",
+"Sets minimum standards for intellectual property protection",
+"Regulates average standards for protection of intellectual property",
+"Sets basic limitations for intellectual property protection"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 349,
+"q": "Which convention primarily deals with the protection of industrial property such as patents and trademarks?",
+"o": [
+"Berne Convention",
+"Paris Convention",
+"Rome Convention",
+"Geneva Convention"
+],
+"a": [
+1
+],
+"c": 1
+},
+{
+"n": 350,
+"q": "What is the primary Law in the area of intellectual property in Vietnam?",
+"o": [
+"Vietnam Copyright Law",
+"Vietnam Trademark Law",
+"Vietnam Intellectual Property Law 2005 (amended and supplemented in 2009, 2019 and 2022).",
+"Vietnam Industrial Design Law"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 351,
+"q": "___ indicate that the user of the mark is a member of a trade association which owns the mark.",
+"o": [
+"Certification trade marks",
+"Generic marks",
+"Unregistered trade marks",
+"Collective trade marks"
+],
+"a": [
+3
+],
+"c": 4
+},
+{
+"n": 352,
+"q": "Get-up includes___",
+"o": [
+"the type of lettering used on a label",
+"the colour of packaging",
+"internal parts of a product that can not be seen in normal use",
+"visual impression of business premises"
+],
+"a": [
+0,
+1,
+3
+],
+"c": 5
+},
+{
+"n": 353,
+"q": "Which statement best describe the owner of a registered design?",
+"o": [
+"A person who actually creates a registered design",
+"The company placing the commission",
+"The manager of the technical team of a company",
+"A person who contributes the idea"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 354,
+"q": "What is the advantage of the community right?",
+"o": [
+"Community right has the same effect in all EU countries, and that for the registration system there need be only one application.",
+"The community right does not have any advantage",
+"Community right has the different effect in all EU countries, so in some countries it can have longer protecting duration",
+"Community right has the same effect in all EU countries but in some special circumstances it can have longer protecting duration"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 355,
+"q": "The UK government department has copied a design and authorised Company H to manufacture the design for use in the national defence of the UK. Which of the following is RIGHT?",
+"o": [
+"If the Department uses of the design in the way as described above, it has to notify and inform of the extent of use to the owner of the design.",
+"The owner of the design can sue the Department for an infringement of Design right",
+"The Department cannot copy the design for any purposes.",
+"The Department cannot authorise the company H to manufacture the design, and this is an infringement."
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 356,
+"q": "What is individual character informed?",
+"o": [
+"The design must be identical to the other previous designs or available products",
+"The design must be original",
+"The design must produce on an informed user an overall impression which differs from the overall impression produced by the earlier design",
+"All are correct"
+],
+"a": [
+2
+],
+"c": 6,
+"f": 1
+},
+{
+"n": 357,
+"q": "Which of the following forms a secondary infringement of copyright?",
+"o": [
+"Smith purchases copies abroad and imports them into the UK.",
+"Smith adapts a copyright work of Peter.",
+"Smith copies a substantial part of Peter's non-technical book.",
+"Smith photocopies a copyrighted book of Peter."
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 358,
+"q": "Which of the following is not excluded from a design registration?",
+"o": [
+"a mass-produced product with novelty and individual character",
+"a feature of a product which is dictated by its function",
+"internal features which are not seen in normal use",
+"a feature which allows a product to fit to another product"
+],
+"a": [
+0
+],
+"c": 6
+},
+{
+"n": 359,
+"q": "A new software code can be protected by:",
+"o": [
+"Trademark and Design Right",
+"Copyright and Patent",
+"Patent and Trade Secret",
+"Copyright and Trade Secret"
+],
+"a": [
+3
+],
+"c": 1
+},
+{
+"n": 360,
+"q": "How does the duration of copyright in a cable programme compare to that of a sound recording?",
+"o": [
+"Both last for 50 years from the date of first transmission or release",
+"Copyright in cable programmes lasts longer",
+"Sound recordings have indefinite copyright protection",
+"Cable programmes have shorter copyright duration"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 361,
+"q": "Which of the following is not primary infringement of copyright?",
+"o": [
+"Purchasing copies abroad and importing them into the UK",
+"Adapt a copyright work",
+"Making a short-term copy in a different medium to the original work",
+"Reutilising a substantial part of a computer-stored database"
+],
+"a": [
+0
+],
+"c": 3
+},
+{
+"n": 362,
+"q": "Is IPR assignment a contract?",
+"o": [
+"Yes, it is a contract",
+"No, it is a kind of order with military nature",
+"No, it is a license",
+"No, assignment is a kind of home exercise for student"
+],
+"a": [
+0
+],
+"c": 1
+},
+{
+"n": 363,
+"q": "Some types of copying or of trading in copyright material are criminal offences. What are they?",
+"o": [
+"Making the article for private or domestic use",
+"Selling, hiring, exhibiting or distributing the article in the course of a business",
+"Designing a famous quote of someone for decoration",
+"Copy some pages of a book for researching"
+],
+"a": [
+1
+],
+"c": 3
+},
+{
+"n": 364,
+"q": "What are the main objectives of WIPO?",
+"o": [
+"To promote the protection of intellectual property worldwide",
+"To ensure administrative cooperation among the intellectual property Unions established by the treaties that WIPO administers",
+"A and B is correct",
+"A and B is not correct"
+],
+"a": [
+2
+],
+"c": 1,
+"f": 1
+},
+{
+"n": 365,
+"q": "Under the 'must match' exception, what can be freely made and sold?",
+"o": [
+"Any patented product",
+"Replacement parts that must match other parts of a product",
+"The original product only",
+"Decorative items"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 366,
+"q": "What is the significance of the 50-year duration for copyright in broadcasts and cable programmes?",
+"o": [
+"It defines the period during which the copyright holder has exclusive rights over the content",
+"It limits the time a programme can be aired",
+"It determines when a programme can be remade",
+"It ensures that the content can be freely shared after 50 years"
+],
+"a": [
+0
+],
+"c": 2
+},
+{
+"n": 367,
+"q": "Why is surface decoration not protected by design right?",
+"o": [
+"Because it is too complex",
+"Because it is not functional",
+"Because it can be protected by registered designs law instead",
+"Because it is too simple"
+],
+"a": [
+1
+],
+"c": 6
+},
+{
+"n": 368,
+"q": "The photographer owns the copyright but the person paying for the photograph to be taken can stop it being used for other purposes, which is referred to as___",
+"o": [
+"Integrity right",
+"Paternity right",
+"False attribution right",
+"Privacy right"
+],
+"a": [
+3
+],
+"c": 2
+},
+{
+"n": 369,
+"q": "What kind of works in graphic design can be protected by intellectual property rights?",
+"o": [
+"Only logos",
+"Only printed materials",
+"Graphic design works that is tangible and creations of minds",
+"Only digital designs"
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 370,
+"q": "What is not the benefit of winning a lawsuit?",
+"o": [
+"Sending a message to others that IP owners is willing to defend the IPR.",
+"Protecting the market for the products of IP owners by stopping infringers from IP infringements",
+"Spending time and money for the litigation.",
+"Other parties need to take an IPR license if they intend to exploit the PR."
+],
+"a": [
+2
+],
+"c": 1
+},
+{
+"n": 371,
+"q": "What is required for electronic works to qualify for copyright protection compared to conventional literary works?",
+"o": [
+"The need for legal registration",
+"The work must be published",
+"There must be a spark of creativity",
+"The work must be over a certain length"
+],
+"a": [
+2
+],
+"c": 2
+},
+{
+"n": 372,
+"q": "Which is the Statute in the UK that covers a wide range of intellectual property rights, including copyright, design rights, and patents?",
+"o": [
+"Trade Marks Act 1994",
+"Copyright, Designs and Patents Act 1988, amended in the 1990s.",
+"Copyright and Related Rights Regulations 2003",
+"Patents Act 1977"
+],
+"a": [
+1
+],
+"c": 2
+}
+]

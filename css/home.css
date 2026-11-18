@@ -50,3 +50,18 @@ i[data-b="5"]{background:var(--c5)!important}
 .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
 h3{margin:0 0 10px;font-size:18px}
 
+/* chọn môn: thanh tab lớn, tách hẳn khỏi chip phạm vi chương */
+.sec-lbl{font-size:12px;font-weight:800;letter-spacing:.5px;color:var(--ink2);text-align:left;margin:6px 2px 4px}
+.subj-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:0 0 12px;padding:6px;border:3px solid var(--ink);border-radius:18px;background:var(--lav2)}
+.subj-tab{font:inherit;display:grid;gap:1px;justify-items:center;padding:8px 8px 7px;border:2px solid transparent;border-radius:13px;background:transparent;color:var(--ink);cursor:pointer;transition:transform .1s,background .15s}
+.subj-tab .st-code{font-size:18px;font-weight:900;letter-spacing:.5px;line-height:1.1}
+.subj-tab .st-name{font-size:13px;font-weight:700;line-height:1.2}
+.subj-tab .st-n{font-size:11px;font-weight:700;opacity:.65}
+.subj-tab:hover:not(.on){background:#fff;transform:translateY(-1px)}
+.subj-tab.on{background:linear-gradient(180deg,#fff 0%,var(--pink2) 50%,var(--pink) 100%);border-color:var(--ink);box-shadow:0 4px 0 var(--ink);transform:translateY(-2px)}
+.subj-tab.on .st-n{opacity:.85}
+.subj-tab:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+[data-theme="night"] .subj-tabs{background:var(--surface2);border-color:var(--line2);border-radius:8px}
+[data-theme="night"] .subj-tab{border-radius:6px;color:var(--ink)}
+[data-theme="night"] .subj-tab:hover:not(.on){background:var(--surface)}
+[data-theme="night"] .subj-tab.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink);box-shadow:3px 3px 0 var(--hard)}

@@ -25,3 +25,15 @@
 .exp .warn{margin:0 14px 12px;border:2px solid #ffb36b;background:#fff2e4;border-radius:12px;padding:8px 10px;font-size:14px;line-height:1.5}
 .review .exp{margin-top:8px}
 
+/* bản dịch tiếng Việt (IPR102): .vi chỉ hiện khi body.vi-on; khung dịch sau khi chọn luôn hiện */
+.vi{display:none}
+.vi-on .vi{display:block}
+.qvi{font-size:15px;font-weight:600;font-style:italic;color:var(--ink2);margin:-6px 0 12px;line-height:1.45}
+.opt .ot{display:grid;gap:3px;min-width:0}
+.opt .vi{font-size:14px;font-weight:600;font-style:italic;color:var(--ink2);line-height:1.4}
+#viBtn{cursor:pointer;font-family:inherit}
+#viBtn.on{background:var(--mint)}
+.exp li.ok{border-color:#1f9e66;background:#e9fff4}
+.vi-exp .eh{background:linear-gradient(90deg,var(--mint),var(--sky2))}
+.vi-exp .eb b{font-weight:800}
+.review .vi-exp{margin-top:8px}

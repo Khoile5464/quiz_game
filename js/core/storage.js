@@ -44,8 +44,8 @@ function norm(s){
   if (!s.unl || typeof s.unl !== "object" || Array.isArray(s.unl)) s.unl = {};
   if (!s.temple || typeof s.temple !== "object" || Array.isArray(s.temple)) s.temple = {};
   s.temple.best = Math.max(0, Math.floor(numOf(s.temple.best))); s.temple.runs = Math.max(0, Math.floor(numOf(s.temple.runs)));
-  // mỗi môn một giải đề + kho câu sai riêng: MLN111 giữ khoá cũ (giaide, onsai) để không mất tiến trình, môn khác thêm hậu tố (giaide122, onsai122)
-  for (const sfx of ["", "122"]){
+  // mỗi môn một giải đề + kho câu sai riêng: MLN111 giữ khoá cũ (giaide, onsai) để không mất tiến trình, môn khác thêm hậu tố (giaide122, onsai122, giaideipr, onsaiipr)
+  for (const sfx of ["", "122", "ipr"]){
     s["giaide" + sfx] = normGiaide(s["giaide" + sfx]);
     // dữ liệu cũ chưa có kho (chỉ MLN111): lấy luôn các câu đã sai trong lượt giải đề đang làm dở
     s["onsai" + sfx] = normOnsai(s["onsai" + sfx], !sfx && s.giaide ? s.giaide.wrong.map(w => w[0]) : []);

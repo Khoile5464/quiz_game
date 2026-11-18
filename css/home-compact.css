@@ -74,3 +74,4 @@
   *{animation:none!important;transition:none!important}
   .floaty{display:none}
 }
+@media (max-width:560px){ .subj-tabs{grid-template-columns:repeat(3,1fr);gap:4px;padding:4px} .subj-tab{padding:6px 2px} .subj-tab .st-code{font-size:15px} .subj-tab .st-name{font-size:11px} }

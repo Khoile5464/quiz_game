@@ -74,5 +74,5 @@ const Guide = (() => {
   const g = {"111": makeGuide(GUIDE), "122": makeGuide(GUIDE122, {KTTT:"kinh tế thị trường", GTTD:"giá trị thặng dư", GTSD:"giá trị sử dụng", SXHH:"sản xuất hàng hóa",
     XKTB:"xuất khẩu tư bản", "ĐQNN":"độc quyền nhà nước", CNH:"công nghiệp hóa", "HĐH":"hiện đại hóa", CMCN:"cách mạng công nghiệp", TB:"tư bản", DN:"doanh nghiệp",
     KT:"kinh tế", VN:"Việt Nam", "SLĐ":"sức lao động", "CSVC–KT":"cơ sở vật chất kỹ thuật", "KH-CN":"khoa học công nghệ", KHCN:"khoa học công nghệ", "ĐH":"Đại hội"})};
-  return {match: q => g[subjOf(q)].match(q)};
+  return {has: q => !!g[subjOf(q)], match: q => g[subjOf(q)] ? g[subjOf(q)].match(q) : []}; // IPR102 chưa có Study Guide: hiện bản dịch thay thế
 })();
