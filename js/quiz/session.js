@@ -188,7 +188,7 @@ function applyVi(q){
   b.classList.toggle("on", viOn); b.textContent = viOn ? "🇻🇳 Dịch: bật" : "🇻🇳 Dịch: tắt";
 }
 $("viBtn").onclick = () => { viOn = !viOn; try{ localStorage.setItem("mln111_vi", viOn ? "1" : "0"); }catch(e){} applyVi(run && run.qs[run.i]); };
-function viExplainEl(q, picked, order){
+function viExplainEl(q, picked, order, noWarn){
   const box = el("div","exp vi-exp");
   const h = el("div","eh"); h.append(el("span","","🇻🇳"), el("span","","Bản dịch tiếng Việt")); box.append(h);
   const eb = el("div","eb"); eb.append(el("b","",q.vi.q)); box.append(eb);
@@ -200,11 +200,15 @@ function viExplainEl(q, picked, order){
     ul.append(li);
   });
   box.append(ul);
-  if (q.k) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + q.k.replace(/^nghi vấn:\s*/i, "") + " — Khi thi vẫn nên chọn theo đáp án của đề."));
+  if (q.k && !noWarn) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + q.k.replace(/^nghi vấn:\s*/i, "") + " — Khi thi vẫn nên chọn theo đáp án của đề."));
   return box;
 }
 function explainEl(q, picked, openWrong, order){
-  if (!q.e && q.vi) return viExplainEl(q, picked, order);
+  if (q.vi && q.e){ const f = document.createDocumentFragment(); f.append(explainBox(q, picked, openWrong), viExplainEl(q, picked, order, true)); return f; } // IPR102: lời giải rồi tới bản dịch
+  if (q.vi) return viExplainEl(q, picked, order);
+  return explainBox(q, picked, openWrong);
+}
+function explainBox(q, picked, openWrong){
   const box = el("div","exp");
   const h = el("div","eh"); h.append(el("span","","💡"), el("span","","Vì sao đúng?")); box.append(h);
   { const eb = el("div","eb"); eb.append(rich(q.e || "Chưa có giải thích cho câu này.")); box.append(eb); }

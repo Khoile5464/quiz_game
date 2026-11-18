@@ -1,14 +1,14 @@
-# MLN111 ♡ Quiz Y2K
+# Thành Quiz Game (trước là MLN111 ♡ Quiz Y2K)
 
-Web app ôn trắc nghiệm MLN111 (không cần build, chạy offline).
+Web app ôn trắc nghiệm MLN111, MLN122, IPR102 (không cần build, chạy offline).
 
 - Học mới 30 câu chưa làm · Đền ôn tập theo mức ghi nhớ · Ngôi đền huyền thoại (100 câu, HighScore)
 - **Giải đề**: làm lần lượt toàn bộ câu trong phạm vi; tiến độ tự lưu để làm tiếp
 - **📕 Ôn câu sai**: câu sai khi giải đề vào kho ngay; ôn lại theo thứ tự đã sai, đúng thì gỡ khỏi kho, sai thì giữ cho lượt sau
 - **Trích Study Guide** sau mỗi câu, ở mọi chế độ: thẻ kiến thức liên quan, dòng sát ý được tô sáng, bấm để mở đúng thẻ
 - **🧭 Hành trình DVLS**: phần riêng 134 câu Chương 3 (5 phần, nhiều kiểu câu), chọn bằng chip phạm vi
-- **Ba môn** (IPR102 mới ở v0.3.28): chip **MLN111 · Triết học** / **MLN122 · KTCT Mác-Lênin** / **IPR102 · Sở hữu trí tuệ** ở trang chủ; mỗi môn có phạm vi chương, Giải đề và kho câu sai riêng (xu, nông trại, huy hiệu dùng chung). MLN122: 525 câu chia 6 chương theo Schedule môn, đủ giải thích đáp án + Study Guide riêng (`study-guide-mln122.html`)
-- **⚖️ IPR102 · Quyền sở hữu trí tuệ**: 372 câu (đề tiếng Anh đã đối chiếu với PDF gốc) chia 6 chương theo chủ đề, kèm lộ trình học trong `data/ipr102/KE-HOACH-HOC.md`. Mỗi câu có **bản dịch tiếng Việt**: nút **🇻🇳 Dịch** hiện dưới đề và từng phương án khi đang làm; sau khi chọn luôn có khung dịch kèm ✓/✗. 27 câu mà đáp án của đề có nghi vấn được gắn ⚠️. Chưa có Study Guide riêng
+- **Ba môn** (IPR102 mới ở v0.3.29): chip **MLN111 · Triết học** / **MLN122 · KTCT Mác-Lênin** / **IPR102 · Sở hữu trí tuệ** ở trang chủ; mỗi môn có phạm vi chương, Giải đề và kho câu sai riêng (xu, nông trại, huy hiệu dùng chung). MLN122: 525 câu chia 6 chương theo Schedule môn, đủ giải thích đáp án + Study Guide riêng (`study-guide-mln122.html`)
+- **⚖️ IPR102 · Quyền sở hữu trí tuệ**: 372 câu (đề tiếng Anh đã đối chiếu với PDF gốc) chia 6 chương theo chủ đề, kèm lộ trình học trong `data/ipr102/KE-HOACH-HOC.md`. Mỗi câu có **bản dịch tiếng Việt**: nút **🇻🇳 Dịch** hiện dưới đề và từng phương án khi đang làm; sau khi chọn luôn có khung dịch kèm ✓/✗. Cả 372 câu có lời giải «Vì sao đúng». 27 câu mà đáp án của đề có nghi vấn được gắn ⚠️. Chưa có Study Guide riêng
 - **🔁 Làm lại câu sai**: cuối lượt Học mới / Ôn tập / Ngôi đền, làm lại đúng những câu vừa sai; sai nữa thì xếp cuối hàng, xong khi đúng hết (không đổi thống kê, xu)
 - **Chọn nhiều chương**: chip **✚ Tự chọn nhiều chương** cho tick bất kỳ chương nào để học mới, ôn tập, giải đề; danh sách nhớ riêng từng môn
 - **📜 Câu chuyện KTCT** (chỉ MLN122): học qua truyện có tương tác. Mỗi cảnh: tình huống → tự thử (chọn, xếp, mô phỏng) → «Athena gọi tên» (bảng dịch truyện ↔ thuật ngữ + khung «Theo giáo trình» lấy từ Study Guide + cảnh báo chỗ ẩn dụ sai) → quiz chốt bằng câu trong ngân hàng đề (đi vào ôn tập như thường). Có hình minh họa (sơ đồ, thanh chồng, mốc thời gian) và lựa chọn xáo ngẫu nhiên mỗi lần. Đủ 6 hồi theo 6 chương (35 cảnh, phủ 72/72 thẻ Study Guide, 235 câu chốt)
@@ -46,4 +46,4 @@ Các file JS là script thường (không dùng ES module) và dùng chung phạ
 ## Chạy / triển khai
 Mở `index.html` bằng trình duyệt. GitHub Pages: Settings → Pages → Deploy from branch → `main` / `(root)`.
 
-Phiên bản hiện tại: v0.3.28
+Phiên bản hiện tại: v0.3.29

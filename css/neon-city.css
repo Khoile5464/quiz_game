@@ -99,3 +99,5 @@ footer a{color:inherit}
 [data-theme="night"] .exp li.ok{background:#0f2a22;border-color:#1f6e52}
 [data-theme="night"] .vi-exp .eh{background:var(--surface2);color:var(--mint)}
 [data-theme="night"] .qvi,[data-theme="night"] .opt .vi{color:#b9a9e8}
+/* tên app «Thành Quiz Game» có dấu tiếng Việt: font pixel Silkscreen không có glyph, dùng Baloo 2 */
+[data-theme="night"] .logo h1,[data-theme="night"] .tb-title{font-family:"Baloo 2",system-ui,sans-serif;font-weight:800;letter-spacing:1px}

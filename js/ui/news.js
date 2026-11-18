@@ -28,6 +28,10 @@ const NEWS = [
     "Mỗi câu có <b>bản dịch tiếng Việt</b>: bấm nút <b>🇻🇳 Dịch</b> để hiện dưới đề khi đang làm, sau khi chọn luôn có khung dịch đầy đủ kèm đáp án",
     "Câu mà đáp án của đề có nghi vấn được gắn cảnh báo ⚠️ (27 câu)",
     "Bấm chip <b>IPR102</b> ở trang chủ; Giải đề và kho câu sai của môn này tách riêng"]},
+  {id: "ipr102-explain", ic: "💡", t: "IPR102 có giải thích từng câu · app đổi tên Thành Quiz Game", go: "ipr", goText: "Xem IPR102 ✦", li: [
+    "Cả <b>372 câu IPR102</b> có khung <b>💡 Vì sao đúng?</b> bằng tiếng Việt, rồi tới bản dịch đề",
+    "Thanh chọn môn ở trang chủ to hơn, tách hẳn khỏi chip chương",
+    "App đổi tên thành <b>Thành Quiz Game</b> (tiến trình cũ giữ nguyên)"]},
 ];
 const newsUnseen = () => { const i = NEWS.findIndex(n => n.id === S.seenNews); return NEWS.slice(i + 1); }; // seenNews lạ hoặc rỗng → i = -1 → tất cả
 function closeNews(){ $("newsModal").classList.add("hidden"); S.seenNews = NEWS[NEWS.length - 1].id; save(); }
