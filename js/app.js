@@ -14,7 +14,7 @@ $("quitBtn").onclick = quit;
 $("quitX").onclick = quit;
 $("resetBtn").onclick = () => {
   if (!confirm("Xoá toàn bộ tiến trình học? Không thể hoàn tác đâu nha 🥺")) return;
-  VDB.clear().catch(() => {}); for (const k in vUrl){ URL.revokeObjectURL(vUrl[k]); delete vUrl[k]; }
+  VDB.clear().catch(() => {}); Mirror.clear(); for (const k in vUrl){ URL.revokeObjectURL(vUrl[k]); delete vUrl[k]; }
   const {theme, yt, ytVol, ytLoop, sfx: sfxCfg} = S; S = normFull(Object.assign(fresh(), {theme, yt, ytVol, ytLoop, sfx: sfxCfg})); save(); renderHome(); TV.render(); toast("Đã xoá, bắt đầu lại từ đầu ✦");
 };
 const blobToUrl = b => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(b); });
@@ -27,6 +27,16 @@ $("exportBtn").onclick = async () => {
   a.download = `mln111-progress-${today()}.json`; a.click(); URL.revokeObjectURL(a.href);
   if (nv) toast(`💾 Đã sao lưu kèm ${nv} giọng ghi âm`);
 };
+/* bản dự phòng tự động chụp trước khi lên phiên bản mới (storage.js: safetyCopy): quay về được, và tiến trình hiện tại được giữ để đổi ngược */
+const autoBtnSync = () => { let p = null, c = null; try{ p = localStorage.getItem(KEY_PREV); c = localStorage.getItem(KEY); }catch(e){} $("autoRestoreBtn").classList.toggle("hidden", !p || p === c); };
+$("autoRestoreBtn").onclick = () => {
+  let p = null, c = null; try{ p = localStorage.getItem(KEY_PREV); c = localStorage.getItem(KEY); }catch(e){}
+  if (!p) return autoBtnSync();
+  if (!confirm("Quay về bản dự phòng app đã tự chụp trước lần cập nhật gần nhất? Tiến trình hiện tại vẫn được giữ lại, bấm nút này lần nữa để đổi ngược.")) return;
+  try{ const d = JSON.parse(p); S = normFull(Object.assign(fresh(), d)); save(); if (c) localStorage.setItem(KEY_PREV, c); }catch(e){ return toast("Bản dự phòng không đọc được 🥺"); }
+  renderHome(); autoBtnSync(); toast("Đã quay về bản dự phòng 💾");
+};
+autoBtnSync();
 $("importBtn").onclick = () => $("importFile").click();
 $("importFile").onchange = async e => {
   const f = e.target.files[0]; if (!f) return;

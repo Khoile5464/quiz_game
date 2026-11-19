@@ -7,7 +7,7 @@ Web app ôn trắc nghiệm MLN111, MLN122, IPR102 (không cần build, chạy o
 - **📕 Ôn câu sai**: câu sai khi giải đề vào kho ngay; ôn lại theo thứ tự đã sai, đúng thì gỡ khỏi kho, sai thì giữ cho lượt sau
 - **Trích Study Guide** sau mỗi câu, ở mọi chế độ: thẻ kiến thức liên quan, dòng sát ý được tô sáng, bấm để mở đúng thẻ
 - **🧭 Hành trình DVLS**: phần riêng 134 câu Chương 3 (5 phần, nhiều kiểu câu), chọn bằng chip phạm vi
-- **Ba môn** (IPR102 mới ở v0.3.29): chip **MLN111 · Triết học** / **MLN122 · KTCT Mác-Lênin** / **IPR102 · Sở hữu trí tuệ** ở trang chủ; mỗi môn có phạm vi chương, Giải đề và kho câu sai riêng (xu, nông trại, huy hiệu dùng chung). MLN122: 525 câu chia 6 chương theo Schedule môn, đủ giải thích đáp án + Study Guide riêng (`study-guide-mln122.html`)
+- **Ba môn** (IPR102 mới ở v0.3.30): chip **MLN111 · Triết học** / **MLN122 · KTCT Mác-Lênin** / **IPR102 · Sở hữu trí tuệ** ở trang chủ; mỗi môn có phạm vi chương, Giải đề và kho câu sai riêng (xu, nông trại, huy hiệu dùng chung). MLN122: 525 câu chia 6 chương theo Schedule môn, đủ giải thích đáp án + Study Guide riêng (`study-guide-mln122.html`)
 - **⚖️ IPR102 · Quyền sở hữu trí tuệ**: 372 câu (đề tiếng Anh đã đối chiếu với PDF gốc) chia 6 chương theo chủ đề, kèm lộ trình học trong `data/ipr102/KE-HOACH-HOC.md`. Mỗi câu có **bản dịch tiếng Việt**: nút **🇻🇳 Dịch** hiện dưới đề và từng phương án khi đang làm; sau khi chọn luôn có khung dịch kèm ✓/✗. Cả 372 câu có lời giải «Vì sao đúng». 27 câu mà đáp án của đề có nghi vấn được gắn ⚠️. Chưa có Study Guide riêng
 - **🔁 Làm lại câu sai**: cuối lượt Học mới / Ôn tập / Ngôi đền, làm lại đúng những câu vừa sai; sai nữa thì xếp cuối hàng, xong khi đúng hết (không đổi thống kê, xu)
 - **Chọn nhiều chương**: chip **✚ Tự chọn nhiều chương** cho tick bất kỳ chương nào để học mới, ôn tập, giải đề; danh sách nhớ riêng từng môn
@@ -46,4 +46,14 @@ Các file JS là script thường (không dùng ES module) và dùng chung phạ
 ## Chạy / triển khai
 Mở `index.html` bằng trình duyệt. GitHub Pages: Settings → Pages → Deploy from branch → `main` / `(root)`.
 
-Phiên bản hiện tại: v0.3.29
+Phiên bản hiện tại: v0.3.30
+
+## Quy tắc: cập nhật KHÔNG được làm mất dữ liệu người dùng
+Khách từng báo mất sạch thú nông trại sau khi cập nhật app/môn học, nên bắt buộc:
+- **Không đổi `KEY`** (`js/core/storage.js`). `norm()` chỉ thêm trường thiếu, không xoá dữ liệu hợp lệ.
+- **Thú có loài chưa biết không bị xoá**: cất ở `farm.hold`, loài đó có lại thì tự về chuồng. Không xoá/đổi tên loài trong `SPECIES`.
+- **Dữ liệu đọc không được** thì giữ nguyên bản gốc ở `mln111_y2k_v1_corrupt`, không để lần lưu sau ghi đè.
+- **Bản dự phòng tự động** `mln111_y2k_v1_prev` chụp nguyên trạng ngay khi lên phiên bản mới (đổi `APP_VER` trong storage.js mỗi bản); người dùng quay lại bằng nút «↩ Bản dự phòng tự động» ở trang chủ.
+- **Tiến trình học lưu theo id câu hỏi** = băm của (đề + phương án): sửa chữ câu đã phát hành sẽ làm mất tiến trình câu đó. Môn mới dùng id cố định (`ipr-<số câu>`, `q.alt` giữ id băm cũ để tự chuyển tiến trình). Trước khi phát hành chạy `node tools/check-data-safety.js` (báo lỗi nếu có id đã phát hành biến mất), sau khi thêm câu/môn chạy thêm `--update`.
+- **Bản sao thứ hai trong IndexedDB** (`js/core/mirror.js`): mỗi lần lưu, tiến trình được chép sang IndexedDB `tqg_mirror`; mở app mà localStorage trống nhưng bản sao còn thì tự khôi phục (không bao giờ ghi đè bản sao bằng dữ liệu trống; «Xoá tiến trình» xoá cả bản sao). App cũng xin trình duyệt «lưu bền» (`navigator.storage.persist`). Bản sao chỉ có từ v0.3.30 trở đi.
+- **Người dùng Safari**: Safari (ITP) xoá cả localStorage lẫn IndexedDB của trang web sau ~7 ngày dùng Safari không chạm vào trang, nên bản sao IndexedDB không cứu được trường hợp này. Web app đã «Thêm vào Màn hình chính» thì được miễn (có `manifest.webmanifest` + `apple-touch-icon`). `js/ui/install-hint.js` hiện thanh nhắc ở trang chủ cho người dùng Safari chưa cài (kèm nút Sao lưu ngay; tắt được, nhắc lại sau 14 ngày). App trên màn hình chính có kho dữ liệu riêng nên phải Sao lưu ở Safari rồi Khôi phục trong app mới.

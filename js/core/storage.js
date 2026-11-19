@@ -23,6 +23,20 @@ function normOnsai(o, legacyIds){
   } else o.run = null;
   return o;
 }
+/* câu có id cố định (q.id) nhưng từng lưu dưới id băm cũ (q.alt): chuyển tiến trình sang id mới, không mất gì */
+function migrateIds(s){
+  const map = new Map(ALLQ.filter(q => q.alt).map(q => [q.alt, q.id]));
+  if (!map.size) return;
+  const mv = id => map.get(id) || id;
+  for (const [a, id] of map) if (s.stats[a]){ if (!s.stats[id]) s.stats[id] = s.stats[a]; delete s.stats[a]; }
+  for (const k of Object.keys(s)){
+    if (!/^(giaide|onsai)/.test(k) || !s[k] || typeof s[k] !== "object") continue;
+    const g = s[k];
+    if (Array.isArray(g.ids)) g.ids = [...new Set(g.ids.map(mv))];
+    if (Array.isArray(g.wrong)) g.wrong = g.wrong.map(w => Array.isArray(w) ? [mv(w[0]), ...w.slice(1)] : w);
+    if (g.run && Array.isArray(g.run.ids)){ g.run.ids = [...new Set(g.run.ids.map(mv))]; if (Array.isArray(g.run.wrong)) g.run.wrong = g.run.wrong.map(w => Array.isArray(w) ? [mv(w[0]), ...w.slice(1)] : w); }
+  }
+}
 /* chuẩn hoá mọi dữ liệu lưu cũ/thiếu/hỏng: thêm trường mặc định, bỏ giá trị sai kiểu — KHÔNG đổi KEY để người dùng cũ giữ được tiến trình */
 function norm(s){
   s = Object.assign(fresh(), s && typeof s === "object" ? s : {});
@@ -55,13 +69,18 @@ function norm(s){
   const sto = s.story && typeof s.story === "object" && !Array.isArray(s.story) ? s.story : {};
   for (const k of ["done", "cards", "acts"]) if (!sto[k] || typeof sto[k] !== "object" || Array.isArray(sto[k])) sto[k] = {};
   s.story = sto;
+  migrateIds(s);
   s.lastBackup = Math.max(0, numOf(s.lastBackup)); s.firstUse = numOf(s.firstUse) > 0 ? numOf(s.firstUse) : Date.now();
   return s;
 }
 /* dọn danh sách thú (cần SPECIES nên chạy sau khi định nghĩa): bỏ loài không còn, sửa trường thiếu */
 function cleanFarm(s){
   const seen = new Set();
-  s.farm.animals = s.farm.animals.filter(a => a && typeof a === "object" && typeof a.t === "string" && SPECIES[a.t]);
+  // KHÔNG xoá thú có loài chưa biết (bản cũ/mới hơn của app): cất vào farm.hold, khi loài đó có lại sẽ trả về chuồng
+  const known = a => a && typeof a === "object" && typeof a.t === "string" && SPECIES[a.t];
+  const all = [...s.farm.animals, ...(Array.isArray(s.farm.hold) ? s.farm.hold : [])];
+  s.farm.animals = all.filter(known);
+  s.farm.hold = all.filter(a => a && typeof a === "object" && !known(a));
   for (const a of s.farm.animals){
     if (typeof a.id !== "string" || a.id.length < 3 || seen.has(a.id)) a.id = "r" + Math.random().toString(36).slice(2, 8);
     seen.add(a.id);
@@ -72,8 +91,35 @@ function cleanFarm(s){
   return s;
 }
 const normFull = s => cleanFarm(norm(s));
+/* QUY TẮC: cập nhật app/môn học KHÔNG được làm mất dữ liệu người dùng.
+   - KEY không bao giờ đổi; norm() chỉ thêm trường thiếu, không xoá dữ liệu hợp lệ
+   - dữ liệu đọc không được (hỏng) thì giữ nguyên bản gốc ở KEY_corrupt, không để lần lưu sau ghi đè mất
+   - mỗi lần lên phiên bản mới, chụp một bản dự phòng nguyên trạng ở KEY_prev trước khi code mới đụng vào
+   - id câu hỏi phải ổn định (xem tools/check-data-safety.js) */
+const APP_VER = "0.3.30", KEY_PREV = KEY + "_prev", KEY_CORRUPT = KEY + "_corrupt";
+function safetyCopy(raw){
+  try{
+    if (localStorage.getItem("mln111_appver") === APP_VER) return;
+    if (raw.length < 1.5e6) localStorage.setItem(KEY_PREV, raw); // quá nặng (nhiều giọng ghi âm) thì bỏ qua để không đầy bộ nhớ
+    localStorage.setItem("mln111_appver", APP_VER);
+  }catch(e){}
+}
 function load(){
-  try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.stats)return norm(Object.assign(fresh(),s))}catch(e){}
+  let raw = null; try{ raw = localStorage.getItem(KEY); }catch(e){}
+  if (raw){
+    let s = null; try{ s = JSON.parse(raw); }catch(e){}
+    if (s && typeof s === "object" && !Array.isArray(s)){
+      safetyCopy(raw);
+      try{ return norm(Object.assign(fresh(), s)); }
+      catch(e){ // dữ liệu hợp lệ nhưng chuẩn hoá lỗi: KHÔNG được rơi về bản trống, cứu từng phần
+        try{ localStorage.setItem(KEY_CORRUPT, raw); }catch(e2){}
+        for (const keep of [["stats", "farm", "badges", "streak", "coins", "xp", "best", "answered", "correct", "unl", "temple"], ["stats", "coins", "xp"], ["stats"]]){
+          try{ const part = {}; for (const k of keep) if (k in s) part[k] = s[k]; return norm(Object.assign(fresh(), part)); }catch(e3){}
+        }
+      }
+    }
+    try{ localStorage.setItem(KEY_CORRUPT, raw); }catch(e){} // đừng để save() sau này ghi đè mất bản gốc
+  }
   return norm(fresh());
 }
 let S = load();
@@ -82,8 +128,10 @@ const slot = base => subject === "111" ? base : base + subject;
 const D = {get giaide(){return S[slot("giaide")]}, set giaide(v){S[slot("giaide")] = v}, get onsai(){return S[slot("onsai")]}, set onsai(v){S[slot("onsai")] = v}};
 let saveBad = false, saveFailAt = 0;
 function save(){
+  if (typeof Mirror !== "undefined") Mirror.queue(); // bản sao thứ hai trong IndexedDB (js/core/mirror.js)
   try{ localStorage.setItem(KEY, JSON.stringify(S)); saveBad = false; }
   catch(e){
+    try{ localStorage.removeItem(KEY_PREV); localStorage.setItem(KEY, JSON.stringify(S)); saveBad = false; return; }catch(e2){} // nhường chỗ cho tiến trình thật
     saveBad = true; const now = Date.now();
     if (now - saveFailAt > 30000){ saveFailAt = now; try{ toast("⚠️ Không lưu được tiến trình (bộ nhớ trình duyệt đầy hoặc bị chặn). Bấm Sao lưu ngay để giữ dữ liệu!"); }catch(err){} }
   }

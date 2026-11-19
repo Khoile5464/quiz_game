@@ -30,7 +30,7 @@ const rows = src.map(r => {
   if (!v.q) errs.push(tag + ": bản dịch thiếu đề");
   const e = notes.get(r.n); if (!e || e.length < 20) errs.push(tag + ": thiếu lời giải thích (e)");
   if (v.o.length !== r.o.length || v.o.some(x => !x)) errs.push(tag + `: bản dịch có ${v.o.length} phương án, đề gốc ${r.o.length}`);
-  return {q: r.q, o: r.o, a: r.a, m: "ipr", c: r.c, n: r.n, ...(r.f ? {f: 1} : {}), e, vi: {q: v.q, o: v.o}, ...(v.k ? {k: v.k} : {})};
+  return {id: "ipr-" + r.n, q: r.q, o: r.o, a: r.a, m: "ipr", c: r.c, n: r.n, ...(r.f ? {f: 1} : {}), e, vi: {q: v.q, o: v.o}, ...(v.k ? {k: v.k} : {})};
 });
 for (const n of notes.keys()) if (!src.some(r => r.n === n)) errs.push(`lời giải #${n}: không có câu`);
 for (const n of vi.keys()) if (!src.some(r => r.n === n)) errs.push(`bản dịch #${n}: không có câu`);

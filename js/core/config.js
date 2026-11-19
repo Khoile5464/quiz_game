@@ -10,7 +10,8 @@ const SUBJ_TXT = {"111":["Triết học Mác–Lênin","triết học"],"122":["
 let subject = "111";
 try{const v=localStorage.getItem("mln111_subject");if(SUBJECTS.some(s=>s[0]===v))subject=v}catch(e){}
 const subjOf = q => q.m || "111";
-const ALLQ = RAW.map(r => ({...r, id: r.id || hash(r.q + "|" + r.o.join("|"))}));
+/* r.id cố định (IPR102) thì giữ id đó và nhớ id băm cũ ở q.alt để chuyển tiến trình (migrateIds trong storage.js); câu cũ vẫn dùng id băm nên KHÔNG được sửa chữ câu hỏi/phương án đã phát hành */
+const ALLQ = RAW.map(r => { const h = hash(r.q + "|" + r.o.join("|")); return {...r, id: r.id || h, ...(r.id && r.id !== h ? {alt: h} : {})}; });
 let Q = ALLQ.filter(q => subjOf(q) === subject); // chỉ gồm câu của môn đang chọn
 
 const $ = id => document.getElementById(id);

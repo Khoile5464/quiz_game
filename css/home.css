@@ -65,3 +65,7 @@ h3{margin:0 0 10px;font-size:18px}
 [data-theme="night"] .subj-tab{border-radius:6px;color:var(--ink)}
 [data-theme="night"] .subj-tab:hover:not(.on){background:var(--surface)}
 [data-theme="night"] .subj-tab.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink);box-shadow:3px 3px 0 var(--hard)}
+/* thanh nhắc cài app / sao lưu cho người dùng Safari */
+.pwa-hint{margin:0 0 12px;padding:10px 12px;border:3px solid var(--ink);border-radius:16px;background:var(--lemon);font-size:14px;line-height:1.5;text-align:left}
+.pwa-hint .pwa-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+[data-theme="night"] .pwa-hint{background:#2a2108;border-color:#6e5a26;color:#f7dc9c;border-radius:6px}
