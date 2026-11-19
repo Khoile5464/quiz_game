@@ -39,6 +39,7 @@ const rows = src.map((r, i) => {
   const x = notes.get(n);
   if (!x){ errs.push(tag + ": thiếu ghi chú giải thích"); return out; }
   if (!x.e) errs.push(tag + ": thiếu e");
+  for (const [nm, tx] of [["e", x.e], ["k", x.k]]) for (const m of String(tx || "").matchAll(/\{([A-F])\}/g)) if (L.indexOf(m[1]) >= r.o.length) errs.push(`${tag}: tham số {${m[1]}} trong ${nm} vượt số phương án`);
   // w theo chữ cái → mảng theo vị trí; phải giải thích đủ mọi phương án sai và không giải thích phương án đúng
   const w = r.o.map((_, j) => x.w?.[L[j]] || "");
   r.o.forEach((_, j) => { if (!r.a.includes(j) && !w[j]) errs.push(`${tag}: thiếu w.${L[j]}`); if (r.a.includes(j) && w[j]) errs.push(`${tag}: w.${L[j]} là đáp án đúng`); });

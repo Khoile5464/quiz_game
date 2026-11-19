@@ -29,6 +29,7 @@ const rows = src.map(r => {
   if (!v) { errs.push(tag + ": thiếu bản dịch"); return null; }
   if (!v.q) errs.push(tag + ": bản dịch thiếu đề");
   const e = notes.get(r.n); if (!e || e.length < 20) errs.push(tag + ": thiếu lời giải thích (e)");
+  for (const [nm, tx] of [["e", e], ["k", v && v.k]]) for (const m of String(tx || "").matchAll(/\{([A-F])\}/g)) if ("ABCDEF".indexOf(m[1]) >= r.o.length) errs.push(`${tag}: tham số {${m[1]}} trong ${nm} vượt số phương án`);
   if (v.o.length !== r.o.length || v.o.some(x => !x)) errs.push(tag + `: bản dịch có ${v.o.length} phương án, đề gốc ${r.o.length}`);
   return {id: "ipr-" + r.n, q: r.q, o: r.o, a: r.a, m: "ipr", c: r.c, n: r.n, ...(r.f ? {f: 1} : {}), e, vi: {q: v.q, o: v.o}, ...(v.k ? {k: v.k} : {})};
 });
@@ -51,8 +52,9 @@ md.push("", "---", "");
 for (let i = 0; i < src.length; i++) {
   const r = src[i], v = vi.get(r.n);
   md.push(`**${r.n}. ${v.q}**`, ...v.o.map((t, j) => `- ${L[j]}. ${t}`), `- **Đáp án: ${r.a.map(j => `${L[j]}. ${v.o[j]}`).join(" | ")}**`);
-  md.push("", `> 💡 ${rows[i].e}`);
-  if (v.k) md.push("", `> ⚠️ ${v.k}`);
+  const plain = t => t.replace(/\{([A-F])\}/g, "$1"); // bản văn bản giữ đúng thứ tự gốc nên tham số đổi lại thành chữ cái
+  md.push("", `> 💡 ${plain(rows[i].e)}`);
+  if (v.k) md.push("", `> ⚠️ ${plain(v.k)}`);
   md.push("");
 }
 fs.writeFileSync(path.join(root, "data/ipr102/IPR102_VI.md"), md.join("\n"));

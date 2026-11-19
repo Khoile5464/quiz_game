@@ -124,6 +124,7 @@ const RunUI = (() => {
 
   /* ---------- hộp bí mật ---------- */
   function showBox(boxId){
+    clearTimeout(G.revealT); clearTimeout(G.revealF); X.over.classList.remove("rtoastcard");
     RunScene.dropBox();
     X.qcard.classList.add("rq-out");
     const card = mk("div", "rcard"); card.append(mk("h3", "", "📦 Hộp bí mật!"), mk("p", "", "Bên trong có thể là khiên, điểm ×2 hoặc một con thú Rừng nhiệt đới."));
@@ -142,20 +143,24 @@ const RunUI = (() => {
     const card = mk("div", "rcard");
     if (res.type === "shield") card.append(mk("div", "rbig", "🛡"), mk("h3", "", res.converted ? "Đã có khiên rồi!" : "Khiên bảo vệ!"), mk("p", "", res.converted ? `Khiên thừa được quy đổi thành +${vnd(res.scoreDelta)} điểm.` : "Đỡ cho bạn 1 lần sai hoặc hết giờ."));
     else if (res.type === "scoreBoost") card.append(mk("div", "rbig", "✨"), mk("h3", "", `Điểm ×${res.factor}!`), mk("p", "", `Nhân điểm trong ${res.questions} câu đúng kế tiếp.`));
-    else card.append(...petCard(res));
-    const cont = btn(d.runOver ? "Xem tổng kết ▶" : "Tiếp tục chạy ▶", "big-start", () => { if (d.runOver) finish(d.summary); else present(d.nextQuestion); });
-    const row = mk("div", "ract"); row.append(cont);
-    if (res.type === "pet" && res.userPetId) row.append(btn("🌴 Xem trong trang trại", "lav", () => goFarm(res.userPetId)));
-    card.append(row); X.over.replaceChildren(card); X.over.classList.remove("hidden"); cont.focus({preventScroll: true});
-    if (res.type === "pet"){ try{ gachaSnd(RF_RAR[res.rarity]); }catch(e){} const b = X.over.getBoundingClientRect(); if (RF_RAR[res.rarity]) burst(b.left + b.width / 2, b.top + 90, [0, 10, 20, 36][RF_RAR[res.rarity]]); }
+    else card.append(...petCard(res, false, 4));
+    // thông báo TỰ TẮT, không cần bấm: câu kế tiếp hiện ngay bên dưới (đồng hồ của server đã chạy từ lúc mở hộp) và thẻ vật phẩm mờ dần rồi biến mất
+    const rr = res.type === "pet" ? RF_RAR[res.rarity] : -1, hold = res.type === "pet" ? (rr >= 2 ? 4200 : 3300) : 2400;
+    if (res.type === "pet" && res.userPetId){ const row = mk("div", "ract"); row.append(btn("🌴 Xem trong trang trại", "lav", () => goFarm(res.userPetId))); card.append(row); }
+    clearTimeout(G.revealT); clearTimeout(G.revealF);
+    if (d.runOver){ X.over.classList.remove("rtoastcard"); } else present(d.nextQuestion); // present() ẩn lớp phủ cũ; bật lại ngay sau đó
+    X.over.replaceChildren(card); X.over.classList.remove("hidden"); X.over.classList.toggle("rtoastcard", !d.runOver);
+    G.revealF = setTimeout(() => card.classList.add("fading"), hold - 400);
+    G.revealT = setTimeout(() => { X.over.classList.add("hidden"); X.over.classList.remove("rtoastcard"); if (d.runOver) finish(d.summary); }, hold);
+    if (res.type === "pet"){ try{ gachaSnd(RF_RAR[res.rarity]); }catch(e){} const bb = X.over.getBoundingClientRect(); if (RF_RAR[res.rarity]) burst(bb.left + bb.width / 2, bb.top + 90, [0, 10, 20, 36][RF_RAR[res.rarity]]); }
     else { try{ sfx.ok(); }catch(e){} }
   }
   /* card nhận thú: tên, rarity, mới, hoạt ảnh idle */
-  function petCard(res, small){
+  function petCard(res, small, scaleMax){
     const sp = SPECIES[res.petId], rr = RF_RAR[res.rarity], col = RAR_COL[rr], pet = RAINFOREST_PETS.find(p => p.id === res.petId);
     const chip = mk("span", "grar r" + rr, RAR[rr]); if (rr < 3) chip.style.background = col;
     const stage = mk("div", "gstage"); stage.style.setProperty("--gc", col + "66");
-    const sc = small ? 3 : Math.max(4, Math.min(8, Math.floor(130 / Math.max(sp.W, sp.H)))), cvs = [0, 1].map(f => spriteCv(animRows(res.petId, f), sp.pal, sc));
+    const sc = small ? 3 : Math.max(3, Math.min(scaleMax || 8, Math.floor(130 / Math.max(sp.W, sp.H)))), cvs = [0, 1].map(f => spriteCv(animRows(res.petId, f), sp.pal, sc));
     stage.append(cvs[0]); let fl = 0; const iv = setInterval(() => { if (!stage.isConnected){ clearInterval(iv); return; } fl ^= 1; stage.replaceChildren(cvs[fl]); }, 420);
     const title = mk("h3", "", pet.name); if (res.isNew) title.append(mk("span", "gnew", "✦ MỚI"));
     const out = [chip, stage, title];

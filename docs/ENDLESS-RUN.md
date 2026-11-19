@@ -58,3 +58,6 @@ Môn đang chọn quyết định kho câu. Kho ôn chỉ gồm câu đã học 
 - Trong một ván **không bao giờ lặp** một câu cho đến khi cả kho cạn. Câu vừa hỏi ở các ván gần đây (`runRecentMemory` = 60, nhớ qua nhiều ván) bị hạ ưu tiên nên ván sau không gặp lại ngay.
 - Chỉ lấy câu đáp án đơn; 66 câu «A và B» của IPR102 giữ nguyên thứ tự phương án; có nút **🇻🇳 Dịch** nếu môn có bản dịch (IPR102).
 Đặt `runPoolTarget: 0` để quay về kiểu chỉ ôn câu đã học (cần ≥ `minLearnedQuestions`).
+
+## Thông báo vật phẩm từ hộp bí mật
+Mở hộp xong, vật phẩm (khiên / điểm ×2 / thú) hiện thành thẻ **tự tắt** trên cảnh chạy (2,4 giây; thú thường 3,3 giây, thú siêu hiếm/huyền thoại 4,2 giây), không cần bấm. Câu kế tiếp hiện ngay bên dưới và dùng được ngay (đồng hồ của server đã chạy từ lúc mở hộp). Thẻ thú vẫn có nút «Xem trong trang trại» bấm được trong lúc còn hiện. Riêng việc **mở hộp** vẫn là một lần chạm.

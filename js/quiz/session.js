@@ -188,6 +188,15 @@ function applyVi(q){
   b.classList.toggle("on", viOn); b.textContent = viOn ? "🇻🇳 Dịch: bật" : "🇻🇳 Dịch: tắt";
 }
 $("viBtn").onclick = () => { viOn = !viOn; try{ localStorage.setItem("mln111_vi", viOn ? "1" : "0"); }catch(e){} applyVi(run && run.qs[run.i]); };
+/* Lời giải / ghi chú tham chiếu phương án bằng THAM SỐ {A}..{F} = chữ cái GỐC của phương án trong dữ liệu. Đề được xáo thứ tự khi làm bài nên phải đổi
+   sang chữ cái ĐANG HIỂN THỊ (order[pos] = chỉ số gốc). Không có order (màn xem lại cuối lượt, không hiện chữ cái) thì thay bằng chính nội dung phương án. */
+function fillOpts(text, q, order){
+  return String(text).replace(/\{([A-F])\}/g, (_, L) => {
+    const i = LETTERS.indexOf(L);
+    if (order){ const pos = order.indexOf(i); return LETTERS[pos >= 0 ? pos : i]; }
+    const t = q.o[i]; return t ? "«" + (t.length > 46 ? t.slice(0, 44) + "…" : t) + "»" : L;
+  });
+}
 function viExplainEl(q, picked, order, noWarn){
   const box = el("div","exp vi-exp");
   const h = el("div","eh"); h.append(el("span","","🇻🇳"), el("span","","Bản dịch tiếng Việt")); box.append(h);
@@ -200,18 +209,18 @@ function viExplainEl(q, picked, order, noWarn){
     ul.append(li);
   });
   box.append(ul);
-  if (q.k && !noWarn) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + q.k.replace(/^nghi vấn:\s*/i, "") + " — Khi thi vẫn nên chọn theo đáp án của đề."));
+  if (q.k && !noWarn) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + fillOpts(q.k.replace(/^nghi vấn:\s*/i, ""), q, order) + " — Khi thi vẫn nên chọn theo đáp án của đề."));
   return box;
 }
 function explainEl(q, picked, openWrong, order){
-  if (q.vi && q.e){ const f = document.createDocumentFragment(); f.append(explainBox(q, picked, openWrong), viExplainEl(q, picked, order, true)); return f; } // IPR102: lời giải rồi tới bản dịch
+  if (q.vi && q.e){ const f = document.createDocumentFragment(); f.append(explainBox(q, picked, openWrong, order), viExplainEl(q, picked, order, true)); return f; } // IPR102: lời giải rồi tới bản dịch
   if (q.vi) return viExplainEl(q, picked, order);
-  return explainBox(q, picked, openWrong);
+  return explainBox(q, picked, openWrong, order);
 }
-function explainBox(q, picked, openWrong){
+function explainBox(q, picked, openWrong, order){
   const box = el("div","exp");
   const h = el("div","eh"); h.append(el("span","","💡"), el("span","","Vì sao đúng?")); box.append(h);
-  { const eb = el("div","eb"); eb.append(rich(q.e || "Chưa có giải thích cho câu này.")); box.append(eb); }
+  { const eb = el("div","eb"); eb.append(rich(fillOpts(q.e || "Chưa có giải thích cho câu này.", q, order))); box.append(eb); }
   const others = q.o.map((t, i) => ({t, i, why: q.w?.[i]})).filter(x => !q.a.includes(x.i) && x.why);
   if (others.length){
     const d = el("details"); d.open = openWrong;
@@ -226,7 +235,7 @@ function explainBox(q, picked, openWrong){
     }
     d.append(ul); box.append(d);
   }
-  if (q.k) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + q.k.replace(/^nghi vấn:\s*/i, "") + " — Khi thi vẫn nên chọn theo đáp án của đề."));
+  if (q.k) box.append(el("div","warn","⚠️ Lưu ý về đáp án: " + fillOpts(q.k.replace(/^nghi vấn:\s*/i, ""), q, order) + " — Khi thi vẫn nên chọn theo đáp án của đề."));
   if (q.s) { const sd = el("div","src","📖 "); sd.append(rich(q.s)); box.append(sd); }
   return box;
 }

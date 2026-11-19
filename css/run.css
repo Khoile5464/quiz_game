@@ -44,3 +44,9 @@
 [data-theme="night"] .rtoast{background:#0f0a24;color:#fff;border-color:var(--sky)}
 @media (max-width:520px){.rtitle{font-size:22px}.rrules li{font-size:14px}.rstat b{font-size:19px}.ract .btn{flex:1 1 140px}}
 .rfpanel{grid-column:1/-1;width:100%;min-width:0}.rfpanel .gdex{margin:4px 0 8px}
+/* thông báo vật phẩm từ hộp bí mật: tự tắt, không chặn thao tác (chỉ nút «Xem trong trang trại» bấm được) */
+.rover.rtoastcard{background:transparent;backdrop-filter:none;pointer-events:none;align-items:start}
+.rover.rtoastcard .rcard{pointer-events:none;margin-top:6px;max-height:92%;box-shadow:0 6px 20px rgba(40,20,70,.35);transition:opacity .4s ease,transform .4s ease}
+.rover.rtoastcard .rcard .btn{pointer-events:auto}
+.rover.rtoastcard .rcard.fading{opacity:0;transform:translateY(-10px) scale(.96)}
+.rover.rtoastcard .rbig{font-size:38px}.rover.rtoastcard .rcard .gstage{min-height:0;margin:2px 0}
