@@ -1,6 +1,6 @@
 # Chạy rừng — Endless Run Quiz
 
-Mode chơi để nhận thú map **Rừng nhiệt đới** (30 thú). Nhân vật tự chạy, mỗi chướng ngại là một câu trắc nghiệm 20 giây; đúng thì nhảy qua, sai/hết giờ thì vấp ngã (có khiên thì chạy tiếp). Sau mỗi 3–5 câu đúng có hộp bí mật: khiên · điểm ×2 · thú.
+Mode chơi để nhận thú map **Rừng nhiệt đới** (30 thú). Nhân vật tự chạy, mỗi chướng ngại là một câu trắc nghiệm 45 giây; đúng thì nhảy qua, sai/hết giờ thì vấp ngã (có khiên thì chạy tiếp). Sau mỗi 3–5 câu đúng có hộp bí mật: khiên · điểm ×2 · thú.
 
 ## Kiến trúc ngắn
 ```
@@ -22,7 +22,7 @@ Mode chơi để nhận thú map **Rừng nhiệt đới** (30 thú). Nhân vậ
 4. Đồng hồ đo bằng `performance.now()` (đơn điệu, đổi giờ hệ thống không ảnh hưởng); giới hạn pet/ngày theo ngày dương lịch của máy. Mở lại app thì run còn treo bị kết thúc (đồng hồ reset theo trang) và hộp chưa mở được mở nốt để không mất thưởng.
 5. Nguồn câu hỏi: câu **đã học** (n>0), đáp án đơn, của môn đang chọn; không có câu mới. Kho cạn thì cho lặp (run vô tận), chỉ tránh lặp ngay câu vừa hỏi. Cần ≥ `minLearnedQuestions` (8) câu.
 6. Server xáo thứ tự lựa chọn (trừ câu có phương án tham chiếu chéo như «A và B» → giữ thứ tự), id lựa chọn ngẫu nhiên mỗi lần. Đáp án đúng chỉ lộ **sau khi chấm** (`correctChoiceId`) để người chơi học.
-7. Đồng hồ câu kế tiếp bắt đầu từ lúc server phát câu; với câu đến sau hộp bí mật thì từ lúc mở hộp (animation mở hộp không ăn giờ). Animation nhảy/vấp (~1 giây) có tính vào 20 giây.
+7. Đồng hồ câu kế tiếp bắt đầu từ lúc server phát câu; với câu đến sau hộp bí mật thì từ lúc mở hộp (animation mở hộp không ăn giờ). Animation nhảy/vấp (~1 giây) có tính vào 45 giây.
 8. Thêm ngoài danh sách API tối thiểu: `POST /run/pause` và `/run/resume` (để server cũng dừng đồng hồ khi mất mạng ≤ 30 giây). Mở hộp lặp lại trả đúng kết quả cũ. Chuồng Rừng đầy (30 con) hoặc `duplicatePolicy:"coin"` thì pet đổi thành xu.
 9. Dữ liệu cũ an toàn: chỉ thêm trường mới (`S.rf`, `S.farm.pity.rainforest`, loài `r_*`); không đổi KEY, không đổi id câu hỏi.
 

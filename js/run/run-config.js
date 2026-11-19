@@ -6,7 +6,7 @@
     maxAnimalsPerMap: 30,         // sức chứa chuồng mỗi map (khớp MAX_ANIMALS của app)
 
     /* thời gian & chống gian lận */
-    questionTimeMs: 20000,        // hạn trả lời mỗi câu (server tự đo)
+    questionTimeMs: 45000,        // hạn trả lời mỗi câu (server tự đo)
     graceMs: 1500,                // dung sai mạng; đến muộn hơn questionTimeMs + graceMs luôn bị tính SAI
     runIdleTimeoutMs: 90000,      // im lặng quá mức này thì run hết hạn (tránh run treo)
     pauseMaxMs: 30000,            // mất mạng giữa run: dừng đồng hồ tối đa ngần này cho mỗi câu, quá thì kết thúc run

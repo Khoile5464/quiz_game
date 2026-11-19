@@ -1,5 +1,5 @@
 /* ---------- «Endless Run Quiz» — engine server-authoritative ----------
-   Không đụng DOM. Mọi quyết định về phần thưởng nằm ở đây: sinh câu hỏi, tự đo 20 giây, tự chấm, bốc hộp, pity, ghi pet.
+   Không đụng DOM. Mọi quyết định về phần thưởng nằm ở đây: sinh câu hỏi, tự đo thời hạn mỗi câu (CONFIG.questionTimeMs, hiện 45 giây), tự chấm, bốc hộp, pity, ghi pet.
    Client chỉ gọi 5 API (start / answer / box/open / end / farm) + pause/resume và nhận kết quả.
 
    Phụ thuộc được TIÊM vào (nên chạy được trong trình duyệt với LocalStore lẫn Node với store giả khi test, và chuyển lên backend thật được):

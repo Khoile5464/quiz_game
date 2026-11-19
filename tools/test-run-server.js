@@ -45,9 +45,9 @@ const test = (name, fn) => tests.push([name, fn]);
 const throwsCode = (fn, code) => { try { fn(); } catch (e) { assert.ok(e instanceof RunError, "phải là RunError, nhận " + e); assert.strictEqual(e.code, code); return e; } assert.fail("phải ném " + code); };
 
 /* ================= hết giờ & đồng hồ server ================= */
-test("đáp án ĐÚNG nhưng gửi muộn hơn 20s + grace luôn bị tính SAI (kể cả client sửa)", () => {
+test("đáp án ĐÚNG nhưng gửi muộn hơn hạn (questionTimeMs) + grace luôn bị tính SAI (kể cả client sửa)", () => {
   const { srv, clock, store, questions } = setup();
-  const s = srv.start(); clock.t += 20000 + 1500 + 1;
+  const s = srv.start(); clock.t += CFG0.questionTimeMs + CFG0.graceMs + 1;
   const r = srv.answer({ runId: s.runId, token: s.firstQuestion.token, choiceId: correctId(store, s.runId) });
   assert.strictEqual(r.correct, false); assert.strictEqual(r.timedOut, true); assert.strictEqual(r.runOver, true);
   assert.deepStrictEqual(questions.log, [["q0", false]]); // timeout tính là sai cho mastery
@@ -64,7 +64,7 @@ test("gửi choiceId = null (client báo hết giờ/bỏ qua) là sai", () => {
 test("client đổi giờ hệ thống không ảnh hưởng: server dùng đồng hồ đơn điệu của chính nó", () => {
   const { srv, clock, store } = setup(); const s = srv.start();
   const realNow = Date.now; Date.now = () => realNow() - 3600e3; // client lùi đồng hồ 1 giờ
-  try { clock.t += 30000; assert.strictEqual(srv.answer({ runId: s.runId, token: s.firstQuestion.token, choiceId: correctId(store, s.runId) }).correct, false); } finally { Date.now = realNow; }
+  try { clock.t += CFG0.questionTimeMs + CFG0.graceMs + 5000; assert.strictEqual(srv.answer({ runId: s.runId, token: s.firstQuestion.token, choiceId: correctId(store, s.runId) }).correct, false); } finally { Date.now = realNow; }
 });
 
 /* ================= token ================= */
@@ -121,7 +121,7 @@ test("hết giờ cũng bị khiên đỡ như sai; nhặt khiên khi đang có 
   r = srv.answer({ runId: s.runId, token: ob.nextQuestion.token, choiceId: correctId(store, s.runId) }); // đúng → hộp thứ 2 (đang có khiên)
   const score0 = r.score; ob = srv.openBox({ runId: s.runId, boxId: r.secretBox.boxId });
   assert.strictEqual(ob.result.converted, true); assert.strictEqual(ob.score, score0 + CFG0.shieldOverflowScore); assert.strictEqual(ob.shield, true);
-  clock.t += 25000; r = srv.answer({ runId: s.runId, token: ob.nextQuestion.token, choiceId: null });
+  clock.t += CFG0.questionTimeMs + CFG0.graceMs + 1000; r = srv.answer({ runId: s.runId, token: ob.nextQuestion.token, choiceId: null });
   assert.strictEqual(r.shieldUsed, true); assert.strictEqual(r.runOver, false);
 });
 
@@ -266,8 +266,8 @@ test("câu hỏi không lặp trong run; kho cạn thì run kết thúc 'complet
 });
 test("tạm dừng mất mạng: đồng hồ dừng tối đa 30s mỗi câu, quá thì run kết thúc", () => {
   const a = setup(); const s = a.srv.start(); a.clock.t += 10000; a.srv.pause({ runId: s.runId }); a.clock.t += 25000;
-  const rs = a.srv.resume({ runId: s.runId }); assert.strictEqual(rs.runOver, false); assert.ok(Math.abs(rs.remainingMs - 10000) < 5);
-  assert.strictEqual(a.srv.answer({ runId: s.runId, token: s.firstQuestion.token, choiceId: correctId(a.store, s.runId) }).correct, true, "25s tạm dừng không bị tính vào hạn 20s");
+  const rs = a.srv.resume({ runId: s.runId }); assert.strictEqual(rs.runOver, false); assert.ok(Math.abs(rs.remainingMs - (CFG0.questionTimeMs - 10000)) < 5);
+  assert.strictEqual(a.srv.answer({ runId: s.runId, token: s.firstQuestion.token, choiceId: correctId(a.store, s.runId) }).correct, true, "25s tạm dừng không bị tính vào hạn trả lời");
   const b = setup(); const s2 = b.srv.start(); b.srv.pause({ runId: s2.runId }); b.clock.t += 45000;
   const rs2 = b.srv.resume({ runId: s2.runId }); assert.strictEqual(rs2.runOver, true); assert.strictEqual(b.store.state.runs[s2.runId].status, "disconnected");
   const c = setup(); const s3 = c.srv.start(); c.srv.pause({ runId: s3.runId }); c.clock.t += 80000; // đồng hồ chỉ được dừng ≤30s; trả lời sau 80s vẫn muộn
