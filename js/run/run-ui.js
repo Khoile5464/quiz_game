@@ -50,7 +50,7 @@ const RunUI = (() => {
     const go = btn("🏃 Bắt đầu chạy", "big-start", startRun); go.disabled = have < need;
     const act = mk("div", "ract"); act.append(go, btn("← Về trang chủ", "lav", leave));
     X.intro.replaceChildren(mk("h2", "rtitle", "🏃 Chạy rừng"), mk("p", "rsub", "Endless Run Quiz · nhận thú Rừng nhiệt đới"), rules, stats,
-      have < need ? mk("p", "rwarn", `Cần đã học ≥ ${need} câu của môn này (hiện ${have}). Học thêm vài câu rồi quay lại nhé ✦`) : mk("p", "rsub", RunLocal.usingFallback() ? `Môn này bạn mới học ít nên ván chạy dùng cả câu chưa học (${have} câu) — vừa chơi vừa học ✦` : `Có ${have} câu đã học để ôn trong lúc chạy.`), act);
+      have < need ? mk("p", "rwarn", `Cần đã học ≥ ${need} câu của môn này (hiện ${have}). Học thêm vài câu rồi quay lại nhé ✦`) : mk("p", "rsub", RunLocal.usingFallback() ? `Bạn mới học ít câu của môn này (dưới ${CFG.runPoolTarget}) nên ván chạy trộn thêm câu chưa học để không lặp — vừa chơi vừa học ✦` : `Có ${have} câu đã học để ôn trong lúc chạy.`), act);
   }
 
   /* ---------- vòng đời ván ---------- */

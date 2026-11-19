@@ -51,5 +51,10 @@ Mã lỗi (`error.code`): `RUN_NOT_FOUND`, `RUN_OVER`, `TOKEN_INVALID`, `TOKEN_E
 ## Kiểm thử đã có
 `node tools/test-run-server.js`: hết giờ + grace (kể cả client đổi giờ), replay token, token lạ/cũ, lựa chọn sai không tiêu token, không lộ đáp án trước khi chấm, khiên (đỡ 1 lần, hết giờ cũng đỡ, nhặt thừa → điểm), chu kỳ hộp 3–5, mở hộp lặp, boost ×2, rarity theo bậc streak (thống kê), pity qua nhiều run & nhiều phiên, giới hạn pet/run & /ngày, thú trùng/chuồng đầy → xu, transaction rollback + idempotent, kết quả trả client là bản sao, không có API xin pet, run treo hết hạn (được COMMIT), tạm dừng mất mạng, xu/combo.
 
-## Chạy cho môn IPR102 (và môn mới học ít)
-Môn đang chọn quyết định kho câu hỏi. Nếu bạn đã học < `minLearnedQuestions` câu của môn đó thì ván chạy lấy **cả câu chưa học** của môn (`allowNewWhenFewLearned: true`) để chơi được ngay; từ khi đủ câu đã học thì chỉ ôn câu đã học như thiết kế gốc. Với IPR102: chỉ lấy câu đáp án đơn (bỏ 3 câu nhiều đáp án), giữ nguyên thứ tự phương án với 66 câu «A và B», và mỗi câu có nút **🇻🇳 Dịch** hiện bản dịch dưới đề + từng phương án.
+## Nguồn câu hỏi trong ván (chống lặp)
+Môn đang chọn quyết định kho câu. Kho ôn chỉ gồm câu đã học nên nếu bạn mới học ít (ví dụ 10–20 câu) thì chạy vài chục câu là lặp lại. Vì vậy:
+- Đã học **< `runPoolTarget` (40)** câu của môn: trộn thêm câu **chưa học** của môn. Học càng ít thì tỉ lệ câu mới càng cao (tối thiểu 35%); phần còn lại vẫn ưu tiên câu hay sai theo `reviewMixRatio`.
+- Đã học **≥ 40** câu: chỉ ôn câu đã học như thiết kế gốc (ưu tiên vừa sai/đang nhớ, ít câu đã rất chắc).
+- Trong một ván **không bao giờ lặp** một câu cho đến khi cả kho cạn. Câu vừa hỏi ở các ván gần đây (`runRecentMemory` = 60, nhớ qua nhiều ván) bị hạ ưu tiên nên ván sau không gặp lại ngay.
+- Chỉ lấy câu đáp án đơn; 66 câu «A và B» của IPR102 giữ nguyên thứ tự phương án; có nút **🇻🇳 Dịch** nếu môn có bản dịch (IPR102).
+Đặt `runPoolTarget: 0` để quay về kiểu chỉ ôn câu đã học (cần ≥ `minLearnedQuestions`).

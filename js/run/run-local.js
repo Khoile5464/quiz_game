@@ -48,25 +48,38 @@ const RunLocal = (() => {
 
   /* ----- nguồn câu hỏi: chỉ câu đã học, đáp án đơn ----- */
   const single = q => q.a.length === 1 && q.o.length >= 2;
-  const learnedPool = () => Q.filter(q => (S.stats[q.id]?.n || 0) > 0 && single(q));
-  /* môn mới học ít (vd IPR102 vừa mở): lấy luôn câu chưa học của môn để chạy được ngay (CONFIG.allowNewWhenFewLearned); đủ câu đã học thì chỉ ôn câu đã học */
-  const usingFallback = () => CFG_.allowNewWhenFewLearned && learnedPool().length < CFG_.minLearnedQuestions;
   const CFG_ = RUN_CONFIG;
+  const isLearned = q => (S.stats[q.id]?.n || 0) > 0;
+  const learnedPool = () => Q.filter(q => isLearned(q) && single(q));
+  const freshPool = () => Q.filter(q => !isLearned(q) && single(q));
+  /* Kho ôn quá nhỏ thì cùng vài câu lặp đi lặp lại. Khi số câu đã học < runPoolTarget, trộn thêm câu CHƯA học của môn (tỉ lệ càng cao khi học càng ít);
+     đủ câu đã học thì chỉ ôn câu đã học như thiết kế gốc. */
+  const usingFallback = () => learnedPool().length < CFG_.runPoolTarget;
   const eligible = () => usingFallback() ? Q.filter(single) : learnedPool();
   const bucketOf = q => { const b = boxOf(q); return b <= 1 ? "weak" : b <= 3 ? "mid" : "strong"; }; // vừa sai / đang nhớ → weak; khá ổn / đã thuộc → mid; rất chắc / master → strong
+  /* câu vừa hỏi ở các ván gần đây (qua nhiều ván) được hạ ưu tiên để không gặp lại ngay */
+  const recent = () => { ensureRecent(); return S.rf.recent; };
+  function ensureRecent(){ if (!S.rf || typeof S.rf !== "object") S.rf = {}; if (!Array.isArray(S.rf.recent)) S.rf.recent = []; }
   let lastId = null;
   const provider = {
     learnedCount: () => eligible().length,
     next({exclude}){
-      const all = eligible(); if (!all.length) return null;
+      const learned = learnedPool(), fresh = usingFallback() ? freshPool() : [];
+      const all = learned.concat(fresh); if (!all.length) return null;
+      const rec = new Set(recent());
       let pool = all.filter(q => !exclude.has(q.id));
-      if (!pool.length) pool = all.length > 1 ? all.filter(q => q.id !== lastId) : all; // kho đã hết thì cho lặp lại (run vô tận), chỉ tránh lặp ngay câu vừa hỏi
-      const buckets = {weak: [], mid: [], strong: []}; for (const q of pool) buckets[bucketOf(q)].push(q);
-      const mix = RUN_CONFIG.reviewMixRatio, keys = Object.keys(buckets).filter(k => buckets[k].length && (mix[k] || 0) > 0);
-      const use = keys.length ? keys : Object.keys(buckets).filter(k => buckets[k].length);
-      let r = Math.random() * use.reduce((s, k) => s + (mix[k] || 1), 0), key = use[use.length - 1];
-      for (const k of use){ r -= (mix[k] || 1); if (r < 0){ key = k; break; } }
+      if (!pool.length) pool = all.length > 1 ? all.filter(q => q.id !== lastId) : all; // kho đã hết thì mới lặp lại, chỉ tránh lặp ngay câu vừa hỏi
+      const fresher = pool.filter(q => !rec.has(q.id)); if (fresher.length >= 3 || fresher.length === pool.length) pool = fresher.length ? fresher : pool; else if (fresher.length) pool = fresher.concat(pool.filter(q => rec.has(q.id)).slice(0, 2));
+      const buckets = {weak: [], mid: [], strong: [], fresh: []};
+      for (const q of pool) buckets[isLearned(q) ? bucketOf(q) : "fresh"].push(q);
+      const mix = CFG_.reviewMixRatio, learnedN = learned.length;
+      const wf = buckets.fresh.length ? Math.max(.35, 1 - learnedN / CFG_.runPoolTarget) : 0; // học càng ít thì câu mới càng nhiều (tối thiểu 35%)
+      const W = {weak: (mix.weak || 0) * (1 - wf), mid: (mix.mid || 0) * (1 - wf), strong: (mix.strong || 0) * (1 - wf), fresh: wf};
+      let keys = Object.keys(buckets).filter(k => buckets[k].length && W[k] > 0); if (!keys.length) keys = Object.keys(buckets).filter(k => buckets[k].length);
+      let r = Math.random() * keys.reduce((t, k) => t + (W[k] || 1), 0), key = keys[keys.length - 1];
+      for (const k of keys){ r -= (W[k] || 1); if (r < 0){ key = k; break; } }
       const list = buckets[key], q = list[Math.floor(Math.random() * list.length)]; lastId = q.id;
+      ensureRecent(); S.rf.recent.push(q.id); if (S.rf.recent.length > CFG_.runRecentMemory) S.rf.recent.splice(0, S.rf.recent.length - CFG_.runRecentMemory);
       return {id: q.id, text: q.q, options: q.o.slice(), correct: q.a[0], ordered: !!q.f, ...(q.vi ? {textVi: q.vi.q, optionsVi: q.vi.o.slice()} : {})};
     },
     /* giống hệt nhánh cập nhật của submit() trong session.js (khi không phải chế độ «làm lại câu sai») */
@@ -104,5 +117,5 @@ const RunLocal = (() => {
     post(path, body){ return this.request("POST", path, body); },
     get(path){ return this.request("GET", path); },
   };
-  return {RunAPI, dayKey, learnedCount: provider.learnedCount, usingFallback, swept, server};
+  return {RunAPI, dayKey, learnedCount: provider.learnedCount, usingFallback, provider, swept, server};
 })();

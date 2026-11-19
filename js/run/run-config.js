@@ -38,8 +38,9 @@
 
     /* nguồn câu hỏi: chỉ câu đã học (n > 0), KHÔNG có câu mới. weak = vừa sai / đang nhớ (box 0–1), mid = box 2–3, strong = box 4–5 */
     reviewMixRatio: { weak: 0.6, mid: 0.3, strong: 0.1 },
-    minLearnedQuestions: 8,       // ít hơn thì chưa cho chạy (hoặc dùng câu chưa học nếu allowNewWhenFewLearned)
-    allowNewWhenFewLearned: true, // môn mới học ít (vd IPR102) → ván chạy lấy cả câu chưa học của môn để chơi được ngay; đặt false để CHỈ ôn câu đã học
+    minLearnedQuestions: 8,       // dưới mức này (và runPoolTarget = 0) thì chưa cho chạy
+    runPoolTarget: 40,            // đã học < ngần này câu của môn thì trộn thêm câu CHƯA học (càng học ít càng nhiều câu mới, tối thiểu 35%) để không lặp mãi vài câu; đủ thì chỉ ôn câu đã học. Đặt 0 để CHỈ ôn câu đã học
+    runRecentMemory: 60,          // nhớ ngần này câu vừa hỏi (qua nhiều ván) để không gặp lại ngay
 
     /* tốc độ chạy (chỉ hiệu ứng hình ảnh, tăng nhẹ theo số câu đúng) */
     runSpeedBase: 1.0, runSpeedPerCorrect: 0.015, runSpeedMax: 1.6,

@@ -22,24 +22,23 @@
 [data-theme="night"] .tab{color:var(--ink2);text-shadow:none;border-radius:2px}
 [data-theme="night"] .tab.on{background:var(--pink);color:#1a0a1f;border-color:var(--pink)}
 [data-theme="night"] .tb-title{font-family:"Silkscreen",monospace;font-weight:400;letter-spacing:2px;color:#fff;-webkit-text-stroke:0;background:none;text-shadow:0 0 8px rgba(242,104,159,.45),2px 2px 0 #3a0a2a;filter:none;font-size:20px}
-/* khóa trang chủ vừa một màn hình chỉ khi đủ cao để cột phải không bị cắt (đã đo: cao ≥ 760px khi rộng ≥ 1280px, ≥ 840px khi rộng 1000–1279px) */
-@media (min-width:1280px) and (min-height:760px), (min-width:1000px) and (min-height:840px){
-  body.on-home{--wmax:min(1760px,calc((100dvh - 344px) * 1.78 + 640px));height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+/* Trang chủ màn rộng (≥1000px): 2 cột. KHÔNG khóa chiều cao nữa: trước đây khóa body = 100dvh + overflow:hidden nên khi nội dung cột phải dài hơn
+   (nhiều chip phạm vi, nút Chạy rừng, thanh nhắc…) hoặc khi zoom 67–110% thì bị cắt mất nút. Giờ trang cuộn bình thường, chỉ giới hạn kích thước ô nông trại theo chiều cao cửa sổ. */
+@media (min-width:1000px){
+  body.on-home{--wmax:1760px}
   body.on-home .theme-bar{max-width:var(--wmax);width:100%;padding:6px 20px 0;align-items:center}
   body.on-home .tb-title{display:block}
   body.on-home .logo{display:none}
-  body.on-home .wrap{flex:1;min-height:0;width:100%;max-width:var(--wmax);padding:10px 20px 14px}
-  body.on-home #home{height:100%;display:grid;grid-template-columns:minmax(0,1fr) clamp(430px,36vw,600px);gap:14px}
-  body.on-home .col{display:flex;flex-direction:column;gap:12px;min-height:0}
+  body.on-home .wrap{width:100%;max-width:var(--wmax);padding:10px 20px 28px}
+  body.on-home #home{display:grid;grid-template-columns:minmax(0,1fr) clamp(400px,34vw,560px);gap:14px;align-items:start}
+  body.on-home .col{display:flex;flex-direction:column;gap:12px;min-width:0}
   body.on-home .col .win{margin-bottom:0}
   body.on-home .win{box-shadow:0 4px 0 #b48ce8,0 8px 18px rgba(120,60,180,.2)}
   body.on-home .bar{padding:5px 12px}
   body.on-home .body{padding:10px 12px}
-  body.on-home .farmwin{flex:1;min-height:0;display:flex;flex-direction:column}
-  body.on-home .farmwin .body{flex:1;min-height:0;display:flex;flex-direction:column}
   body.on-home .fhead{margin-bottom:6px}
-  body.on-home .fwrap{flex:1;min-height:0;container-type:size;display:grid;place-items:center}
-  body.on-home .fstage{width:min(100cqw,calc(100cqh * 16 / 9))}
+  body.on-home .fwrap{display:block}
+  body.on-home .fstage{width:min(100%,calc((100dvh - 250px) * 16 / 9));min-width:min(100%,520px);margin:0 auto}
   body.on-home .fshop{grid-template-columns:repeat(4,1fr);gap:8px}
   body.on-home .gshop{grid-template-columns:repeat(3,1fr);gap:8px}
   body.on-home .gcard{padding:6px 8px}
@@ -54,15 +53,12 @@
   body.on-home .stat .l{font-size:11px}
   body.on-home .startwin .body{padding:8px 12px}
   body.on-home .startwin .hint{font-size:12px}
-  body.on-home .startwin .body > .hint:last-child{display:none}
   body.on-home .chips{margin:2px 0 8px;gap:6px}
   body.on-home .chip{padding:3px 10px;font-size:13px}
   body.on-home .big-start{font-size:19px;padding:8px 22px;margin-top:2px}
   body.on-home .big-start small{font-size:11px;margin-top:0}
-  body.on-home .infowin{flex:1;min-height:0;display:flex;flex-direction:column}
-  body.on-home .infowin .tabbody{flex:1;min-height:0;overflow:auto}
+  body.on-home .infowin .tabbody{max-height:360px;overflow:auto}
   body.on-home .meter{height:14px;margin-top:4px}
-  body.on-home footer{display:none}
 }
 @media (max-width:600px){
   .stats{grid-template-columns:repeat(2,1fr)}
