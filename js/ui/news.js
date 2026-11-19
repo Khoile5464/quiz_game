@@ -32,6 +32,11 @@ const NEWS = [
     "Cả <b>372 câu IPR102</b> có khung <b>💡 Vì sao đúng?</b> bằng tiếng Việt, rồi tới bản dịch đề",
     "Thanh chọn môn ở trang chủ to hơn, tách hẳn khỏi chip chương",
     "App đổi tên thành <b>Thành Quiz Game</b> (tiến trình cũ giữ nguyên)"]},
+  {id: "run-rainforest", ic: "🏃", t: "Chạy rừng: map Rừng nhiệt đới + 30 thú mới", go: "111", goText: "Xem map Rừng ✦", li: [
+    "Nhân vật tự chạy, mỗi chướng ngại là một câu hỏi <b>20 giây</b> (câu bạn đã học, ưu tiên câu hay sai)",
+    "Đúng thì nhảy qua, sai/hết giờ thì vấp ngã; có <b>khiên</b> thì chạy tiếp",
+    "Sau 3–5 câu đúng có <b>hộp bí mật</b>: khiên, điểm ×2 hoặc một con thú Rừng nhiệt đới — đúng liên tiếp càng nhiều càng dễ ra thú hiếm",
+    "Bấm <b>🏃 Chạy rừng</b> ở trang chủ hoặc tab 🌴 Rừng trong nông trại. Thú cũ của bạn giữ nguyên"]},
 ];
 const newsUnseen = () => { const i = NEWS.findIndex(n => n.id === S.seenNews); return NEWS.slice(i + 1); }; // seenNews lạ hoặc rỗng → i = -1 → tất cả
 function closeNews(){ $("newsModal").classList.add("hidden"); S.seenNews = NEWS[NEWS.length - 1].id; save(); }

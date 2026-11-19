@@ -1,0 +1,46 @@
+/* ---------- Chạy rừng (Endless Run Quiz) — ưu tiên di động ---------- */
+#run .win{max-width:760px;margin:0 auto}
+.rtitle{margin:0 0 2px;font-size:26px;text-align:center}
+.rsub{margin:2px 0 10px;text-align:center;color:var(--ink2);font-weight:700;line-height:1.45}
+.rwarn{margin:8px 0;padding:8px 12px;border:2px solid #ffb36b;background:#fff2e4;border-radius:12px;font-weight:700;text-align:center}
+.rrules{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:6px}
+.rrules li{padding:7px 10px;border:2px solid var(--lav);border-radius:12px;background:#fff;font-size:15px;line-height:1.45}
+.rstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:8px 0}
+.rstat{border:3px solid var(--ink);border-radius:14px;background:var(--lemon);padding:6px 8px;text-align:center}
+.rstat small{display:block;font-size:12px;font-weight:800;color:var(--ink2)}.rstat b{font-size:22px}
+.ract{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0 2px}
+.ract .btn{min-width:150px}
+.rhud{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.rhud .chip{font-size:14px}
+.rhud .chip.hot{background:linear-gradient(90deg,#ffb36b,#ff7ac8);color:#fff}
+.rshield{background:#d6f7ff}.rboost{background:var(--lemon)}
+#viBtn,.rhud button.chip{cursor:pointer;font-family:inherit}.rhud button.chip.on{background:var(--mint)}
+.rstage{position:relative;border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:#7fd6a8;line-height:0;touch-action:manipulation}
+.rstage canvas{display:block;width:100%;height:auto;aspect-ratio:2/1;image-rendering:pixelated}
+.rtoast{position:absolute;left:50%;top:14%;transform:translateX(-50%);padding:4px 14px;border:3px solid var(--ink);border-radius:999px;background:#fff;font-weight:900;font-size:18px;line-height:1.3;animation:rfloat 1s ease-out forwards;pointer-events:none}
+@keyframes rfloat{from{transform:translate(-50%,10px) scale(.7);opacity:0}25%{opacity:1;transform:translate(-50%,0) scale(1.1)}to{transform:translate(-50%,-14px) scale(1);opacity:0}}
+.rover{position:absolute;inset:0;display:grid;place-items:center;background:rgba(40,20,70,.55);backdrop-filter:blur(2px);line-height:1.4;padding:8px;overflow:auto}
+.rcard{width:min(92%,380px);max-height:100%;overflow:auto;text-align:center;background:var(--white,#fffdf5);border:4px solid var(--ink);border-radius:20px;box-shadow:var(--shadow);padding:12px 14px;animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+.rcard h3{margin:4px 0}.rcard p{margin:4px 0 8px;font-weight:700}
+.rbig{font-size:54px;line-height:1.1}
+.rtimer{display:flex;align-items:center;gap:10px;margin:10px 0}
+.rtrack{flex:1;height:14px;border:3px solid var(--ink);border-radius:999px;background:#fff;overflow:hidden}
+.rtbar{height:100%;width:100%;background:linear-gradient(90deg,#5ad07a,#c8f08a);transition:width .12s linear}
+.rtbar.low{background:linear-gradient(90deg,#ff5a6a,#ff9a3c);animation:rpulse .5s infinite alternate}
+@keyframes rpulse{to{filter:brightness(1.25)}}
+.rtnum{min-width:34px;text-align:center;font-weight:900;font-size:24px}.rtnum.low{color:#e8434f;animation:rpulse .5s infinite alternate}
+.rq{transition:opacity .2s}.rq.rq-out{opacity:.25;pointer-events:none}
+.rnet{margin:6px 0;padding:6px 10px;border:2px solid #ffb36b;background:#fff2e4;border-radius:12px;font-weight:800;text-align:center}
+.ritems{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:4px 0}
+.rpets{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:6px 0}
+.rpet{border:3px solid var(--ink);border-radius:14px;background:#fff;padding:6px;text-align:center}.rpet h3{font-size:14px;margin:2px 0}
+.rfgrp{margin:12px 2px 4px;text-align:left}.rfnote{margin:6px 0}
+.rpet .gstage{min-height:60px}
+[data-theme="night"] .rstat{background:#2a2108;border-color:#6e5a26;color:#f7dc9c;border-radius:6px}
+[data-theme="night"] .rrules li{background:var(--surface);border-color:var(--line);color:var(--ink);border-radius:6px}
+[data-theme="night"] .rcard{background:#0f0a24;border-color:var(--sky);color:#fff;border-radius:6px}
+[data-theme="night"] .rpet{background:var(--surface);border-color:var(--line);border-radius:6px}
+[data-theme="night"] .rtrack{background:var(--surface);border-color:var(--line)}
+[data-theme="night"] .rtoast{background:#0f0a24;color:#fff;border-color:var(--sky)}
+@media (max-width:520px){.rtitle{font-size:22px}.rrules li{font-size:14px}.rstat b{font-size:19px}.ract .btn{flex:1 1 140px}}
+.rfpanel{grid-column:1/-1;width:100%;min-width:0}.rfpanel .gdex{margin:4px 0 8px}

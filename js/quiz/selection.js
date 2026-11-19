@@ -27,7 +27,7 @@ function applySubject(){
 }
 function setSubject(k){
   if (k === subject || !SUBJECTS.some(s => s[0] === k)) return;
-  if (run) return toast("Thoát bài đang làm rồi hãy đổi môn nha ✦");
+  if (run || (typeof RunUI !== "undefined" && RunUI.active)) return toast("Thoát bài đang làm rồi hãy đổi môn nha ✦");
   subject = k; try{localStorage.setItem("mln111_subject", k)}catch(e){}
   Q = ALLQ.filter(q => subjOf(q) === subject); SCOPES = SCOPES_BY[subject]; scope = SCOPES[0][0];
   try{const v=localStorage.getItem(SCOPE_KEY());if(SCOPES.some(s=>s[0]===v))scope=v}catch(e){}

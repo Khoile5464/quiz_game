@@ -1,6 +1,6 @@
 /* ---------- quiz ---------- */
 let run = null;
-function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result","story"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
+function show(id){ if (id !== "result") document.querySelectorAll(".brag").forEach(e => e.remove());document.body.classList.toggle("on-home", id === "home"); for (const s of ["home","quiz","result","story","run"]) $(s).classList.toggle("hidden", s !== id); scrollTo({top:0,behavior:"smooth"}); }
 
 let lastMode = "new";
 function startSession(mode, restart){

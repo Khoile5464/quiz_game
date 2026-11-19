@@ -7,12 +7,12 @@ function checkUnlocks(){
 function setMap(m){
   if (m === "ocean" && !oceanOpen()){ toast(`🔒 Cần thuộc ${OCEAN_NEED} câu để mở Đại dương Olympus (hiện ${mastered()}/${OCEAN_NEED})`); return; }
   curMap = m; try{ localStorage.setItem("mln111_map", m); }catch(e){}
-  selId = null; renderFarmUI(); farmSay(m === "ocean" ? OCEAN_HINT : FARM_HINT);
+  selId = null; renderFarmUI(); farmSay(m === "ocean" ? OCEAN_HINT : m === "rainforest" ? RF_HINT : FARM_HINT);
 }
 function renderMaps(){
   const open = oceanOpen();
   const mk = (k, label, cls) => { const b = el("button", cls + (curMap === k ? " on" : ""), label); b.type = "button"; b.onclick = () => setMap(k); return b; };
-  $("fmaps").replaceChildren(mk("farm", "🌿 Nông trại", ""), mk("ocean", open ? "🌊 Đại dương" : `🔒 Đại dương ${Math.min(mastered(), OCEAN_NEED)}/${OCEAN_NEED}`, open ? "" : "lock"));
+  $("fmaps").replaceChildren(mk("farm", "🌿 Nông trại", ""), mk("ocean", open ? "🌊 Đại dương" : `🔒 Đại dương ${Math.min(mastered(), OCEAN_NEED)}/${OCEAN_NEED}`, open ? "" : "lock"), mk("rainforest", "🌴 Rừng", ""));
 }
 
 function renderSel(){
@@ -44,11 +44,11 @@ function renderFarmUI(){
   $("coins").textContent = `🪙 ${vnd(S.coins)} xu`;
   const total = countMap(curMap);
   $("farmCount").textContent = `${total}/${MAX_ANIMALS} con`;
-  $("mapName").textContent = curMap === "ocean" ? "🌊 Đại dương Olympus" : "🏛 Nông trại Olympus";
+  $("mapName").textContent = curMap === "ocean" ? "🌊 Đại dương Olympus" : curMap === "rainforest" ? "🌴 Rừng nhiệt đới" : "🏛 Nông trại Olympus";
   renderMaps();
   document.querySelectorAll("[data-ft]").forEach(b => b.classList.toggle("on", b.dataset.ft === ftab));
-  const tab = curMap === "ocean" ? "gacha" : ftab;
-  document.querySelectorAll("[data-ft]").forEach(b => { b.classList.toggle("on", b.dataset.ft === tab); if (b.dataset.ft === "shop") b.classList.toggle("hidden", curMap === "ocean"); });
+  const noShop = curMap === "ocean" || curMap === "rainforest", tab = noShop ? "gacha" : ftab; // Đại dương & Rừng: chỉ có tab thú (không bán thú trong cửa hàng)
+  document.querySelectorAll("[data-ft]").forEach(b => { b.classList.toggle("on", b.dataset.ft === tab); if (b.dataset.ft === "shop") b.classList.toggle("hidden", noShop); if (b.dataset.ft === "gacha" && curMap === "rainforest") b.textContent = "🏃 Chạy rừng"; else if (b.dataset.ft === "gacha") b.textContent = "🎰 Gacha"; });
   $("farmShop").classList.toggle("hidden", tab !== "shop"); $("gachaShop").classList.toggle("hidden", tab !== "gacha");
   if (tab === "shop") renderShop(total); else renderGacha(total);
   renderSel(); drawFarm();
@@ -66,6 +66,8 @@ function renderShop(total){
   }));
 }
 function renderGacha(total){
+  if (curMap === "rainforest") return renderRainforest(total);
+  if (!RUN_CONFIG.legacyGachaEnabled){ $("gachaShop").replaceChildren(el("p", "gnote", "🌴 Thú mới giờ đến từ map Rừng nhiệt đới: bấm tab 🌴 Rừng rồi 🏃 Chạy rừng để mở hộp bí mật.")); return; }
   $("gachaShop").replaceChildren(...GACHA.map((m, mi) => ({m, mi})).filter(o => o.m.map === curMap).map(({m, mi}) => {
     const own = m.animals.filter(an => S.farm.dex[an.k]).length;
     const d = el("div", "gcard"); d.style.setProperty("--g1", m.bg[0]); d.style.setProperty("--g2", m.bg[1]);

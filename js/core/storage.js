@@ -96,7 +96,7 @@ const normFull = s => cleanFarm(norm(s));
    - dữ liệu đọc không được (hỏng) thì giữ nguyên bản gốc ở KEY_corrupt, không để lần lưu sau ghi đè mất
    - mỗi lần lên phiên bản mới, chụp một bản dự phòng nguyên trạng ở KEY_prev trước khi code mới đụng vào
    - id câu hỏi phải ổn định (xem tools/check-data-safety.js) */
-const APP_VER = "0.3.30", KEY_PREV = KEY + "_prev", KEY_CORRUPT = KEY + "_corrupt";
+const APP_VER = "0.3.31", KEY_PREV = KEY + "_prev", KEY_CORRUPT = KEY + "_corrupt";
 function safetyCopy(raw){
   try{
     if (localStorage.getItem("mln111_appver") === APP_VER) return;

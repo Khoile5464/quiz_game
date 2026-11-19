@@ -16,6 +16,7 @@ addEventListener("keydown", e => { if (e.key === "Escape" && !gm.classList.conta
 
 function pullGacha(mi){
   const m = GACHA[mi];
+  if (!RUN_CONFIG.legacyGachaEnabled){ toast("Gacha đã được thay bằng 🏃 Chạy rừng ✦"); return; }
   if (countMap(m.map) >= MAX_ANIMALS){ toast(`Chuồng đầy rồi (${MAX_ANIMALS} con) — bán bớt một bé nha 🥲`); return; }
   if (S.coins < m.price){ toast("Chưa đủ xu — làm thêm vài câu quiz nha ✦"); return; }
   if (curMap !== m.map) setMap(m.map);

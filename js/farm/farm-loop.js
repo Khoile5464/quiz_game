@@ -95,6 +95,7 @@ function paintParts(R){
 }
 function drawFarm(){
   if (curMap === "ocean"){ drawOcean(); return; }
+  if (curMap === "rainforest"){ drawJungle(); return; }
   const night = isNight();
   if (!bgCache || bgNight !== night){ bgCache = makeBg(night); bgNight = night; }
   cx.drawImage(bgCache, 0, 0);

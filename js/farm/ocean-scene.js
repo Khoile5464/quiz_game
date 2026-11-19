@@ -1,6 +1,6 @@
 /* ---------- map Đại dương Olympus ---------- */
 let curMap = "farm";
-try{ if (localStorage.getItem("mln111_map") === "ocean") curMap = "ocean"; }catch(e){}
+try{ const mp = localStorage.getItem("mln111_map"); if (mp === "ocean" || mp === "rainforest") curMap = mp; }catch(e){}
 const OCEAN_NEED = 50;
 const rndO = (s => () => (s = s * 16807 % 2147483647) / 2147483647)(777);
 let oceanCache = null, oceanNight = null;
